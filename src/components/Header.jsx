@@ -1,11 +1,11 @@
 import React from 'react'
 
-function WhoWeAre() {
+function Header() {
   return (
     <div>
-     Who we are 
+     Header  
     </div>
   )
 }
 
-export default WhoWeAre
+export default Header

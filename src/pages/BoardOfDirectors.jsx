@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function BoardOfDirectors() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div>this is board of BoardOfDirectors</div>;
 }
 
-export default BoardOfDirectors
+export default BoardOfDirectors;
