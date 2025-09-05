@@ -18,14 +18,16 @@ import Partners from "./pages/Partners";
 import Startups from "./pages/Startups";
 import UpcomingEvents from "./pages/UpcomingEvents";
 import WhoWeAre from "./pages/WhoWeAre";
-import Footer from "./components/Footer.jsx";
-import Header from "./components/Header.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import Header from "./components/Header/Header.jsx";
+import PageLayout from "./components/PageLayout.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <StrictMode>
+      {/* Header  */}
       <Header></Header>
-      <div className="bg-red-300 min-h-screen">
+      <PageLayout>
         <Routes>
           {/* HOME PAGE */}
           <Route index element={<App />} />
@@ -56,7 +58,7 @@ createRoot(document.getElementById("root")).render(
 
           {/* NETWORK & COMMUNITY */}
           {/* Co-founder matching and networking */}
-          <Route path="/co-founder" element={<Cofounders />} />
+          <Route path="/cofounders" element={<Cofounders />} />
           {/* Available mentors and advisors */}
           <Route path="/mentors" element={<Mentors />} />
           {/* Partner organizations and collaborators */}
@@ -69,8 +71,9 @@ createRoot(document.getElementById("root")).render(
           {/* Upcoming events and workshops */}
           <Route path="/upcoming-events" element={<UpcomingEvents />} />
         </Routes>
-      </div>
+      </PageLayout>
 
+      {/* Footer  */}
       <Footer></Footer>
     </StrictMode>
   </BrowserRouter>

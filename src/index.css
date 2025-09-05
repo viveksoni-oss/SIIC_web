@@ -2,24 +2,14 @@
 
 @theme {
   /* Colors */
-  /* --color-primary: oklch(0.65 0.15 264.7);
-  --color-secondary: oklch(0.75 0.12 342.5);
-  --color-accent: oklch(0.68 0.14 142.5);
-  --color-neutral: oklch(0.64 0.02 247.8);
-  --color-background: oklch(0.99 0 0); */
-  
-  /* Typography */
-  /* --font-display: "Inter", "sans-serif";
-  --font-body: "Inter", "sans-serif"; */
-  
-  /* Spacing */
-  /* --spacing-18: 4.5rem;
-  --spacing-128: 32rem;
-   */
-  /* Breakpoints */
-  /* --breakpoint-3xl: 1920px; */
-  
-  /* Custom animations/easing */
-  /* --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --ease-fluid: cubic-bezier(0.3, 0, 0, 1); */
-} 
+  --color-primary: #6c3231;
+  --color-primary-highlight: #ff8a40;
+  --color-secondary: #2d415c;
+  --color-secondary-white: #e3e3e3;
+  /* fbb990 */
+  /*  bg gradiant color */
+  /* Typography*/
+  --font-sans: "Plus Jakarta Sans", "Inter", "sans-serif";
+
+  --radius-2xl: 20px;
+}
