@@ -1,11 +1,7 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
 function Cofounders() {
-  return (
-    <div>
-      Cofounders
-    </div>
-  )
+  return <div>Cofounders</div>;
 }
 
-export default Cofounders
+export default Cofounders;

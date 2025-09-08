@@ -1,7 +1,8 @@
 import React from "react";
+import PageLayout from "../components/PageLayout";
 
 function BoardOfDirectors() {
-  return <div>this is board of BoardOfDirectors</div>;
+  return <PageLayout>this is board of BoardOfDirectors</PageLayout>;
 }
 
 export default BoardOfDirectors;

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import SepratorLine from './../Utility Components/SepratorLine';
+import SepratorLine from "./../Utility Components/SepratorLine";
+import { Link } from "react-router";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -102,14 +103,14 @@ function Header() {
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="hidden lg:flex items-center gap-6 xl:gap-9"
+          className="hidden md:flex lg:flex items-center gap-6 xl:gap-9"
         >
           <div className="flex items-center gap-6 xl:gap-8 text-sm xl:text-base font-medium">
             {["What we Offer", "Start ups", "Join Us", "News & Events"].map(
               (item, index) => (
-                <motion.a
+                <Link
                   key={item}
-                  href="#"
+                  to={`/${item}`}
                   whileHover={{ scale: 1.05, color: "#2563eb" }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 0 }}
@@ -118,18 +119,20 @@ function Header() {
                   className="hover:text-blue-600 transition-colors"
                 >
                   {item}
-                </motion.a>
+                </Link>
               )
             )}
           </div>
 
-          <div className="text-gray-400 mx-2"><SepratorLine></SepratorLine></div>
+          <div className="text-gray-400 mx-2 hidden xl:block">
+            <SepratorLine></SepratorLine>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 0.3 }}
-            className="relative"
+            className="relative  hidden xl:block"
           >
             <motion.input
               whileFocus={{ scale: 1.02 }}
@@ -153,7 +156,7 @@ function Header() {
           </motion.div>
         </motion.nav>
 
-        {/* Tablet Navigation */}
+        {/* Tablet Navigation
         <motion.nav
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -162,18 +165,18 @@ function Header() {
         >
           <div className="flex items-center gap-4 text-sm font-medium">
             {["Offers", "Startups", "Join", "News"].map((item, index) => (
-              <motion.a
+              <Link
                 key={item}
-                href="#"
+                to="/Offers"
                 whileHover={{ scale: 1.05, color: "#2563eb" }}
                 whileTap={{ scale: 0.95 }}
                 className="hover:text-blue-600 transition-colors"
               >
                 {item}
-              </motion.a>
+              </Link>
             ))}
           </div>
-        </motion.nav>
+        </motion.nav> */}
 
         {/* Animated Hamburger Button */}
         <motion.button
