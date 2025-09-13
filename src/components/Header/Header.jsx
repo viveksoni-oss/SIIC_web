@@ -1,14 +1,92 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { ChevronDown, Search } from "lucide-react";
 import SepratorLine from "./../Utility Components/SepratorLine";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [dropdownOpen, setDropdownOpen] = useState(null);
+  const navigate = useNavigate();
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const toggleDropdown = (item) => {
+    setDropdownOpen(dropdownOpen === item ? null : item);
+  };
+
+  // Animated underline variants
+const underlineVariants = {
+  initial: {
+    width: 0,
+    opacity: 1,
+  },
+  hover: {
+    width: "100%",
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};
+
+  // Dropdown variants
+  const dropdownVariants = {
+    closed: {
+      opacity: 0,
+      y: -10,
+      transition: {
+        duration: 0.2,
+      },
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  // Navigation items with dropdown info
+  const navItems = [
+    {
+      name: "What we Offer",
+      hasDropdown: true,
+      dropdownItems: [
+        "Incubation",
+        "Pre-Incubation",
+        "Acceleration",
+        "Mentorship",
+      ],
+    },
+    {
+      name: "Start ups",
+      hasDropdown: true,
+      dropdownItems: [
+        "Portfolio",
+        "Success Stories",
+        "Current Batch",
+        "Alumni",
+      ],
+    },
+    {
+      name: "Join Us",
+      hasDropdown: false,
+    },
+    {
+      name: "News & Events",
+      hasDropdown: true,
+      dropdownItems: [
+        "Latest News",
+        "Upcoming Events",
+        "Workshops",
+        "Webinars",
+      ],
+    },
+  ];
 
   // Animation variants
   const menuVariants = {
@@ -89,74 +167,121 @@ function Header() {
         className="min-h-[70px] bg-[#f7f7f7] p-4 flex justify-between items-center relative"
       >
         {/* Logo with entrance animation */}
-        <motion.img
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          src="/logo_header.png"
-          alt="SIIC IITK logo"
-          className="h-16 md:h-18 lg:h-20 "
-        />
+        <Link to="/">
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            src="/logo_header.png"
+            alt="SIIC IITK logo"
+            className="h-16 md:h-18 lg:h-20"
+          />
+        </Link>
 
-        {/* Desktop Navigation with staggered animation */}
+        {/* Desktop Navigation */}
         <motion.nav
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="hidden md:flex lg:flex items-center gap-6 xl:gap-9"
+          className="hidden lg:flex items-center gap-6 xl:gap-9"
         >
           <div className="flex items-center gap-6 xl:gap-8 text-sm xl:text-base font-medium">
-            {["What we Offer", "Start ups", "Join Us", "News & Events"].map(
-              (item, index) => (
-                <Link
-                  key={item}
-                  to={`/${item}`}
-                  whileHover={{ scale: 1.05, color: "#2563eb" }}
-                  whileTap={{ scale: 0.95 }}
+            {navItems.map((item, index) => (
+              <div key={item.name} className="relative group">
+                <motion.div
                   initial={{ opacity: 0, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.3 }}
-                  className="hover:text-blue-600 transition-colors"
+                  className="relative"
+                  onMouseEnter={() =>
+                    item.hasDropdown && setDropdownOpen(item.name)
+                  }
+                  onMouseLeave={() => setDropdownOpen(null)}
                 >
-                  {item}
-                </Link>
-              )
-            )}
+                  <div
+                    to={`/${item.name}`}
+                    className="flex cursor-pointer items-center gap-1 py-2 transition-colors relative"
+                  >
+                    <span>{item.name}</span>
+                    {item.hasDropdown && (
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          dropdownOpen === item.name ? "rotate-180" : ""
+                        }`}
+                      />
+                    )}
+
+                    {/* Animated underline */}
+                    <motion.div
+                      className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full origin-left"
+                      variants={underlineVariants}
+                      initial="initial"
+                      whileHover="hover"
+                    />
+                  </div>
+
+                  {/* Dropdown Menu */}
+                  <AnimatePresence>
+                    {item.hasDropdown && dropdownOpen === item.name && (
+                      <motion.div
+                        variants={dropdownVariants}
+                        initial="closed"
+                        animate="open"
+                        exit="closed"
+                        className="absolute top-full left-0  w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                      >
+                        {item.dropdownItems?.map((dropdownItem, idx) => (
+                          <motion.div
+                            key={dropdownItem}
+                            whileHover={{
+                              backgroundColor: "#fff5f0",
+                              x: [0, 6, 4, 0],
+                              transition: {
+                                x: {
+                                  duration: 0.35,
+                                  times: [0, 0.4, 0.7, 1.0],
+                                  ease: "easeInOut",
+                                },
+                                backgroundColor: {
+                                  duration: 0.2,
+                                },
+                              },
+                            }}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:text-[#ff8a40] transition-colors "
+                          >
+                            {dropdownItem}
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </div>
+            ))}
           </div>
 
           <div className="text-gray-400 mx-2 hidden xl:block">
-            <SepratorLine></SepratorLine>
+            <SepratorLine />
           </div>
 
+          {/* Desktop Search */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 0.3 }}
-            className="relative  hidden xl:block"
+            className="relative hidden xl:block"
           >
             <motion.input
               whileFocus={{ scale: 1.02 }}
               type="text"
               placeholder="Search"
-              className="px-3 py-2 pr-10 rounded-md border text-sm border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-33 h-6"
+              className="px-3 py-2 pr-10 rounded-md border text-sm border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ff8a40] focus:border-transparent w-33 h-6"
             />
-            <svg
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+            <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
           </motion.div>
         </motion.nav>
 
-        {/* Tablet Navigation
+        {/* Medium Screen Navigation */}
         <motion.nav
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -164,26 +289,82 @@ function Header() {
           className="hidden md:flex lg:hidden items-center gap-4"
         >
           <div className="flex items-center gap-4 text-sm font-medium">
-            {["Offers", "Startups", "Join", "News"].map((item, index) => (
-              <Link
-                key={item}
-                to="/Offers"
-                whileHover={{ scale: 1.05, color: "#2563eb" }}
-                whileTap={{ scale: 0.95 }}
-                className="hover:text-blue-600 transition-colors"
-              >
-                {item}
-              </Link>
+            {navItems.map((item, index) => (
+              <div key={item.name} className="relative group">
+                <motion.div
+                  className="relative"
+                  onMouseEnter={() =>
+                    item.hasDropdown && setDropdownOpen(item.name)
+                  }
+                  onMouseLeave={() => setDropdownOpen(null)}
+                >
+                  <Link
+                    to={`/${item.name}`}
+                    className="flex items-center gap-1 py-2 transition-colors relative"
+                  >
+                    <span>{item.name}</span>
+                    {item.hasDropdown && (
+                      <ChevronDown
+                        className={`w-3 h-3 transition-transform duration-200 ${
+                          dropdownOpen === item.name ? "rotate-180" : ""
+                        }`}
+                      />
+                    )}
+
+                    {/* Animated underline */}
+                    {/* Animated underline */}
+                    <motion.div
+                      className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full origin-left"
+                      variants={underlineVariants}
+                      initial="initial"
+                      whileHover="hover"
+                    />
+                  </Link>
+
+                  {/* Dropdown Menu for MD screens */}
+                  <AnimatePresence>
+                    {item.hasDropdown && dropdownOpen === item.name && (
+                      <motion.div
+                        variants={dropdownVariants}
+                        initial="closed"
+                        animate="open"
+                        exit="closed"
+                        className="absolute top-full left-0 mt-2 w-44 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                      >
+                        {item.dropdownItems?.map((dropdownItem) => (
+                          <motion.a
+                            key={dropdownItem}
+                            href="#"
+                            whileHover={{ backgroundColor: "#fff5f0", x: 4 }}
+                            className="block px-3 py-2 text-xs text-gray-700 hover:text-[#ff8a40] transition-colors"
+                          >
+                            {dropdownItem}
+                          </motion.a>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </div>
             ))}
           </div>
-        </motion.nav> */}
+
+          {/* Search Icon for MD screens */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+          >
+            <Search className="w-5 h-5 text-gray-700" />
+          </motion.button>
+        </motion.nav>
 
         {/* Animated Hamburger Button */}
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={toggleMobileMenu}
-          className="md:hidden relative p-2 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="md:hidden relative p-2 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#ff8a40]"
           aria-label="Toggle mobile menu"
         >
           {/* Animated Hamburger Lines */}
@@ -215,7 +396,7 @@ function Header() {
         </motion.button>
       </motion.div>
 
-      {/* Mobile Menu with AnimatePresence for exit animations */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
@@ -268,7 +449,7 @@ function Header() {
                 </motion.button>
               </motion.div>
 
-              {/* Mobile Menu Items with staggered animation */}
+              {/* Mobile Menu Items */}
               <motion.nav
                 variants={containerVariants}
                 initial="closed"
@@ -276,22 +457,54 @@ function Header() {
                 exit="closed"
                 className="flex flex-col p-4"
               >
-                {["What we Offer", "Start ups", "Join Us", "News & Events"].map(
-                  (item, index) => (
-                    <motion.a
-                      key={item}
-                      variants={menuItemVariants}
-                      whileHover={{ x: 10, color: "#2563eb" }}
-                      whileTap={{ scale: 0.95 }}
-                      href="#"
-                      className="py-3 text-gray-800 hover:text-blue-600 border-b border-gray-100 transition-colors"
+                {navItems.map((item) => (
+                  <motion.div key={item.name} variants={menuItemVariants}>
+                    <div
+                      className="flex items-center justify-between py-3 text-gray-800 border-b border-gray-100 cursor-pointer"
+                      onClick={() =>
+                        item.hasDropdown && toggleDropdown(item.name)
+                      }
                     >
-                      {item}
-                    </motion.a>
-                  )
-                )}
+                      <span className="hover:text-[#ff8a40] transition-colors">
+                        {item.name}
+                      </span>
+                      {item.hasDropdown && (
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            dropdownOpen === item.name ? "rotate-180" : ""
+                          }`}
+                        />
+                      )}
+                    </div>
 
-                {/* Mobile Search with animation */}
+                    {/* Mobile Dropdown */}
+                    <AnimatePresence>
+                      {item.hasDropdown && dropdownOpen === item.name && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="pl-4 overflow-hidden"
+                        >
+                          {item.dropdownItems?.map((dropdownItem) => (
+                            <motion.div
+                              key={dropdownItem}
+                              href="#"
+                              onClick={() => navigate("/programs")}
+                              whileHover={{ x: 4 }}
+                              className="block py-2 text-sm text-gray-600 hover:text-[#ff8a40] transition-colors"
+                            >
+                              {dropdownItem}
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+
+                {/* Mobile Search */}
                 <motion.div
                   variants={menuItemVariants}
                   className="mt-4 pt-4 border-t border-gray-200"
@@ -308,21 +521,9 @@ function Header() {
                       id="mobile-search"
                       type="text"
                       placeholder="Search..."
-                      className="w-full px-4 py-2 pr-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 pr-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ff8a40] focus:border-transparent"
                     />
-                    <svg
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      />
-                    </svg>
+                    <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                   </div>
                 </motion.div>
               </motion.nav>

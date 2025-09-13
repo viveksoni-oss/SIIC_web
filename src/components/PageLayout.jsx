@@ -1,13 +1,15 @@
-import React from "react";
 import GradientBanner from "./Utility Components/GradientBanner";
-import { Outlet } from "react-router";
 
-function PageLayout({ children, banner }) {
+function PageLayout({ children, banner, bodyStyle, bannerLink }) {
   return (
-    <div className={" min-h-screen relative "}>
-      <GradientBanner>{banner}</GradientBanner>
-
-      <div className="min-h-[200vh] bg-white  -translate-y-32 rounded-[30px]">
+    <div className=" min-h-screen relative ">
+      <GradientBanner bannerLink={bannerLink}>{banner}</GradientBanner>
+      <div
+        className={
+          bodyStyle +
+          " min-h-screen bg-white  -translate-y-20 z-10 rounded-[30px]"
+        }
+      >
         {children}
       </div>
     </div>
