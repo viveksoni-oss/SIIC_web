@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react'
 
 function UpcomingEvents() {
-  return <div>upcoming evernts</div>;
+  return (
+    <div>
+      sf
+    </div>
+  )
 }
 
-export default UpcomingEvents;
+export default UpcomingEvents

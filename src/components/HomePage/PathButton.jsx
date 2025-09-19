@@ -7,7 +7,7 @@ function PathButton({ details, setCurrentPath, currentPath }) {
   const isActive = currentPath === title;
 
   const handleClick = () => {
-    setCurrentPath((prev) => (prev === title ? null : details));
+    setCurrentPath((prev) => (prev?.title === title ? null : details));
   };
 
   return (

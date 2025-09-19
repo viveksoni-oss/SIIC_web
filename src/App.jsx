@@ -11,13 +11,13 @@ import OfficeSpaces from "./pages/OfficeSpaces";
 import OurTeam from "./pages/OurTeam";
 import Partners from "./pages/Partners";
 import Startups from "./pages/Startups";
-import UpcomingEvents from "./pages/UpcomingEvents";
 import WhoWeAre from "./pages/WhoWeAre";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import HomePage from "./pages/HomePage";
 import { Navigate, Routes } from "react-router";
 import { Route } from "react-router";
+import UpcomingEvents from "./pages/UpcomingEvents.jsx";
 
 function App() {
   return (

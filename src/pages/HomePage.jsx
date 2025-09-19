@@ -8,6 +8,7 @@ import FlashNewsLayout from "../components/HomePage/FlashNewsLayout";
 import LetUsKnow from "./../components/Utility Components/LetUsKnow";
 import MarqueeContainer from "../components/HomePage/MarqueeContainer";
 import OurPride from "../components/HomePage/OurPride";
+import UpcomingEvents from "../components/HomePage/UpcomingEvents";
 
 function HomePage() {
   return (
@@ -20,6 +21,7 @@ function HomePage() {
       <HomePagePara />
       <CounterLayout />
       <KnowYourJourney />
+      <UpcomingEvents />
       <FlashNewsLayout />
       <OurPride></OurPride>
       <MarqueeContainer />
