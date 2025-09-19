@@ -1,11 +1,11 @@
 import React from 'react'
 
-function FlashNews() {
+function UpcomingEvent() {
   return (
     <div>
- 1     FlashNews
+      
     </div>
   )
 }
 
-export default FlashNews
+export default UpcomingEvent

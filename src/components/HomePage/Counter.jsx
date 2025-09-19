@@ -16,8 +16,8 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
     if (!node) return;
 
     // Animate from 0 up to the target number
-    const controls = animate(0, targetNumber, {
-      duration: 1,
+    const controls = animate(number/1.1, targetNumber, {
+      duration: 0.5,
       ease: "easeOut",
       onUpdate(value) {
         // Check if the target number has decimals
@@ -43,7 +43,7 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
     <motion.div
       ref={ref}
       className="flex flex-col gap-2 justify-center items-center"
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 0 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >

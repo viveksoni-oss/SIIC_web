@@ -1,12 +1,15 @@
-import React from "react";
-import { Outlet } from "react-router";
+import PageLayout from "../components/PageLayout";
+import ProgramsBanner from "../components/banners/ProgramsBanner";
+import ProgramCard from "./../components/ProgramsComponents/ProgramCard";
 
 function Programs() {
   return (
-    <div>
-      <div>Programs</div>
-      {/* <Outlet></Outlet>{" "} */}
-    </div>
+    <PageLayout banner={<ProgramsBanner />}>
+      <div className="p-16">
+
+      <ProgramCard></ProgramCard>
+      </div>
+    </PageLayout>
   );
 }
 

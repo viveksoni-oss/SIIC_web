@@ -17,20 +17,20 @@ function Header() {
   };
 
   // Animated underline variants
-const underlineVariants = {
-  initial: {
-    width: 0,
-    opacity: 1,
-  },
-  hover: {
-    width: "100%",
-    opacity: 1,
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
+  const underlineVariants = {
+    initial: {
+      width: 0,
+      opacity: 1,
     },
-  },
-};
+    hover: {
+      width: "100%",
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   // Dropdown variants
   const dropdownVariants = {
@@ -56,35 +56,27 @@ const underlineVariants = {
       name: "What we Offer",
       hasDropdown: true,
       dropdownItems: [
-        "Incubation",
-        "Pre-Incubation",
-        "Acceleration",
-        "Mentorship",
+        "Programs",
+        "Facilities",
+        "Partners",
+        "Mentors",
+        "Co-founder",
+        "Patents",
       ],
     },
     {
       name: "Start ups",
-      hasDropdown: true,
-      dropdownItems: [
-        "Portfolio",
-        "Success Stories",
-        "Current Batch",
-        "Alumni",
-      ],
+      hasDropdown: false,
     },
     {
       name: "Join Us",
-      hasDropdown: false,
+      hasDropdown: true,
+      dropdownItems: ["As a Mentor", "As an Investor", "Careers @ SIIC"],
     },
     {
       name: "News & Events",
       hasDropdown: true,
-      dropdownItems: [
-        "Latest News",
-        "Upcoming Events",
-        "Workshops",
-        "Webinars",
-      ],
+      dropdownItems: ["Upcoming Events", "Flash News"],
     },
   ];
 

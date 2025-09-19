@@ -1,6 +1,5 @@
 import React from "react";
 import Counter from "./Counter";
-import { motion } from "framer-motion";
 
 function CounterLayout() {
   const details = [
@@ -10,7 +9,7 @@ function CounterLayout() {
     { title: "combined value", count: "71.13", prefix: "₹ ", suffix: " B" },
   ];
   return (
-    <div className="flex flex-row justify-center items-center gap-42 p-8 hover:bg-[#E3E3E3] duration-300 ">
+    <div className="flex flex-row justify-center items-center gap-42 p-8 hover:bg-[#f4f4f4] duration-300 mt-25 ">
       {details.map((item) => (
         <Counter
           number={item.count}

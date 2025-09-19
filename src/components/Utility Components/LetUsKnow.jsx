@@ -1,5 +1,5 @@
 import React from "react";
-import HighlightedText from "./Utility Components/HighlightedText";
+import HighlightedText from "./HighlightedText";
 
 function LetUsKnow() {
   const inputStyle =
@@ -7,7 +7,7 @@ function LetUsKnow() {
   const textareaStyle =
     "resize-none focus:outline-none focus:ring-2 focus:ring-primary-highlight focus:right-offset-0 transition-all duration-300 px-4 py-2 bg-white lg:col-span-2 h-30 w-full  -mt-4 rounded-lg text-base font-[500]";
   return (
-    <div className="max-w-4xl bg-[#E3E3E3]/50 rounded-t-4xl p-12 px-24 mx-auto h-auto flex flex-col gap-16 ">
+    <div className="max-w-4xl bg-[#E3E3E3]/50 rounded-t-4xl p-12 px-24 mx-auto h-auto flex flex-col gap-16 mt-30 ">
       <h1 className="text-5xl text-center font-[200]">
         Let us{" "}
         <HighlightedText size="48px" weight={600}>

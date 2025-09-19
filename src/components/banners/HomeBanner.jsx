@@ -1,6 +1,7 @@
 import React from "react";
 import HighlightedText from "../Utility Components/HighlightedText";
 import { motion } from "framer-motion";
+import AnimatedButton from "./../Utility Components/AnimatedButton";
 
 function HomeBanner() {
   return (
@@ -50,20 +51,24 @@ function HomeBanner() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <motion.button
-            className="border-1 rounded-full px-8 py-3 hover:bg-white ease-in-out duration-300 hover:text-black hover:border-white"
+            className="border-2 rounded-full px-8 py-3 hover:bg-white transition-colors duration-700 ease-in-out hover:text-black hover:border-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            transition={{
+              scale: { duration: 0.2, ease: "easeInOut" },
+            }}
           >
-            <span className="hover:scale-110 duration-300">
+            <span className="hover:scale-110 duration-300 inline-block">
               Incubate with us
             </span>
           </motion.button>
+
           <motion.button
-            className="border-1 rounded-full px-8 py-3"
+            className=""
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Active Programs
+            <AnimatedButton>Active programs</AnimatedButton>
           </motion.button>
         </motion.div>
       </motion.div>

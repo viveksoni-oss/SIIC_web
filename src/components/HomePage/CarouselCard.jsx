@@ -1,11 +1,11 @@
 import React from 'react'
 
-function FlashNews() {
+function CarouselCard() {
   return (
     <div>
- 1     FlashNews
+      
     </div>
   )
 }
 
-export default FlashNews
+export default CarouselCard

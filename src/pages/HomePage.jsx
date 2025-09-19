@@ -2,12 +2,12 @@ import PageLayout from "../components/PageLayout";
 import HomeBanner from "../components/banners/HomeBanner";
 import BookMark from "./../components/Utility Components/BookMark";
 import HomePagePara from "../components/HomePage/HomePagePara";
-import Counter from "../components/HomePage/Counter";
 import CounterLayout from "../components/HomePage/CounterLayout";
 import KnowYourJourney from "../components/HomePage/KnowYourJourney";
-import FlashNewsCard from "../components/HomePage/FlashNewsCard";
 import FlashNewsLayout from "../components/HomePage/FlashNewsLayout";
-import LetUsKnow from "./../components/LetUsKnow";
+import LetUsKnow from "./../components/Utility Components/LetUsKnow";
+import MarqueeContainer from "../components/HomePage/MarqueeContainer";
+import OurPride from "../components/HomePage/OurPride";
 
 function HomePage() {
   return (
@@ -21,6 +21,8 @@ function HomePage() {
       <CounterLayout />
       <KnowYourJourney />
       <FlashNewsLayout />
+      <OurPride></OurPride>
+      <MarqueeContainer />
       <LetUsKnow></LetUsKnow>
     </PageLayout>
   );

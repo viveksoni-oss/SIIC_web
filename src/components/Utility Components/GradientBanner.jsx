@@ -6,7 +6,7 @@ function GradientBanner({ children, cls = "", bannerLink }) {
       <img
         src={bannerLink ? bannerLink : "/Hero_banner.jpg"}
         alt="banner img"
-        className={`w-full h-auto ${cls}`}
+        className={`w-full lg:h-auto h-[700px] z-20 ${cls}`}
       />
 
       {/* content will go here */}
