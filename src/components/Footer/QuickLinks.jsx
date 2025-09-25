@@ -20,14 +20,9 @@ function QuickLinks() {
       link: "/our-team",
       isExternalLink: false,
     },
-    {
-      linkTitle: "Google",
-      link: "https://www.google.com",
-      isExternalLink: true,
-    },
   ];
   return (
-    <div className="flex flex-col gap-4 lg:w-lg lg:col-auto">
+    <div className="flex flex-col gap-4 grow-1 ">
       <h3 className="text-base font-bold">Quick Link:</h3>
 
       <div className="flex gap-4 text-[#9ca3a5]">
@@ -60,7 +55,7 @@ function QuickLinks() {
       <div className="mt-14 text-[#9ca3a5] font-medium flex flex-col justify-center gap-8">
         <div className="flex gap-4">
           <img src="/Icons/location-pin.svg" alt="location-pin-icon" />
-          <div>
+          <div className="w-[480px]">
             Indian Institute of Technology Kanpur, Kalyanpur, Kanpur Nagar,
             Uttar Pradesh-208016, India
           </div>

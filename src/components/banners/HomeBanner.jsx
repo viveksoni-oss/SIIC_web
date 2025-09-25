@@ -2,13 +2,15 @@ import React from "react";
 import HighlightedText from "../Utility Components/HighlightedText";
 import { motion } from "framer-motion";
 import AnimatedButton from "./../Utility Components/AnimatedButton";
+import { useNavigate } from "react-router";
 
 function HomeBanner() {
+  const navigate = useNavigate();
   return (
     <div className="z-50 relative text-white flex justify-between">
       {/* Content div */}
       <motion.div
-        className="p-20 pt-24 max-w-[650px] flex flex-col gap-4"
+        className="p-20 pt-24 max-w-[650px] h-[500px] flex flex-col gap-4"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -51,7 +53,7 @@ function HomeBanner() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <motion.button
-            className="border-2 rounded-full px-8 py-3 hover:bg-white transition-colors duration-700 ease-in-out hover:text-black hover:border-white"
+            className="border-2 rounded-full px-8 py-[12px] hover:bg-white transition-colors duration-700 ease-in-out hover:text-black hover:border-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{
@@ -64,7 +66,7 @@ function HomeBanner() {
           </motion.button>
 
           <motion.button
-            className=""
+            onClick={() => navigate("/programs")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -72,10 +74,9 @@ function HomeBanner() {
           </motion.button>
         </motion.div>
       </motion.div>
-
       {/* Banner Image - Coming from bottom */}
       <motion.div
-        className="rounded-2xl absolute right-0 m-16 z-50 hidden lg:block"
+        className="rounded-2xl absolute right-0 -bottom-30 m-16 z-50 hidden xl:block "
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import HighlightedText from "./HighlightedText";
 
 function LetUsKnow() {
+  const [isHovered, setIsHovered] = useState(false);
   const inputStyle =
     "px-4 py-2 bg-white min-w-80 border-primary rounded-lg text-base -mt-4 font-[500] focus:outline-none  focus:ring-2  focus:ring-primary-highlight focus:ring-offset-0 transition-all duration-300";
   const textareaStyle =
@@ -36,8 +37,32 @@ function LetUsKnow() {
         </div>
       </div>
 
-      <button className="border-2 border-primary-highlight self-end py-2 px-4 justify-end rounded-full ">
-        Send us
+      <button
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="border-3 flex justify-between w-[100px] h-[30px] items-center border-primary-highlight self-end py-2 px-4 rounded-full text-[12px] transition-all duration-300 hover:bg-primary-highlight hover:text-white hover:font-semibold"
+      >
+        <span>Send</span>
+        <div className="relative w-5 h-5">
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+              isHovered ? "opacity-0" : "opacity-100"
+            }`}
+          >
+            <img src="/Icons/buttonArrow.svg" alt="arrow" className="w-3 h-3" />
+          </div>
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+              isHovered ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src="/Icons/hover-icons/buttonArrow-hover.svg"
+              alt="arrow hover"
+              className="w-5 h-5"
+            />
+          </div>
+        </div>
       </button>
     </div>
   );

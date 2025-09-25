@@ -1,0 +1,37 @@
+<svg width="350" height="320" viewBox="0 0 350 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1440" height="559" transform="matrix(-1 0 0 1 1290.32 -98.4531)" fill="#6C3231"/>
+<ellipse cx="464.719" cy="134.273" rx="464.719" ry="134.273" transform="matrix(-0.866821 -0.49862 -0.49862 0.866821 832.32 105.982)" fill="url(#paint0_linear_781_5286)"/>
+<ellipse cx="464.719" cy="134.273" rx="464.719" ry="134.273" transform="matrix(-0.357515 -0.933907 -0.933907 0.357515 164.086 159.008)" fill="url(#paint1_linear_781_5286)"/>
+<foreignObject x="-249.68" y="-199.453" width="1640" height="798"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(50px);clip-path:url(#bgblur_0_781_5286_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_n_781_5286)" data-figma-bg-blur-radius="100">
+<rect width="1440" height="598" transform="matrix(-1 0 0 1 1290.32 -99.4531)" fill="black" fill-opacity="0.05"/>
+</g>
+<defs>
+<filter id="filter0_n_781_5286" x="-249.68" y="-199.453" width="1640" height="798" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="8087" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.2)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_781_5286">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<clipPath id="bgblur_0_781_5286_clip_path" transform="translate(249.68 199.453)"><rect width="1440" height="598" transform="matrix(-1 0 0 1 1290.32 -99.4531)"/>
+</clipPath><linearGradient id="paint0_linear_781_5286" x1="102.516" y1="207.847" x2="1135.93" y2="247.393" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6C3231"/>
+<stop offset="0.288462" stop-color="#FDA46C"/>
+<stop offset="0.639423" stop-color="#FACBAF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_781_5286" x1="47.3051" y1="294.303" x2="376.748" y2="220.654" gradientUnits="userSpaceOnUse">
+<stop stop-color="#6C3231"/>
+<stop offset="0.565213" stop-color="#FDA873"/>
+<stop offset="1" stop-color="#FACBAF"/>
+</linearGradient>
+</defs>
+</svg>

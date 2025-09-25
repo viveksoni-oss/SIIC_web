@@ -34,7 +34,7 @@ function FlashNewsLayout() {
           News
         </HighlightedText>{" "}
       </h1>
-      <div className="flex items-center justify-between gap-8 ">
+      <div className="flex items-center justify-between flex-col md:flex-row xl:justify-evenly gap-8 ">
         {newsDetails.map((newsDetail) => {
           return <FlashNewsCard newsDetail={newsDetail} />;
         })}

@@ -10,13 +10,13 @@ function SocialLink() {
     },
     {
       title: "instagram",
-      icon: "Icons/instagram.svg",
+      icon: "/Icons/instagram.svg",
       hoverIcon: "/Icons/hover-icons/instagram-hover.svg",
     },
     {
       title: "twitter",
-      icon: "Icons/twitter.svg",
-      hoverIcon: "Icons/hover-icons/twitter-hover.svg",
+      icon: "/Icons/twitter.svg",
+      hoverIcon: "/Icons/hover-icons/twitter-hover.svg",
     },
     {
       title: "youtube",
@@ -25,7 +25,7 @@ function SocialLink() {
     },
   ];
   return (
-    <div className="flex flex-col items-center ml-auto row-start-1 col-start-2 lg:col-auto lg:row-auto   gap-4 justify-center ">
+    <div className="flex flex-col items-center ml-auto    gap-4 justify-center ">
       {socialLinkList.map((socialLink) => {
         console.log(socialLink.icon);
         return (

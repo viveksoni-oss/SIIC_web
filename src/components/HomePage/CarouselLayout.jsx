@@ -8,19 +8,19 @@ const cards = [
     id: 1,
     imgSrc: "lenek.png",
     title: "LENEK",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
   },
   {
     id: 2,
     imgSrc: "phool.png",
     title: "Phool",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.2",
   },
   {
     id: 3,
     imgSrc: "fertilizer.png",
     title: "LCB Fertilizers",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.3",
   },
 ];
 

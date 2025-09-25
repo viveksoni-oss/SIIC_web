@@ -5,7 +5,8 @@
   --color-primary: #6c3231;
   --color-primary-highlight: #ff8a40;
   --color-secondary: #2d415c;
-  --color-secondary-white: #e3e3e3;
+  --color-secondary-gray: #e3e3e3;
+  --color-secondary-blue: #2d415c;
   /* Typography*/
   --font-sans: "Plus Jakarta Sans", "Inter", "";
   --radius-2xl: 20px;
@@ -18,6 +19,7 @@
 .animated-button {
   position: relative;
   background-color: #652e2e;
+  box-shadow: 0 0 7px 1px #ff894080;
 }
 
 .animated-button::after {
@@ -25,55 +27,29 @@
   position: absolute;
   inset: -0.15rem;
   border-radius: inherit;
-  background: conic-gradient(
-    from var(--angle),
-    #663719 0%,
-    #703e1c 4%,
-    #7f4520 8%,
-    #8b4c23 12%,
-    #995226 16%,
-    #a65829 20%,
-    #b2602c 24%,
-    #bb6b2f 27%,
-    #b8682e 30%,
-    #b2602c 33%,
-    #a65829 37%,
-    #995226 41%,
-    #8b4c23 45%,
-    #7f4520 49%,
-    #703e1c 53%,
-    #663719 57%,
-    #663719 100%
+
+  background: linear-gradient(
+    var(--angle),
+    rgb(255, 137, 64, 0.5) 10%,
+    #652e2e 90%
   );
   z-index: -1;
   animation: animate 3s linear infinite;
 }
 
-.animated-button::before {
+/* .animated-button::before {
   content: "";
   position: absolute;
   inset: -0.15rem;
   border-radius: inherit;
-  background: conic-gradient(
-    from 0deg,
-
-    #995226 0%,
-    #a65829 12%,
-    #b2602c 24%,
-    #bb6b2f 36%,
-    #b8682e 48%,
-    #b2602c 60%,
-    #a65829 72%,
-    #995226 100%
-  );
   z-index: -1;
   animation: animate 3s linear infinite;
 }
 
 .animated-button::before {
-  filter: blur(3px);
+  filter: blur(7px);
   opacity: 0.8;
-}
+} */
 
 @keyframes animate {
   0% {
