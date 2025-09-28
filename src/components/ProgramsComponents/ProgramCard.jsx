@@ -21,7 +21,7 @@ function ProgramCard({ data = {} }) {
         isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""
       }`}
     >
-      <div className="relative overflow-hidden  h-[245px]">
+      <div className="relative overflow-hidden h-[245px]">
         <img
           src={data.imgLink}
           className="w-full  transition-transform duration-500 object-fill min-h-[245px] ease-out group-hover:scale-105"

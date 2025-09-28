@@ -105,19 +105,17 @@ function KnowYourJourney() {
         setPreviousPath(null);
       }
     };
-
-    document
-      .getElementById("containerClass")
-      .addEventListener("click", handleClickOutside);
+    const container = document.getElementById("containerClass");
+    container.addEventListener("click", handleClickOutside);
 
     return () => {
-      document
-        .getElementById("containerClass")
-        .removeEventListener("click", handleClickOutside);
+      if (container) {
+        container.removeEventListener("click", handleClickOutside);
+      }
     };
   }, []);
 
-  // Get current and previous inkkjdices for direction calculation
+  // Get current and previous indices for direction calculation
   const currentIndex = currentPath
     ? paths.findIndex((p) => p.title === currentPath.title)
     : -1;
