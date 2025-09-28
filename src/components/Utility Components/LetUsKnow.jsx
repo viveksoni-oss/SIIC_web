@@ -52,7 +52,7 @@ function LetUsKnow() {
             <img src="/Icons/buttonArrow.svg" alt="arrow" className="w-3 h-3" />
           </div>
           <div
-            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-600 hover:-rotate-45 hover:-translate-y-3.5 ${
               isHovered ? "opacity-100" : "opacity-0"
             }`}
           >

@@ -6,7 +6,7 @@ function BookMark() {
   return (
     <div className="h-26 w-11 rounded-b-2xl relative rounded-t-lg ml-24 -translate-y-3 bg-primary-highlight shadow-2xl group">
       {/* Bookmark body */}
-      <div className="bg-white rounded-full w-9 h-9 absolute bottom-[4px] left-[4px] z-30 flex justify-center items-center cursor-pointer">
+      <div className="bg-white rounded-full w-9 h-9 absolute bottom-[4px] left-[4px] z-[60] flex justify-center items-center cursor-pointer">
         <motion.img
           initial={{ y: 0 }}
           animate={{ y: [-4, 4, -5] }}

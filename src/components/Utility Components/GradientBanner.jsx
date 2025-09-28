@@ -10,7 +10,7 @@ function GradientBanner({ children, cls = "", bannerLink }) {
       />
 
       {/* content will go here */}
-      <div className="absolute inset-0 z-40 text-2xl h-full w-full text-white">
+      <div className="absolute inset-0 z-15 text-2xl h-full w-full text-white">
         {children}
       </div>
     </div>

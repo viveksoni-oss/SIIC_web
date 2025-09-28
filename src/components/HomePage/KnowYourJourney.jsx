@@ -117,7 +117,7 @@ function KnowYourJourney() {
     };
   }, []);
 
-  // Get current and previous indices for direction calculation
+  // Get current and previous inkkjdices for direction calculation
   const currentIndex = currentPath
     ? paths.findIndex((p) => p.title === currentPath.title)
     : -1;
