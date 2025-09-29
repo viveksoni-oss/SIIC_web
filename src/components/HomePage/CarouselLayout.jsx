@@ -7,19 +7,43 @@ const cards = [
   {
     id: 1,
     imgSrc: "lenek.png",
-    title: "LENEK",
+    title: "1",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+  },
+  {
+    id: 4,
+    imgSrc: "lenek.png",
+    title: "222",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+  },
+  {
+    id: 5,
+    imgSrc: "lenek.png",
+    title: "3 ",
     desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
   },
   {
     id: 2,
     imgSrc: "phool.png",
-    title: "Phool",
+    title: "4",
     desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.2",
   },
   {
     id: 3,
     imgSrc: "fertilizer.png",
-    title: "LCB Fertilizers",
+    title: "5",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.3",
+  },
+  {
+    id: 6,
+    imgSrc: "fertilizer.png",
+    title: "6",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.3",
+  },
+  {
+    id: 7,
+    imgSrc: "fertilizer.png",
+    title: "7",
     desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.3",
   },
 ];
@@ -27,8 +51,17 @@ const cards = [
 function CarouselLayout() {
   const [currentIndex, setCurrentIndex] = useState(1);
 
-  const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
-  const nextIndex = (currentIndex + 1) % cards.length;
+const total = cards.length;
+
+const cycleIndex = (i) => (i + total) % total;
+
+const visible = [
+  cycleIndex(currentIndex - 2),
+  cycleIndex(currentIndex - 1),
+  currentIndex,
+  cycleIndex(currentIndex + 1),
+  cycleIndex(currentIndex + 2),
+];
 
   const handlePrev = () =>
     setCurrentIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1));
@@ -43,13 +76,15 @@ function CarouselLayout() {
         onClick={handlePrev}
       />
 
-      <div className="relative w-[800px] flex justify-center items-center gap-0">
+      <div className="relative w-[1000px] flex justify-center items-center">
         {cards.map((card, idx) => {
-          let scale = 0.9;
-          let x = 0;
-          let zIndex = 1;
-          let filter = "brightness(0.8)";
-          let y = 0;
+          if (!visible.includes(idx)) return null;
+
+          let scale = 0.85,
+            x = 0,
+            zIndex = 1,
+            filter = "brightness(0.7)",
+            y = 0;
 
           if (idx === currentIndex) {
             scale = 1.1;
@@ -57,26 +92,35 @@ function CarouselLayout() {
             zIndex = 10;
             filter = "none";
             y = -10;
-          } else if (idx === prevIndex) {
-            scale = 0.97;
-            x = -220;
+          } else if (idx === cycleIndex(currentIndex - 1)) {
+            scale = 0.95;
+            x = -160;
+            zIndex = 8;
+            filter = "brightness(0.85)";
+          } else if (idx === cycleIndex(currentIndex - 2)) {
+            scale = 0.85;
+            x = -320;
             zIndex = 5;
-            filter = "brightness(0.93)";
-          } else if (idx === nextIndex) {
-            scale = 0.97;
-            x = 220;
+            filter = "brightness(0.7)";
+          } else if (idx === cycleIndex(currentIndex + 1)) {
+            scale = 0.95;
+            x = 160;
+            zIndex = 8;
+            filter = "brightness(0.85)";
+          } else if (idx === cycleIndex(currentIndex + 2)) {
+            scale = 0.85;
+            x = 320;
             zIndex = 5;
-            filter = "brightness(0.93)";
+            filter = "brightness(0.7)";
           }
 
           return (
             <motion.div
               key={card.id}
-              initial={false}
               animate={{ scale, x, zIndex, filter, y }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="cursor-pointer absolute"
-              style={{ width: 315 }}
+              className="absolute cursor-pointer"
+              style={{ width: 260 }}
             >
               <CarouselCard isMain={idx === currentIndex} cardData={card} />
             </motion.div>

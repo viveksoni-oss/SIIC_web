@@ -18,12 +18,12 @@ function MarqueeContainer() {
           Partners
         </HighlightedText>
       </h1>
-      <div className="border-[0.5px] my-16 mt-9 border-black/20">
+      <div className="my-16 mt-9">
         <Marquee
           speed={100}
           gradient={true}
           gradientColor={"white"}
-          gradientWidth={100}
+          gradientWidth={200}
           direction="left"
         >
           {items.map((item, index) => (

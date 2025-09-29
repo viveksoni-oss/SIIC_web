@@ -37,21 +37,13 @@
   animation: animate 3s linear infinite;
 }
 
-/* .animated-button::before {
-  content: "";
-  position: absolute;
-  inset: -0.15rem;
-  border-radius: inherit;
-  z-index: -1;
-  animation: animate 3s linear infinite;
-}
+
 
 .animated-button::before {
   filter: blur(7px);
   opacity: 0.8;
-} */
-
-@keyframes animate {
+}
+ @keyframes animate {
   0% {
     --angle: 0deg;
   }

@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HighlightedText from "./../Utility Components/HighlightedText";
 
 function ProgramCard({ data = {} }) {
   const [isHovered, setIsHovered] = useState(false);
-  // id: "innovation-789",
-  //   title: "Innovation Challenge",
-  //   imgLink: "/images/programs/innovation.jpg",
-  //   startDate: "2024-03-01",
-  //   endDate: "2024-06-01",
-  //   DirectApplyLink: "",
-  //   type: "Past",
-  //   domain: ["cleantech", "sustainability"],
-  //   centerOfExcellence: "Environmental Solutions",
+  const [blinking, setBlinking] = useState(false);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBlinking((prev) => !prev);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
@@ -37,15 +38,21 @@ function ProgramCard({ data = {} }) {
         )}
       </div>
 
-      <div className="bg-white p-2 px-4  z-20 -translate-y-2">
+      <div className="bg-white pb-1 pt-2 px-4  z-20 -translate-y-2">
         <div className="text-lg line-clamp-1 capitalize font-bold transition-transform duration-200 ">
           {data.title}
         </div>
 
-        <div className="flex justify-between items-center">
-          <div className="text-primary-highlight  text-xs font-[400] cursor-pointer transition-all duration-200  hover:underline">
-            {"Know more  >"}
-          </div>
+        <div className="flex justify-between items-center mt-1">
+          {blinking ? (
+            <div className="  text-xs font-[400] cursor-pointer transition-all duration-200  hover:underline">
+              Know more <span className="ml-2">{">"}</span>
+            </div>
+          ) : (
+            <div className="text-primary-highlight italic   text-xs font-[400] cursor-pointer transition-all duration-200  hover:underline">
+              Know more <span className="ml-2">{">>"}</span>
+            </div>
+          )}
 
           {data.type === "Active" && (
             <div className="text-[10px] transition-transform font-[400] duration-200  group-hover:scale-105">

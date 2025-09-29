@@ -7,8 +7,8 @@ function OurPride() {
       <div>
         <CarouselLayout />
       </div>
-      <div className="flex justify-center items-center bg-white self-end">
-        <div className="bg-[#F5F5F5] rounded-l-2xl px-12 py-10 flex flex-col items-start gap-8 w-[420px] shadow">
+      <div className="flex justify-center items-center bg-white ">
+        <div className="bg-[#F5F5F5] rounded-l-2xl px-12 py-10 flex flex-col items-start gap-8 shadow">
           <h1 className="text-[42px] font-extralight leading-snug">
             Our{" "}
             <HighlightedText size="42px" weight={800}>

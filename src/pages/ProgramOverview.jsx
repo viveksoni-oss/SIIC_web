@@ -1,6 +1,8 @@
+import { SquareArrowOutUpRight } from "lucide-react";
+import { useState } from "react";
 import { useParams } from "react-router";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
-import { MoveRight, SquareArrowOutUpRight } from "lucide-react";
+import FAQ from "../components/ProgramsComponents/FAQ";
 
 function OurOfferings() {
   const CardDetails = [
@@ -24,11 +26,11 @@ function OurOfferings() {
     },
   ];
   return (
-    <div className="col-span-3 p-6 space-x-8">
-      <h1 className="text-[40px] font-thin ">
-        Our
+    <div className="col-span-3 p-6 space-x-8 relative ">
+      <h1 className="text-[40px] font-thin mb-7">
+        Our{" "}
         <HighlightedText size={"40px"} weight={700}>
-          Offerings{" "}
+          Offerings
         </HighlightedText>
       </h1>
 
@@ -39,35 +41,42 @@ function OurOfferings() {
             <p className="text-xs text-center line-clamp-2">{data.content}</p>
           </div>
         ))}
+        <div className=" border-b-1 container absolute bottom-10 left-25 border-black/50 w-[415px] opacity-25 mt-10 place-items-start"></div>
       </div>
     </div>
   );
 }
 function EligibilityCriteria() {
   return (
-    <div className="col-span-3 ">
-      <h1 className="text-[40px] font-thin  ">
+    <div className="col-span-3 p-6 ">
+      <h1 className="text-[40px] font-thin mb-8  ">
         <HighlightedText size={"40px"} weight={700}>
           Eligibility{" "}
         </HighlightedText>
         Criteria
       </h1>
+      <div className="max-w-[800px] space-y-2">
+        {Array.from({ length: 5 }, (_, idx) => (
+          <div className="flex gap-3 text-base ">
+            <img src="/Icons/list-icon.svg" alt="list icon" />
+            <p className="line-clamp-2">
+              {" "}
+              ibero nobis. Nobis reiciendis blanditiis recusandae quasi vero
+              iusto sed Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium optio sint eos fugiat accusantium delectus in
+              repudiandae iste sapiente dolores. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Cumque facere molestias error nobis
+              magnam eaque rerum, inventore fuga ab praesentium.!
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
-function FAQ() {
-  return (
-    <div className="col-span-3 ">
-      <h1 className="text-[40px] font-thin ">
-        Frequently Asked
-        <HighlightedText size={"40px"} weight={700}>
-          Questions
-        </HighlightedText>
-      </h1>
-    </div>
-  );
-}
+
 function ProgramOverview() {
+  const [isHovered, setIsHovered] = useState(false);
   const { id } = useParams();
   console.log(id);
   const list = [
@@ -100,14 +109,45 @@ function ProgramOverview() {
                 UAV / UAS / DRONE Acceleration and Networking Program
               </p>
             </div>
-            <button className="border-2 text-[12px] flex border-white justify-between group duration-300 ease-in-out text-white rounded-2xl max-w-[200px] px-4 py-1">
-              <span>Apply now</span>{" "}
-              <MoveRight className="text-white group-hover:-rotate-45 duration:300 ease-in-out " />
-              {/* <img
-                src="/Icons/buttonArrow.svg"
-                className="text-white hover:-rotate-45 "
-                alt="arrow-icon"
-              /> */}
+            <button
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="border-2 text-[12px] flex items-center border-white justify-between group duration-300 ease-in-out text-white rounded-2xl max-w-[200px] px-4 py-1 hover:bg-white hover:text-black transition-all"
+            >
+              <span>Apply now</span>
+
+              {/* Conditional SVG rendering based on hover state */}
+              {!isHovered ? (
+                // Default arrow (horizontal)
+                <svg
+                  width="11"
+                  height="9"
+                  viewBox="0 0 11 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="transition-all duration-300 ease-in-out"
+                >
+                  <path
+                    d="M5.104 9L9.888 4.232L9.904 5.032L5.104 0.504H6.384L10.496 4.328V4.952L6.384 9H5.104ZM0.8 5.128V4.216H9.68V5.128H0.8Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              ) : (
+                // Hovered arrow (diagonal)
+                <svg
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="transition-all duration-300 ease-in-out transform "
+                >
+                  <path
+                    d="M14.1416 16.1533L14.0394 6.07052L15.1113 7.13718L5.11813 6.88418L7.18176 4.87524L15.4459 4.96925L16.2327 5.7775L16.2052 14.1444L14.1416 16.1533ZM5.98964 16.553L4.49968 15.0225L13.7688 5.999L15.2588 7.52952L5.98964 16.553Z"
+                    fill="black"
+                  />
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -162,7 +202,6 @@ function ProgramOverview() {
 
         {/* Our Offerings - Row 1, Column 2 */}
         <OurOfferings></OurOfferings>
-
         {/* Program Benefits - Row 2, Column 2 */}
         <EligibilityCriteria></EligibilityCriteria>
 

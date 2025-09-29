@@ -26,13 +26,12 @@ function HomeBanner() {
 
         <div>
           <motion.div
-            className="text-6xl w-full font-medium capitalize"
+            className="text-5xl w-full font-medium capitalize md:text4xl lg:text-5xl 2xl:text-6xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            We incubate <HighlightedText size={"60px"}>your</HighlightedText>{" "}
-            innovations
+            We incubate <HighlightedText>your</HighlightedText> innovations
           </motion.div>
 
           <motion.p
@@ -53,7 +52,7 @@ function HomeBanner() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <motion.button
-            className="border-2 rounded-full px-8 py-[12px] hover:bg-white transition-colors duration-700 ease-in-out hover:text-black hover:border-white"
+            className="border-2 rounded-full  hover:bg-white text-xs transition-colors duration-700 ease-in-out hover:text-black hover:border-white"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{

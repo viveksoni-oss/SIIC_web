@@ -43,25 +43,38 @@ function LetUsKnow() {
         className="border-3 flex justify-between w-[100px] h-[30px] items-center border-primary-highlight self-end py-2 px-4 rounded-full text-[12px] transition-all duration-300 hover:bg-primary-highlight hover:text-white hover:font-semibold"
       >
         <span>Send</span>
-        <div className="relative w-5 h-5">
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-              isHovered ? "opacity-0" : "opacity-100"
-            }`}
-          >
-            <img src="/Icons/buttonArrow.svg" alt="arrow" className="w-3 h-3" />
-          </div>
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-600 hover:-rotate-45 hover:-translate-y-3.5 ${
-              isHovered ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <img
-              src="/Icons/hover-icons/buttonArrow-hover.svg"
-              alt="arrow hover"
-              className="w-5 h-5"
-            />
-          </div>
+        <div className="relative w-5 h-5 flex items-center   ">
+          {!isHovered ? (
+            // Default arrow (horizontal)
+            <svg
+              width="11"
+              height="9"
+              viewBox="0 0 11 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="transition-all duration-300 ease-in-out"
+            >
+              <path
+                d="M5.104 9L9.888 4.232L9.904 5.032L5.104 0.504H6.384L10.496 4.328V4.952L6.384 9H5.104ZM0.8 5.128V4.216H9.68V5.128H0.8Z"
+                fill="currentColor"
+              />
+            </svg>
+          ) : (
+            // Hovered arrow (diagonal)
+            <svg
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="transition-all duration-300 ease-in-out transform "
+            >
+              <path
+                d="M14.1416 16.1533L14.0394 6.07052L15.1113 7.13718L5.11813 6.88418L7.18176 4.87524L15.4459 4.96925L16.2327 5.7775L16.2052 14.1444L14.1416 16.1533ZM5.98964 16.553L4.49968 15.0225L13.7688 5.999L15.2588 7.52952L5.98964 16.553Z"
+                fill="white"
+              />
+            </svg>
+          )}
         </div>
       </button>
     </div>

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronRight, Search } from "lucide-react";
 import SepratorLine from "./../Utility Components/SepratorLine";
 import { Link, useNavigate } from "react-router";
@@ -8,7 +8,23 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [nestedDropdownOpen, setNestedDropdownOpen] = useState(null);
+  const [logoLoaded, setLogoLoaded] = useState(false);
   const navigate = useNavigate();
+
+  // Preload logo on component mount
+  useEffect(() => {
+    const preloadLogo = () => {
+      const img = new Image();
+      img.onload = () => setLogoLoaded(true);
+      img.onerror = () => {
+        console.error("Failed to preload header logo");
+        setLogoLoaded(true); // Still proceed
+      };
+      img.src = "/logo_header.png";
+    };
+
+    preloadLogo();
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -16,16 +32,22 @@ function Header() {
 
   const toggleDropdown = (item) => {
     setDropdownOpen(dropdownOpen === item ? null : item);
-    setNestedDropdownOpen(null); // Close nested when main changes
+    setNestedDropdownOpen(null);
   };
 
-  // Animated underline variants
+  // Fixed underline variants - the issue was with the animation structure
   const underlineVariants = {
-    initial: { width: 0, opacity: 1 },
+    initial: {
+      scaleX: 0,
+      originX: 0,
+    },
     hover: {
-      width: "100%",
-      opacity: 1,
-      transition: { duration: 0.3, ease: "easeInOut" },
+      scaleX: 1,
+      originX: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
     },
   };
 
@@ -35,7 +57,7 @@ function Header() {
     open: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
-  // Navigation items with nested structure
+  // Navigation items (keeping your existing structure)
   const navItems = [
     {
       name: "What we Offer",
@@ -91,7 +113,7 @@ function Header() {
     },
   ];
 
-  // Animation variants (keeping existing ones)
+  // Animation variants
   const menuVariants = {
     closed: {
       x: "100%",
@@ -137,16 +159,40 @@ function Header() {
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className="min-h-[70px] bg-[#f7f7f7] p-4 flex justify-between items-center relative"
       >
-        {/* Logo */}
+        {/* Optimized Logo */}
         <Link to="/">
-          <motion.img
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            src="/logo_header.png"
-            alt="SIIC IITK logo"
-            className="h-16 md:h-18 lg:h-20"
-          />
+          <div className="relative h-16 md:h-18 lg:h-20 flex items-center">
+            {/* Loading skeleton */}
+            {!logoLoaded && (
+              <div className="w-24 h-16 md:w-28 md:h-18 lg:w-32 lg:h-20 bg-gray-200 animate-pulse rounded" />
+            )}
+
+            {/* Optimized logo image */}
+            <motion.img
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{
+                opacity: logoLoaded ? 1 : 0,
+                scale: logoLoaded ? 1 : 0.8,
+              }}
+              transition={{
+                duration: logoLoaded ? 0.5 : 0,
+                delay: logoLoaded ? 0.2 : 0,
+              }}
+              src="/logo_header.png"
+              alt="SIIC IITK logo"
+              className={`h-16 md:h-18 lg:h-20 object-contain transition-opacity duration-300 ${
+                logoLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              onLoad={() => setLogoLoaded(true)}
+              onError={() => {
+                console.error("Failed to load header logo");
+                setLogoLoaded(true);
+              }}
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -173,32 +219,37 @@ function Header() {
                   }}
                 >
                   {item.hasDropdown ? (
-                    <div className="flex cursor-pointer items-center gap-1 py-2 transition-colors relative">
+                    <motion.div
+                      className="flex cursor-pointer items-center gap-1 py-2 transition-colors relative"
+                      whileHover="hover"
+                      initial="initial"
+                    >
                       <span>{item.name}</span>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-200 ${
                           dropdownOpen === item.name ? "rotate-180" : ""
                         }`}
                       />
+                      {/* Fixed underline animation */}
                       <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full origin-left"
+                        className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full"
                         variants={underlineVariants}
-                        initial="initial"
-                        whileHover="hover"
                       />
-                    </div>
+                    </motion.div>
                   ) : (
-                    <Link
-                      to={item.linkAddress}
-                      className="flex cursor-pointer items-center gap-1 py-2 transition-colors relative"
-                    >
-                      <span>{item.name}</span>
+                    <Link to={item.linkAddress} className="block">
                       <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full origin-left"
-                        variants={underlineVariants}
-                        initial="initial"
+                        className="flex cursor-pointer items-center gap-1 py-2 transition-colors relative"
                         whileHover="hover"
-                      />
+                        initial="initial"
+                      >
+                        <span>{item.name}</span>
+                        {/* Fixed underline animation */}
+                        <motion.div
+                          className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full"
+                          variants={underlineVariants}
+                        />
+                      </motion.div>
                     </Link>
                   )}
 
@@ -342,7 +393,7 @@ function Header() {
           </motion.div>
         </motion.nav>
 
-        {/* Medium Screen Navigation */}
+        {/* Medium Screen Navigation - Apply same underline fix */}
         <motion.nav
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -363,7 +414,11 @@ function Header() {
                   }}
                 >
                   {item.hasDropdown ? (
-                    <div className="flex items-center gap-1 py-2 transition-colors relative cursor-pointer">
+                    <motion.div
+                      className="flex items-center gap-1 py-2 transition-colors relative cursor-pointer"
+                      whileHover="hover"
+                      initial="initial"
+                    >
                       <span>{item.name}</span>
                       <ChevronDown
                         className={`w-3 h-3 transition-transform duration-200 ${
@@ -371,28 +426,27 @@ function Header() {
                         }`}
                       />
                       <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full origin-left"
+                        className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full"
                         variants={underlineVariants}
-                        initial="initial"
-                        whileHover="hover"
                       />
-                    </div>
+                    </motion.div>
                   ) : (
-                    <Link
-                      to={item.linkAddress}
-                      className="flex items-center gap-1 py-2 transition-colors relative"
-                    >
-                      <span>{item.name}</span>
+                    <Link to={item.linkAddress} className="block">
                       <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full origin-left"
-                        variants={underlineVariants}
-                        initial="initial"
+                        className="flex items-center gap-1 py-2 transition-colors relative"
                         whileHover="hover"
-                      />
+                        initial="initial"
+                      >
+                        <span>{item.name}</span>
+                        <motion.div
+                          className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full"
+                          variants={underlineVariants}
+                        />
+                      </motion.div>
                     </Link>
                   )}
 
-                  {/* Dropdown Menu for MD screens */}
+                  {/* Dropdown Menu for MD screens - keeping your existing code */}
                   <AnimatePresence>
                     {item.hasDropdown && dropdownOpen === item.name && (
                       <motion.div
@@ -435,7 +489,7 @@ function Header() {
           </motion.button>
         </motion.nav>
 
-        {/* Animated Hamburger Button */}
+        {/* Animated Hamburger Button - keeping your existing code */}
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -469,7 +523,7 @@ function Header() {
         </motion.button>
       </motion.div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - keeping all your existing mobile menu code */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>

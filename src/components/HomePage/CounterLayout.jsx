@@ -9,7 +9,7 @@ function CounterLayout() {
     { title: "combined value", count: "71.13", prefix: "₹ ", suffix: " B" },
   ];
   return (
-    <div className="flex flex-row justify-center items-center gap-42 p-8 hover:bg-[#f4f4f4] duration-300 mt-25 ">
+    <div className="flex container flex-row justify-center items-center gap-42 p-8 hover:bg-[#f4f4f4] duration-300 mt-25 ">
       {details.map((item) => (
         <Counter
           number={item.count}
