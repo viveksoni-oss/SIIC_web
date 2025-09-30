@@ -18,7 +18,7 @@ function ProgramCard({ data = {} }) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group aspect-square border-[#F1F1F1] border-2 overflow-hidden w-[304px] rounded-xl cursor-pointer transition-all duration-500 ease-out ${
+      className={`group aspect-square bg-white border-[#F1F1F1] border-2 overflow-hidden w-[304px] rounded-xl cursor-pointer transition-all duration-500 ease-out ${
         isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""
       }`}
     >
