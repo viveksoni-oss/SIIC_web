@@ -9,7 +9,8 @@ function Programs() {
     {
       id: "udaan-2025",
       title: "Udaan Startup Accelerator",
-      imgLink: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=500&h=500",
+      imgLink:
+        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=500&h=500",
       startDate: "2025-06-15",
       endDate: "2025-12-15",
       DirectApplyLink: "https://apply.siic.com/udaan-2025",
@@ -20,7 +21,8 @@ function Programs() {
     {
       id: "fintech-hub-2025",
       title: "FinTech Innovation Hub",
-      imgLink: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500",
+      imgLink:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500",
       startDate: "2025-07-01",
       endDate: "2026-01-15",
       DirectApplyLink: "https://apply.siic.com/fintech-hub",
@@ -31,7 +33,8 @@ function Programs() {
     {
       id: "healthtech-2025",
       title: "HealthTech Pioneerd",
-      imgLink: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500",
+      imgLink:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=500",
       startDate: "2025-08-15",
       endDate: "2026-02-15",
       DirectApplyLink: "https://apply.siic.com/healthtech-2025",
@@ -44,7 +47,8 @@ function Programs() {
     {
       id: "cleantech-2025",
       title: "CleanTech Solutions",
-      imgLink: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&h=500",
+      imgLink:
+        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&h=500",
       startDate: "2025-10-01",
       endDate: "2026-04-01",
       DirectApplyLink: "https://apply.siic.com/cleantech-2025",
@@ -55,7 +59,8 @@ function Programs() {
     {
       id: "agritech-2025",
       title: "AgriTech Revolution",
-      imgLink: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=500&h=500",
+      imgLink:
+        "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=500&h=500",
       startDate: "2025-11-15",
       endDate: "2026-05-15",
       DirectApplyLink: "https://apply.siic.com/agritech-2025",
@@ -66,7 +71,8 @@ function Programs() {
     {
       id: "edtech-2026",
       title: "EdTech Transformation",
-      imgLink: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=500",
+      imgLink:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=500",
       startDate: "2026-01-10",
       endDate: "2026-07-10",
       DirectApplyLink: "https://apply.siic.com/edtech-2026",
@@ -137,10 +143,11 @@ function Programs() {
       imgLink: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0",
       startDate: "2024-02-20",
       endDate: "2024-02-22",
-      DirectApplyLink: "",
-      type: "Past",
+      directApplyLink: "",
+      type: "Past", //"Past" || "Upcoming" || "Active"
       domain: ["blockchain", "cryptocurrency", "web3"],
       centerOfExcellence: "Blockchain Innovation",
+      youHaveA: "idea", // idea || startUp
     },
     {
       id: "women-entrepreneurs-2024",
