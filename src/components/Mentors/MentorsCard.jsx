@@ -3,7 +3,7 @@ import { mentorsData } from "../../data/MentorsData.js";
 function MentorsCard({ mentor }) {
   return (
     <div className="bg-secondary-gray/31 pl-20 p-4 text-xs relative mt-4     h-[195px] group ml-20 rounded-2xl w-[350px]">
-      <div className="absolute -left-18 top-10">
+      <div className="absolute -left-18 top-10  transition-transform transform duration-500">
         <div className="relative">
           <img
             src={mentor.image}
@@ -28,7 +28,7 @@ function MentorsCard({ mentor }) {
                 <div className="border-l-2 rounded-4xl border-secondary-blue w-0 min-h-[30px]"></div>
                 <img
                   src="/Mentors/icons/wave.svg"
-                  className="transition-all ease-in-out transform duration-300 group-hover:animate-wave"
+                  className="transition-transform ease-in-out transform duration-500 group-hover:animate-wave "
                   alt="waving hand"
                 />
               </div>

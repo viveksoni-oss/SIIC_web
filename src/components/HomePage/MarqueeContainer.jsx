@@ -10,6 +10,7 @@ function MarqueeContainer() {
     "/Marquee/image5.svg",
     "/Marquee/image6.svg",
   ];
+
   return (
     <div>
       <h1 className="text-center text-5xl font-[200]">
@@ -29,8 +30,10 @@ function MarqueeContainer() {
           {items.map((item, index) => (
             <img
               key={index}
-              className="mx-4  text-white px-6  rounded-full font-semibold"
+              className="mx-4 text-white px-6 rounded-full font-semibold"
               src={item}
+              alt={`Partner ${index + 1}`}
+              loading="lazy"
             />
           ))}
         </Marquee>
