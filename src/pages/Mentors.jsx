@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import MentorsBanner from "../components/banners/MentorsBanner";
 import PageLayout from "../components/PageLayout";
 import MentorsSection from "./../components/Mentors/MentorsCard";
+import MentorDomain from "../components/Mentors/MentorDomain";
 
 function Mentors() {
   const categoriesOfMentors = [
@@ -50,28 +51,28 @@ function Mentors() {
     "Cross Border Collaborations",
     "Investment",
   ];
-
+  const [domain, setDomain] = useState("All");
+  const [search, setSearch] = useState("");
+  const inputStyle =
+    "px-4 py-2 bg-white min-w-80 border-primary rounded-lg text-base font-[500] focus:outline-none focus:ring-3 focus:ring-primary-highlight focus:ring-offset-0 transition-all duration-300 text-black z-60 border-1 border-primary-highlight";
   return (
     <PageLayout bodyStyle={"-mt-60 z-40 p-8"} banner={<MentorsBanner />}>
-      <div className="mt-20 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
-        <aside className="border-2 border-secondary-gray/50 rounded-2xl h-fit py-6">
-          <div className="px-3 mb-5 text-lg font-semibold text-[#1f1f1f]/80">
-            Domain
-          </div>
-          <div className="flex gap-3 flex-wrap p-3">
-            {categoriesOfMentors.map((category, index) => (
-              <button
-                key={index}
-                className="py-1 px-2 bg-[#f1f1f1]/95 text-[#1f1f1f] text-xs rounded-full hover:bg-primary-highlight hover:text-white transition-colors "
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </aside>
-
+      <div>
+        <input
+          className={inputStyle}
+          placeholder="Search mentor"
+          type="text"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+      <div className="mt-20 grid grid-cols-1 xl:grid-cols-[320px_1fr] gap-6">
+        <MentorDomain
+          categoriesOfMentors={categoriesOfMentors}
+          setDomain={setDomain}
+          domain={domain}
+        ></MentorDomain>
         <main className="min-w-0">
-          <MentorsSection />
+          <MentorsSection domain={domain} search={search} />
         </main>
       </div>
     </PageLayout>

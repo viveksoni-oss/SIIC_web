@@ -1,7 +1,6 @@
 import React from "react";
 import { mentorsData } from "../../data/MentorsData.js";
 function MentorsCard({ mentor }) {
-  console.log(mentor);
   return (
     <div className="bg-secondary-gray/31 pl-20 p-4 text-xs relative mt-4     h-[195px] group ml-20 rounded-2xl w-[350px]">
       <div className="absolute -left-18 top-10">
@@ -51,13 +50,24 @@ function MentorsCard({ mentor }) {
 }
 
 // Container component to render multiple mentor cards
-function MentorsSection() {
-  
+function MentorsSection({ domain, search }) {
+  let filteredMentors = mentorsData.filter((data) =>
+    domain === "All" ? true : data.domains.includes(domain)
+  );
+  filteredMentors = filteredMentors.filter((data) =>
+    data.name.toLowerCase().includes(search.trim().toLowerCase())
+  );
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2  gap-15 items-center scrollbar-container justify-items-end p-8 overflow-y-scroll max-h-[750px] ">
-      {mentorsData.map((mentor) => (
-        <MentorsCard key={mentor.id} mentor={mentor} />
-      ))}
+    <div className="grid grid-cols-1 md:grid-cols-2  gap-15   justify-items-end p-8 overflow-y-auto h-[750px] ">
+      {filteredMentors.length == 0 ? (
+        <div className="sticky top-0 flex items-center justify-center h-[200px] text-gray-400 font-semibold text-4xl w-full col-span-2 capitalize bg-white">
+          No mentors available with {domain} Domain
+        </div>
+      ) : (
+        filteredMentors.map((mentor) => (
+          <MentorsCard key={mentor.id} mentor={mentor} />
+        ))
+      )}
     </div>
   );
 }
