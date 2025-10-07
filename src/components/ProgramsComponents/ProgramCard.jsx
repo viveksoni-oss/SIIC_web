@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import HighlightedText from "./../Utility Components/HighlightedText";
+import { useNavigate } from "react-router";
 
 function ProgramCard({ data = {} }) {
   const [isHovered, setIsHovered] = useState(false);
   const [blinking, setBlinking] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const interval = setInterval(() => {
       setBlinking((prev) => !prev);
@@ -29,12 +30,16 @@ function ProgramCard({ data = {} }) {
           alt="Program preview"
         />
         {data.type === "Active" && data.DirectApplyLink && (
-          <>
-            <button className="absolute -bottom-1 right-7 text-sm font-semibold bg-primary-highlight text-white  px-4 py-2 pb-3.5 transition-all duration-300 ease-in-out  group-hover:-translate-y-1  group-hover:shadow-lg hover:bg-white  hover:outline-3 hover:outline-primary-highlight hover:text-black  active:scale-95 rounded-t-lg ">
+          <div className="group/apply-btn">
+            <a
+              href={data?.DirectApplyLink}
+              target="_blank"
+              className="absolute -bottom-1 right-7 text-sm font-semibold bg-primary-highlight text-white  px-4 py-2 pb-3.5 transition-all duration-300 ease-in-out  group-hover:-translate-y-1  group-hover:shadow-lg hover:bg-white  hover:outline-3 hover:outline-primary-highlight group hover:text-black  active:scale-95 rounded-t-lg "
+            >
               Apply Now
-            </button>
-            <div className="w-[106px] h-1 absolute bg-primary-highlight right-7 bottom-[6.5px]  "></div>
-          </>
+            </a>
+            <div className="w-[106px] h-1 absolute bg-primary-highlight right-7 bottom-[6.5px] group-hover/apply-btn:opacity-100 opacity-0 duration-300 transition-colors"></div>
+          </div>
         )}
       </div>
 
@@ -43,7 +48,13 @@ function ProgramCard({ data = {} }) {
           {data.title}
         </div>
 
-        <div className="flex justify-between items-center mt-1">
+        <div
+          onClick={() => {
+            console.log(data.slug);
+            navigate(`${data.slug}`);
+          }}
+          className="flex justify-between items-center mt-1"
+        >
           {blinking ? (
             <div className="  text-xs font-[400] cursor-pointer transition-all duration-200  hover:underline">
               Know more <span className="ml-2">{">"}</span>

@@ -232,7 +232,7 @@ function Header() {
                       />
                       {/* Fixed underline animation */}
                       <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full"
+                        className="absolute bottom-0 left-0 h-1 rounded-full bg-[#ff8a40] w-full"
                         variants={underlineVariants}
                       />
                     </motion.div>
@@ -246,7 +246,7 @@ function Header() {
                         <span>{item.name}</span>
                         {/* Fixed underline animation */}
                         <motion.div
-                          className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full"
+                          className="absolute bottom-0 left-0 h-1 rounded-full bg-[#ff8a40] w-full"
                           variants={underlineVariants}
                         />
                       </motion.div>
@@ -261,7 +261,7 @@ function Header() {
                         initial="closed"
                         animate="open"
                         exit="closed"
-                        className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] border border-gray-200 py-2 z-50"
+                        className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] border border-gray-200 px-2 py-2 z-50"
                       >
                         {item.dropdownItems?.map((dropdownItem, idx) => (
                           <div
@@ -316,9 +316,7 @@ function Header() {
                                       initial={{ opacity: 0, x: -2 }}
                                       animate={{ opacity: 1, x: 0 }}
                                       className="ml-1"
-                                    >
-                                      <ChevronRight className="w-4 h-4" />
-                                    </motion.div>
+                                    ></motion.div>
                                   )}
                                 </motion.div>
                               )}
@@ -426,7 +424,7 @@ function Header() {
                         }`}
                       />
                       <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-[#ff8a40] w-full"
+                        className="absolute bottom-0 left-0 h-5 bg-[#ff8a40] w-full"
                         variants={underlineVariants}
                       />
                     </motion.div>

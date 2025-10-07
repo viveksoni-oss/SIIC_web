@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HighlightedText from "../Utility Components/HighlightedText";
 
-function MentorsBanner() {
+function CofounderBanner() {
   return (
     <div className="z-50 relative text-white flex justify-between">
       {/* Content div */}
@@ -14,12 +14,12 @@ function MentorsBanner() {
       >
         <div>
           <motion.div
-            className="text-2xl lg:text-[56px] w-full font-medium capitalize"
+            className="text-2xl lg:text-[50px] w-full font-medium capitalize"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Mentors to Ignite
+            Co-founders to Achieve
             <HighlightedText>Your</HighlightedText> Innovation.
           </motion.div>
 
@@ -29,8 +29,8 @@ function MentorsBanner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            SIIC mentors guide innovators, accelerating ideas into impactful,
-            scalable ventures.
+            SIIC connects innovators to find their co-founders, accelerating
+            ventures through shared expertise.
           </motion.p>
         </div>
       </motion.div>
@@ -38,4 +38,4 @@ function MentorsBanner() {
   );
 }
 
-export default MentorsBanner;
+export default CofounderBanner;

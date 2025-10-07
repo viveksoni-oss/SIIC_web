@@ -14,15 +14,14 @@ function FlashNewsCard({ newsDetail }) {
         alt={newsDetail.title + "image"}
         className=""
       />
-
       <h3 className="font-[500] text-base line-clamp-2">{newsDetail.title}</h3>
 
       <div className="flex flex-row justify-end w-full z-20 ">
-        <div className="relative w-8 h-8">
+        <div className="relative aspect-square w-2 md:w-4 lg:w-8 h-8">
           <img
             src="Icons/external-link.svg"
             alt="external-link-icon"
-            className={`absolute inset-0 w-8 h-8 cursor-pointer transition-opacity duration-600 ease-in-out ${
+            className={`absolute inset-0 aspect-square w-2 md:w-4 lg:w-8 h-8 cursor-pointer transition-opacity duration-600 ease-in-out ${
               isHovered ? "opacity-0" : "opacity-100"
             }`}
           />

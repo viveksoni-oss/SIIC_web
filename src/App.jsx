@@ -23,51 +23,53 @@ function App() {
   return (
     <>
       <Header></Header>
-      <Routes>
-        {/* HOME PAGE */}
-        <Route path="/" element={<HomePage />} />
-        {/* PROGRAMS SECTION */}
-        {/* Main programs listing page */}
-        <Route path="/programs" element={<Programs />}></Route>
-        {/* Individual program detail page with dynamic ID parameter */}
-        <Route path="programs/:id" element={<ProgramOverview />} />
+      <div className="container mx-auto shadow-2xl">
+        <Routes>
+          {/* HOME PAGE */}
+          <Route path="/" element={<HomePage />} />
+          {/* PROGRAMS SECTION */}
+          {/* Main programs listing page */}
+          <Route path="/programs" element={<Programs />}></Route>
+          {/* Individual program detail page with dynamic ID parameter */}
+          <Route path="programs/:id" element={<ProgramOverview />} />
 
-        {/*LEADERSHIP */}
-        {/* Board of directors information page */}
-        <Route path="/board-of-directors" element={<BoardOfDirectors />} />
-        {/* Company team members page */}
-        <Route path="/our-team" element={<OurTeam />} />
-        {/* Company information and mission page */}
-        <Route path="/who-we-are" element={<WhoWeAre />} />
+          {/*LEADERSHIP */}
+          {/* Board of directors information page */}
+          <Route path="/board-of-directors" element={<BoardOfDirectors />} />
+          {/* Company team members page */}
+          <Route path="/our-team" element={<OurTeam />} />
+          {/* Company information and mission page */}
+          <Route path="/who-we-are" element={<WhoWeAre />} />
 
-        {/* SERVICES & FACILITIES */}
-        {/* Company branding and marketing materials */}
-        <Route path="/branding" element={<Branding />} />
-        {/* Laboratory facilities and equipment */}
-        <Route path="/lab" element={<Lab />} />
-        {/* Available office spaces for startups */}
-        <Route path="/office-spaces" element={<OfficeSpaces />} />
-        {/* Portfolio management services */}
-        <Route path="/manage-portfolios" element={<ManagePortfolios />} />
+          {/* SERVICES & FACILITIES */}
+          {/* Company branding and marketing materials */}
+          <Route path="/branding" element={<Branding />} />
+          {/* Laboratory facilities and equipment */}
+          <Route path="/lab" element={<Lab />} />
+          {/* Available office spaces for startups */}
+          <Route path="/office-spaces" element={<OfficeSpaces />} />
+          {/* Portfolio management services */}
+          <Route path="/manage-portfolios" element={<ManagePortfolios />} />
 
-        {/* NETWORK & COMMUNITY */}
-        {/* Co-founder matching and networking */}
-        <Route path="/cofounders" element={<Cofounders />} />
-        {/* Available mentors and advisors */}
-        <Route path="/mentors" element={<Mentors />} />
-        {/* Partner organizations and collaborators */}
-        <Route path="/partners" element={<Partners />} />
-        {/* Portfolio startups and companies */}
-        <Route path="/startups" element={<Startups />} />
-        {/* NEWS & EVENTS */}
-        {/* Latest news and announcements */}
-        <Route path="/flash-news" element={<FlashNews />} />
-        {/* Upcoming events and workshops */}
-        <Route path="/upcoming-events" element={<UpcomingEvents />} />
-        <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
-      </Routes>
-      {/* Footer  */}
-      <Footer></Footer>
+          {/* NETWORK & COMMUNITY */}
+          {/* Co-founder matching and networking */}
+          <Route path="/cofounders" element={<Cofounders />} />
+          {/* Available mentors and advisors */}
+          <Route path="/mentors" element={<Mentors />} />
+          {/* Partner organizations and collaborators */}
+          <Route path="/partners" element={<Partners />} />
+          {/* Portfolio startups and companies */}
+          <Route path="/startups" element={<Startups />} />
+          {/* NEWS & EVENTS */}
+          {/* Latest news and announcements */}
+          <Route path="/flash-news" element={<FlashNews />} />
+          {/* Upcoming events and workshops */}
+          <Route path="/upcoming-events" element={<UpcomingEvents />} />
+          <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
+        </Routes>
+        {/* Footer  */}
+        <Footer></Footer>
+      </div>
     </>
   );
 }

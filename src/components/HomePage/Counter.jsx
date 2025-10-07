@@ -6,7 +6,6 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
   const countRef = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.3 });
 
-  // Convert to number and handle edge cases
   const targetNumber = Number(number) || 0;
 
   useEffect(() => {
@@ -15,41 +14,48 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
     const node = countRef.current;
     if (!node) return;
 
-    // Animate from 0 up to the target number
-    const controls = animate(number/1.1, targetNumber, {
+    const controls = animate(number / 1.1, targetNumber, {
       duration: 0.5,
       ease: "easeOut",
       onUpdate(value) {
-        // Check if the target number has decimals
         const hasDecimals = targetNumber % 1 !== 0;
-
         let formattedValue;
         if (hasDecimals) {
-          // Show decimals if target number has decimals
           formattedValue = value.toFixed(2);
         } else {
-          // Show whole number if target is integer
           formattedValue = Math.round(value).toString();
         }
-
         node.textContent = `${prefix}${formattedValue}${suffix}`;
       },
     });
 
     return () => controls.stop();
-  }, [isInView, targetNumber, prefix, suffix]);
+  }, [isInView, targetNumber, prefix, suffix, number]);
 
   return (
     <motion.div
       ref={ref}
-      className="flex flex-col gap-2 justify-center items-center"
+      className="
+        flex flex-col 
+        gap-1 sm:gap-2 md:gap-3
+        justify-center items-center
+        min-w-[120px] sm:min-w-[140px] md:min-w-[160px] lg:min-w-[180px]
+        px-3 sm:px-4 md:px-6
+        py-2 sm:py-3
+      "
       initial={{ opacity: 0, y: 0 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <motion.div
         ref={countRef}
-        className="text-5xl text-[#2D415C] font-bold"
+        className="
+          text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+          text-[#2D415C] 
+          font-bold
+          leading-tight
+          text-center
+        "
         initial={{ scale: 0.5 }}
         animate={isInView ? { scale: 1 } : {}}
         transition={{ duration: 0.8, ease: "backOut" }}
@@ -57,7 +63,15 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
         {`${prefix}0${suffix}`}
       </motion.div>
       <motion.div
-        className="text-lg font-[400] capitalize text-[#1F1F1F]"
+        className="
+          text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl
+          font-[400] 
+          capitalize 
+          text-[#1F1F1F]
+          text-center
+          leading-snug
+          max-w-[150px] sm:max-w-[180px] md:max-w-[200px]
+        "
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ delay: 0.3, duration: 0.5 }}

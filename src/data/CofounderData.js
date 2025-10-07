@@ -1,0 +1,138 @@
+export const coFoundersData = [
+  {
+    id: 1,
+    name: "Mr. Chirag Agrawal",
+    role: "CO-FOUNDER",
+    company: "Lumel Technologies",
+    domain: "AI/ML",
+    image: "/Cofounders/cofounder-1.png",
+    aboutCompany:
+      "Lumel Technologies fights TB with a handheld X-ray device for faster, accessible screening",
+    strengths: [
+      "Medical Device Innovation",
+      "AI-powered Diagnostics",
+      "Healthcare Technology",
+      "Product Development",
+      "Regulatory Compliance",
+    ],
+  },
+  {
+    id: 2,
+    name: "Mr. Akshay Srivastav",
+    role: "FOUNDER",
+    company: "LCR Meters",
+    domain: "IOT/Electronics",
+    image: "/Cofounders/cofounder-2.png",
+    aboutCompany:
+      "LCR Meters produces bioferrilisers with microbes and polymers to boost soil nutrients retention",
+    strengths: [
+      "Agricultural Technology",
+      "Microbiology",
+      "Sustainable Farming",
+      "Soil Science",
+      "Biotechnology",
+    ],
+  },
+  {
+    id: 3,
+    name: "Mrs. Neha Srivastav",
+    role: "FOUNDER",
+    company: "LCR Meters",
+    domain: "IOT/Electronics",
+    image: "/Cofounders/cofounder-3.png",
+    aboutCompany:
+      "LCR Meters produces bioferrilisers with microbes and polymers to boost soil nutrients retention",
+    strengths: [
+      "Business Development",
+      "Market Research",
+      "Team Leadership",
+      "Strategic Planning",
+      "Agricultural Marketing",
+    ],
+  },
+  {
+    id: 4,
+    name: "Mr. Sidesh Dhalkar",
+    role: "CO-FOUNDER",
+    company: "Lumel Technologies",
+    domain: "AI/ML",
+    image: "/Cofounders/cofounder-4.png",
+    aboutCompany:
+      "Lumel Technologies fights TB with a handheld X-ray device for faster, accessible screening",
+    strengths: [
+      "Machine Learning",
+      "Computer Vision",
+      "Software Architecture",
+      "Algorithm Development",
+      "Technical Leadership",
+    ],
+  },
+  {
+    id: 5,
+    name: "Mr. Raul Kaushik",
+    role: "FOUNDER",
+    company: "Smart Joules",
+    domain: "Cleantech",
+    image: "/Cofounders/cofounder-5.png",
+    aboutCompany:
+      "Smart Joules clears houses 99.9% airborne viruses in manufacturing, patented UVGI technology",
+    strengths: [
+      "UVGI Technology",
+      "Environmental Engineering",
+      "Patent Development",
+      "Clean Energy Solutions",
+      "Manufacturing Processes",
+    ],
+  },
+  {
+    id: 6,
+    name: "Mr. Sarthak Gupta",
+    role: "FOUNDER",
+    company: "Bio Plastic",
+    domain: "Biotech",
+    image: "/Cofounders/cofounder-6.png",
+    aboutCompany:
+      "Biotech engineers convert plastic waste into WRP-suitable, recyclable, and cost-efficient plywood alternative",
+    strengths: [
+      "Waste Management",
+      "Material Science",
+      "Recycling Technology",
+      "Environmental Solutions",
+      "Sustainable Manufacturing",
+    ],
+  },
+  {
+    id: 7,
+    name: "Mrs. Kajal Srivastava",
+    role: "FOUNDER",
+    company: "Health Tech Solutions",
+    domain: "Defence & Aerospace",
+    image: "/Cofounders/cofounder-7.png",
+    aboutCompany:
+      "nPulse combines Ayurveda and modern tech to deliver wrist-based diagnostics with personalised holistic wellness",
+    strengths: [
+      "Ayurveda Integration",
+      "Wearable Technology",
+      "Health Analytics",
+      "Personalized Medicine",
+      "Holistic Healthcare",
+    ],
+  },
+  {
+    id: 8,
+    name: "Mr. Soubhik Das",
+    role: "FOUNDER",
+    company: "Advanced DAPI",
+    domain: "Biotech",
+    image: "/Cofounders/cofounder-8.png",
+    aboutCompany:
+      "Manages offers personalized teleradiology support for dementia patients using advanced DAPI technology",
+    strengths: [
+      "Teleradiology",
+      "Medical Imaging",
+      "Dementia Care",
+      "Healthcare IT",
+      "Patient Management Systems",
+    ],
+  },
+];

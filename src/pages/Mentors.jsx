@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import MentorsBanner from "../components/banners/MentorsBanner";
 import PageLayout from "../components/PageLayout";
 import MentorsSection from "./../components/Mentors/MentorsCard";
-import MentorDomain from "../components/Mentors/MentorDomain";
+import Domain from "../components/Utility Components/Domain";
+import SearchBar from "./../components/Utility Components/SearchBar";
 
 function Mentors() {
   const categoriesOfMentors = [
@@ -53,24 +54,21 @@ function Mentors() {
   ];
   const [domain, setDomain] = useState("All");
   const [search, setSearch] = useState("");
-  const inputStyle =
-    "px-4 py-2 bg-white min-w-80 border-primary rounded-lg text-base font-[500] focus:outline-none focus:ring-3 focus:ring-primary-highlight focus:ring-offset-0 transition-all duration-300 text-black z-60 border-1 border-primary-highlight";
+
   return (
     <PageLayout bodyStyle={"-mt-60 z-40 p-8"} banner={<MentorsBanner />}>
-      <div>
-        <input
-          className={inputStyle}
-          placeholder="Search mentor"
-          type="text"
-          onChange={(e) => setSearch(e.target.value)}
-        />
+      {/* Search Bar Container */}
+      <div className="flex justify-end mb-6">
+        <SearchBar search={search} setSearch={setSearch}></SearchBar>
       </div>
-      <div className="mt-20 grid grid-cols-1 xl:grid-cols-[320px_1fr] gap-6">
-        <MentorDomain
-          categoriesOfMentors={categoriesOfMentors}
+
+      {/* Main Content Grid */}
+      <div className="grid grid-cols-1 xl:grid-cols-[320px_1fr] gap-6">
+        <Domain
+          categories={categoriesOfMentors}
           setDomain={setDomain}
           domain={domain}
-        ></MentorDomain>
+        />
         <main className="min-w-0">
           <MentorsSection domain={domain} search={search} />
         </main>

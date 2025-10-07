@@ -1,37 +1,40 @@
 import React from "react";
 
 function CarouselCard({ isMain = false, cardData }) {
-  // Set the main border color to match the brown "primary" used in your screenshot.
-  const mainBorderColor = "#74363A"; // update if your theme uses a different primary
+  const mainBorderColor = "#74363A";
 
   return (
     <div
       className={`
-        w-[315px] min-h-[410px] rounded-xl transition-all duration-300
+        w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[315px]
+        h-auto rounded-xl transition-all duration-300
         flex flex-col justify-between items-center relative
         bg-white
         ${isMain ? "scale-105 z-10 shadow-xl" : "bg-[#2d415c] shadow-md z-0"}
       `}
       style={
         isMain
-          ? { border: `3px solid ${mainBorderColor}` }
+          ? { border: `3px solid ${mainBorderColor} `,borderRadius:"16px" }
           : { border: "1.5px solid #C3CEDD" }
       }
     >
-      <div className="w-full h-[220px] flex justify-center items-center rounded-t-xl bg-white">
+      <div className="w-full h-[150px] sm:h-[180px] md:h-[200px] lg:h-[220px] flex justify-center items-center rounded-t-xl bg-white">
         <img
           src={cardData?.imgSrc || "/phool.png"}
           alt={cardData?.title || "Phool"}
-          className="max-h-[110px] object-contain"
+          className="max-h-[70px] sm:max-h-[85px] md:max-h-[100px] lg:max-h-[110px] object-contain"
+          loading="lazy"
         />
       </div>
       <div
-        className={`w-full p-5 rounded-b-xl ${
+        className={`w-full p-3 sm:p-4 md:p-5 rounded-b-xl ${
           isMain ? "bg-[#74363A] text-white" : "bg-[#2d415c] text-white"
         }`}
       >
-        <h1 className="text-2xl font-bold">{cardData?.title || "Phool"}</h1>
-        <p className="mt-2 text-[14px] leading-[175%]">
+        <h1 className="text-lg sm:text-xl md:text-2xl font-bold">
+          {cardData?.title || "Phool"}
+        </h1>
+        <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-[14px] leading-[175%]">
           {cardData?.desc ||
             "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit."}
         </p>

@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 function KnowYourJourney() {
   const [currentPath, setCurrentPath] = useState(null);
   const [previousPath, setPreviousPath] = useState(null);
+  const [scrollTo, setScrollTo] = useState(null);
   const pathRef = useRef(null);
 
   const paths = [
@@ -85,7 +86,6 @@ function KnowYourJourney() {
       },
     },
   ];
-
   // Function to get direction of transition
   const getTransitionDirection = (currentIndex, previousIndex) => {
     if (previousIndex === null) return 0;
@@ -97,12 +97,26 @@ function KnowYourJourney() {
     setPreviousPath(currentPath);
     setCurrentPath(newPath);
   };
+  useEffect(() => {
+    if (!scrollTo) return;
+
+    // Add a delay to wait for the AnimatePresence animation to complete
+    const timeoutId = setTimeout(() => {
+      const section = document.getElementById(scrollTo);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100); // 100ms delay allows the element to render
+
+    return () => clearTimeout(timeoutId);
+  }, [scrollTo]);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (pathRef.current && !pathRef.current.contains(e.target)) {
         setCurrentPath(null);
         setPreviousPath(null);
+        setScrollTo("knowYourJourney");
       }
     };
     const container = document.getElementById("containerClass");
@@ -125,13 +139,13 @@ function KnowYourJourney() {
   const direction = getTransitionDirection(currentIndex, previousIndex);
 
   return (
-    <div className="w-full " id="containerClass">
+    <div id="containerClass" className="w-full">
       <div
-        className="mx-auto mt-26 max-w-5xl mb-45 w-full p-6 rounded-2xl border-2 border-primary flex flex-col items-center justify-center"
+        className="mx-auto mt-26 container w-3/4 mb-45  p-6 rounded-2xl border-2 border-primary flex flex-col items-center justify-center"
         ref={pathRef}
       >
         <div className="flex justify-center items-center gap-2 flex-col">
-          <h1 className="text-[40px] font-light">
+          <h1 className="text-[40px] font-light" id="knowYourJourney">
             Know your{" "}
             <HighlightedText weight={600} size={"40px"}>
               Journey
@@ -143,9 +157,13 @@ function KnowYourJourney() {
           </p>
         </div>
 
-        <div className="flex flex-row items-center justify-center gap-18 mt-10 w-full">
+        <div
+          id="start"
+          className="flex flex-row items-center justify-center gap-18 mt-10 container flex-wrap "
+        >
           {paths.map((path) => (
             <PathButton
+              setScrollTo={setScrollTo}
               details={path}
               key={path.title}
               setCurrentPath={handlePathChange}
@@ -158,6 +176,7 @@ function KnowYourJourney() {
           <AnimatePresence mode="wait">
             {currentPath !== null && (
               <motion.div
+                id={scrollTo}
                 key="content-container"
                 initial={
                   previousPath === null
@@ -187,22 +206,29 @@ function KnowYourJourney() {
                 className="w-full"
               >
                 <div className="w-full h-auto mt-6 p-4 border-t-1 border-black/50 relative">
-                  <motion.button
-                    onClick={() => {
-                      setCurrentPath(null);
-                      setPreviousPath(null);
-                    }}
-                    className="hover:scale-110 duration-300 absolute top-2 right-3 ease-in-out hover:bg-neutral-100 rounded-full p-2 text-primary"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3, duration: 0.3 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <X />
-                  </motion.button>
-
                   <div className="relative overflow-hidden">
+                    <motion.button
+                      onClick={() => {
+                        setCurrentPath(null);
+                        setPreviousPath(null);
+                      }}
+                      className="absolute top-2 right-3 rounded-full p-2 text-primary"
+                      whileHover={{
+                        scale: 1.15,
+                        rotate: 90,
+                        backgroundColor: "rgba(245, 245, 245, 0.8)",
+                      }}
+                      whileTap={{
+                        scale: 0.85,
+                      }}
+                      transition={{
+                        duration: 0.2,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <X className="transition-colors duration-200" />
+                    </motion.button>
+
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={currentPath.title}
@@ -250,7 +276,7 @@ function KnowYourJourney() {
                         <img
                           src={`/KnowYourJourney/JourneySection/${currentPath.CardContent.RoadmapLink}.svg`}
                           alt={currentPath.CardContent.RoadmapLink}
-                          className="w-full h-auto"
+                          className="w-full h-auto p-20"
                         />
 
                         <div className="mt-10 flex justify-center items-center gap-6 flex-col">

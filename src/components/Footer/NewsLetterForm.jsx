@@ -12,8 +12,11 @@ function NewsLetterForm() {
         <input type="text" className={inputStyle} placeholder="Email" />
       </div>
       <div className="flex justify-end ml-auto">
-        <button className="border-b-2 border-[#848c8e] hover:border-primary-highlight transition-colors duration-200">
+        <button className="relative transition-color duration-300 hover:text-primary-highlight group/link">
           Subscribe
+          <span
+            className={`absolute left-0 -bottom-0.5 w-full group-hover/link:-bottom-[2px] bg-[#9ca3a5] group-hover/link:bg-white h-[1px] `}
+          ></span>
         </button>
       </div>
     </div>

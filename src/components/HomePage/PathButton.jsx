@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 
-function PathButton({ details, setCurrentPath, currentPath }) {
+function PathButton({ details, setCurrentPath, currentPath, setScrollTo }) {
   const { title, path, hoverPath } = details;
   const [isHovered, setIsHovered] = useState(false);
 
   const isActive = currentPath === title;
 
   const handleClick = () => {
-    setCurrentPath((prev) => (prev?.title === title ? null : details));
+    if (isActive) {
+      // Clicking the same item: close it
+      setCurrentPath(null);
+      setScrollTo("knowYourJourney");
+    } else {
+      // Clicking a different item: open it and scroll
+      setCurrentPath(details);
+      setScrollTo(title);
+    }
   };
 
   return (
@@ -23,21 +31,24 @@ function PathButton({ details, setCurrentPath, currentPath }) {
           <img
             src="/KnowYourJourney/Ellipse.svg"
             alt="background"
-            className={`transition-opacity duration-300 ${
+            className={`transition-opacity  transform duration-300 ${
               isHovered ? "opacity-0" : "opacity-100"
             }`}
           />
           <img
             src="/KnowYourJourney/hover/Ellipse-hover.svg"
             alt="background hover"
-            className={`absolute inset-0 scale-110 transition-opacity duration-500 ${
+            className={`absolute scale-110  inset-0 transform  transition-opacity duration-500 ${
               isHovered ? "opacity-100" : "opacity-0"
             }`}
           />
         </div>
 
         {/* Icons */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div
+          onClick={handleClick}
+          className="absolute inset-0 flex items-center justify-center"
+        >
           <img
             src={`/KnowYourJourney/${path}`}
             alt={`${title} icon`}

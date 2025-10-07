@@ -22,46 +22,22 @@ const cards = [
     title: "3 ",
     desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
   },
-  {
-    id: 2,
-    imgSrc: "phool.png",
-    title: "4",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.2",
-  },
-  {
-    id: 3,
-    imgSrc: "fertilizer.png",
-    title: "5",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.3",
-  },
-  {
-    id: 6,
-    imgSrc: "fertilizer.png",
-    title: "6",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.3",
-  },
-  {
-    id: 7,
-    imgSrc: "fertilizer.png",
-    title: "7",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit.3",
-  },
+  // Other cards commented out
 ];
 
 function CarouselLayout() {
   const [currentIndex, setCurrentIndex] = useState(1);
+  const total = cards.length;
 
-const total = cards.length;
+  const cycleIndex = (i) => (i + total) % total;
 
-const cycleIndex = (i) => (i + total) % total;
-
-const visible = [
-  cycleIndex(currentIndex - 2),
-  cycleIndex(currentIndex - 1),
-  currentIndex,
-  cycleIndex(currentIndex + 1),
-  cycleIndex(currentIndex + 2),
-];
+  const visible = [
+    cycleIndex(currentIndex - 2),
+    cycleIndex(currentIndex - 1),
+    currentIndex,
+    cycleIndex(currentIndex + 1),
+    cycleIndex(currentIndex + 2),
+  ];
 
   const handlePrev = () =>
     setCurrentIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1));
@@ -69,70 +45,70 @@ const visible = [
     setCurrentIndex((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
 
   return (
-    <div className="relative flex items-center ml-8 px-10 py-4 justify-center">
-      <ChevronLeft
-        className="absolute left-0 top-1/2 cursor-pointer select-none"
-        size={64}
-        onClick={handlePrev}
-      />
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="flex items-center justify-between py-4 min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] px-4 sm:px-8 md:px-12 lg:px-16">
+        <ChevronLeft
+          className="cursor-pointer select-none z-20 text-gray-700 hover:text-primary-highlight transition"
+          size={48}
+          onClick={handlePrev}
+        />
+        {/* Card Container */}
+        <div className="flex justify-center items-center w-[550px] h-[250px] sm:h-[280px] md:h-[320px] lg:h-[350px] px-4 sm:px-8 md:px-12 lg:px-16 relative">
+          {cards.map((card, idx) => {
+            if (!visible.includes(idx)) return null;
 
-      <div className="relative w-[1000px] flex justify-center items-center">
-        {cards.map((card, idx) => {
-          if (!visible.includes(idx)) return null;
+            let scale = 0.85,
+              x = 0,
+              zIndex = 1,
+              filter = "brightness(0.7)",
+              y = 0;
 
-          let scale = 0.85,
-            x = 0,
-            zIndex = 1,
-            filter = "brightness(0.7)",
-            y = 0;
+            if (idx === currentIndex) {
+              scale = 1.1;
+              x = 0;
+              zIndex = 10;
+              filter = "none";
+              y = -10;
+            } else if (idx === cycleIndex(currentIndex - 1)) {
+              scale = 0.95;
+              x = -80;
+              zIndex = 8;
+              filter = "brightness(0.85)";
+            } else if (idx === cycleIndex(currentIndex - 2)) {
+              scale = 0.85;
+              x = -140;
+              zIndex = 5;
+              filter = "brightness(0.7)";
+            } else if (idx === cycleIndex(currentIndex + 1)) {
+              scale = 0.95;
+              x = 80;
+              zIndex = 8;
+              filter = "brightness(0.85)";
+            } else if (idx === cycleIndex(currentIndex + 2)) {
+              scale = 0.85;
+              x = 140;
+              zIndex = 5;
+              filter = "brightness(0.7)";
+            }
 
-          if (idx === currentIndex) {
-            scale = 1.1;
-            x = 0;
-            zIndex = 10;
-            filter = "none";
-            y = -10;
-          } else if (idx === cycleIndex(currentIndex - 1)) {
-            scale = 0.95;
-            x = -160;
-            zIndex = 8;
-            filter = "brightness(0.85)";
-          } else if (idx === cycleIndex(currentIndex - 2)) {
-            scale = 0.85;
-            x = -320;
-            zIndex = 5;
-            filter = "brightness(0.7)";
-          } else if (idx === cycleIndex(currentIndex + 1)) {
-            scale = 0.95;
-            x = 160;
-            zIndex = 8;
-            filter = "brightness(0.85)";
-          } else if (idx === cycleIndex(currentIndex + 2)) {
-            scale = 0.85;
-            x = 320;
-            zIndex = 5;
-            filter = "brightness(0.7)";
-          }
-
-          return (
-            <motion.div
-              key={card.id}
-              animate={{ scale, x, zIndex, filter, y }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="absolute cursor-pointer"
-              style={{ width: 260 }}
-            >
-              <CarouselCard isMain={idx === currentIndex} cardData={card} />
-            </motion.div>
-          );
-        })}
+            return (
+              <motion.div
+                key={card.id}
+                animate={{ scale, x, zIndex, filter, y }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="absolute cursor-pointer w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]"
+              >
+                <CarouselCard isMain={idx === currentIndex} cardData={card} />
+              </motion.div>
+            );
+          })}
+        </div>
+        <ChevronRight
+          className="cursor-pointer select-none z-20 text-gray-700 hover:text-primary-highlight transition"
+          size={48}
+          onClick={handleNext}
+        />
       </div>
-
-      <ChevronRight
-        className="absolute right-0 top-1/2 cursor-pointer select-none"
-        size={64}
-        onClick={handleNext}
-      />
     </div>
   );
 }

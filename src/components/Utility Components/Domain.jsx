@@ -1,11 +1,11 @@
-function MentorDomain({ categoriesOfMentors, setDomain, domain }) {
+function Domain({ categories, setDomain, domain }) {
   return (
     <aside className="border-2 border-secondary-gray/50 rounded-2xl h-fit py-6">
       <div className="px-3 mb-5 text-lg font-semibold text-[#1f1f1f]/80">
         Domain
       </div>
       <div className="flex gap-3 flex-wrap p-3">
-        {categoriesOfMentors.map((category, index) => (
+        {categories.map((category, index) => (
           <button
             key={index}
             onClick={() => {
@@ -30,4 +30,4 @@ function MentorDomain({ categoriesOfMentors, setDomain, domain }) {
   );
 }
 
-export default MentorDomain;
+export default Domain;

@@ -10,7 +10,7 @@ function HomeBanner() {
     <div className="z-50 relative text-white flex justify-between">
       {/* Content div */}
       <motion.div
-        className="p-20 pt-24 max-w-[650px] h-[500px] flex flex-col gap-4"
+        className="p-6 sm:px-10 md:px-16 lg:px-12 2xl:px-20 pt-16 sm:pt-20 md:pt-15 2xl:pt-24 max-w-full sm:max-w-[500px] md:max-w-[550px] 2xl:max-w-[650px] min-h-[400px] sm:min-h-[450px] md:h-[500px] flex flex-col gap-3 sm:gap-4"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -18,7 +18,7 @@ function HomeBanner() {
         <motion.img
           src="logo1.svg"
           alt="logo"
-          className="shrink-0 self-start"
+          className="shrink-0 self-start w-24 sm:w-28 md:w-32 lg:w-auto"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -26,7 +26,7 @@ function HomeBanner() {
 
         <div>
           <motion.div
-            className="text-5xl w-full font-medium capitalize md:text4xl lg:text-5xl 2xl:text-6xl"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl w-full font-medium capitalize"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -35,7 +35,7 @@ function HomeBanner() {
           </motion.div>
 
           <motion.p
-            className="text-base font-normal mt-2.5 py-4"
+            className="text-sm sm:text-base font-normal mt-2 sm:mt-2.5 py-2 sm:py-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -46,22 +46,13 @@ function HomeBanner() {
         </div>
 
         <motion.div
-          className="flex gap-11 text-base justify-start mt-5 font-semibold"
+          className="flex  gap-4 sm:gap-6 md:gap-8 lg:gap-11 text-sm sm:text-base justify-start mt-3 sm:mt-5 font-semibold"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <motion.button
-            className="border-2 rounded-full  hover:bg-white text-xs transition-colors duration-700 ease-in-out hover:text-black hover:border-white"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{
-              scale: { duration: 0.2, ease: "easeInOut" },
-            }}
-          >
-            <span className="hover:scale-110 duration-300 inline-block">
-              Incubate with us
-            </span>
+          <motion.button className="border-2 rounded-full px-4 py-0 sm:px-5 sm:py-2.5 md:px-6 md:py-3 hover:bg-white text-xs sm:text-sm transition-colors duration-700 ease-in-out hover:text-black hover:border-white">
+            Incubate with us
           </motion.button>
 
           <motion.button
@@ -73,9 +64,10 @@ function HomeBanner() {
           </motion.button>
         </motion.div>
       </motion.div>
+
       {/* Banner Image - Coming from bottom */}
       <motion.div
-        className="rounded-2xl absolute right-0 -bottom-30 m-16 z-50 hidden xl:block "
+        className="rounded-2xl absolute right-0 -bottom-20 sm:-bottom-25 md:-bottom-30 m-4 sm:m-8 md:m-12 lg:m-16 z-50 hidden xl:block max-w-[400px] lg:max-w-[500px] xl:max-w-none"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -86,7 +78,8 @@ function HomeBanner() {
       >
         <motion.img
           src="/SIIC_building.png"
-          alt="siic building picture hidden lg:block"
+          alt="siic building picture"
+          className="w-full h-auto"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         />

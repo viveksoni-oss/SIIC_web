@@ -31,7 +31,7 @@ function QuickLinks() {
             return (
               <a
                 target="_blank"
-                className={`underline underline-offset-6`}
+                className={`underline underline-offset-6 hover:text-primary-highlight `}
                 href={link.link}
               >
                 {link.linkTitle}
@@ -40,12 +40,15 @@ function QuickLinks() {
           } else {
             return (
               <Link
-                className={`underline underline-offset-6  ${
-                  pathname == link.link ? "text-primary-highlight" : null
+                className={`relative transition-color duration-300 hover:text-primary-highlight group/link  ${
+                  pathname == link.link ? "text-primary-highlight " : null
                 }`}
                 to={link.link}
               >
                 {link.linkTitle}
+                <span
+                  className={`absolute left-0 -bottom-0.5 w-full group-hover/link:-bottom-[2px] bg-[#9ca3a5] group-hover/link:bg-white h-[1px] `}
+                ></span>
               </Link>
             );
           }

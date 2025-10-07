@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+body {
+  @apply bg-white;
+}
 @theme {
   /* Colors */
   --color-primary: #6c3231;
