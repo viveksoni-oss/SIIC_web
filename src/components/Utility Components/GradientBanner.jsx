@@ -39,7 +39,7 @@ function GradientBanner({ children, cls = "", bannerLink }) {
       {/* Loading skeleton */}
       {!imageLoaded && (
         <div
-          className={`w-full h-[300px] bg-gradient-to-r from-primary to-primary-highlight animate-pulse ${cls}`}
+          className={`w-full h-[600px] bg-gradient-to-r from-primary to-primary-highlight animate-pulse ${cls}`}
         />
       )}
 
