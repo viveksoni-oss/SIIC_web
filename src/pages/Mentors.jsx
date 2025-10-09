@@ -59,7 +59,11 @@ function Mentors() {
     <PageLayout bodyStyle={"-mt-60 z-40 p-8"} banner={<MentorsBanner />}>
       {/* Search Bar Container */}
       <div className="flex justify-end mb-6">
-        <SearchBar search={search} setSearch={setSearch}></SearchBar>
+        <SearchBar
+          placeholder={"Search for Mentor"}
+          search={search}
+          setSearch={setSearch}
+        ></SearchBar>
       </div>
 
       {/* Main Content Grid */}

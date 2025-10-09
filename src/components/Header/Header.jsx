@@ -2,7 +2,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronRight, Search } from "lucide-react";
 import SepratorLine from "./../Utility Components/SepratorLine";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
+import IncubateButton from "../Utility Components/IncubateButton";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,6 +11,7 @@ function Header() {
   const [nestedDropdownOpen, setNestedDropdownOpen] = useState(null);
   const [logoLoaded, setLogoLoaded] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Preload logo on component mount
   useEffect(() => {
@@ -25,6 +27,8 @@ function Header() {
 
     preloadLogo();
   }, []);
+
+  const isHomePage = location.pathname === "/";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -59,6 +63,11 @@ function Header() {
 
   // Navigation items (keeping your existing structure)
   const navItems = [
+    {
+      name: "Home",
+      hasDropdown: false,
+      linkAddress: "/",
+    },
     {
       name: "What we Offer",
       hasDropdown: true,
@@ -157,7 +166,7 @@ function Header() {
         initial={{ y: 0 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="min-h-[70px] bg-[#f7f7f7] p-4 flex justify-between items-center relative"
+        className="min-h-[70px] bg-[#f7f7f7] p-4 shadow-md flex justify-between items-center relative"
       >
         {/* Optimized Logo */}
         <Link to="/">
@@ -203,171 +212,181 @@ function Header() {
           className="hidden lg:flex items-center gap-6 xl:gap-9"
         >
           <div className="flex items-center gap-6 xl:gap-8 text-sm xl:text-base font-medium">
-            {navItems.map((item, index) => (
-              <div key={item.name} className="relative group">
-                <motion.div
-                  initial={{ opacity: 0, y: 0 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1, duration: 0.3 }}
-                  className="relative"
-                  onMouseEnter={() =>
-                    item.hasDropdown && setDropdownOpen(item.name)
-                  }
-                  onMouseLeave={() => {
-                    setDropdownOpen(null);
-                    setNestedDropdownOpen(null);
-                  }}
-                >
-                  {item.hasDropdown ? (
-                    <motion.div
-                      className="flex cursor-pointer items-center gap-1 py-2 transition-colors relative"
-                      whileHover="hover"
-                      initial="initial"
-                    >
-                      <span>{item.name}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${
-                          dropdownOpen === item.name ? "rotate-180" : ""
-                        }`}
-                      />
-                      {/* Fixed underline animation */}
-                      <motion.div
-                        className="absolute bottom-0 left-0 h-1 rounded-full bg-[#ff8a40] w-full"
-                        variants={underlineVariants}
-                      />
-                    </motion.div>
-                  ) : (
-                    <Link to={item.linkAddress} className="block">
+            {navItems.map((item, index) => {
+              if (isHomePage && item.name === "Home") {
+                return;
+              }
+              return (
+                <div key={item.name} className="relative group">
+                  <motion.div
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + index * 0.1, duration: 0.3 }}
+                    className="relative"
+                    onMouseEnter={() =>
+                      item.hasDropdown && setDropdownOpen(item.name)
+                    }
+                    onMouseLeave={() => {
+                      setDropdownOpen(null);
+                      setNestedDropdownOpen(null);
+                    }}
+                  >
+                    {item.hasDropdown ? (
                       <motion.div
                         className="flex cursor-pointer items-center gap-1 py-2 transition-colors relative"
                         whileHover="hover"
                         initial="initial"
                       >
                         <span>{item.name}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            dropdownOpen === item.name ? "rotate-180" : ""
+                          }`}
+                        />
                         {/* Fixed underline animation */}
                         <motion.div
                           className="absolute bottom-0 left-0 h-1 rounded-full bg-[#ff8a40] w-full"
                           variants={underlineVariants}
                         />
                       </motion.div>
-                    </Link>
-                  )}
+                    ) : (
+                      <Link to={item.linkAddress} className="block">
+                        <motion.div
+                          className="flex cursor-pointer items-center gap-1 py-2 transition-colors relative"
+                          whileHover="hover"
+                          initial="initial"
+                        >
+                          <span>{item.name}</span>
+                          {/* Fixed underline animation */}
+                          <motion.div
+                            className="absolute bottom-0 left-0 h-1 rounded-full bg-[#ff8a40] w-full"
+                            variants={underlineVariants}
+                          />
+                        </motion.div>
+                      </Link>
+                    )}
 
-                  {/* Main Dropdown Menu */}
-                  <AnimatePresence>
-                    {item.hasDropdown && dropdownOpen === item.name && (
-                      <motion.div
-                        variants={dropdownVariants}
-                        initial="closed"
-                        animate="open"
-                        exit="closed"
-                        className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] border border-gray-200 px-2 py-2 z-50"
-                      >
-                        {item.dropdownItems?.map((dropdownItem, idx) => (
-                          <div
-                            key={dropdownItem.heading}
-                            className="relative"
-                            onMouseEnter={() =>
-                              dropdownItem.children &&
-                              setNestedDropdownOpen(dropdownItem.heading)
-                            }
-                            onMouseLeave={() =>
-                              !dropdownItem.children &&
-                              setNestedDropdownOpen(null)
-                            }
-                          >
-                            <motion.div
-                              onClick={() =>
-                                handleDropdownClick(dropdownItem.linkAddress)
+                    {/* Main Dropdown Menu */}
+                    <AnimatePresence>
+                      {item.hasDropdown && dropdownOpen === item.name && (
+                        <motion.div
+                          variants={dropdownVariants}
+                          initial="closed"
+                          animate="open"
+                          exit="closed"
+                          className="absolute top-full left-0 w-48 bg-white rounded-lg shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] border border-gray-200 px-2 py-2 z-50"
+                        >
+                          {item.dropdownItems?.map((dropdownItem, idx) => (
+                            <div
+                              key={dropdownItem.heading}
+                              className="relative"
+                              onMouseEnter={() =>
+                                dropdownItem.children &&
+                                setNestedDropdownOpen(dropdownItem.heading)
                               }
-                              whileHover={{
-                                backgroundColor: "#fff5f0",
-                                x: dropdownItem.children
-                                  ? [0, 6, 4, 0]
-                                  : [0, 4, 2, 0],
-                                transition: {
-                                  x: {
-                                    duration: 0.35,
-                                    times: [0, 0.4, 0.7, 1.0],
-                                    ease: "easeInOut",
-                                  },
-                                  backgroundColor: { duration: 0.2 },
-                                },
-                              }}
-                              className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:text-[#ff8a40] transition-colors cursor-pointer"
+                              onMouseLeave={() =>
+                                !dropdownItem.children &&
+                                setNestedDropdownOpen(null)
+                              }
                             >
-                              <span>{dropdownItem.heading}</span>
-                              {dropdownItem.children && (
-                                <motion.div
-                                  animate={{
-                                    x:
-                                      nestedDropdownOpen ===
-                                      dropdownItem.heading
-                                        ? [0, 2, 0]
-                                        : 0,
-                                  }}
-                                  transition={{ duration: 0.3 }}
-                                  className="flex items-center"
-                                >
-                                  <ChevronRight className="w-4 h-4" />
-                                  {nestedDropdownOpen ===
-                                    dropdownItem.heading && (
-                                    <motion.div
-                                      initial={{ opacity: 0, x: -2 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      className="ml-1"
-                                    ></motion.div>
-                                  )}
-                                </motion.div>
-                              )}
-                            </motion.div>
-
-                            {/* Nested Dropdown */}
-                            <AnimatePresence>
-                              {dropdownItem.children &&
-                                nestedDropdownOpen === dropdownItem.heading && (
+                              <motion.div
+                                onClick={() =>
+                                  handleDropdownClick(dropdownItem.linkAddress)
+                                }
+                                whileHover={{
+                                  backgroundColor: "#fff5f0",
+                                  x: dropdownItem.children
+                                    ? [0, 6, 4, 0]
+                                    : [0, 4, 2, 0],
+                                  transition: {
+                                    x: {
+                                      duration: 0.35,
+                                      times: [0, 0.4, 0.7, 1.0],
+                                      ease: "easeInOut",
+                                    },
+                                    backgroundColor: { duration: 0.2 },
+                                  },
+                                }}
+                                className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:text-[#ff8a40] transition-colors cursor-pointer"
+                              >
+                                <span>{dropdownItem.heading}</span>
+                                {dropdownItem.children && (
                                   <motion.div
-                                    initial={{ opacity: 0, x: -10, y: -10 }}
-                                    animate={{ opacity: 1, x: 0, y: 0 }}
-                                    exit={{ opacity: 0, x: -10, y: -10 }}
-                                    transition={{ duration: 0.2 }}
-                                    className="absolute left-full top-0 ml-1 w-48 bg-white rounded-lg shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] border border-gray-200 py-2 z-60"
+                                    animate={{
+                                      x:
+                                        nestedDropdownOpen ===
+                                        dropdownItem.heading
+                                          ? [0, 2, 0]
+                                          : 0,
+                                    }}
+                                    transition={{ duration: 0.3 }}
+                                    className="flex items-center"
                                   >
-                                    {dropdownItem.children.map((childItem) => (
+                                    <ChevronRight className="w-4 h-4" />
+                                    {nestedDropdownOpen ===
+                                      dropdownItem.heading && (
                                       <motion.div
-                                        key={childItem.heading}
-                                        onClick={() =>
-                                          handleDropdownClick(
-                                            childItem.linkAddress
-                                          )
-                                        }
-                                        whileHover={{
-                                          backgroundColor: "#fff5f0",
-                                          x: [0, 4, 2, 0],
-                                          transition: {
-                                            x: {
-                                              duration: 0.35,
-                                              times: [0, 0.4, 0.7, 1.0],
-                                            },
-                                            backgroundColor: { duration: 0.2 },
-                                          },
-                                        }}
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:text-[#ff8a40] transition-colors cursor-pointer"
-                                      >
-                                        {childItem.heading}
-                                      </motion.div>
-                                    ))}
+                                        initial={{ opacity: 0, x: -2 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        className="ml-1"
+                                      ></motion.div>
+                                    )}
                                   </motion.div>
                                 )}
-                            </AnimatePresence>
-                          </div>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              </div>
-            ))}
+                              </motion.div>
+
+                              {/* Nested Dropdown */}
+                              <AnimatePresence>
+                                {dropdownItem.children &&
+                                  nestedDropdownOpen ===
+                                    dropdownItem.heading && (
+                                    <motion.div
+                                      initial={{ opacity: 0, x: -10, y: -10 }}
+                                      animate={{ opacity: 1, x: 0, y: 0 }}
+                                      exit={{ opacity: 0, x: -10, y: -10 }}
+                                      transition={{ duration: 0.2 }}
+                                      className="absolute left-full top-0 ml-1 w-48 bg-white rounded-lg shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] border border-gray-200 py-2 z-60"
+                                    >
+                                      {dropdownItem.children.map(
+                                        (childItem) => (
+                                          <motion.div
+                                            key={childItem.heading}
+                                            onClick={() =>
+                                              handleDropdownClick(
+                                                childItem.linkAddress
+                                              )
+                                            }
+                                            whileHover={{
+                                              backgroundColor: "#fff5f0",
+                                              x: [0, 4, 2, 0],
+                                              transition: {
+                                                x: {
+                                                  duration: 0.35,
+                                                  times: [0, 0.4, 0.7, 1.0],
+                                                },
+                                                backgroundColor: {
+                                                  duration: 0.2,
+                                                },
+                                              },
+                                            }}
+                                            className="block px-4 py-2 text-sm text-gray-700 hover:text-[#ff8a40] transition-colors cursor-pointer"
+                                          >
+                                            {childItem.heading}
+                                          </motion.div>
+                                        )
+                                      )}
+                                    </motion.div>
+                                  )}
+                              </AnimatePresence>
+                            </div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="text-gray-400 mx-2 hidden xl:block">
@@ -381,13 +400,19 @@ function Header() {
             transition={{ delay: 0.8, duration: 0.3 }}
             className="relative hidden xl:block"
           >
-            <motion.input
-              whileFocus={{ scale: 1.02 }}
-              type="text"
-              placeholder="Search"
-              className="px-3 py-2 pr-10 rounded-md border text-sm border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ff8a40] focus:border-transparent w-33 h-6"
-            />
-            <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+            {isHomePage ? (
+              <>
+                <motion.input
+                  whileFocus={{ scale: 1.02 }}
+                  type="text"
+                  placeholder="Search"
+                  className="px-3 py-2 pr-10 rounded-md border text-sm border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ff8a40] focus:border-transparent w-33 h-6"
+                />
+                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+              </>
+            ) : (
+              <IncubateButton />
+            )}
           </motion.div>
         </motion.nav>
 

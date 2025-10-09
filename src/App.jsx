@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="container mx-auto shadow-2xl">
+      <div className="container mx-auto  shadow-2xl">
         <Routes>
           {/* HOME PAGE */}
           <Route path="/" element={<HomePage />} />

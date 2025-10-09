@@ -1,7 +1,11 @@
 @import "tailwindcss";
 body {
-  @apply bg-white;
+  @apply bg-[#f7f7f7];
 }
+.Toastify__progress-bar {
+  background: #6c3231 !important;
+}
+
 @theme {
   /* Colors */
   --color-primary: #6c3231;

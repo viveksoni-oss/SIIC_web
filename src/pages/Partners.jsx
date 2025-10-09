@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PageLayout from "../components/PageLayout";
 
 import PartnerBanner from "../components/banners/PartnerBanner";
@@ -19,13 +19,15 @@ function Partners() {
     data.name.toLowerCase().includes(search.trim().toLowerCase())
   );
   return (
-    <PageLayout bodyStyle={"-mt-60 z-40 p-8"} banner={<PartnerBanner />}>
-      <div className="p-18 flex flex-col gap-10 z-40">
-        <SearchBar
-          search={search}
-          setSearch={setSearch}
-          placeholder={"Search for Partner"}
-        ></SearchBar>
+    <PageLayout bodyStyle={"-mt-60 z-40 "} banner={<PartnerBanner />}>
+      <div className="p-16 pr-8 flex flex-col gap-10 z-40">
+        <div className="flex justify-end mr-2">
+          <SearchBar
+            search={search}
+            setSearch={setSearch}
+            placeholder={"Search for Partner"}
+          ></SearchBar>
+        </div>
 
         <h1 className="text-5xl font-thin ">
           <HighlightedText size={"48px"} weight={600}>
@@ -33,18 +35,27 @@ function Partners() {
           </HighlightedText>{" "}
           Partners
         </h1>
-        <div className="overflow-y-scroll max-h-[600px] w-full p-10 items-center justify-center flex gap-10 flex-wrap">
+        <div className="overflow-y-auto  h-[600px] w-full  items-center justify-start flex gap-10 flex-wrap">
           {SearchedData.length > 0 ? (
-            SearchedData.map((partner) => {
+            SearchedData.map((partner, idx) => {
               return (
-                <PartnerLogos imgLink={partner.img} title={partner.name} />
+                <PartnerLogos
+                  key={partner.id + idx}
+                  imgLink={partner.img}
+                  title={partner.name}
+                />
               );
             })
           ) : (
-            <div>Result not found</div>
+            <div className="w-full flex justify-center items-start">
+              <div className="font-extrabold text-gray-500/20 text-3xl">
+                Program Not Found
+              </div>
+            </div>
           )}
         </div>
       </div>
+  
     </PageLayout>
   );
 }

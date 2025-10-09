@@ -2,7 +2,7 @@ import React from "react";
 import HighlightedText from "../../components/Utility Components/HighlightedText";
 
 function HomePagePara() {
-  const hightLightedStyle = { weight: 500, size: "40px" };
+  const hightLightedStyle = { weight: 500 };
 
   return (
     <div className="text-[36px] flex items-center justify-center   content-center mx-auto my-16">

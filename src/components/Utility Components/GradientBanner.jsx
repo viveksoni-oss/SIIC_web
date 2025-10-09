@@ -39,7 +39,7 @@ function GradientBanner({ children, cls = "", bannerLink }) {
       {/* Loading skeleton */}
       {!imageLoaded && (
         <div
-          className={`w-full h-[600px] bg-gradient-to-r from-primary to-primary-highlight animate-pulse ${cls}`}
+          className={`w-full h-[300px] bg-gradient-to-r from-primary to-primary-highlight animate-pulse ${cls}`}
         />
       )}
 
@@ -62,7 +62,7 @@ function GradientBanner({ children, cls = "", bannerLink }) {
 
       {/* Content overlay */}
       <div
-        className={`absolute inset-0 z-30 text-2xl h-full w-full text-white transition-opacity duration-300 ${
+        className={`absolute inset-0 z-20 text-2xl h-full w-full text-white transition-opacity duration-300 ${
           imageLoaded ? "opacity-100" : "opacity-75"
         }`}
       >

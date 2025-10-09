@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 function HomeBanner() {
   const navigate = useNavigate();
   return (
-    <div className="z-50 relative text-white flex justify-between">
+    <div className="relative text-white flex justify-between">
       {/* Content div */}
       <motion.div
         className="p-6 sm:px-10 md:px-16 lg:px-12 2xl:px-20 pt-16 sm:pt-20 md:pt-15 2xl:pt-24 max-w-full sm:max-w-[500px] md:max-w-[550px] 2xl:max-w-[650px] min-h-[400px] sm:min-h-[450px] md:h-[500px] flex flex-col gap-3 sm:gap-4"
@@ -55,19 +55,19 @@ function HomeBanner() {
             Incubate with us
           </motion.button>
 
-          <motion.button
+          <motion.div
             onClick={() => navigate("/programs")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <AnimatedButton>Active programs</AnimatedButton>
-          </motion.button>
+          </motion.div>
         </motion.div>
       </motion.div>
 
       {/* Banner Image - Coming from bottom */}
       <motion.div
-        className="rounded-2xl absolute right-0 -bottom-20 sm:-bottom-25 md:-bottom-30 m-4 sm:m-8 md:m-12 lg:m-16 z-50 hidden xl:block max-w-[400px] lg:max-w-[500px] xl:max-w-none"
+        className="rounded-2xl absolute right-0 -bottom-20 sm:-bottom-26 md:-bottom-30 m-4 sm:m-8 md:m-12 lg:m-16 hidden xl:block max-w-[400px] lg:max-w-[500px] xl:max-w-none"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -80,7 +80,6 @@ function HomeBanner() {
           src="/SIIC_building.png"
           alt="siic building picture"
           className="w-full h-auto"
-          whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         />
       </motion.div>

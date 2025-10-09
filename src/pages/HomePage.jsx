@@ -21,7 +21,7 @@ function HomePage() {
       <HomePagePara />
       <CounterLayout />
       <KnowYourJourney />
-      {/* <UpcomingEvents /> */}
+      <UpcomingEvents />
       <FlashNewsLayout />
       <OurPride></OurPride>
       <MarqueeContainer />

@@ -30,6 +30,7 @@ function QuickLinks() {
           if (link.isExternalLink) {
             return (
               <a
+                key={link.linkTitle}
                 target="_blank"
                 className={`underline underline-offset-6 hover:text-primary-highlight `}
                 href={link.link}
@@ -40,6 +41,7 @@ function QuickLinks() {
           } else {
             return (
               <Link
+                key={link.linkTitle}
                 className={`relative transition-color duration-300 hover:text-primary-highlight group/link  ${
                   pathname == link.link ? "text-primary-highlight " : null
                 }`}

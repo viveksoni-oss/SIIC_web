@@ -30,7 +30,7 @@ function MarqueeContainer() {
           {items.map((item, index) => (
             <img
               key={index}
-              className="mx-4 text-white px-6 rounded-full font-semibold"
+              className="mx-4 text-white px-6 w-[240px] h-[150px] md:h-full md:w-full rounded-full font-semibold"
               src={item}
               alt={`Partner ${index + 1}`}
               loading="lazy"

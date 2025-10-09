@@ -1,7 +1,7 @@
 import { mentorsData } from "../../data/MentorsData.js";
 function MentorsCard({ mentor }) {
   return (
-    <div className="bg-secondary-gray/31 pl-20 p-4 text-xs relative mt-4   container max-h-[195px] group ml-20 rounded-2xl max-w-[350px]">
+    <div className="bg-secondary-gray/31 pl-20 p-4 text-xs relative mt-4   container max-h-[195px] group ml-20 rounded-2xl max-w-[21.875rem]">
       <div className="absolute -left-18 top-10  transition-transform transform duration-500">
         <div className="relative">
           <img
@@ -16,7 +16,13 @@ function MentorsCard({ mentor }) {
         <div className="">
           <div className="text-sm">
             <h2 className="font-semibold text-base text-primary-highlight">
-              {mentor.name}
+              {(mentor.suffix != undefined
+                ? mentor.suffix
+                : mentor.gender == "male"
+                ? "Mr"
+                : "Mrs") +
+                ". " +
+                mentor.name}
             </h2>
             <div className="flex justify-between">
               <div className="text-[10px] font-medium">
@@ -57,7 +63,7 @@ function MentorsSection({ domain, search }) {
     data.name.toLowerCase().includes(search.trim().toLowerCase())
   );
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2  gap-15   justify-items-end p-8 overflow-y-auto h-[750px] ">
+    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-15   justify-items-center p-8 overflow-y-auto h-[750px] ">
       {filteredMentors.length == 0 ? (
         <div className="sticky top-0 flex items-center justify-center h-[200px] text-gray-400 font-semibold text-4xl w-full col-span-2 capitalize bg-white">
           No mentors available with {domain} Domain

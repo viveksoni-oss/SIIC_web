@@ -49,4 +49,39 @@ export const PartnersData = [
     name: "Indian Angel Network",
     img: "/Partners/partner-10",
   },
+  {
+    id: 4,
+    name: "CIPET",
+    img: "/Partners/partner-8",
+  },
+  {
+    id: 5,
+    name: "Citi",
+    img: "/Partners/partner-9",
+  },
+  {
+    id: 6,
+    name: "Department of Biotechnology, Government of India",
+    img: "/Partners/partner-1",
+  },
+  {
+    id: 7,
+    name: "ICICI Securities",
+    img: "/Partners/partner-4",
+  },
+  {
+    id: 8,
+    name: "HDFC Bank",
+    img: "/Partners/partner-3",
+  },
+  {
+    id: 9,
+    name: "Department of Science and Technology (DST)",
+    img: "/Partners/partner-2",
+  },
+  {
+    id: 10,
+    name: "Indian Angel Network",
+    img: "/Partners/partner-10",
+  },
 ];

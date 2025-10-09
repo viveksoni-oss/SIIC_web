@@ -50,11 +50,12 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
       <motion.div
         ref={countRef}
         className="
-          text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+          text-4xl lg:text-5xl xl:text-5xl
           text-[#2D415C] 
           font-bold
-          leading-tight
+          
           text-center
+          
         "
         initial={{ scale: 0.5 }}
         animate={isInView ? { scale: 1 } : {}}

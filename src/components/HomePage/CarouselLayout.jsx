@@ -11,6 +11,18 @@ const cards = [
     desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
   },
   {
+    id: 2,
+    imgSrc: "lenek.png",
+    title: "1",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+  },
+  {
+    id: 3,
+    imgSrc: "lenek.png",
+    title: "1",
+    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+  },
+  {
     id: 4,
     imgSrc: "lenek.png",
     title: "222",
@@ -71,22 +83,22 @@ function CarouselLayout() {
               y = -10;
             } else if (idx === cycleIndex(currentIndex - 1)) {
               scale = 0.95;
-              x = -80;
+              x = -120;
               zIndex = 8;
               filter = "brightness(0.85)";
             } else if (idx === cycleIndex(currentIndex - 2)) {
               scale = 0.85;
-              x = -140;
+              x = -200;
               zIndex = 5;
               filter = "brightness(0.7)";
             } else if (idx === cycleIndex(currentIndex + 1)) {
               scale = 0.95;
-              x = 80;
+              x = 120;
               zIndex = 8;
               filter = "brightness(0.85)";
             } else if (idx === cycleIndex(currentIndex + 2)) {
               scale = 0.85;
-              x = 140;
+              x = 200;
               zIndex = 5;
               filter = "brightness(0.7)";
             }

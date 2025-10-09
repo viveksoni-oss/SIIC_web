@@ -4,7 +4,7 @@ import HighlightedText from "./HighlightedText";
 
 function BookMark() {
   return (
-    <div className="relative ml-24 -translate-y-3 z-60">
+    <div className="relative ml-24 -translate-y-3 z-20">
       {/* Bookmark body */}
       <div className="h-26 w-11 rounded-b-2xl rounded-t-lg bg-primary-highlight shadow-2xl group cursor-pointer">
         <div className="bg-white rounded-full w-9 h-9 absolute bottom-[4px] left-[4px] flex justify-center items-center">
