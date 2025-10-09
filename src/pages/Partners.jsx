@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import PageLayout from "../components/PageLayout";
-
 import PartnerBanner from "../components/banners/PartnerBanner";
 import SearchBar from "./../components/Utility Components/SearchBar";
 import HighlightedText from "./../components/Utility Components/HighlightedText";

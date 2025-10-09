@@ -3,43 +3,47 @@ import HighlightedText from "./../Utility Components/HighlightedText";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Configurable auto-scroll time (in milliseconds)
-const AUTO_SCROLL_DELAY = 5000; // 5 seconds - change this value to adjust timing
+const AUTO_SCROLL_DELAY = 2000; // 5 seconds - change this value to adjust timing
 //opacity of the texts
-//size 
-//the alignment of the text in 
+//size
+//the alignment of the text in
 const eventsData = [
   {
     id: 1,
     title: "Abhivyakti 26",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi officia inventore consectetur architecto quae tempora...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi officia inventore consectetur architecto quae tempora...",
     location: "IIT Kanpur",
     date: "15-03-2025",
-    time: "10:00 AM"
+    time: "10:00 AM",
   },
   {
     id: 2,
     title: "TechFest 2025",
-    description: "Annual technical festival showcasing innovation and technology breakthroughs from across the nation...",
-    location: "IIT Bombay", 
+    description:
+      "Annual technical festival showcasing innovation and technology breakthroughs from across the nation...",
+    location: "IIT Bombay",
     date: "22-04-2025",
-    time: "09:00 AM"
+    time: "09:00 AM",
   },
   {
     id: 3,
     title: "StartUp Summit",
-    description: "Connect with entrepreneurs, investors, and innovators in this premier startup networking event...",
+    description:
+      "Connect with entrepreneurs, investors, and innovators in this premier startup networking event...",
     location: "IIT Delhi",
-    date: "10-05-2025", 
-    time: "11:30 AM"
+    date: "10-05-2025",
+    time: "11:30 AM",
   },
   {
     id: 4,
     title: "Innovation Hub",
-    description: "Explore cutting-edge research, participate in workshops, and network with industry leaders...",
+    description:
+      "Explore cutting-edge research, participate in workshops, and network with industry leaders...",
     location: "IIT Madras",
     date: "18-06-2025",
-    time: "02:00 PM"
-  }
+    time: "02:00 PM",
+  },
 ];
 
 function UpcomingEvents() {
@@ -51,7 +55,7 @@ function UpcomingEvents() {
     // Only start auto-scroll if not hovered
     if (!isHovered) {
       const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => 
+        setCurrentIndex((prevIndex) =>
           prevIndex === eventsData.length - 1 ? 0 : prevIndex + 1
         );
       }, AUTO_SCROLL_DELAY);
@@ -76,11 +80,10 @@ function UpcomingEvents() {
 
   return (
     <div className="mx-16 mb-50 flex flex-col gap-8">
-      <motion.h1 
-        className="flex gap-2" 
+      <motion.h1
+        className="flex gap-2"
         style={{ fontSize: "48px", fontWeight: 200 }}
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
@@ -91,10 +94,9 @@ function UpcomingEvents() {
       </motion.h1>
 
       {/* REMOVED overflow-hidden to let image pop out */}
-      <motion.div 
+      <motion.div
         className="rounded-2xl bg-gray-100 pt-6 pb-8 pl-18 relative"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.2 }}
         viewport={{ once: true }}
         onMouseEnter={handleMouseEnter}
@@ -106,8 +108,9 @@ function UpcomingEvents() {
               key={currentEvent.id}
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -50, opacity: 0 }}
+              exit={{ y: -40 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="overflow-hidden"
             >
               <div className="flex items-center gap-2 -ml-6 text-base font-[600]">
                 <div className="w-5 aspect-square bg-black flex justify-center items-center rounded-full">
@@ -125,7 +128,7 @@ function UpcomingEvents() {
             </motion.div>
           </AnimatePresence>
 
-          <motion.div 
+          <motion.div
             className="flex gap-16 items-start mt-12 w-xl"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -168,25 +171,25 @@ function UpcomingEvents() {
                 key={currentEvent.id}
                 src="/UpcomingEvents/Abhivyakti.svg"
                 alt={currentEvent.title}
-                initial={{ 
-                  y: 80, 
-                  opacity: 0,
-                  zIndex: 50
-                }}
-                animate={{ 
-                  y: 0, 
+                initial={{
+                  y: 500,
                   opacity: 1,
-                  zIndex: 50
+                  zIndex: 50,
                 }}
-                exit={{ 
-                  y: -80, 
-                  opacity: 0,
-                  zIndex: 50
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                  zIndex: 50,
                 }}
-                transition={{ 
-                  duration: 0.7, 
+                exit={{
+                  y: -1200,
+                  opacity: 1,
+                  zIndex: 50,
+                }}
+                transition={{
+                  duration: 0.7,
                   ease: "easeInOut",
-                  opacity: { duration: 0.4 }
+                  opacity: { duration: 0.4 },
                 }}
                 className="max-w-full h-auto relative z-50"
                 style={{ zIndex: 50 }}
@@ -200,15 +203,15 @@ function UpcomingEvents() {
               <motion.div
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`w-[18px] h-[18px] rounded-full bg-white border border-black/10 flex items-center justify-center shadow-md cursor-pointer transition-all duration-300 ${
-                  index === currentIndex ? 'ring-2 ring-primary-highlight' : ''
+                className={`w-[19px] h-[19px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center or-pointer transition-all duration-300 ${
+                  index === currentIndex ? "ring-primary-highlight" : ""
                 }`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <div 
-                  className={`w-[10px] h-[10px] rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-primary-highlight' : 'bg-gray-400'
+                <div
+                  className={`w-[12px] h-[12px] rounded-full transition-all duration-300 ${
+                    index === currentIndex ? "bg-primary-highlight" : "bg-white"
                   }`}
                 ></div>
               </motion.div>

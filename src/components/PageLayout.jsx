@@ -8,7 +8,7 @@ function PageLayout({ children, banner, bodyStyle, bannerLink }) {
       <div
         className={
           bodyStyle +
-          " min-h-screen relative   bg-white -mt-23 z-10 rounded-[30px]"
+          " min-h-screen relative   bg-white -mt-23 rounded-[30px]"
         }
       >
         {children}

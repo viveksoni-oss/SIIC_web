@@ -14,23 +14,26 @@ function StartupsBanner() {
       >
         <div>
           <motion.div
-            className="text-2xl md:text-4xl lg:text-6xl w-full font-medium capitalize"
+            className="text-2xl md:text-4xl lg:text-[56px] w-full font-medium capitalize"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Partners To Fuel
-            <HighlightedText size="68px"> Your</HighlightedText> Ventures
+            Startups
+            <HighlightedText weight={800}>
+              <br /> We
+            </HighlightedText>{" "}
+            Incubated
           </motion.div>
-
+     
           <motion.p
             className="text-base font-normal mt-2.5 py-4 pr-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Through partner support, SIIC strengthens programs benefiting every
-            incubatee.
+            Showcasing startups nurtured at SIIC, now thriving across <br />{" "}
+            diverse industries.
           </motion.p>
         </div>
       </motion.div>

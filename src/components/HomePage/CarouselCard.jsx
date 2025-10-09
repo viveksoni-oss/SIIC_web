@@ -14,15 +14,21 @@ function CarouselCard({ isMain = false, cardData }) {
       `}
       style={
         isMain
-          ? { border: `3px solid ${mainBorderColor} `,borderRadius:"16px" }
-          : { border: "1.5px solid #C3CEDD" }
+          ? { border: `3px solid ${mainBorderColor} `, borderRadius: "16px" }
+          : { border: "3px solid #2d415c" ,borderRadius:"16px"}
       }
     >
-      <div className="w-full h-[150px] sm:h-[180px] md:h-[200px] lg:h-[220px] flex justify-center items-center rounded-t-xl bg-white">
+      <div
+        className={`w-full h-[150px] sm:h-[180px] md:h-[200px] ${
+          isMain ? "lg:h-[280px]" : "lg:h-[220px]"
+        } flex justify-center items-center rounded-t-xl bg-white`}
+      >
         <img
           src={cardData?.imgSrc || "/phool.png"}
           alt={cardData?.title || "Phool"}
-          className="max-h-[70px] sm:max-h-[85px] md:max-h-[100px] lg:max-h-[110px] object-contain"
+          className={
+            "max-h-[70px] sm:max-h-[85px] md:max-h-[100px] lg:max-h-[200px] object-contain"
+          }
           loading="lazy"
         />
       </div>
@@ -34,7 +40,7 @@ function CarouselCard({ isMain = false, cardData }) {
         <h1 className="text-lg sm:text-xl md:text-2xl font-bold">
           {cardData?.title || "Phool"}
         </h1>
-        <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-[14px] leading-[175%]">
+        <p className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-[14px] leading-[175%] line-clamp-2">
           {cardData?.desc ||
             "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit."}
         </p>
