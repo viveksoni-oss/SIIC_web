@@ -61,7 +61,7 @@ function Mentors() {
       banner={<MentorsBanner />}
     >
       {/* Search Bar Container */}
-      <div className="flex justify-end mb-6">
+      <div className="flex justify-end mb-6 mr-4">
         <SearchBar
           placeholder={"Search for Mentor"}
           search={search}
