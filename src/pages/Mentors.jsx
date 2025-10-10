@@ -31,14 +31,14 @@ function Mentors() {
     "IP",
     "life sciences",
     "General Management",
-    "IDF / Digital Governance / Digital Marketing",
+    "IDF ",
     "Manufacturing",
     "Oil & Gas",
     "SAAS",
     "Medical & Health technologies",
     "SDG",
     "Planning",
-    "Product Management",
+    "P. Management",
     "Public Policy",
     "Risk Management",
     "Social Tech",
@@ -56,7 +56,10 @@ function Mentors() {
   const [search, setSearch] = useState("");
 
   return (
-    <PageLayout bodyStyle={"-mt-60 z-40 p-8"} banner={<MentorsBanner />}>
+    <PageLayout
+      bodyStyle={"-mt-60 z-40 p-6 lg:pr-0 2xl:p-6"}
+      banner={<MentorsBanner />}
+    >
       {/* Search Bar Container */}
       <div className="flex justify-end mb-6">
         <SearchBar
@@ -67,13 +70,13 @@ function Mentors() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 xl:grid-cols-[320px_1fr] gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] 2xl:grid-cols-[320px_1fr] ">
         <Domain
           categories={categoriesOfMentors}
           setDomain={setDomain}
           domain={domain}
         />
-        <main className="min-w-0">
+        <main className="min-w-0 overflow-y-auto">
           <MentorsSection domain={domain} search={search} />
         </main>
       </div>

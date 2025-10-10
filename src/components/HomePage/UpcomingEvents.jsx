@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import HighlightedText from "./../Utility Components/HighlightedText";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Configurable auto-scroll time (in milliseconds)
-const AUTO_SCROLL_DELAY = 2000; // 5 seconds - change this value to adjust timing
-//opacity of the texts
-//size
-//the alignment of the text in
+const AUTO_SCROLL_DELAY = 20000;
+
 const eventsData = [
   {
     id: 1,
@@ -49,11 +46,34 @@ const eventsData = [
 function UpcomingEvents() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+
+  const upcomingRef = useRef(null);
+  const containerRef = useRef(null);
+
+  // Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (upcomingRef.current) {
+      observer.observe(upcomingRef.current);
+    }
+
+    return () => {
+      if (upcomingRef.current) {
+        observer.unobserve(upcomingRef.current);
+      }
+    };
+  }, []);
 
   // Auto-scroll functionality
   useEffect(() => {
-    // Only start auto-scroll if not hovered
-    if (!isHovered) {
+    if (!isHovered && isInView) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) =>
           prevIndex === eventsData.length - 1 ? 0 : prevIndex + 1
@@ -62,164 +82,154 @@ function UpcomingEvents() {
 
       return () => clearInterval(interval);
     }
-  }, [isHovered]);
+  }, [isHovered, isInView]);
+
+  // Wheel scroll handler
+  const handleWheel = (e) => {
+    e.preventDefault();
+    if (e.deltaY > 0) {
+      // Scroll down - next
+      setCurrentIndex((prev) =>
+        prev === eventsData.length - 1 ? 0 : prev + 1
+      );
+    } else {
+      // Scroll up - previous
+      setCurrentIndex((prev) =>
+        prev === 0 ? eventsData.length - 1 : prev - 1
+      );
+    }
+  };
 
   const handleDotClick = (index) => {
     setCurrentIndex(index);
   };
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   const currentEvent = eventsData[currentIndex];
 
   return (
-    <div className="mx-16 mb-50 flex flex-col gap-8">
-      <motion.h1
-        className="flex gap-2"
-        style={{ fontSize: "48px", fontWeight: 200 }}
-        initial={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        Upcoming{" "}
-        <HighlightedText size="48px" weight={800}>
-          Events
-        </HighlightedText>
-      </motion.h1>
-
-      {/* REMOVED overflow-hidden to let image pop out */}
-      <motion.div
-        className="rounded-2xl bg-gray-100 pt-6 pb-8 pl-18 relative"
-        initial={{ opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        viewport={{ once: true }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className="w-1/2 flex flex-col gap-4">
+    <motion.div className="w-full pb-50 overflow-hidden relative">
+      <div className="absolute right-20 translate-y-1/8 flex gap-18 justify-between z-20">
+        <div className="relative w-full ">
           <AnimatePresence mode="wait">
-            <motion.div
+            <motion.img
               key={currentEvent.id}
-              initial={{ y: 50, opacity: 0 }}
+              src="/UpcomingEvents/Abhivyakti.svg"
+              alt={currentEvent.title}
+              initial={{ y: 300, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -40 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="overflow-hidden"
-            >
-              <div className="flex items-center gap-2 -ml-6 text-base font-[600]">
-                <div className="w-5 aspect-square bg-black flex justify-center items-center rounded-full">
-                  <div className="w-2.5 aspect-square bg-white rounded-full"></div>
-                </div>
-                {currentEvent.title}
-              </div>
-
-              <p className="font-medium mt-4">
-                {currentEvent.description}
-                <span className="font-semibold ml-2 text-primary-highlight cursor-pointer hover:underline">
-                  Know More {">>"}
-                </span>
-              </p>
-            </motion.div>
+              exit={{ y: -300, opacity: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeInOut",
+              }}
+              className="max-w-full h-auto relative"
+            />
           </AnimatePresence>
-
-          <motion.div
-            className="flex gap-16 items-start mt-12 w-xl"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`${currentEvent.id}-details`}
-                className="flex gap-16"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -20, opacity: 0 }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="flex justify-center items-center gap-2 flex-col">
-                  <div className="font-bold">Location</div>
-                  <div>{currentEvent.location}</div>
-                </div>
-                <div className="h-12 border-l-2"></div>
-                <div className="flex justify-center items-center gap-2 flex-col">
-                  <div className="font-bold">Date</div>
-                  <div>{currentEvent.date}</div>
-                </div>
-                <div className="h-12 border-l-2"></div>
-                <div className="flex justify-center items-center gap-2 flex-col">
-                  <div className="font-bold">Time</div>
-                  <div>{currentEvent.time}</div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
         </div>
 
-        {/* Image positioned to pop out on top with higher z-index */}
-        <div className="absolute right-0 w-1/3 -top-1/6 flex justify-between pr-4 z-20">
-          {/* Image container - pops out above the container */}
-          <div className="relative w-full">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentEvent.id}
-                src="/UpcomingEvents/Abhivyakti.svg"
-                alt={currentEvent.title}
-                initial={{
-                  y: 500,
-                  opacity: 1,
-                  zIndex: 50,
-                }}
-                animate={{
-                  y: 0,
-                  opacity: 1,
-                  zIndex: 50,
-                }}
-                exit={{
-                  y: -1200,
-                  opacity: 1,
-                  zIndex: 50,
-                }}
-                transition={{
-                  duration: 0.7,
-                  ease: "easeInOut",
-                  opacity: { duration: 0.4 },
-                }}
-                className="max-w-full h-auto relative z-50"
-                style={{ zIndex: 50 }}
-              />
-            </AnimatePresence>
-          </div>
-
-          {/* Vertical carousel indicator dots */}
-          <div className="flex flex-col justify-center gap-3 ml-4 z-30">
-            {eventsData.map((_, index) => (
-              <motion.div
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`w-[19px] h-[19px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center or-pointer transition-all duration-300 ${
-                  index === currentIndex ? "ring-primary-highlight" : ""
+        {/* Vertical carousel indicator dots */}
+        <div className="flex flex-col justify-center gap-3 ml-2 z-30">
+          {eventsData.map((_, index) => (
+            <motion.div
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`w-[19px] h-[19px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center cursor-pointer transition-all duration-300`}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <div
+                className={`w-[12px] h-[12px] rounded-full transition-all duration-300 ${
+                  index === currentIndex ? "bg-primary-highlight" : "bg-white"
                 }`}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <div
-                  className={`w-[12px] h-[12px] rounded-full transition-all duration-300 ${
-                    index === currentIndex ? "bg-primary-highlight" : "bg-white"
-                  }`}
-                ></div>
-              </motion.div>
-            ))}
-          </div>
+              ></div>
+            </motion.div>
+          ))}
         </div>
-      </motion.div>
-    </div>
+      </div>
+      <div className="mx-16 flex flex-col gap-8" ref={upcomingRef}>
+        <motion.h1
+          className="flex gap-2"
+          style={{ fontSize: "48px", fontWeight: 200 }}
+          initial={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Upcoming{" "}
+          <HighlightedText size="48px" weight={800}>
+            Events
+          </HighlightedText>
+        </motion.h1>
+
+        <motion.div
+          ref={containerRef}
+          className="rounded-2xl bg-gray-100 pt-6 pb-8 pl-18 relative overflow-hidden"
+          initial={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true }}
+          onWheel={handleWheel}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="w-1/2 flex flex-col gap-4">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentEvent.id}
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -30, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                <div className="flex items-center gap-2 -ml-6 text-base font-[600]">
+                  <div className="w-5 aspect-square bg-black flex justify-center items-center rounded-full">
+                    <div className="w-2.5 aspect-square bg-white rounded-full"></div>
+                  </div>
+                  {currentEvent.title}
+                </div>
+
+                <p className="font-medium mt-4">
+                  {currentEvent.description}
+                  <span className="font-semibold ml-2 text-primary-highlight cursor-pointer hover:underline">
+                    Know More {">>"}
+                  </span>
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Location, Date, Time - 3D Cylinder Roll Effect */}
+            <div className="flex gap-16 items-start mt-12 w-xl overflow-hidden h-[60px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`${currentEvent.id}-details`}
+                  className="flex gap-16"
+                  initial={{ rotateX: 90, opacity: 0, y: 20 }}
+                  animate={{ rotateX: 0, opacity: 1, y: 0 }}
+                  exit={{ rotateX: -90, opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  <div className="flex justify-center items-center gap-2 flex-col">
+                    <div className="font-bold">Location</div>
+                    <div>{currentEvent.location}</div>
+                  </div>
+                  <div className="h-12 border-l-2"></div>
+                  <div className="flex justify-center items-center gap-2 flex-col">
+                    <div className="font-bold">Date</div>
+                    <div>{currentEvent.date}</div>
+                  </div>
+                  <div className="h-12 border-l-2"></div>
+                  <div className="flex justify-center items-center gap-2 flex-col">
+                    <div className="font-bold">Time</div>
+                    <div>{currentEvent.time}</div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Image - stays within bounds */}
+        </motion.div>
+      </div>
+    </motion.div>
   );
 }
 

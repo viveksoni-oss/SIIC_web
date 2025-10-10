@@ -201,13 +201,13 @@ export const mentorsData = [
   },
   {
     id: 20,
-    name: "Air mashal with too many strengths singh",
+    name: "Random name",
     suffix: "Dr",
     position: "IP Consultant",
     company: "IP Innovations",
     image: "/Mentors/mentor-8.png",
     strengths:
-      "IIP, Patent Law, Commercialization.IP, Patent Law, Commercialization.IP, Patent Law, Commercialization.IP, Patent Law, Commercialization.IP, Patent Law, Commercialization.IP, Patent Law, Commercialization.IP, Patent Law, Commercialization.P, Patent Law, Commercialization.",
+      "IIP, Patent Law, Commercialization.IP, Patent Law, Commercialization.IP, Patent Law, Commercialization.IP, Patent Law",
     domains: [],
     gender: "male",
   },

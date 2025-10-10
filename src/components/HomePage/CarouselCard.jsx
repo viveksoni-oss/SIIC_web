@@ -9,20 +9,21 @@ function CarouselCard({ isMain = false, cardData }) {
         w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[315px]
         h-auto rounded-xl transition-all duration-300
         flex flex-col justify-between items-center relative
-        bg-white
+        bg-white select-none
         ${isMain ? "scale-105 z-10 shadow-xl" : "bg-[#2d415c] shadow-md z-0"}
       `}
       style={
         isMain
           ? { border: `3px solid ${mainBorderColor} `, borderRadius: "16px" }
-          : { border: "3px solid #2d415c" ,borderRadius:"16px"}
+          : { border: "3px solid #2d415c", borderRadius: "16px" }
       }
     >
       <div
-        className={`w-full h-[150px] sm:h-[180px] md:h-[200px] ${
+        className={`w-full h-[150px] sm:h-[180px] md:h-[200px] relative ${
           isMain ? "lg:h-[280px]" : "lg:h-[220px]"
         } flex justify-center items-center rounded-t-xl bg-white`}
       >
+        <div className="bg-black h-full absolute inset-0 opacity-0"></div>
         <img
           src={cardData?.imgSrc || "/phool.png"}
           alt={cardData?.title || "Phool"}

@@ -64,10 +64,10 @@ function CarouselLayout() {
     setCurrentIndex((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
 
   return (
-    <div className="w-full max-w-full mx-auto">
-      <div className="flex items-center justify-between py-4 min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] px-4 sm:px-8 md:px-12 lg:px-16">
+    <div className="w-full max-w-full mx-auto overflow-hidden sm:overflow-visible">
+      <div className="sm:flex w-full items-center justify-between py-4 min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] px-4 sm:px-8 md:px-12 lg:px-16">
         <ChevronLeft
-          className="cursor-pointer select-none z-20 text-gray-700 hover:text-primary-highlight transition"
+          className="cursor-pointer hidden sm:block select-none z-20 text-gray-700 hover:text-primary-highlight transition"
           size={48}
           onClick={handlePrev}
         />

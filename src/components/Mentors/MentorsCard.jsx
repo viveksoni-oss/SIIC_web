@@ -63,7 +63,7 @@ function MentorsSection({ domain, search }) {
     data.name.toLowerCase().includes(search.trim().toLowerCase())
   );
   return (
-    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-15   justify-items-center p-8 overflow-y-auto h-[750px] ">
+    <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2  gap-15   justify-items-center p-8  h-[750px] ">
       {filteredMentors.length == 0 ? (
         <div className="sticky top-0 flex items-center justify-center h-[200px] text-gray-400 font-semibold text-4xl w-full col-span-2 capitalize bg-white">
           No mentors available with {domain} Domain

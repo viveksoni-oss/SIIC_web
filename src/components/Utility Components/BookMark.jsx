@@ -18,7 +18,7 @@ function BookMark() {
 
   return (
     <motion.div
-      className="relative ml-24 -translate-y-3 z-40"
+      className="relative ml-24 -translate-y-3 z-40 inline-block"
       whileHover="hover"
       initial="initial"
     >
