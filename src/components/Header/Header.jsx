@@ -421,7 +421,7 @@ function Header() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="hidden md:flex lg:hidden items-center gap-4"
+          className="hidden md:hidden lg:hidden items-center gap-4"
         >
           <div className="flex items-center gap-4 text-sm font-medium">
             {navItems.map((item, index) => (
@@ -517,7 +517,7 @@ function Header() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={toggleMobileMenu}
-          className="md:hidden relative p-2 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#ff8a40]"
+          className="lg:hidden relative p-2 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#ff8a40]"
           aria-label="Toggle mobile menu"
         >
           <div className="w-6 h-6 flex flex-col justify-center items-center">
@@ -556,7 +556,7 @@ function Header() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="md:hidden fixed inset-0 bg-black z-40"
+              className="lg:hidden fixed inset-0 bg-black z-40"
               onClick={toggleMobileMenu}
             />
 
@@ -566,7 +566,7 @@ function Header() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="md:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-xl"
+              className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-xl"
             >
               {/* Mobile Menu Header */}
               <motion.div
