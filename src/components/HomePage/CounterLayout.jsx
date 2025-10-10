@@ -6,20 +6,21 @@ function CounterLayout() {
     { title: "startup incubated", count: "483", suffix: "+", prefix: "" },
     { title: "job created", count: "8000", suffix: "+", prefix: "" },
     { title: "startup influenced", count: "595", suffix: "+", prefix: "" },
-    { title: "combined value", count: "71.13", prefix: "₹ ", suffix: " B" },
+    { title: "combined value", count: "71.13", prefix: "₹", suffix: "B" },
   ];
 
   return (
     <div
       className="
+      
       grid grid-cols-2 md:flex md:flex-row
-      justify-evenly items-center 
-      gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20
+      justify-between items-center 
+  
       px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-12 lg:py-12
       mt-6 sm:mt-10 md:mt-16 lg:mt-20 xl:mt-25
       hover:bg-[#f4f4f4] 
       transition-colors duration-300
-       w-full mx-auto
+       w-full 
     "
     >
       {details.map((item, index) => (

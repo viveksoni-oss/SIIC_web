@@ -23,7 +23,7 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
         if (hasDecimals) {
           formattedValue = value.toFixed(2);
         } else {
-          formattedValue = Math.round(value).toString();
+          formattedValue = Math.round(value);
         }
         node.textContent = `${prefix}${formattedValue}${suffix}`;
       },

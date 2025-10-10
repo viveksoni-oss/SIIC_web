@@ -19,7 +19,7 @@ function FlashNewsCard({ newsDetail }) {
       </h3>
 
       <div className="flex flex-row justify-end w-full z-20 ">
-        <div className="relative aspect-square w-8 md:w-4 lg:w-8 h-8 md:p-3">
+        <div className="relative aspect-square w-8 md:w-4 lg:w-4 lg:h-4 2xl:w-8 2xl:h-8 md:p-3">
           <img
             src="Icons/external-link.svg"
             alt="external-link-icon"

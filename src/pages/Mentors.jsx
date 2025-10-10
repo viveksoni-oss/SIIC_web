@@ -70,13 +70,13 @@ function Mentors() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] 2xl:grid-cols-[320px_1fr] ">
+      <div className="grid grid-cols-1 gap-10 sm:gap-0 lg:grid-cols-[280px_1fr] 2xl:grid-cols-[320px_1fr] ">
         <Domain
           categories={categoriesOfMentors}
           setDomain={setDomain}
           domain={domain}
         />
-        <main className="min-w-0 overflow-y-auto">
+        <main className="  sm:overflow-y-auto">
           <MentorsSection domain={domain} search={search} />
         </main>
       </div>

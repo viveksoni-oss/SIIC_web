@@ -88,12 +88,10 @@ function UpcomingEvents() {
   const handleWheel = (e) => {
     e.preventDefault();
     if (e.deltaY > 0) {
-      // Scroll down - next
       setCurrentIndex((prev) =>
         prev === eventsData.length - 1 ? 0 : prev + 1
       );
     } else {
-      // Scroll up - previous
       setCurrentIndex((prev) =>
         prev === 0 ? eventsData.length - 1 : prev - 1
       );
@@ -109,18 +107,36 @@ function UpcomingEvents() {
   return (
     <motion.div className="w-full pb-50 overflow-hidden relative">
       <div className="absolute right-20 translate-y-1/8 flex gap-18 justify-between z-20">
-        <div className="relative w-full ">
+        <div className="relative w-full">
           <AnimatePresence mode="wait">
             <motion.img
               key={currentEvent.id}
               src="/UpcomingEvents/Abhivyakti.svg"
               alt={currentEvent.title}
-              initial={{ y: 300, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -300, opacity: 0 }}
+              initial={{
+                y: 100,
+                opacity: 0,
+                scale: 0.9,
+                filter: "blur(10px)",
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                filter: "blur(0px)",
+              }}
+              exit={{
+                y: -100,
+                opacity: 0,
+                scale: 0.9,
+                filter: "blur(10px)",
+              }}
               transition={{
-                duration: 0.6,
-                ease: "easeInOut",
+                duration: 0.8,
+                ease: [0.43, 0.13, 0.23, 0.96], // Custom bezier for smoother feel
+                opacity: { duration: 0.5 },
+                scale: { duration: 0.6 },
+                filter: { duration: 0.4 },
               }}
               className="max-w-full h-auto relative"
             />
@@ -146,6 +162,7 @@ function UpcomingEvents() {
           ))}
         </div>
       </div>
+
       <div className="mx-16 flex flex-col gap-8" ref={upcomingRef}>
         <motion.h1
           className="flex gap-2"
@@ -174,10 +191,27 @@ function UpcomingEvents() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentEvent.id}
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -30, opacity: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                initial={{
+                  y: 40,
+                  opacity: 0,
+                  filter: "blur(4px)",
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                  filter: "blur(0px)",
+                }}
+                exit={{
+                  y: -40,
+                  opacity: 0,
+                  filter: "blur(4px)",
+                }}
+                transition={{
+                  duration: 0.6,
+                  ease: [0.25, 0.46, 0.45, 0.94], // easeOutQuad
+                  opacity: { duration: 0.4 },
+                  filter: { duration: 0.3 },
+                }}
               >
                 <div className="flex items-center gap-2 -ml-6 text-base font-[600]">
                   <div className="w-5 aspect-square bg-black flex justify-center items-center rounded-full">
@@ -195,17 +229,40 @@ function UpcomingEvents() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Location, Date, Time - 3D Cylinder Roll Effect */}
+            {/* Location, Date, Time - Smooth 3D Cylinder Roll Effect */}
             <div className="flex gap-16 items-start mt-12 w-xl overflow-hidden h-[60px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`${currentEvent.id}-details`}
                   className="flex gap-16"
-                  initial={{ rotateX: 90, opacity: 0, y: 20 }}
-                  animate={{ rotateX: 0, opacity: 1, y: 0 }}
-                  exit={{ rotateX: -90, opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  style={{ transformStyle: "preserve-3d" }}
+                  initial={{
+                    rotateX: 90,
+                    opacity: 0,
+                    y: 30,
+                    scale: 0.95,
+                  }}
+                  animate={{
+                    rotateX: 0,
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  }}
+                  exit={{
+                    rotateX: -90,
+                    opacity: 0,
+                    y: -30,
+                    scale: 0.95,
+                  }}
+                  transition={{
+                    duration: 0.7,
+                    ease: [0.34, 1.56, 0.64, 1], // easeOutBack for bounce effect
+                    opacity: { duration: 0.5 },
+                    scale: { duration: 0.5 },
+                  }}
+                  style={{
+                    transformStyle: "preserve-3d",
+                    perspective: "1000px",
+                  }}
                 >
                   <div className="flex justify-center items-center gap-2 flex-col">
                     <div className="font-bold">Location</div>
@@ -225,8 +282,6 @@ function UpcomingEvents() {
               </AnimatePresence>
             </div>
           </div>
-
-          {/* Image - stays within bounds */}
         </motion.div>
       </div>
     </motion.div>

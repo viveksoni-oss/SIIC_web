@@ -23,14 +23,16 @@ function Startups() {
       <h1 className="text-5xl font-thin text-[#1f1f1f] ">
         <HighlightedText weight={800}>Our</HighlightedText> Startups
       </h1>
-      <div className="grid grid-cols-5 h-[600px] overflow-y-auto gap-8 pt-6 justify-items-center">
-        {Array.from({ length: 32 }, (_, idx) => {
-          return (
-            <StartupCard
-              src={"Startups/startup-" + (idx % 8) + ".png"}
-            ></StartupCard>
-          );
-        })}
+      <div className="">
+        <div className="grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 p-8 xl:justify-items-start justify-items-center grid-cols-1 2xl:grid-cols-5 h-[600px] overflow-y-auto 2xl:gap-8 pt-6 2xl:justify-items-center ">
+          {Array.from({ length: 32 }, (_, idx) => {
+            return (
+              <StartupCard
+                src={"Startups/startup-" + (idx % 8) + ".png"}
+              ></StartupCard>
+            );
+          })}
+        </div>
       </div>
     </PageLayout>
   );
