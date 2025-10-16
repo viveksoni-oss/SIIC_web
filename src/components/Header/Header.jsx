@@ -81,7 +81,7 @@ function Header() {
           linkAddress: "facilities",
           children: [
             { heading: "Lab", linkAddress: "lab" },
-            { heading: "Office Space", linkAddress: "office" },
+            { heading: "Office Space", linkAddress: "office-spaces" },
             {
               heading: "Branding",
               linkAddress: "branding",

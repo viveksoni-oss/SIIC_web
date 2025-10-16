@@ -25,7 +25,11 @@ body {
 .animated-button {
   position: relative;
   background-color: #652e2e;
-  box-shadow: 0 0 7px 1px #ff894080;
+  box-shadow: 0 0 7px 1px rgba(255, 137, 64, 0.5);
+  transition: all 0.3s ease;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .animated-button::after {
@@ -33,10 +37,9 @@ body {
   position: absolute;
   inset: -0.15rem;
   border-radius: inherit;
-
   background: linear-gradient(
     var(--angle),
-    rgb(255, 137, 64, 0.5) 10%,
+    rgba(255, 137, 64, 0.5) 10%,
     #652e2e 90%
   );
   z-index: -1;
@@ -44,9 +47,26 @@ body {
 }
 
 .animated-button::before {
-  filter: blur(7px);
+  content: "";
+  position: absolute;
+  inset: -0.15rem;
+  border-radius: inherit;
+  background: linear-gradient(
+    var(--angle),
+    rgba(255, 137, 64, 0.5) 10%,
+    #652e2e 90%
+  );
+  z-index: -1;
+  filter: blur(0px);
   opacity: 0.8;
 }
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 @keyframes animate {
   0% {
     --angle: 0deg;
@@ -55,6 +75,8 @@ body {
     --angle: 360deg;
   }
 }
+
+/* Wave animation */
 @theme {
   --animate-wave: wave 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 

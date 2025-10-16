@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HighlightedText from "../Utility Components/HighlightedText";
 
-function MentorsBanner() {
+function OfficeSpacesBanner() {
   return (
     <div className="z-50 relative text-white flex justify-between">
       {/* Content div */}
@@ -38,4 +38,4 @@ function MentorsBanner() {
   );
 }
 
-export default MentorsBanner;
+export default OfficeSpacesBanner;

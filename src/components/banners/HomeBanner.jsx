@@ -1,29 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import HighlightedText from "../Utility Components/HighlightedText";
 import { motion } from "framer-motion";
 import AnimatedButton from "./../Utility Components/AnimatedButton";
 import { useNavigate } from "react-router";
+import AnimatedLogo from "./../LogoAnimation/Logo";
 
 function HomeBanner() {
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="relative text-white flex justify-between">
+    <div className="relative text-white flex w-full justify-start">
       {/* Content div */}
       <motion.div
-        className="p-6 sm:px-10 md:px-16 lg:px-12 2xl:px-20 pt-16 sm:pt-20 md:pt-15 2xl:pt-24 max-w-full sm:max-w-[500px] md:max-w-[550px] 2xl:max-w-[650px] min-h-[400px] sm:min-h-[450px] md:h-[500px] flex flex-col gap-3 sm:gap-4"
+        className="p-6 sm:px-10 md:px-16 lg:px-12 2xl:px-20 pt-16 sm:pt-20 md:pt-15 2xl:pt-24 max-w-full sm:max-w-[500px] md:max-w-[550px] 2xl:max-w-[650px] min-h-[400px] sm:min-h-[450px] md:h-[500px] flex flex-col gap-3 sm:gap-4 -mt-9"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
       >
-        <motion.img
-          src="logo1.svg"
-          alt="logo"
-          className="shrink-0 self-start w-24 sm:w-28 md:w-32 lg:w-auto"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        />
-
+        <AnimatedLogo
+          setIsHovered={setIsHovered}
+          isHovered={isHovered}
+        ></AnimatedLogo>
         <div>
           <motion.div
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl w-full font-medium capitalize"
@@ -51,8 +50,21 @@ function HomeBanner() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <motion.button className="border-2 rounded-full px-4 py-0 sm:px-5 sm:py-2.5 md:px-6 md:py-3 hover:bg-white text-xs sm:text-sm transition-colors duration-700 ease-in-out hover:text-black hover:border-white">
-            Incubate with us
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div
+              className="border-2 rounded-full px-[30px] py-[14px] flex items-center justify-center 
+             hover:bg-white text-sm xl:text-base text-center 
+             transition-colors duration-100 ease-in-out 
+             hover:text-black hover:border-white 
+             w-[203px] h-[46px]"
+            >
+              {" "}
+              Incubate with us
+            </div>
           </motion.button>
 
           <motion.div
@@ -67,7 +79,7 @@ function HomeBanner() {
 
       {/* Banner Image - Coming from bottom */}
       <motion.div
-        className="rounded-2xl absolute right-0 -bottom-20 sm:-bottom-26 md:-bottom-30 m-4 sm:m-8 md:m-12 lg:m-16 hidden xl:block max-w-[400px] lg:max-w-[500px] xl:max-w-none"
+        className="rounded-2xl absolute right-0 -bottom-20 sm:-bottom-26 md:-bottom-42 m-4 sm:m-8 md:m-12 lg:m-16 hidden lg:w-[600px] lg:h-[480px] 2xl:w-[650px] 2xl:h-[510px] xl:max-w-none xl:flex xl:justify-end "
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

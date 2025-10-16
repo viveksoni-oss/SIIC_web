@@ -7,7 +7,7 @@ import { PartnersData } from "./../data/PartnersData";
 
 function PartnerLogos({ imgLink, title }) {
   return (
-    <div className="h-60 w-60 border border-black/20 rounded-2xl flex justify-center items-center">
+    <div className="h-60 w-60 border border-black/20 rounded-2xl overflow-hidden flex justify-center items-center">
       <img src={`${imgLink}.png`} alt={`${title}`} />
     </div>
   );
@@ -54,7 +54,6 @@ function Partners() {
           )}
         </div>
       </div>
-  
     </PageLayout>
   );
 }

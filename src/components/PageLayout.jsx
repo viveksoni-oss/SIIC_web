@@ -1,17 +1,18 @@
 import { ToastContainer } from "react-toastify";
 import GradientBanner from "./Utility Components/GradientBanner";
 
-function PageLayout({ children, banner, bodyStyle, bannerLink }) {
+function PageLayout({ children, banner, bodyStyle = "", bannerLink }) {
   return (
-    <div className="">
+    <div className="w-full min-h-screen">
       <GradientBanner bannerLink={bannerLink}>{banner}</GradientBanner>
+
       <div
-        className={
-          bodyStyle +
-          " min-h-screen relative   bg-white -mt-23 rounded-[30px]"
-        }
+        className={`
+          min-h-screen relative bg-white -mt-23 rounded-t-2xl sm:rounded-t-3xl lg:rounded-t-[30px]
+          ${bodyStyle}
+        `}
       >
-        {children}
+        <main className="w-full mx-auto">{children}</main>
         <ToastContainer autoClose={2000} />
       </div>
     </div>

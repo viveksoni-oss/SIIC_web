@@ -14,7 +14,7 @@ export const programs = [
       "UDAAN accelerates India’s drone startups, selecting 20 innovators annually for mentorship, funding, and R&D access.",
     process: [
       { step: "Call for applications" },
-      { step: "Evaluation & Shortlisting" },
+      { step: " " },
       { step: "Accelerator phase" },
       { step: "Showcase & Networking" },
     ],
@@ -72,6 +72,10 @@ export const programs = [
       { step: "Application submission" },
       { step: "Screening interviews" },
       { step: "Bootcamp phase" },
+      { step: "Demo day" },
+      { step: "Demo day" },
+      { step: "Demo day" },
+      { step: "Demo day" },
       { step: "Demo day" },
     ],
     offerings: [

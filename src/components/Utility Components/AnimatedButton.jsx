@@ -1,10 +1,9 @@
-import React from "react";
-
 function AnimatedButton({ children }) {
   return (
-    <button className="animated-button px-8 py-4 rounded-full">
+    <div className="animated-button px-[30px] py-[14px] max-h-[46px] flex items-center justify-center rounded-full">
       {children}
-    </button>
+    </div>
   );
 }
+
 export default AnimatedButton;

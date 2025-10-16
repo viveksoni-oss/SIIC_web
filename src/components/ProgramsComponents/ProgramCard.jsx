@@ -50,7 +50,6 @@ function ProgramCard({ data = {} }) {
 
         <div
           onClick={() => {
-            console.log(data.slug);
             navigate(`${data.slug}`);
           }}
           className="flex justify-between items-center mt-1"

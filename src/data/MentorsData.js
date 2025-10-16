@@ -181,7 +181,7 @@ export const mentorsData = [
   },
   {
     id: 18,
-    name: "Rajat Malhotra",
+    name: "RRajat MalhotraRajat MalhotraRajat Malhotraajat Malhotra",
     position: "Consultant",
     company: "StrategyFirst",
     image: "/Mentors/mentor-4.png",
