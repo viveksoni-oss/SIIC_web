@@ -57,7 +57,9 @@ function SearchBar({ search, setSearch, placeholder }) {
     setSearch("");
     searchBarRef.current?.focus();
   };
-
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
   return (
     <div className="relative w-full sm:w-auto max-w-sm">
       <Search
@@ -72,7 +74,7 @@ function SearchBar({ search, setSearch, placeholder }) {
         value={search}
         onFocus={() => onFocus()}
         onBlur={() => onBlur()}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => handleChange(e)}
         autoComplete="off"
         spellCheck="false"
       />

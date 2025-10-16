@@ -14,9 +14,18 @@ function PartnerLogos({ imgLink, title }) {
 }
 function Partners() {
   const [search, setSearch] = useState("");
-  const SearchedData = PartnersData.filter((data) =>
-    data.name.toLowerCase().includes(search.trim().toLowerCase())
-  );
+  const [filteredData, setFilteredData] = useState(PartnersData);
+
+  useEffect(() => {
+    const result = PartnersData.filter((data) =>
+      data.name.toLowerCase().includes(search.trim().toLowerCase())
+    );
+    const timeout = setTimeout(() => {
+      setFilteredData(result);
+    }, 200); // 1 second debounce
+
+    return () => clearTimeout(timeout); // Clean up previous timeout
+  }, [search]);
   return (
     <PageLayout bodyStyle={"-mt-60 z-40 "} banner={<PartnerBanner />}>
       <div className="p-16 pr-8 flex flex-col gap-10 z-40">
@@ -35,8 +44,8 @@ function Partners() {
           Partners
         </h1>
         <div className="overflow-y-auto  h-[600px] w-full  items-center justify-start flex gap-10 flex-wrap">
-          {SearchedData.length > 0 ? (
-            SearchedData.map((partner, idx) => {
+          {filteredData.length > 0 ? (
+            filteredData.map((partner, idx) => {
               return (
                 <PartnerLogos
                   key={partner.id + idx}
@@ -48,7 +57,7 @@ function Partners() {
           ) : (
             <div className="w-full flex justify-center items-start">
               <div className="font-extrabold text-gray-500/20 text-3xl">
-                Program Not Found
+                We don't have {`"${search}"`} as Partner
               </div>
             </div>
           )}
