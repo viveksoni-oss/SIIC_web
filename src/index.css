@@ -45,7 +45,32 @@ body {
   z-index: -1;
   animation: animate 3s linear infinite;
 }
-
+.faded-container {
+  position: relative;
+}
+.faded-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10px; /* adjust as needed */
+  background: linear-gradient(to bottom, transparent 0%, #f1f1f1 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+.faded-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: right 20px;
+  height: 10px; /* adjust as needed */
+  background: linear-gradient(to top, transparent 0%, #f1f1f1 100%);
+  pointer-events: none;
+  z-index: 2;
+}
 .animated-button::before {
   content: "";
   position: absolute;

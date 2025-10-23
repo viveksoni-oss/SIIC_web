@@ -27,7 +27,6 @@ function SocialLink() {
   return (
     <div className="flex flex-col items-center ml-auto    gap-4 justify-center ">
       {socialLinkList.map((socialLink) => {
-        console.log(socialLink.icon);
         return (
           <img
             className="duration-300 transition-colors w-8 h-8 "

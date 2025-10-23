@@ -5,8 +5,9 @@ import { faqData } from "./../../data/FAQdata";
 
 function FAQ() {
   const [expandedItems, setExpandedItems] = useState(new Set());
-
+  const [isHovered, setIsHovered] = useState(false);
   const toggleExpanded = (id) => {
+    setIsHovered(false);
     const newExpanded = new Set(expandedItems);
     if (newExpanded.has(id)) {
       newExpanded.delete(id);
@@ -17,11 +18,11 @@ function FAQ() {
   };
 
   const shouldTruncate = (text) => {
-    return text.length > 120;
+    return text.length > 100;
   };
 
   const getTruncatedText = (text) => {
-    return text.length > 120 ? text.substring(0, 120) + "..........." : text;
+    return text.length > 100 ? text.substring(0, 100) + "..." : text;
   };
 
   const containerVariants = {
@@ -61,7 +62,7 @@ function FAQ() {
       {/* FAQ Items */}
       <div className="relative">
         <motion.div
-          className="max-h-[485px] overflow-y-auto space-y-0 pr-3 scrollbar-container"
+          className="max-h-[485px] overflow-y-auto space-y-4 pr-3 scrollbar-container"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -70,15 +71,15 @@ function FAQ() {
             <motion.div
               key={item.id}
               variants={itemVariants}
-              className="bg-white border-b border-gray-100 last:border-b-0 py-6 px-2"
+              className="bg-secondary-gray/30 rounded-2xl  border-gray-100 py-3 px-5"
             >
               {/* Question */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">
+              <h3 className="text-sm font-semibold text-[#1f1f1f] mb-3 leading-tight">
                 {item.question}
               </h3>
 
               {/* Answer with Read More functionality */}
-              <div className="text-gray-600 leading-relaxed">
+              <div className="text-gray-600 text-base leading-relaxed">
                 <motion.div
                   animate={{
                     opacity: 1,
@@ -95,13 +96,39 @@ function FAQ() {
                     {shouldTruncate(item.answer) && (
                       <motion.button
                         onClick={() => toggleExpanded(item.id)}
-                        className="ml-2 text-gray-800 hover:text-gray-600 font-medium transition-colors duration-200 focus:outline-none underline decoration-1 underline-offset-2"
+                        className="ml-2 text-gray-600 text-sm hover:text-gray-600 font-medium transition-colors duration-200 focus:outline-none underline decoration-1 underline-offset-2"
                         whileHover={{
                           scale: 1.02,
                         }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        {expandedItems.has(item.id) ? "" : "Read more >"}
+                        {expandedItems.has(item.id) ? (
+                          <div
+                            onMouseEnter={() => setIsHovered(item.id)}
+                            onMouseLeave={() => setIsHovered(null)}
+                          >
+                            {item.id !== isHovered ? (
+                              <span>{"Read less >"}</span>
+                            ) : (
+                              <span className="text-primary-highlight font-semibold italic underline decoration-1 underline-offset-2 ">
+                                {"Read less >>"}
+                              </span>
+                            )}
+                          </div>
+                        ) : (
+                          <div
+                            onMouseEnter={() => setIsHovered(item.id)}
+                            onMouseLeave={() => setIsHovered(null)}
+                          >
+                            {item.id !== isHovered ? (
+                              <span>{"Read more >"}</span>
+                            ) : (
+                              <span className="text-primary-highlight font-semibold italic underline decoration-1 underline-offset-2 ">
+                                {"Read more >>"}
+                              </span>
+                            )}
+                          </div>
+                        )}
                       </motion.button>
                     )}
                   </p>
@@ -116,11 +143,11 @@ function FAQ() {
       <style jsx>{`
         .scrollbar-container {
           scrollbar-width: thin;
-          scrollbar-color: #6b7280 transparent;
+          scrollbar-color: #2d415c transparent;
         }
-
         .scrollbar-container::-webkit-scrollbar {
           width: 6px;
+          background-color: #aaaaaa;
         }
 
         .scrollbar-container::-webkit-scrollbar-track {
@@ -136,19 +163,10 @@ function FAQ() {
           transition: all 0.3s ease;
         }
 
-        .scrollbar-container::-webkit-scrollbar-thumb:hover {
-          background: #4b5563;
-          box-shadow: -4px 0 0 #4b5563, 4px 0 0 #4b5563;
-          transform: scaleX(1.2);
-        }
-
-        .scrollbar-container::-webkit-scrollbar-thumb:active {
-          background: #374151;
-          box-shadow: -5px 0 0 #374151, 5px 0 0 #374151;
-        }
-
-        .scrollbar-container {
+        .scrollbar-container::-webkit-scrollbar-button {
           scroll-behavior: smooth;
+          width: 0px;
+          height: 0px;
         }
       `}</style>
     </div>

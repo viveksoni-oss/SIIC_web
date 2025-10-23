@@ -18,8 +18,12 @@ import HomePage from "./pages/HomePage";
 import { Navigate, Routes } from "react-router";
 import { Route } from "react-router";
 import UpcomingEvents from "./pages/UpcomingEvents.jsx";
+import { useScrollToTop } from "./Hooks/useScrollToTop";
+import useTitle from "./Hooks/useTitle.jsx";
 
 function App() {
+  useScrollToTop();
+  useTitle();
   return (
     <>
       <Header></Header>

@@ -3,12 +3,12 @@ import GradientBanner from "./Utility Components/GradientBanner";
 
 function PageLayout({ children, banner, bodyStyle = "", bannerLink }) {
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen -mb-20">
       <GradientBanner bannerLink={bannerLink}>{banner}</GradientBanner>
 
       <div
         className={`
-          min-h-screen relative bg-white -mt-23 rounded-t-2xl sm:rounded-t-3xl lg:rounded-t-[30px]
+          min-h-screen relative bg-white -mt-23 rounded-2xl sm:rounded-3xl lg:rounded-[30px]
           ${bodyStyle}
         `}
       >

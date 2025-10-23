@@ -7,7 +7,7 @@ function FlashNewsCard({ newsDetail }) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="border-[#F1F1F1] border-[1.5px] shadow-2xs relative rounded-[10px] overflow-hidden max-w-[416px] flex flex-col  items-center justify-center p-4 md:p-1 lg:p-4 gap-5 duration-300 ease-out hover:bg-[#e3e3e3]/20 hover:shadow-lg hover:border-0 transition-colors   "
+      className="border-[#F1F1F1] border-[1.5px] shadow-2xs relative box-border rounded-[10px] overflow-hidden max-w-[416px] flex flex-col  items-center justify-center p-4 md:p-1 lg:p-4 gap-5 duration-300 ease-out hover:bg-[#e3e3e3]/20 hover:shadow-lg hover:border-transparent transition-colors   "
     >
       <img
         src={newsDetail.imageLink}

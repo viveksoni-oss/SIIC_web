@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import HighlightedText from "./../Utility Components/HighlightedText";
 import { motion, AnimatePresence } from "framer-motion";
 
-const AUTO_SCROLL_DELAY = 20000;
+const AUTO_SCROLL_DELAY = 5000;
 
 const eventsData = [
   {
@@ -132,7 +132,7 @@ function UpcomingEvents() {
                 filter: "blur(10px)",
               }}
               transition={{
-                duration: 0.8,
+                duration: 1,
                 ease: [0.43, 0.13, 0.23, 0.96], // Custom bezier for smoother feel
                 opacity: { duration: 0.5 },
                 scale: { duration: 0.6 },
@@ -149,7 +149,7 @@ function UpcomingEvents() {
             <motion.div
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-[19px] h-[19px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center cursor-pointer transition-all duration-300`}
+              className={`w-[20px] h-[20px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center cursor-pointer transition-all duration-300`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -163,7 +163,7 @@ function UpcomingEvents() {
         </div>
       </div>
 
-      <div className="mx-16 flex flex-col gap-8" ref={upcomingRef}>
+      <div className="mx-16 flex flex-col gap-8">
         <motion.h1
           className="flex gap-2"
           style={{ fontSize: "48px", fontWeight: 200 }}
@@ -178,7 +178,7 @@ function UpcomingEvents() {
         </motion.h1>
 
         <motion.div
-          ref={containerRef}
+          ref={(containerRef, upcomingRef)}
           className="rounded-2xl bg-gray-100 pt-6 pb-8 pl-18 relative overflow-hidden"
           initial={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}

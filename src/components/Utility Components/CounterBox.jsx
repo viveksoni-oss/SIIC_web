@@ -1,5 +1,6 @@
 import React from "react";
 import HighlightedText from "./HighlightedText";
+import Counter from "./../HomePage/Counter";
 
 function CounterBox() {
   return (
@@ -8,6 +9,7 @@ function CounterBox() {
         XXX
       </HighlightedText>
       <div className="text-sm font-medium text-center">Portfolio Managers</div>
+      {/* <Counter title={"portfolio manager"} number={3242}></Counter> */}
     </div>
   );
 }

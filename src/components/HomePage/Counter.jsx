@@ -1,7 +1,7 @@
 import { motion, useInView, animate } from "framer-motion";
 import { useRef, useEffect } from "react";
 
-function Counter({ number, title, prefix = "", suffix = "" }) {
+function Counter({ number, title, prefix = "", suffix = "" ,}) {
   const ref = useRef(null);
   const countRef = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.3 });

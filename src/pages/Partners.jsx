@@ -43,24 +43,26 @@ function Partners() {
           </HighlightedText>{" "}
           Partners
         </h1>
-        <div className="overflow-y-auto  h-[600px] w-full  items-center justify-start flex gap-10 flex-wrap">
-          {filteredData.length > 0 ? (
-            filteredData.map((partner, idx) => {
-              return (
-                <PartnerLogos
-                  key={partner.id + idx}
-                  imgLink={partner.img}
-                  title={partner.name}
-                />
-              );
-            })
-          ) : (
-            <div className="w-full flex justify-center items-start">
-              <div className="font-extrabold text-gray-500/20 text-3xl">
-                We don't have {`"${search}"`} as Partner
+        <div className=" faded-container rounded-2xl overflow-hidden">
+          <div className="overflow-y-auto  h-[600px] w-full  pt-8 pl-6 p-4 items-center justify-start flex gap-10 flex-wrap ">
+            {filteredData.length > 0 ? (
+              filteredData.map((partner, idx) => {
+                return (
+                  <PartnerLogos
+                    key={partner.id + idx}
+                    imgLink={partner.img}
+                    title={partner.name}
+                  />
+                );
+              })
+            ) : (
+              <div className="w-full flex justify-center items-start">
+                <div className="font-extrabold text-gray-500/20 text-3xl">
+                  We don't have {`"${search}"`} as Partner
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </PageLayout>

@@ -5,7 +5,7 @@ export const programs = [
     name: "UDAAN",
     title: "Udaan – UAV/Drone Accelerator and Networking Program",
     headBanner: {
-      imageUrl: "https://cdn.example.com/banner_udaan.jpg",
+      imageUrl: "/ProgramBrief/head-img.jpg",
       applyLink: "https://apply.example.com/udaan",
     },
     postDate: "2025-10-01",
@@ -14,7 +14,7 @@ export const programs = [
       "UDAAN accelerates India’s drone startups, selecting 20 innovators annually for mentorship, funding, and R&D access.",
     process: [
       { step: "Call for applications" },
-      { step: " " },
+      { step: "sdhfs & sdfdsf " },
       { step: "Accelerator phase" },
       { step: "Showcase & Networking" },
     ],
@@ -61,7 +61,7 @@ export const programs = [
     name: "QuipTrack",
     title: "QuipTrack – Logistics and Supply Chain Accelerator",
     headBanner: {
-      imageUrl: "https://cdn.example.com/banner_quiptrack.jpg",
+      imageUrl: "/ProgramBrief/head-img.jpg",
       applyLink: "https://apply.example.com/quiptrack",
     },
     postDate: "2025-09-15",
@@ -80,12 +80,17 @@ export const programs = [
     ],
     offerings: [
       {
-        icon: "ai",
+        icon: "Duration",
         title: "AI Tool Access",
         description: "Free credits for logistics AI platforms.",
       },
       {
-        icon: "funding",
+        icon: "Applications",
+        title: "Seed Funding",
+        description: "Up to $50,000 initial investment.",
+      },
+      {
+        icon: "Released Fund",
         title: "Seed Funding",
         description: "Up to $50,000 initial investment.",
       },
@@ -95,6 +100,15 @@ export const programs = [
       "Registered company, operational in the last 2 years.",
       "At least 2 team members.",
       "Innovative product or service.",
+      "Tech-enabled logistics or supply chain startup.",
+      "Registered company, operational in the last 2 years.",
+      "At least 2 team members.",
+      "Innovative product or service.",
+      "Tech-enabled logistics or supply chain startup.",
+      "Registered company, operational in the last 2 years.",
+      "At least 2 team members.",
+      "Innovative product or service.",
+      ,
     ],
     faq: [
       {
@@ -113,7 +127,7 @@ export const programs = [
     name: "AgriGenius",
     title: "AgriGenius – AgriTech and Sustainability Program",
     headBanner: {
-      imageUrl: "https://cdn.example.com/banner_agrigenius.jpg",
+      imageUrl: "/ProgramBrief/head-img.jpg",
       applyLink: "https://apply.example.com/agrigenius",
     },
     postDate: "2025-08-01",
@@ -153,10 +167,10 @@ export const programs = [
   {
     id: "medvance",
     slug: "medvance",
-    name: "MedVance",
+    name: "MmedvancemedvancemedvanceedVance",
     title: "MedVance – Healthcare Innovation Accelerator",
     headBanner: {
-      imageUrl: "https://cdn.example.com/banner_medvance.jpg",
+      imageUrl: "/ProgramBrief/head-img.jpg",
       applyLink: "https://apply.example.com/medvance",
     },
     postDate: "2025-07-10",
@@ -199,7 +213,7 @@ export const programs = [
     name: "GreenLoop",
     title: "GreenLoop – Climate Tech Accelerator",
     headBanner: {
-      imageUrl: "https://cdn.example.com/banner_greenloop.jpg",
+      imageUrl: "/ProgramBrief/head-img.jpg",
       applyLink: "https://apply.example.com/greenloop",
     },
     postDate: "2025-06-20",
