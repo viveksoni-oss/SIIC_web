@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ArrowBg from "./ArrowBg";
 
-function CardArrow({ data }) {
+function CardArrow({ data, arrowColor }) {
   const { name, role, domain, image, linkedin, strengths } = data;
   const [isHovered, setIsHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -44,7 +44,7 @@ function CardArrow({ data }) {
                   : {}
               }
             >
-              <ArrowBg />
+              <ArrowBg color={arrowColor} />
             </div>
           </div>
         </div>

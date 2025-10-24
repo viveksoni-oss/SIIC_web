@@ -189,7 +189,7 @@ function Header() {
               }}
               src="/logo_header.png"
               alt="SIIC IITK logo"
-              className={`h-16 md:h-18 lg:h-20 object-contain transition-opacity duration-300 ${
+              className={`h-16 md:h-18 lg:h-[70px] lg:w-[320px] object-contain transition-opacity duration-300 ${
                 logoLoaded ? "opacity-100" : "opacity-0"
               }`}
               loading="eager"

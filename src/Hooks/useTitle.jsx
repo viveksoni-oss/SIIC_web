@@ -1,21 +1,26 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router"; // Use react-router-dom
+import { useLocation } from "react-router";
 
 function useTitle() {
-  const location = useLocation();
-  const pathname = location.pathname;
+  const { pathname } = useLocation();
 
   useEffect(() => {
+    // Home page
     if (pathname === "/" || pathname === "") {
       document.title = "SIIC IIT Kanpur";
-    } else {
-      // Get path after slash, e.g. "/directors" => "Directors"
-      const pageName = pathname
-        .slice(1)
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (c) => c.toUpperCase());
-      document.title = `SIIC IITK | ${pageName}`;
+      return;
     }
+
+    // Get last non-empty path segment
+    const segments = pathname.split("/").filter(Boolean);
+    let pageName = segments.length > 0 ? segments[segments.length - 1] : "";
+
+    // Replace hyphens/underscores and capitalize each word
+    pageName = pageName
+      .replace(/[-_]/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+
+    document.title = pageName ? `SIIC IITK | ${pageName}` : "SIIC IIT Kanpur";
   }, [pathname]);
 }
 

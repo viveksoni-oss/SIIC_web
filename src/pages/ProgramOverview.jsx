@@ -103,7 +103,7 @@ function ProgramOverview() {
   } = currentProgramData;
 
   return (
-    <div className="min-h-screen rounded-2xl mb-15 bg-white p-12">
+    <div className="min-h-screen rounded-2xl  z-30 relative -mb-15 bg-white p-12">
       <div className="grid grid-cols-4 gap-44">
         <ProgramTitleContainer
           isHovered={isHovered}
