@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import HighlightedText from "./HighlightedText";
+import useIsMobile from "./../../Hooks/useIsMobile";
 
 function BookMark() {
+  const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false); // Fixed: was "false" string, should be boolean
   const blinkVariants = {
     animate: {
@@ -27,6 +29,11 @@ function BookMark() {
         className="h-26 w-11 rounded-b-2xl relative rounded-t-lg bg-primary-highlight shadow-[0px_4px_4px_1px_rgba(0,0,0,0.20)] cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={() => {
+          if (isMobile) {
+            setIsHovered((prev) => !prev);
+          }
+        }}
       >
         <div className="bg-white rounded-full w-9 h-9 absolute bottom-[4px] left-[4px] flex justify-center items-center overflow-hidden">
           <motion.img

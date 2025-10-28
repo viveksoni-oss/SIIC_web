@@ -276,7 +276,7 @@ function KnowYourJourney() {
                         <img
                           src={`/KnowYourJourney/JourneySection/${currentPath.CardContent.RoadmapLink}.svg`}
                           alt={currentPath.CardContent.RoadmapLink}
-                          className="w-full h-auto p-20"
+                          className="w-full h-auto md:p-20 p-0"
                         />
 
                         <div className="mt-10 flex justify-center items-center gap-6 flex-col">

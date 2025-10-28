@@ -7,7 +7,7 @@ function Footer() {
   return (
     <div
       id="footer"
-      className=" bg-[#09181D] -mt-20  -z-20 relative  px-16 pb-5 pt-30 w-full  text-white grid grid-cols-1  md:grid-cols-2 lg:grid-cols-[auto_300px_auto]  "
+      className=" bg-[#09181D] -mt-20  -z-20 relative text-[14px] lg:text-base px-8 xl:px-16 pb-5 pt-30 w-full  text-white grid grid-cols-1 gap-y-10 md:grid-cols-2 lg:grid-cols-[auto_auto_auto]  "
     >
       <QuickLinks />
       <NewsLetterForm />

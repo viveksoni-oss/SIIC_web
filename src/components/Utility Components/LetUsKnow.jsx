@@ -4,7 +4,7 @@ import HighlightedText from "./HighlightedText";
 function LetUsKnow() {
   const [isHovered, setIsHovered] = useState(false);
   const inputStyle =
-    "px-1 lg:px-4 py-2 bg-white w-full border-primary rounded-lg text-base -mt-4 font-[500] focus:outline-none  focus:ring-2  focus:ring-primary-highlight focus:ring-offset-0 transition-all duration-300";
+    "px-4 py-2 bg-white w-full border-primary rounded-lg text-base -mt-4 font-[500] focus:outline-none  focus:ring-2  focus:ring-primary-highlight focus:ring-offset-0 transition-all duration-300";
   const textareaStyle =
     "resize-none focus:outline-none focus:ring-2 focus:ring-primary-highlight focus:right-offset-0 transition-all duration-300 px-4 py-2 bg-white lg:col-span-2 h-30 w-full  -mt-4 rounded-lg text-base font-[500]";
   return (
@@ -40,7 +40,9 @@ function LetUsKnow() {
       <button
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="border-3 flex justify-between w-[100px] h-[30px] items-center border-primary-highlight self-end py-2 px-4 rounded-full text-[12px] transition-all duration-300 hover:bg-primary-highlight hover:text-white hover:font-semibold"
+        className={`border-3 flex justify-between w-[100px] h-[30px] items-center border-primary-highlight self-end py-2 px-4 rounded-full text-[12px] transition-all duration-300 ${
+          isHovered ? "bg-primary-highlight text-white font-semibold" : ""
+        }`}
       >
         <span>Send</span>
         <div className="relative w-5 h-5 flex items-center   ">

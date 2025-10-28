@@ -48,9 +48,9 @@ function FAQ() {
   };
 
   return (
-    <div className="col-span-3">
+    <div className="col-span-3 p-6">
       {/* Header Section */}
-      <div className="mb-8">
+      <div className="mb-8 ">
         <h1 className="text-[40px] font-thin mb-4">
           Frequently Asked{" "}
           <HighlightedText size={"40px"} weight={700}>
@@ -60,9 +60,9 @@ function FAQ() {
       </div>
 
       {/* FAQ Items */}
-      <div className="relative">
+      <div className="relative ">
         <motion.div
-          className="max-h-[485px] overflow-y-auto space-y-4 pr-3 scrollbar-container"
+          className="max-h-[485px] overflow-y-auto space-y-4 pr-3 scrollbar-container py-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

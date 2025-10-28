@@ -25,12 +25,18 @@ function HomeBanner() {
         ></AnimatedLogo>
         <div>
           <motion.div
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl w-full font-medium capitalize"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl w-full font-medium capitalize"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            We incubate <HighlightedText>your</HighlightedText> innovations
+            We incubate{" "}
+            <HighlightedText>
+              {" "}
+              <br className="sm:hidden" />
+              your
+            </HighlightedText>{" "}
+            innovations
           </motion.div>
 
           <motion.p
@@ -39,8 +45,9 @@ function HomeBanner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            From crazy concepts to real impact — we're with you at every step of
-            the startup journey.
+            From crazy concepts to real impact — we're with you at every{" "}
+            <br className="sm:hidden" />
+            step of the startup journey.
           </motion.p>
         </div>
 
@@ -56,11 +63,11 @@ function HomeBanner() {
             transition={{ duration: 0.3 }}
           >
             <div
-              className="border-2 rounded-full px-[30px] py-[14px] flex items-center justify-center 
+              className="border-2 rounded-full lg:px-[30px] lg:py-[14px] flex items-center justify-center 
              hover:bg-white text-sm xl:text-base text-center 
              transition-colors duration-100 ease-in-out 
              hover:text-black hover:border-white 
-             w-[203px] h-[46px]"
+             lg:w-[203px] lg:h-[46px] w-[104px] h-[24px] text-[10px] "
             >
               {" "}
               Incubate with us
