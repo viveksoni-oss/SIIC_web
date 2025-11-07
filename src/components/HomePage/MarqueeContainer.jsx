@@ -1,16 +1,8 @@
 import Marquee from "react-fast-marquee";
 import HighlightedText from "../Utility Components/HighlightedText";
+import { PartnersData } from "../../data/PartnersData";
 
 function MarqueeContainer() {
-  const items = [
-    "/Marquee/image1.svg",
-    "/Marquee/image2.svg",
-    "/Marquee/image3.svg",
-    "/Marquee/image4.svg",
-    "/Marquee/image5.svg",
-    "/Marquee/image6.svg",
-  ];
-
   return (
     <div>
       <h1 className="text-center text-5xl font-[200]">
@@ -27,12 +19,12 @@ function MarqueeContainer() {
           gradientWidth={200}
           direction="left"
         >
-          {items.map((item, index) => (
+          {PartnersData.map((item, index) => (
             <img
-              key={index}
+              key={item.id}
               className="mx-4 text-white px-6 w-[240px] h-[150px] md:h-full md:w-full rounded-full font-semibold"
-              src={item}
-              alt={`Partner ${index + 1}`}
+              src={`${item.img}.png`}
+              alt={item.name}
               loading="lazy"
             />
           ))}

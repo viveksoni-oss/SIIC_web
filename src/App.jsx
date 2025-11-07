@@ -13,13 +13,16 @@ import Partners from "./pages/Partners";
 import Startups from "./pages/Startups";
 import WhoWeAre from "./pages/WhoWeAre";
 import Footer from "./components/Footer/Footer.jsx";
-import Header from "./components/Header/Header.jsx";
 import HomePage from "./pages/HomePage";
 import { Navigate, Routes } from "react-router";
 import { Route } from "react-router";
 import UpcomingEvents from "./pages/UpcomingEvents.jsx";
 import { useScrollToTop } from "./Hooks/useScrollToTop";
 import useTitle from "./Hooks/useTitle.jsx";
+import Header from "./components/Header/Index";
+import JoinAsMentor from "./pages/JoinAsMentor.jsx";
+import JoinAsInvestor from "./pages/JoinAsInvestor";
+import Careers from "./pages/Careers";
 
 function App() {
   useScrollToTop();
@@ -27,7 +30,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className=" container mx-auto overflow-hidden relative z-10 shadow-2xl">
+      <div className=" max-w-[100rem]  mx-auto overflow-hidden relative z-10 ">
         <Routes>
           {/* HOME PAGE */}
           <Route path="/" element={<HomePage />} />
@@ -69,6 +72,10 @@ function App() {
           <Route path="/flash-news" element={<FlashNews />} />
           {/* Upcoming events and workshops */}
           <Route path="/upcoming-events" element={<UpcomingEvents />} />
+          {/* Join us */}
+          <Route path="/join-as-mentor" element={<JoinAsMentor />} />
+          <Route path="/join-as-investor" element={<JoinAsInvestor />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
         </Routes>
         {/* Footer  */}

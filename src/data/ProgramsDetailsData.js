@@ -1,4 +1,4 @@
-export const programs = [
+ const programs = [
   {
     id: "udaan",
     slug: "udaan",

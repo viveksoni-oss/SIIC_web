@@ -19,8 +19,8 @@ function MentorsBanner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Mentors to Ignite
-            <HighlightedText>Your</HighlightedText> Innovation.
+            Creative Workspace to Build <HighlightedText>your</HighlightedText>{" "}
+            vision
           </motion.div>
 
           <motion.p

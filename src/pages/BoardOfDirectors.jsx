@@ -1,9 +1,7 @@
-import React from "react";
-import PageLayout from "../components/PageLayout";
+
 import HighlightedText from "./../components/Utility Components/HighlightedText";
 import { DirectorData } from "./../data/DirectorsData";
 import CardArrow from "./../components/Utility Components/CardArrow";
-import ArrowBg from "./../components/Utility Components/ArrowBg";
 
 function BoardOfDirectors() {
   return (

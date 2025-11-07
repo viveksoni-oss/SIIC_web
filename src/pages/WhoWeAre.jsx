@@ -32,7 +32,7 @@ function WhoWeAre() {
         </div>
       </div>
 
-      <div className="flex mt-20 px-16">
+      <div className="flex mt-20 ">
         <ImageCollage></ImageCollage>
         <div>
           <h1 className="text-[40px] font-thin mb-1">

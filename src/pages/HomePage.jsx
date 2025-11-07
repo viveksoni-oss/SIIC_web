@@ -9,7 +9,6 @@ import LetUsKnow from "./../components/Utility Components/LetUsKnow";
 import MarqueeContainer from "../components/HomePage/MarqueeContainer";
 import OurPride from "../components/HomePage/OurPride";
 import UpcomingEvents from "../components/HomePage/UpcomingEvents";
-import useTitle from "../Hooks/useTitle";
 
 function HomePage() {
   return (

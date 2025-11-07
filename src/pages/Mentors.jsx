@@ -70,7 +70,7 @@ function Mentors() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 gap-10 sm:gap-0 lg:grid-cols-[280px_1fr] 2xl:grid-cols-[320px_1fr] ">
+      <div className="grid grid-cols-1 gap-10 sm:gap-0 lg:grid-cols-[320px_1fr] xl:grid-cols-[280px_1fr] 2xl:grid-cols-[320px_1fr] ">
         <Domain
           categories={categoriesOfMentors}
           setDomain={setDomain}

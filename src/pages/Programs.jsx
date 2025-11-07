@@ -3,34 +3,23 @@ import PageLayout from "../components/PageLayout";
 import ProgramsBanner from "../components/banners/ProgramsBanner";
 import ProgramCard from "./../components/ProgramsComponents/ProgramCard";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
-import { programsData } from "./../data/ProgramsData";
-import { Info as InfoCircle } from "lucide-react";
-
 import { useEffect } from "react";
 import { useSearchParams } from "react-router";
+import { getProgramsByType } from "./../Util/HelperFunctions";
 
 function Programs() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Filter programs by type
-  const activePrograms = programsData.filter(
-    (program) => program.type === "Active"
-  );
-  const upcomingPrograms = programsData.filter(
-    (program) => program.type === "Upcoming"
-  );
-  const pastPrograms = programsData.filter(
-    (program) => program.type === "Past"
-  );
+  // Filter programs by type (with auto status update)
+  const activePrograms = getProgramsByType("Active");
+  const upcomingPrograms = getProgramsByType("Upcoming");
+  const pastPrograms = getProgramsByType("Past");
 
   useEffect(() => {
     // Show toast if redirected from invalid program
-    console.log("notFound param:", searchParams.get("notFound"));
-
     if (searchParams.get("notFound") === "true") {
       toast.error(`Oops! Program not found`, {
         position: "bottom-right",
-
         autoClose: 2000,
       });
       // Remove the query param after showing toast
@@ -38,7 +27,7 @@ function Programs() {
       newParams.delete("notFound");
       setSearchParams(newParams, { replace: true });
     }
-  }, [searchParams]); // FIXED: Added dependencies
+  }, [searchParams, setSearchParams]);
 
   // Component to render program section
   const ProgramSection = ({ title, programs, highlightText }) => {
@@ -55,12 +44,11 @@ function Programs() {
             {title}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6 xl:gap-10 2xl:gap-8 justify-center items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-20 2xl:gap-8 lg:gap-10 justify-center items-center">
           {programs.map((program) => (
             <ProgramCard key={program.id} data={program} />
           ))}
         </div>
-        {/* REMOVED ToastContainer from here */}
       </div>
     );
   };
@@ -90,11 +78,13 @@ function Programs() {
         />
 
         {/* Fallback message if no programs exist */}
-        {programsData.length === 0 && (
-          <div className="text-center text-gray-500 text-xl py-20">
-            No programs available at the moment.
-          </div>
-        )}
+        {activePrograms.length === 0 &&
+          upcomingPrograms.length === 0 &&
+          pastPrograms.length === 0 && (
+            <div className="text-center text-gray-500 text-xl py-20">
+              No programs available at the moment.
+            </div>
+          )}
       </div>
     </PageLayout>
   );

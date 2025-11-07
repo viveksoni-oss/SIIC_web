@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import HighlightedText from "./../Utility Components/HighlightedText";
 import { useNavigate } from "react-router";
+import { calculateDaysLeft } from "../../Util/HelperFunctions";
 
 function ProgramCard({ data = {} }) {
   const [isHovered, setIsHovered] = useState(false);
   const [blinking, setBlinking] = useState(false);
   const navigate = useNavigate();
+
+  // Calculate days left until deadline
+  const daysLeft = data.deadline ? calculateDaysLeft(data.deadline) : null;
+
   useEffect(() => {
     const interval = setInterval(() => {
       setBlinking((prev) => !prev);
@@ -15,6 +20,7 @@ function ProgramCard({ data = {} }) {
       clearInterval(interval);
     };
   }, []);
+
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
@@ -25,16 +31,17 @@ function ProgramCard({ data = {} }) {
     >
       <div className="relative overflow-hidden h-[245px]">
         <img
-          src={data.imgLink}
-          className="w-full  transition-transform duration-500 object-fill min-h-[245px] ease-out group-hover:scale-105"
+          src={data.cardImage}
+          className="w-full transition-transform duration-500 object-fill min-h-[245px] ease-out group-hover:scale-105"
           alt="Program preview"
         />
-        {data.type === "Active" && data.DirectApplyLink && (
+        {data.type === "Active" && data.applyLink && (
           <div className="group/apply-btn">
             <a
-              href={data?.DirectApplyLink}
+              href={data.applyLink}
               target="_blank"
-              className="absolute -bottom-1 right-7 text-sm font-semibold bg-primary-highlight text-white  px-4 py-2 pb-3.5 transition-all duration-300 ease-in-out  group-hover:-translate-y-1  group-hover:shadow-lg hover:bg-white  hover:outline-3 hover:outline-primary-highlight group hover:text-black  active:scale-95 rounded-t-lg "
+              rel="noopener noreferrer"
+              className="absolute -bottom-1 right-7 text-sm font-semibold bg-primary-highlight text-white px-4 py-2 pb-3.5 transition-all duration-300 ease-in-out group-hover:-translate-y-1 group-hover:shadow-lg hover:bg-white hover:outline-3 hover:outline-primary-highlight group hover:text-black active:scale-95 rounded-t-lg"
             >
               Apply Now
             </a>
@@ -43,8 +50,8 @@ function ProgramCard({ data = {} }) {
         )}
       </div>
 
-      <div className="bg-white pb-1 pt-2 px-4  z-20 -translate-y-2">
-        <div className="text-lg line-clamp-1 capitalize font-bold transition-transform duration-200 ">
+      <div className="bg-white pb-1 pt-2 px-4 z-20 -translate-y-2">
+        <div className="text-lg line-clamp-1 capitalize font-bold transition-transform duration-200">
           {data.title}
         </div>
 
@@ -55,21 +62,22 @@ function ProgramCard({ data = {} }) {
           className="flex justify-between items-center mt-1"
         >
           {blinking ? (
-            <div className="  text-xs font-[400] cursor-pointer transition-all duration-200  hover:underline">
+            <div className="text-xs font-[400] cursor-pointer transition-all duration-200 hover:underline">
               Know more <span className="ml-2">{">"}</span>
             </div>
           ) : (
-            <div className="text-primary-highlight italic   text-xs font-[400] cursor-pointer transition-all duration-200  hover:underline">
+            <div className="text-primary-highlight italic text-xs font-[400] cursor-pointer transition-all duration-200 hover:underline">
               Know more <span className="ml-2">{">>"}</span>
             </div>
           )}
 
-          {data.type === "Active" && (
-            <div className="text-[10px] transition-transform font-[400] duration-200  group-hover:scale-105">
+          {data.type === "Active" && daysLeft !== null && (
+            <div className="text-[10px] transition-transform font-[400] duration-200 group-hover:scale-105">
               <HighlightedText size="12px" weight={600}>
-                29{"    "}
+                {daysLeft}
+                {"    "}
               </HighlightedText>{" "}
-              days left
+              {daysLeft === 1 ? "day left" : "days left"}
             </div>
           )}
         </div>

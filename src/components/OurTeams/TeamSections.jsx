@@ -6,11 +6,12 @@ function TeamSections({ heading, TeamData }) {
   let words = heading.split(" ");
   const last_word = words[words.length - 1];
   words = words.slice(0, words.length - 1);
-  console.log(words, last_word);
-  console.log(heading, TeamData);
   return (
     <div>
-      <h1 className="text-[40px] font-thin ml-18 mt-8.5 capitalize">
+      <h1
+        id={`${heading.toLowerCase().split(" ").join("-")}`}
+        className="text-[40px] font-thin ml-18 mt-8.5 capitalize"
+      >
         {words.join(" ")}{" "}
         <HighlightedText weight={700}>{last_word}</HighlightedText>
       </h1>

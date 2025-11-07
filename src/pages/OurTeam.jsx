@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HighlightedText from "../components/Utility Components/HighlightedText";
 import { DirectorData } from "../data/DirectorsData";
 import CardArrow from "../components/Utility Components/CardArrow";
@@ -11,6 +11,15 @@ import {
 import { mentorsData } from "./../data/MentorsData";
 
 function OurTeam() {
+  useEffect(() => {
+    if (window.location.hash) {
+      const el = document.getElementById(window.location);
+      console.log(el);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [window.location]);
   return (
     <div className="min-h-screen  -mb-20 bg-white relative rounded-b-2xl px-16 py-8 pb-16">
       {/* Gradient top bar */}
@@ -47,6 +56,7 @@ function OurTeam() {
       ></TeamSections>
       {/* Staff of Operations */}
       <TeamSections
+      
         heading={"Staff of Operations"}
         TeamData={staffOfOperation}
       ></TeamSections>

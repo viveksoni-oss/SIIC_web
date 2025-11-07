@@ -1,7 +1,7 @@
 import { motion, useInView, animate } from "framer-motion";
 import { useRef, useEffect } from "react";
 
-function Counter({ number, title, prefix = "", suffix = "" ,}) {
+function Counter({ number, title, prefix = "", suffix = "" }) {
   const ref = useRef(null);
   const countRef = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.3 });
@@ -14,8 +14,8 @@ function Counter({ number, title, prefix = "", suffix = "" ,}) {
     const node = countRef.current;
     if (!node) return;
 
-    const controls = animate(number / 1.1, targetNumber, {
-      duration: 0.5,
+    const controls = animate(number / 2, targetNumber, {
+      duration: 0.7,
       ease: "easeOut",
       onUpdate(value) {
         const hasDecimals = targetNumber % 1 !== 0;
@@ -57,8 +57,6 @@ function Counter({ number, title, prefix = "", suffix = "" ,}) {
           text-center
           
         "
-        initial={{ scale: 0.5 }}
-        animate={isInView ? { scale: 1 } : {}}
         transition={{ duration: 0.8, ease: "backOut" }}
       >
         {`${prefix}0${suffix}`}

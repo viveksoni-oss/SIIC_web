@@ -20,7 +20,7 @@ function ManagePortfoliosBanner() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Portfolio Manager Guiding <br />
-            <HighlightedText size="56px"> Your</HighlightedText> Growth
+            <HighlightedText> Your</HighlightedText> Growth
           </motion.div>
 
           <motion.p

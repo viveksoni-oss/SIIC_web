@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import HighlightedText from "../Utility Components/HighlightedText";
-import { faqData } from "./../../data/FAQdata";
 
-function FAQ() {
+function FAQ({ faqData }) {
   const [expandedItems, setExpandedItems] = useState(new Set());
   const [isHovered, setIsHovered] = useState(false);
   const toggleExpanded = (id) => {
