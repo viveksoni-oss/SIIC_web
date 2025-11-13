@@ -41,7 +41,7 @@ function PastEventsCarousel() {
       </div>
 
       {/* Carousel section */}
-      <Carousel opts={{ loop: true }} className="flex-1 w-full max-w-[900px]  ">
+      <Carousel opts={{ loop: true }} className="flex-1 ml-6 w-full max-w-[875px]  ">
         <CarouselContent className="-ml-1">
           {dummyEvents.map((event, idx) => (
             <CarouselItem
@@ -53,7 +53,7 @@ function PastEventsCarousel() {
           ))}
         </CarouselContent>
         <CarouselPrevious className="rounded-full border-2 border-primary-highlight bg-white text-primary-highlight hover:bg-primary-highlight hover:text-white transition-all" />
-        <CarouselNext className="rounded-full border-2 border-primary-highlight bg-white text-primary-highlight hover:bg-primary-highlight hover:text-white transition-all" />
+        <CarouselNext className="rounded-full border-2 border-primary-highlight bg-white text-primary-highlight hover:bg-primary-highlight hover:text-white transition-all -translate-x-6" />
       </Carousel>
     </section>
   );

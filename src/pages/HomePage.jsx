@@ -25,7 +25,7 @@ function HomePage() {
       <FlashNewsLayout />
       <OurPride></OurPride>
       <MarqueeContainer />
-      <LetUsKnow></LetUsKnow>
+      {/* <LetUsKnow></LetUsKnow> */}
     </PageLayout>
   );
 }

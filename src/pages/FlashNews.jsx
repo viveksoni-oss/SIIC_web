@@ -4,6 +4,7 @@ import BannerTemplate from "../components/banners/BannerTemplate";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "./../components/Utility Components/SectionHeading";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
+import ImageCollage from "./../components/WhoWeAre/ImageCollage";
 
 function FlashNews() {
   return (
@@ -42,16 +43,33 @@ function PastNewsSection() {
       <SectionHeading>
         Innovation through the <HighlightedText>Years</HighlightedText>
       </SectionHeading>
-      <div className="max-w-[330px]">
-        <h3>Dive into our past news to see how ideas evolved into action.</h3>
-        <p>
-          SIIC recently celebrated major milestones, including successful
-          accelerator graduations, funding rounds, and startup launches, while
-          expanding global reach through events, partnerships, and media
-          recognition. SIIC news highlights include awards, pilot projects,
-          satellite initiatives, and notable invitations, showcasing consistent
-          growth, industry impact, and investor confidence.
-        </p>
+      <div>
+        <div className="max-w-[330px]">
+          <h3>Dive into our past news to see how ideas evolved into action.</h3>
+          <p>
+            SIIC recently celebrated major milestones, including successful
+            accelerator graduations, funding rounds, and startup launches, while
+            expanding global reach through events, partnerships, and media
+            recognition. SIIC news highlights include awards, pilot projects,
+            satellite initiatives, and notable invitations, showcasing
+            consistent growth, industry impact, and investor confidence.
+          </p>
+        </div>
+        <div className=" overflow-y-scroll flex flex-col gap-8">
+          {Array.from({ length: 10 }, (_, idx) => {
+            return (
+              <div className="border-1 px-4 py-2 ">
+                <img
+                  src="UpcomingEvents/PastEvents/PastEvent1.png"
+                  className="max-w-[200px] max-h-[120px]"
+                  alt="gd"
+                  width={200}
+                  height={120}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -146,7 +146,7 @@ const underlineStyles = {
 export function PastEventCard() {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <article className=" shrink-0 border border-secondary-gray/80 hover:border-transparent hover:bg-secondary-gray/20 rounded-2xl min-h-[500px] max-w-[265px] flex flex-col justify-between items-start p-4 group transition-all duration-300">
+    <article className=" shrink-0 border hover:-translate-y-2 hover:shadow-md border-secondary-gray/80 hover:border-transparent hover:bg-secondary-gray/20 rounded-2xl min-h-[500px] max-w-[265px] flex flex-col justify-between items-start p-4 group transition-all duration-300">
       <div className="space-y-4">
         <div className="overflow-hidden rounded-[12px]">
           <img
