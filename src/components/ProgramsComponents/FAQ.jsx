@@ -21,7 +21,7 @@ function FAQ({ faqData }) {
   };
 
   const getTruncatedText = (text) => {
-    return text.length > 100 ? text.substring(0, 100) + "..." : text;
+    return text.length > 80 ? text.substring(0, 80) + "..." : text;
   };
 
   const containerVariants = {

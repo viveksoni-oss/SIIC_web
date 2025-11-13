@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HighlightedText from "../Utility Components/HighlightedText";
 
-function BannerTemplate({ Heading, Description }) {
+function BannerTemplate({ Heading="heading", Description="description" }) {
   return (
     <div className="z-50 relative text-white flex justify-between">
       {/* Content div */}

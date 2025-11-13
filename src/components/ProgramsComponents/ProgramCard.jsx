@@ -25,14 +25,14 @@ function ProgramCard({ data = {} }) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group aspect-square bg-white border-[#F1F1F1] border-2 overflow-hidden w-[304px] rounded-xl cursor-pointer transition-all duration-500 ease-out ${
+      className={`group aspect-square bg-white border-[#F1F1F1] border-2 overflow-hidden w-[310px] rounded-xl cursor-pointer transition-all duration-500 ease-out ${
         isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""
       }`}
     >
       <div className="relative overflow-hidden h-[245px]">
         <img
-          src={data.cardImage}
-          className="w-full transition-transform duration-500 object-fill min-h-[245px] ease-out group-hover:scale-105"
+          src={`/ProgramsDashboard/Card-Image/${data.cardImage}`}
+          className="w-full transition-transform duration-500 object-fill min-h-[245px]  ease-out group-hover:scale-105"
           alt="Program preview"
         />
         {data.type === "Active" && data.applyLink && (

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import HighlightedText from "./../Utility Components/HighlightedText";
 import { motion, AnimatePresence } from "framer-motion";
 
-const AUTO_SCROLL_DELAY = 5000; // Increased to 5 seconds for better UX
+const AUTO_SCROLL_DELAY = 15000; // Increased to 5 seconds for better UX
 const ANIMATION_DURATION = 0.6;
 
 const eventsData = [
@@ -24,7 +24,7 @@ const eventsData = [
     location: "IIT Bombay",
     date: "22-04-2025",
     time: "09:00 AM",
-    image: "/UpcomingEvents/TechFest.svg",
+    image: "/UpcomingEvents/Abhivyakti.svg",
   },
   {
     id: 3,
@@ -34,17 +34,7 @@ const eventsData = [
     location: "IIT Delhi",
     date: "10-05-2025",
     time: "11:30 AM",
-    image: "/UpcomingEvents/StartUp.svg",
-  },
-  {
-    id: 4,
-    title: "Innovation Hub",
-    description:
-      "Explore cutting-edge research, participate in workshops, and network with industry leaders...",
-    location: "IIT Madras",
-    date: "18-06-2025",
-    time: "02:00 PM",
-    image: "/UpcomingEvents/Innovation.svg",
+    image: "/UpcomingEvents/Abhivyakti.svg",
   },
 ];
 

@@ -36,7 +36,7 @@ const ProgramTitleContainer = ({
       {/* Background image with reduced gradient overlay */}
       <div className="absolute inset-0">
         <img
-          src={cardImage}
+          src={`/ProgramsDashboard/Card-Image/${cardImage}`}
           alt={name}
           className="w-full h-full object-cover"
         />
@@ -263,7 +263,7 @@ function ProgramOverview() {
               }}
             >
               <img
-                src={cardImage}
+                src={`/ProgramsDashboard/Card-Image/${cardImage}`}
                 className="w-[280px] h-[190px] sm:w-[340px] sm:h-[230px] object-cover"
                 alt={`${name} program banner`}
               />
@@ -299,7 +299,7 @@ function ProgramOverview() {
           )}
           {endDate && (
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <Calendar size={16}/>
+              <Calendar size={16} />
               <span className="font-medium text-gray-600">End:</span>
               <span className="text-gray-800">{formatDate(endDate)}</span>
             </div>

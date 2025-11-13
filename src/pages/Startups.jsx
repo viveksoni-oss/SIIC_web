@@ -4,7 +4,7 @@ import StartupsBanner from "../components/banners/StartupBanner";
 import StartupCard from "../components/Startups/StartupCard";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
 import SearchBar from "./../components/Utility Components/SearchBar";
-import startupData from "../data/StartupData";
+import { startupData } from './../data/StartupData';
 
 function Startups() {
   const [search, setSearch] = useState("");

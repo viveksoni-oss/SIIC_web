@@ -1,106 +1,136 @@
-import React from "react";
 import PageLayout from "./../components/PageLayout";
-import BannerTemplate from "../components/banners/BannerTemplate";
+
 import HighlightedText from "./../components/Utility Components/HighlightedText";
 import CounterBox from "../components/Utility Components/CounterBox";
 import TrustedWords from "./../components/WhoWeAre/TrustedWords";
 import ServiceCard from "../components/Branding/ServiceCard";
 import { YOUR_GAINS } from "./../data/YourGainsData";
 import ListIcon from "./../components/IconComponents/ListIcon";
+import JoinAsMentorBanner from "../components/banners/JoinAsMentorBanner";
+import SectionHeading from "./../components/Utility Components/SectionHeading";
+import InfoImageMetricsSection from "../components/JoinAs/InfoImageMetricsSection";
+import StepsCard from "../components/JoinAs/StepsCard";
 
-function PageOverview() {
-  const stats = [
-    { count: "150K", label: "SQ.FT Space" },
-    { count: "24/7", label: "Access" },
-    { count: "2", label: "Locations" },
+function HowToBeMentor() {
+  // Example steps, you would replace this with real steps and props
+  const stepsData = [
+    {
+      title: "Submit EOI",
+      description:
+        "Express interest online to begin the mentor onboarding process officially.",
+    },
+    { title: "Review", description: "SIIC team reviews application." },
+    { title: "Onboarding", description: "Complete onboarding process." },
+    { title: "Start Mentoring", description: "Begin your mentorship journey." },
+    { title: "Periodic Feedback", description: "Share your inputs regularly." },
+    {
+      title: "Advanced Opportunities",
+      description: "Explore advanced mentoring roles.",
+    },
+    { title: "Community Events", description: "Participate in SIIC events." },
+    {
+      title: "Recognition",
+      description: "Get recognized for your contributions.",
+    },
   ];
   return (
-    <section className="grid grid-cols-2">
-      <img src="JoinAsMentor/MentorHero.png" alt="" srcset="" />
-      <div>
-        <h1>Why Support SIIC ? </h1>
-        <h3>
-          Creating an impact through channeling support to new generation
-          innovators.
-        </h3>
-        <p>
-          Startup Incubation and Innovation Centre, IIT Kanpur, established in
-          2000, is one of India’s oldest business and technology incubators
-          promoting startups and social enterprises specialising in
-          manufacturing.
-        </p>
-        <div className="grid grid-cols-3 gap-4 lg:gap-6 pt-6">
-          {stats.map((stat, index) => (
-            <CounterBox key={index} count={stat.count} label={stat.label} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-function HowToBeMentor() {
-  return <div>
-
-  </div>;
-}
-function WhoCanBeMentors() {
-  return (
-    <div>
-      <h1 className="font-thin text-[40px] ">
-        Who Can Be <HighlightedText>Mentor</HighlightedText>
-      </h1>
-      <div className="space-y-3 mt-8">
-        {Array.from({ length: 5 }, (_, idx) => {
-          return (
-            <div className="flex gap-4 border border-secondary-gray  text-[18px] rounded-lg py-2 px-4 justify-start items-center">
-              <ListIcon size={22}></ListIcon>
-              <span className="text-secondary-blue font-bold">
-                Lorem, ipsum dolor:
-              </span>
-              <div className="text-[#1f1f1f] -ml-2 ">
-                {" "}
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
-                ducimus.
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-function YourGains() {
-  return (
-    <section>
-      <h1 className="text-[40px] font-thin">
-        Know your <HighlightedText weight={700}>Gains</HighlightedText>
-      </h1>
-      <div className="grid grid-cols-4 mt-10 px-8 gap-8 justify-items-center ">
-        {YOUR_GAINS.map((data) => (
-          <ServiceCard data={data}></ServiceCard>
+    <section className="py-10">
+      <SectionHeading>
+        How To be <HighlightedText>Mentor</HighlightedText>
+      </SectionHeading>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        {stepsData.map((step, idx) => (
+          <StepsCard
+            key={idx}
+            step={idx + 1}
+            title={step.title}
+            description={step.description}
+          />
         ))}
       </div>
     </section>
   );
 }
+
+function WhoCanBeMentors() {
+  // Example items, replace with real qualifications
+  const mentorTypes = [
+    {
+      title: "Business Expert",
+      desc: "Extensive background in growing successful ventures.",
+    },
+    {
+      title: "Academic",
+      desc: "Faculty or researcher with deep domain expertise.",
+    },
+    { title: "Investor", desc: "Angel, VC, or institutional investors." },
+    { title: "Entrepreneur", desc: "Founder of innovative startups." },
+    {
+      title: "Corporate Leader",
+      desc: "CXOs and senior management in large organizations.",
+    },
+  ];
+  return (
+    <section className="py-10">
+      <SectionHeading>
+        Who Can Be <HighlightedText>Mentor</HighlightedText>
+      </SectionHeading>
+      <div className="space-y-5 mt-8">
+        {mentorTypes.map((item, idx) => (
+          <div
+            key={idx}
+            className="flex gap-4 border border-secondary-gray text-[18px] rounded-xl py-4 px-6 items-center shadow hover:shadow-md transition"
+          >
+            <ListIcon size={28} />
+            <span className="text-secondary-blue font-bold">{item.title}</span>
+            <span className="text-gray-700 ml-2">{item.desc}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function YourGains() {
+  return (
+    <section className="py-10">
+      <SectionHeading>
+        Know your <HighlightedText weight={700}>Gains</HighlightedText>
+      </SectionHeading>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 justify-items-center">
+        {YOUR_GAINS.map((data, idx) => (
+          <ServiceCard key={idx} data={data} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function JoinAsMentor() {
-  const Heading = (
+  const imageSrc = "JoinAsInvestor/page-overview.png";
+  const imageAlt = "Join as Investor";
+  const heading = (
     <>
-      {" "}
-      Mould the
-      <HighlightedText>Future</HighlightedText>.
+      Why Support <HighlightedText> SIIC</HighlightedText> ?{" "}
     </>
   );
-  const Description =
-    "Guide SIIC startups, sharing expertise to shape impactful, scalable innovations.";
+  const description =
+    "Creating an impact through channeling support to new generation innovators.";
+  const text =
+    "Startup Incubation and Innovation Centre, IIT Kanpur, established in 2000, is one of India’s oldest business and technology incubators promoting startups and social enterprises specialising in manufacturing.";
+
   return (
-    <PageLayout
-      bodyStyle="-mt-60 px-16"
-      banner={<BannerTemplate Heading={Heading} Description={Description} />}
-    >
-      <PageOverview />
+    <PageLayout bodyStyle="p-8 md:p-16 -mt-60" banner={<JoinAsMentorBanner />}>
+      <InfoImageMetricsSection
+        imageSrc={imageSrc}
+        imageAlt={imageAlt}
+        heading={heading}
+        description={description}
+        text={text}
+      />
       <YourGains />
       <WhoCanBeMentors />
+      <HowToBeMentor />
       <TrustedWords />
     </PageLayout>
   );

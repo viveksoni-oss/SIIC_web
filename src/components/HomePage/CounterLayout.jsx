@@ -3,10 +3,10 @@ import Counter from "./Counter";
 
 function CounterLayout() {
   const details = [
-    { title: "startup incubated", count: "483", suffix: "+", prefix: "" },
-    { title: "job created", count: "8000", suffix: "+", prefix: "" },
-    { title: "startup influenced", count: "595", suffix: "+", prefix: "" },
-    { title: "combined value", count: "71.13", prefix: "₹", suffix: "B" },
+    { title: "startup incubated", count: "500", suffix: "+", prefix: "" },
+    { title: "job created", count: "11000", suffix: "+", prefix: "" },
+    { title: "startup influenced", count: "800", suffix: "+", prefix: "" },
+    { title: "combined value", count: "12", prefix: "₹", suffix: "Cr" },
   ];
 
   return (

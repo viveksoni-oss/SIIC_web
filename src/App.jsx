@@ -29,8 +29,8 @@ function App() {
   useTitle();
   return (
     <>
-      <Header></Header>
       <div className=" max-w-[100rem]  mx-auto overflow-hidden relative z-10 ">
+        <Header></Header>
         <Routes>
           {/* HOME PAGE */}
           <Route path="/" element={<HomePage />} />
