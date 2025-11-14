@@ -56,11 +56,11 @@ function App() {
           {/* Available office spaces for startups */}
           <Route path="/office-spaces" element={<OfficeSpaces />} />
           {/* Portfolio management services */}
-          <Route path="/manage-portfolios" element={<ManagePortfolios />} />
+          {/* <Route path="/manage-portfolios" element={<ManagePortfolios />} /> */}
 
           {/* NETWORK & COMMUNITY */}
           {/* Co-founder matching and networking */}
-          <Route path="/cofounders" element={<Cofounders />} />
+          {/* <Route path="/cofounders" element={<Cofounders />} /> */}
           {/* Available mentors and advisors */}
           <Route path="/mentors" element={<Mentors />} />
           {/* Partner organizations and collaborators */}

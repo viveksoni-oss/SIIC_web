@@ -186,10 +186,9 @@ const WantToJoinSection = () => (
       Want to <HighlightedText>Join Us?</HighlightedText>
     </SectionHeading>
     <div className="flex flex-col gap-2">
-
-    {Array.from({ length: 3 }, (_, idx) => (
-      <JobListing key={idx} />
-    ))}
+      {Array.from({ length: 3 }, (_, idx) => (
+        <JobListing key={idx} />
+      ))}
     </div>
   </section>
 );
@@ -247,9 +246,19 @@ function Careers() {
     "Creating an impact through channeling support to new generation innovators.";
   const text =
     "Startup Incubation and Innovation Centre, IIT Kanpur, established in 2000, is one of India’s oldest business and technology incubators promoting startups and social enterprises specialising in manufacturing.";
+  const Heading = (
+    <>
+      Be the Pillars of our <HighlightedText>Future</HighlightedText> .
+    </>
+  );
+  const desc =
+    "Build your career at SIIC, empowering innovations to reach global markets.";
 
   return (
-    <PageLayout bodyStyle="-mt-60 p-8 sm:p-16" banner={<BannerTemplate />}>
+    <PageLayout
+      bodyStyle="-mt-60 p-8 sm:p-16"
+      banner={<BannerTemplate Heading={Heading} Description={desc} />}
+    >
       <InfoImageMetricsSection
         imageSrc={imageSrc}
         imageAlt={imageAlt}

@@ -53,9 +53,9 @@ function LabBanner() {
             </button>
 
             {/* Get Facility Button */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <AnimatedButton>Active programs</AnimatedButton>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </motion.div>

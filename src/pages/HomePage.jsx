@@ -9,8 +9,10 @@ import LetUsKnow from "./../components/Utility Components/LetUsKnow";
 import MarqueeContainer from "../components/HomePage/MarqueeContainer";
 import OurPride from "../components/HomePage/OurPride";
 import UpcomingEvents from "../components/HomePage/UpcomingEvents";
+import useIsMobile from "@/Hooks/useIsMobile";
 
 function HomePage() {
+  const isMobile = useIsMobile();
   return (
     <PageLayout
       banner={<HomeBanner />}
@@ -21,7 +23,8 @@ function HomePage() {
       <HomePagePara />
       <CounterLayout />
       <KnowYourJourney />
-      <UpcomingEvents />
+      {!isMobile ? <UpcomingEvents /> : null}
+
       <FlashNewsLayout />
       <OurPride></OurPride>
       <MarqueeContainer />
