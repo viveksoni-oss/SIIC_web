@@ -4,7 +4,7 @@ import { PartnersData } from "../../data/PartnersData";
 
 function MarqueeContainer() {
   return (
-    <div>
+    <div className="">
       <h1 className="text-center text-5xl font-[200]">
         Our{" "}
         <HighlightedText size="48px" weight={800}>

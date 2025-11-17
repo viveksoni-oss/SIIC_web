@@ -20,8 +20,8 @@ function Startups() {
   return (
     <PageLayout bodyStyle={"-mt-60 z-40 p-16  "} banner={<StartupsBanner />}>
       <div className="flex flex-col gap-10">
-        <div className="flex justify-between">
-          <h1 className="text-5xl font-thin text-[#1f1f1f] ">
+        <div className="flex flex-col gap-10 md:flex-row justify-between">
+          <h1 className="text-5xl font-thin order-2 md:order-none text-[#1f1f1f] ">
             <HighlightedText weight={800}>Our</HighlightedText> Startups
           </h1>
           <SearchBar

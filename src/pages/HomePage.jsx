@@ -1,5 +1,5 @@
 import PageLayout from "../components/PageLayout";
-import HomeBanner from "../components/banners/HomeBanner";
+import HomeBanner from "../components/banners/HomeBanner/HomeBanner";
 import BookMark from "./../components/Utility Components/BookMark";
 import HomePagePara from "../components/HomePage/HomePagePara";
 import CounterLayout from "../components/HomePage/CounterLayout";
@@ -16,10 +16,10 @@ function HomePage() {
   return (
     <PageLayout
       banner={<HomeBanner />}
-      bodyStyle="relative"
+      bodyStyle="relative pb-5 "
       bannerLink={"HomePage_banner.png"}
     >
-      <BookMark></BookMark>
+      {!isMobile ? <BookMark></BookMark> : null}
       <HomePagePara />
       <CounterLayout />
       <KnowYourJourney />

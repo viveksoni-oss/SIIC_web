@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import HighlightedText from "./HighlightedText";
 import useIsMobile from "./../../Hooks/useIsMobile";
+import { useNavigate } from "react-router";
 
 function BookMark() {
   const isMobile = useIsMobile();
@@ -17,12 +18,13 @@ function BookMark() {
       },
     },
   };
-
+  const navigate = useNavigate();
   return (
     <motion.div
       className="relative ml-24 -translate-y-3 z-40 inline-block"
       whileHover="hover"
       initial="initial"
+      onClick={() => navigate("/flash-news")}
     >
       {/* Bookmark body */}
       <div

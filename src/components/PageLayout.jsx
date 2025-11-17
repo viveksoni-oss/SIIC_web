@@ -12,7 +12,7 @@ function PageLayout({ children, banner, bodyStyle = "", bannerLink }) {
           ${bodyStyle}
         `}
       >
-        <main className="w-full mx-auto">{children}</main>
+        <main className="w-full mx-auto transition-all duration-400 ease-in-out">{children}</main>
         <ToastContainer autoClose={2000} />
       </div>
     </div>

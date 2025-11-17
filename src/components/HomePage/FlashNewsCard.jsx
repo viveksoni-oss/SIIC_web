@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
 
 // Animation variants for better organization
 const cardVariants = {
@@ -49,7 +50,7 @@ function FlashNewsCard({ newsDetail }) {
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
-
+  const navigate = useNavigate();
   // Handle navigation to news article
   const handleCardClick = () => {
     if (newsDetail.link) {
@@ -151,7 +152,10 @@ function FlashNewsCard({ newsDetail }) {
       )}
 
       {/* External Link Icon */}
-      <div className="flex flex-row justify-end items-center w-full z-20">
+      <div
+        className="flex flex-row justify-end items-center w-full z-20"
+        onClick={() => navigate("/flash-news")}
+      >
         <motion.div
           variants={iconVariants}
           className="relative aspect-square w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8"
@@ -161,7 +165,7 @@ function FlashNewsCard({ newsDetail }) {
             src="Icons/external-link.svg"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out"
+            className="absolute pointer inset-0 w-full h-full transition-opacity duration-300 ease-in-out"
             style={{ opacity: isHovered ? 0 : 1 }}
           />
 

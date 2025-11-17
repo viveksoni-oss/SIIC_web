@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PageLayout from "../components/PageLayout";
 import BannerTemplate from "../components/banners/BannerTemplate";
 import SectionHeading from "./../components/Utility Components/SectionHeading";
@@ -75,26 +75,66 @@ const newsletterCards = [
 // -------------- Card Components --------------
 
 export function MainNewsCard({ img, title, date, articleUrl, description }) {
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="bg-white rounded-xl shadow-lg flex flex-col items-start p-4 pr-8 min-h-[220px] flex-1">
-      <img
-        src={img}
-        alt="headline"
-        className="rounded-lg w-[820px] h-[400px] object-cover mb-3"
-      />
-      <h3 className="font-bold text-lg mb-2 leading-tight">{title}</h3>
-      {description && (
-        <p className="mb-2 text-[#444] text-[15px]">{description}</p>
-      )}
-      <div className="flex justify-between items-center w-full mt-2">
-        <a
-          href={articleUrl}
-          className="bg-orange-500 text-white rounded px-3 py-1 font-semibold text-sm shadow"
-          style={{ minWidth: 120 }}
-        >
-          See Full Article
-        </a>
-        <span className="text-[#716f6f] text-[14px]">{date}</span>
+    <div className="bg-white rounded-xl shadow transition-all group duration-500 ease-in-out hover:-translate-y-1 hover:shadow-md flex flex-col items-start p-2  min-h-[220px] flex-1 ">
+      <div className="flex justify-center self-center overflow-hidden rounded-2xl items-center  mb-3">
+        <img
+          src={img}
+          alt="headline"
+          className="rounded-lg w-[820px] h-[400px] group-hover:scale-105 transition-all group duration-500 ease-in-out object-cover  "
+        />
+      </div>
+      <div className="px-4 w-full">
+        <h3 className="font-bold text-lg mb-2 leading-tight">{title}</h3>
+        {description && (
+          <p className="mb-2 text-[#444] text-[15px]">{description}</p>
+        )}
+        <div className="flex justify-between items-center w-full mt-2">
+          <a
+            href={articleUrl}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="mt-2 -mr-1 border-3 rounded-2xl  px-3 font-light hover:bg-primary-highlight hover:text-white hover:font-semibold border-primary-highlight text-sm py-1 font-[#1f1f1f]/20 shadow flex justify-between items-center gap-2 transition-all duration-500 ease-in-out "
+            style={{ minWidth: 120 }}
+          >
+            <span>See Full Article</span>
+            {!isHovered ? (
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 11 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-all duration-300 ease-in-out"
+              >
+                <path
+                  d="M5.104 9L9.888 4.232L9.904 5.032L5.104 0.504H6.384L10.496 4.328V4.952L6.384 9H5.104ZM0.8 5.128V4.216H9.68V5.128H0.8Z"
+                  fill="currentColor"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 21 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-all duration-300 ease-in-out transform"
+              >
+                <path
+                  d="M14.1416 16.1533L14.0394 6.07052L15.1113 7.13718L5.11813 6.88418L7.18176 4.87524L15.4459 4.96925L16.2327 5.7775L16.2052 14.1444L14.1416 16.1533ZM5.98964 16.553L4.49968 15.0225L13.7688 5.999L15.2588 7.52952L5.98964 16.553Z"
+                  fill="white"
+                />
+              </svg>
+            )}
+          </a>
+          <div className="text-sm flex gap-2  items-center">
+            <Calendar size={14} className="text-primary-highlight"></Calendar>
+            <span className="!text-[#1f1f1f]/70">{date}</span>
+          </div>
+          {/* <span className="text-[#716f6f] text-[14px]">{date}</span> */}
+        </div>
       </div>
     </div>
   );
@@ -102,13 +142,15 @@ export function MainNewsCard({ img, title, date, articleUrl, description }) {
 
 export function SecondaryNewsCard({ img, title, date, articleUrl }) {
   return (
-    <div className="bg-white rounded-lg shadow p-2 px-4 flex flex-col  min-w-[225px] max-w-[500px]">
+    <div className="bg-white rounded-lg shadow transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-md p-2 px-4 flex flex-col  min-w-[225px] max-w-[500px]">
       <div className=" p-2 flex flex-row gap-6">
-        <img
-          src={img}
-          alt="secondary"
-          className="w-[180px] h-[200px] object-cover rounded"
-        />
+        <div className="rounded-2xl overflow-hidden min-w-[180px]">
+          <img
+            src={img}
+            alt="secondary"
+            className="w-[180px] h-[200px] object-cover rounded"
+          />
+        </div>
         <div className="flex flex-col gap-8 mt-4">
           <h4 className="text-[18px] font-semibold text-[#1f1f1f]/80  leading-tight">
             {title}
@@ -116,11 +158,11 @@ export function SecondaryNewsCard({ img, title, date, articleUrl }) {
           <div className="border-t border-[#1f1f1f]/20  w-[200px]"></div>
         </div>
       </div>
-      <div className="flex justify-between items-center mt-1 text-xs text-[#1f1f1f]/50 px-4">
+      <div className="flex justify-between items-center group/arrow mt-1 text-xs text-[#1f1f1f]/50 px-4">
         <a className="flex gap-1">
-          See Full Article <ArrowRight size={14}></ArrowRight>
+          See Full Article <ArrowRight className=" transition-all duration-500 ease-in-out group-hover/arrow:-rotate-45" size={14}></ArrowRight>
         </a>
-        <div href={articleUrl} className="flex gap-1 ">
+        <div href={articleUrl} className="flex gap-2 ">
           <Calendar size={14} className="text-primary-highlight"></Calendar>
           {date}
         </div>
@@ -159,7 +201,7 @@ export function PastNewsCard({ img, title, date, articleUrl, description }) {
 
 export function NewsLetterCard({ idx = 1, date = "11/11/11", text }) {
   return (
-    <section className="p-3 max-w-[300px] max-h-[520px] border border-[#1f1f1f]/10 rounded-xl bg-white shadow">
+    <section className="p-3 max-w-[300px]  select-none max-h-[520px] border border-[#1f1f1f]/10 rounded-xl bg-white shadow">
       <img
         src={"News/Newsletter/image-" + (idx % 4) + ".png"}
         alt="newsletter"
@@ -234,12 +276,12 @@ function NewsLetter() {
         Progress you can <HighlightedText>Measure</HighlightedText>
       </SectionHeading>
       <div className="pt-6">
-        <Carousel className="w-full max-w-[1400px] mx-auto">
+        <Carousel className="w-full max-w-[300px] sm:max-w-[500px] md:max-w-5xl xl:max-w-[1400px] mx-auto">
           <CarouselContent>
             {newsletterCards.map((card, idx) => (
               <CarouselItem
                 key={idx}
-                className="basis-1/4 pt-3 flex justify-center"
+                className=" sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 pt-3 flex justify-center"
               >
                 <NewsLetterCard
                   idx={card.idx}

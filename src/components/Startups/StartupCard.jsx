@@ -7,11 +7,11 @@ function StartupCard({ data }) {
   const FALL_BACK_IMAGE = "fallback.png";
   const content = (
     <div className="text-white rounded-md group inline-flex w-[260px]  hover:-translate-y-4 transition-all duration-600 ease-in-out flex-col cursor-pointer">
-      <div className="max-w-[260px] max-h-[260px] flex items-center justify-center">
+      <div className="w-[260px] h-[260px] flex items-center justify-center">
         <img
           src={error ? FALL_BACK_IMAGE : data.image}
           onError={() => setError(true)}
-          className="border-1 group-hover:border-transparent  text-black border-white"
+          className="border-1 group-hover:border-transparent object-cover text-black border-white"
           alt={data.title}
         />
       </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import HighlightedText from "./../Utility Components/HighlightedText";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router";
 
 const AUTO_SCROLL_DELAY = 15000; // Increased to 5 seconds for better UX
 const ANIMATION_DURATION = 0.6;
@@ -185,6 +186,7 @@ function UpcomingEvents() {
 
   const currentEvent = eventsData[currentIndex];
 
+  const navigate = useNavigate();
   return (
     <motion.div
       className="w-full pb-50 overflow-hidden relative"
@@ -228,7 +230,7 @@ function UpcomingEvents() {
             <motion.button
               key={event.id}
               onClick={() => handleDotClick(index)}
-              className={`w-[20px] h-[20px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-highlight focus:ring-offset-2`}
+              className={`w-[20px] h-[20px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center cursor-pointer transition-all duration-300 focus:outline-none  focus:ring-primary-highlight focus:ring-offset-2`}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
               aria-label={`Go to ${event.title}`}
@@ -302,6 +304,7 @@ function UpcomingEvents() {
                 <p className="font-medium mt-4 text-gray-700">
                   {currentEvent.description}
                   <button
+                    onClick={() => navigate("/upcoming-events")}
                     className="font-semibold ml-2 text-primary-highlight cursor-pointer hover:underline focus:outline-none focus:ring-2 focus:ring-primary-highlight rounded transition-all"
                     aria-label={`Learn more about ${currentEvent.title}`}
                   >

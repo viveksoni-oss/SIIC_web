@@ -19,7 +19,7 @@ function Lab() {
     setCurrentIndex((prev) => (prev === 0 ? labImages.length - 1 : prev - 1));
 
   return (
-    <PageLayout bodyStyle="-mt-50 py-16" banner={<LabBanner />}>
+    <PageLayout bodyStyle="-mt-50 pt-25 h-[100px] " banner={<LabBanner />}>
       <div className="flex flex-col md:flex-row gap-8 px-2 md:px-8 items-center md:items-start">
         {/* Carousel Container */}
         <div className="relative w-full md:w-1/2 flex items-center justify-center h-[340px] md:h-[440px]">
