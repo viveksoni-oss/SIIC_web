@@ -6,21 +6,27 @@ import { motion } from "framer-motion";
 const cards = [
   {
     id: 1,
-    imgSrc: "Carousel/phool.png",
-    title: "Phool",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+    imgSrc: "Carousel/arc-robotics.png",
+    title: "Arc Robotics",
+    desc: `SIIC-incubated 
+startup Arc Robotics 
+was featured in Kotak 
+BizLabs’ as a 
+sponsored Amazon
+miniseries.    
+`,
   },
   {
     id: 2,
     imgSrc: "Carousel/lenek.png",
     title: "Lenek",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+    desc: "Advanced Diagnostic Imaging Solutions at Point-of-Care",
   },
   {
     id: 3,
     imgSrc: "Carousel/fertilizer.png",
     title: "Fertilizer",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+    desc: "LCB Fertilizers works with the technologies of biotech, nanotech and chemical engineering to develop unique and crop specific and microbes rich fertilizers. ",
   },
   {
     id: 4,
@@ -30,15 +36,33 @@ const cards = [
   },
   {
     id: 5,
-    imgSrc: "Carousel/lenek.png",
-    title: "Lenek",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+    imgSrc: "Carousel/CDISC.png",
+    title: "C DISC Technologies ",
+    desc: `C DISC Technologies 
+achieved dual 
+recognition, 
+Adani Green
+Talks Social Impact 
+Award 2025 in the 
+Climate Action category
+ and the
+GRIHA 
+Valuable Contributor 
+Award.         
+`,
   },
   {
     id: 6,
-    imgSrc: "Carousel/fertilizer.png",
-    title: "Fertilizer",
-    desc: "Aliquam erat volutpat. Integer malesuada turpis id fringilla suscipit. 1",
+    imgSrc: "Carousel/⁠Chimertic.png",
+    title: "Chimertech Pvt. Ltd.,",
+    desc: `Chimertech Pvt. Ltd., was 
+conferred the prestigious 
+Bharat Entrepreneurs 
+Award 2025 for pioneering 
+smart veterinary 
+diagnostics 
+and digital dairy health 
+solutions`,
   },
 ];
 

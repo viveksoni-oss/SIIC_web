@@ -6,7 +6,7 @@ function CounterLayout() {
     { title: "startup incubated", count: "500", suffix: "+", prefix: "" },
     { title: "job created", count: "11000", suffix: "+", prefix: "" },
     { title: "startup influenced", count: "800", suffix: "+", prefix: "" },
-    { title: "combined value", count: "12", prefix: "₹", suffix: "Cr" },
+    { title: "combined value", count: "12", prefix: "₹ ", suffix: " B" },
   ];
 
   return (

@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router";
 import HighlightedText from "./../Utility Components/HighlightedText";
 import CarouselLayout from "./CarouselLayout";
 
 function OurPride() {
+  const navigate = useNavigate();
   return (
     <div className=" mx-auto mt-40 mb-35 ">
       <div className="flex flex-col xl:flex-row items-center justify-between  gap-16 xl:gap-8">
@@ -28,7 +30,10 @@ function OurPride() {
               <br />
               startups that made it happen.
             </p>
-            <button className="border-3 hover:bg-primary-highlight hover:font-semibold hover:text-white border-primary-highlight text-[#292929] px-6 py-2 rounded-full transition font-normal text-base mt-2">
+            <button
+              onClick={() => navigate("/startups")}
+              className="border-3 hover:bg-primary-highlight hover:font-semibold hover:text-white border-primary-highlight text-[#292929] px-4 py-1 rounded-full transition font-normal text-base mt-2 w-[130px]"
+            >
               Know more
             </button>
           </div>

@@ -20,6 +20,11 @@ function QuickLinks() {
       link: "/our-team",
       isExternalLink: false,
     },
+    {
+      linkTitle: "Tenders",
+      link: "/tenders",
+      isExternalLink: false,
+    },
   ];
   return (
     <div className="flex flex-col gap-4 grow-1 ">

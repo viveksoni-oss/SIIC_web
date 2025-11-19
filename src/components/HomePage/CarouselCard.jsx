@@ -1,34 +1,35 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 function CarouselCard({ isMain = false, cardData }) {
-  const mainBorderColor = "#74363A";
+  const mainBorderColor = "74363A";
 
   return (
     <div
       className={`
         w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[315px]
-        h-auto rounded-xl transition-all duration-300
+        h-auto  transition-all duration-300
         flex flex-col justify-between items-center relative
-        bg-white select-none
-        ${isMain ? "scale-105 z-10 shadow-xl" : "bg-[#2d415c] shadow-md z-0"}
+         select-none  rounded-xl p-[1px] overflow-hidden
+        ${
+          isMain
+            ? `scale-105 z-10   bg-[#74363A] `
+            : "  bg-[#2d415c] shadow-md z-0"
+        }
       `}
-      style={
-        isMain
-          ? { border: `3px solid ${mainBorderColor} `, borderRadius: "16px" }
-          : { border: "3px solid #2d415c", borderRadius: "16px" }
-      }
+   
     >
       <div
-        className={`w-full h-[150px] sm:h-[180px] md:h-[200px] relative ${
+        className={`w-full h-[200px] sm:h-[180px] md:h-[200px] relative ${
           isMain ? "lg:h-[280px]" : "lg:h-[220px]"
-        } flex justify-center items-center rounded-t-xl bg-white`}
+        } flex justify-center items-center  rounded-t-xl bg-white sm:rounded-t-xl `}
       >
-        <div className="bg-black h-full absolute inset-0 opacity-0"></div>
+        <div className="bg-black h-full absolute inset-0 opacity-0 "></div>
         <img
           src={cardData?.imgSrc || "/phool.png"}
           alt={cardData?.title || "Phool"}
           className={
-            "max-h-[70px] sm:max-h-[85px] md:max-h-[100px] lg:max-h-[200px] object-contain"
+            "max-h-[140px] sm:max-h-[140px] md:max-h-[100px] lg:max-h-[200px]  object-contain"
           }
           loading="lazy"
         />

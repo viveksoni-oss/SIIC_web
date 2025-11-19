@@ -23,6 +23,7 @@ import Header from "./components/Header/Index";
 import JoinAsMentor from "./pages/JoinAsMentor.jsx";
 import JoinAsInvestor from "./pages/JoinAsInvestor";
 import Careers from "./pages/Careers";
+import Tenders from "./pages/Tenders.jsx";
 
 function App() {
   useScrollToTop();
@@ -75,6 +76,7 @@ function App() {
           {/* Join us */}
           <Route path="/join-as-mentor" element={<JoinAsMentor />} />
           <Route path="/join-as-investor" element={<JoinAsInvestor />} />
+          <Route path="/tenders" element={<Tenders />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
         </Routes>

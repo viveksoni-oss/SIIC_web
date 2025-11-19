@@ -10,8 +10,9 @@ function CardArrow({ data, arrowColor }) {
   const [arrowRef, setArrowRef] = useState(null);
 
   return (
+    // hover:shadow-[1px_0_4px_0px_rgba(0,0,0,0.2)]
     <div
-      className="relative border border-secondary-gray/60 rounded-2xl p-4 pl-24 w-[360px] transition-all duration-300 hover:shadow-[1px_0_4px_0px_rgba(0,0,0,0.2)] ml-20 mb-10 mt-15  outline-none hover:outline outline-2 outline-primary-highlight"
+      className="relative border border-secondary-gray/60 rounded-2xl p-4 pl-24 w-[400px] transition-all duration-300 ml-20 mb-10 mt-15  outline-none hover:shadow-[1px_1px_20px_2px] hover:shadow-primary-highlight/40 hover:outline outline-2 outline-primary-highlight"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -30,11 +31,11 @@ function CardArrow({ data, arrowColor }) {
       {/* Image Container: rounded and overflow-hidden */}
       <div className="absolute -left-20 -top-2/3 w-[180px] h-[220px] rounded-2xl flex items-center justify-center">
         <div className="relative w-[140px] h-[180px] ">
-          <div className="z-10 h-[180px] w-[140px]   overflow-hidden flex justify-center items-center rounded-2xl absolute inset-0">
+          <div className="z-10 rounded-full  overflow-hidden flex justify-center items-center  absolute inset-0 -left-10 -top-5 ">
             <img
               src={imgErr || !image ? FILLER_IMG : image}
               alt={name}
-              className=""
+              className="object-cover"
               onError={() => setImgErr(true)}
             />
           </div>
@@ -47,7 +48,7 @@ function CardArrow({ data, arrowColor }) {
                   : {}
               }
             >
-              <ArrowBg color={arrowColor} />
+              {/* <ArrowBg color={arrowColor} /> */}
             </div>
           </div>
         </div>
@@ -55,13 +56,13 @@ function CardArrow({ data, arrowColor }) {
 
       {/* Content */}
       <div className="space-y-2">
-        <h1 className="text-base font-semibold text-primary-highlight line-clamp-2">
+        <h1 className="text-[18px] font-semibold text-primary-highlight line-clamp-2">
           {name}
         </h1>
         <div className="flex justify-between">
-          <div className="text-[10px] font-medium">
-            <p className="uppercase ">{role}</p>
-            <p className="text-[#1f1f1f]/30 line-clamp-1">{domain}</p>
+          <div className="text-[12px] font-medium">
+            <p className="uppercase  ">{role}</p>
+            <p className="text-[#1f1f1f]/80 line-clamp-1">{domain}</p>
           </div>
           <div className="flex items-center gap-2">
             <div className="h-full w-0 rounded-full border-l-3 border-secondary" />

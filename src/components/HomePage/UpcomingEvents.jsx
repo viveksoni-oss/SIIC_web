@@ -3,40 +3,39 @@ import HighlightedText from "./../Utility Components/HighlightedText";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router";
 
-const AUTO_SCROLL_DELAY = 15000; // Increased to 5 seconds for better UX
+const AUTO_SCROLL_DELAY = 1500000; // Increased to 5 seconds for better UX
 const ANIMATION_DURATION = 0.6;
 
 const eventsData = [
   {
     id: 1,
-    title: "Abhivyakti 26",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sequi officia inventore consectetur architecto quae tempora...",
+    title: "Abhivyakti",
+    description: `Abhivyakti by SIIC IIT Kanpur – Celebrating transformative startup success 20+ years of pioneering  incubation, uniting ecosystem enablers to showcase futuristic innovations.`,
     location: "IIT Kanpur",
-    date: "15-03-2025",
+    date: "15-12-2025",
     time: "10:00 AM",
-    image: "/UpcomingEvents/Abhivyakti.svg",
+    image: "/UpcomingEvents/abhivyakti poster.png",
   },
-  {
-    id: 2,
-    title: "TechFest 2025",
-    description:
-      "Annual technical festival showcasing innovation and technology breakthroughs from across the nation...",
-    location: "IIT Bombay",
-    date: "22-04-2025",
-    time: "09:00 AM",
-    image: "/UpcomingEvents/Abhivyakti.svg",
-  },
-  {
-    id: 3,
-    title: "StartUp Summit",
-    description:
-      "Connect with entrepreneurs, investors, and innovators in this premier startup networking event...",
-    location: "IIT Delhi",
-    date: "10-05-2025",
-    time: "11:30 AM",
-    image: "/UpcomingEvents/Abhivyakti.svg",
-  },
+  // {
+  //   id: 2,
+  //   title: "TechFest 2025",
+  //   description:
+  //     "Annual technical festival showcasing innovation and technology breakthroughs from across the nation...",
+  //   location: "IIT Bombay",
+  //   date: "22-04-2025",
+  //   time: "09:00 AM",
+  //   image: "/UpcomingEvents/Abhivyakti.svg",
+  // },
+  // {
+  //   id: 3,
+  //   title: "StartUp Summit",
+  //   description:
+  //     "Connect with entrepreneurs, investors, and innovators in this premier startup networking event...",
+  //   location: "IIT Delhi",
+  //   date: "10-05-2025",
+  //   time: "11:30 AM",
+  //   image: "/UpcomingEvents/Abhivyakti.svg",
+  // },
 ];
 
 // Animation variants for better organization
@@ -195,29 +194,31 @@ function UpcomingEvents() {
       transition={{ duration: 0.5 }}
     >
       {/* Image and Navigation Dots Section */}
-      <div className="absolute right-20 translate-y-1/8 flex gap-18 justify-between z-20">
+      <div className="absolute right-20 translate-y-[28%] flex gap-18 justify-between z-20">
         <div className="relative w-full">
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.img
-              key={currentEvent.id}
-              src={currentEvent.image}
-              alt={`${currentEvent.title} event banner`}
-              variants={imageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              custom={direction}
-              transition={{
-                duration: ANIMATION_DURATION,
-                ease: [0.43, 0.13, 0.23, 0.96],
-                opacity: { duration: ANIMATION_DURATION * 0.5 },
-                scale: { duration: ANIMATION_DURATION * 0.6 },
-                filter: { duration: ANIMATION_DURATION * 0.4 },
-              }}
-              className="max-w-full h-auto relative"
-              loading="lazy"
-            />
-          </AnimatePresence>
+          <div className="rounded-2xl overflow-hidden">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.img
+                key={currentEvent.id}
+                src={currentEvent.image}
+                alt={`${currentEvent.title} event banner`}
+                variants={imageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                custom={direction}
+                transition={{
+                  duration: ANIMATION_DURATION,
+                  ease: [0.43, 0.13, 0.23, 0.96],
+                  opacity: { duration: ANIMATION_DURATION * 0.5 },
+                  scale: { duration: ANIMATION_DURATION * 0.6 },
+                  filter: { duration: ANIMATION_DURATION * 0.4 },
+                }}
+                className="max-w-full h-auto relative"
+                loading="lazy"
+              />
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Vertical carousel indicator dots */}
@@ -301,8 +302,9 @@ function UpcomingEvents() {
                 </div>
 
                 {/* Event Description */}
-                <p className="font-medium mt-4 text-gray-700">
+                <p className="font-medium mt-4  text-gray-700">
                   {currentEvent.description}
+
                   <button
                     onClick={() => navigate("/upcoming-events")}
                     className="font-semibold ml-2 text-primary-highlight cursor-pointer hover:underline focus:outline-none focus:ring-2 focus:ring-primary-highlight rounded transition-all"

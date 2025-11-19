@@ -1,3 +1,4 @@
+import useIsMobile from "@/Hooks/useIsMobile";
 import React, { useState, useEffect } from "react";
 
 function GradientBanner({ children, cls = "", bannerLink }) {
@@ -33,7 +34,7 @@ function GradientBanner({ children, cls = "", bannerLink }) {
 
     loadImage();
   }, [imageSrc]);
-
+  const isMobile = useIsMobile();
   return (
     <div className="relative">
       {/* Loading skeleton */}
@@ -44,22 +45,25 @@ function GradientBanner({ children, cls = "", bannerLink }) {
       )}
 
       {/* Optimized image */}
-      <img
-        src={currentSrc}
-        alt="banner img"
-        className={`w-full h-[600px] z-20 object-cover transition-opacity duration-500 ${
-          imageLoaded ? "opacity-100" : "opacity-0"
-        } ${cls}`}
-        loading="eager" // Load immediately for hero images
-        fetchPriority="high" // High priority loading
-        decoding="async" // Async decoding for better performance
-        onLoad={() => setImageLoaded(true)}
-        onError={() => {
-          console.error("Failed to load banner image");
-          setImageLoaded(true); // Still show content even if image fails
-        }}
-      />
-
+      {!isMobile ? (
+        <img
+          src={currentSrc}
+          alt="banner img"
+          className={`w-full h-[600px] z-20 object-cover transition-opacity duration-500 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          } ${cls}`}
+          loading="eager" // Load immediately for hero images
+          fetchPriority="high" // High priority loading
+          decoding="async" // Async decoding for better performance
+          onLoad={() => setImageLoaded(true)}
+          onError={() => {
+            console.error("Failed to load banner image");
+            setImageLoaded(true); // Still show content even if image fails
+          }}
+        />
+      ) : (
+        <div className="h-[600px] bg-[#652E2F] bg-[linear-gradient(22deg,rgba(101,46,47,1)_74%,rgba(243,128,60,1)_110%)]"></div>
+      )}
       {/* Content overlay */}
       <div
         className={`absolute inset-0 z-20 text-2xl h-full w-full text-white transition-opacity duration-300 ${

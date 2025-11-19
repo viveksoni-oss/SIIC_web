@@ -57,7 +57,7 @@ function ContentSection({ isHovered, setIsHovered }) {
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="px-[30px] py-[14px]  border-2 border-white max-h-[46px] flex items-center justify-center rounded-full">
+          <div className="px-[30px] py-[14px] hover:bg-white hover:text-primary transition-color border-2 border-white max-h-[46px] flex items-center justify-center rounded-full">
             Incubate with us
           </div>
         </motion.button>

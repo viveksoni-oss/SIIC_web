@@ -160,7 +160,11 @@ export function SecondaryNewsCard({ img, title, date, articleUrl }) {
       </div>
       <div className="flex justify-between items-center group/arrow mt-1 text-xs text-[#1f1f1f]/50 px-4">
         <a className="flex gap-1">
-          See Full Article <ArrowRight className=" transition-all duration-500 ease-in-out group-hover/arrow:-rotate-45" size={14}></ArrowRight>
+          See Full Article{" "}
+          <ArrowRight
+            className=" transition-all duration-500 ease-in-out group-hover/arrow:-rotate-45"
+            size={14}
+          ></ArrowRight>
         </a>
         <div href={articleUrl} className="flex gap-2 ">
           <Calendar size={14} className="text-primary-highlight"></Calendar>
@@ -211,7 +215,12 @@ export function NewsLetterCard({ idx = 1, date = "11/11/11", text }) {
         <p className="text-[13px] font-medium">{text}</p>
         <div className="flex justify-between items-center mt-1 text-[10px] text-[#1f1f1f]/50">
           <span>{date}</span>
-          <DownloadIcon size={16} />
+          <a
+            href="/Files/Figma Design Review Report.pdf"
+            download={"newsletter.pdf"}
+          >
+            <DownloadIcon size={16} />
+          </a>
         </div>
       </div>
     </section>

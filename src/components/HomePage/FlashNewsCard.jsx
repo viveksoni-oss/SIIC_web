@@ -38,7 +38,7 @@ const iconVariants = {
   },
   hover: {
     scale: 1.1,
-    rotate: 15,
+
     transition: {
       duration: 0.3,
       ease: [0.4, 0, 0.2, 1],
@@ -78,7 +78,7 @@ function FlashNewsCard({ newsDetail }) {
       tabIndex={0}
       role="link"
       aria-label={`Read more about ${newsDetail.title}`}
-      className="border-[#F1F1F1] border-[1.5px] shadow-2xs relative box-border rounded-[10px] overflow-hidden max-w-[416px] w-full flex flex-col items-center justify-start p-4 md:p-3 lg:p-4 gap-4 cursor-pointer transition-all duration-300 ease-out hover:bg-[#e3e3e3]/20 hover:shadow-lg hover:border-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
+      className="border-[#F1F1F1] border-[1.5px] shadow-2xs relative box-border rounded-[10px] overflow-hidden w-[385px]  sm:max-w-[420px] sm:min-w-[300px] sm:w-full flex flex-col items-center justify-start p-4 md:p-3 lg:p-4 gap-4 cursor-pointer transition-all duration-300 ease-out hover:bg-[#e3e3e3]/20 hover:shadow-lg hover:border-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
     >
       {/* Image Container with Loading State */}
       <div className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
@@ -152,9 +152,10 @@ function FlashNewsCard({ newsDetail }) {
       )}
 
       {/* External Link Icon */}
-      <div
+      <a
         className="flex flex-row justify-end items-center w-full z-20"
-        onClick={() => navigate("/flash-news")}
+        href={newsDetail.externalLink}
+        target="_blank"
       >
         <motion.div
           variants={iconVariants}
@@ -178,7 +179,7 @@ function FlashNewsCard({ newsDetail }) {
             style={{ opacity: isHovered ? 1 : 0 }}
           />
         </motion.div>
-      </div>
+      </a>
 
       {/* Smooth bottom bar animation */}
       <motion.div

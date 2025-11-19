@@ -33,21 +33,23 @@ function OurTeam() {
           alt=""
         />
         <div className="relative z-30  text-white p-8">
-          <h2 className="text-[56px] font-medium mb-6">
+          <h2 className="text-[36px] xl:text-[56px] font-medium mb-6">
             {" "}
             The Power <HighlightedText weight={800}>Brains</HighlightedText>.
           </h2>
           {/* Add BoardOfDirectors content/components here */}
-          <p>
+          <p className="text-xs md:text-base -mt-2 md:mt-0">
             Visionary leaders guiding SIIC’s mission to empower <br />
             startups and innovators.
           </p>
         </div>
       </div>
+      
       {/* Section First */}
       <TeamSections
         heading={"Our Leadership"}
         TeamData={ourLeadership}
+        filter={false}
       ></TeamSections>
       {/* Staff of Domains */}
       <TeamSections
@@ -56,7 +58,6 @@ function OurTeam() {
       ></TeamSections>
       {/* Staff of Operations */}
       <TeamSections
-      
         heading={"Staff of Operations"}
         TeamData={staffOfOperation}
       ></TeamSections>
