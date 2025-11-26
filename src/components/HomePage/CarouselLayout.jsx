@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CarouselCard from "./CarouselCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import useIsMobile from "@/Hooks/useIsMobile";
 
 const cards = [
   {
@@ -67,6 +68,7 @@ solutions`,
 ];
 
 function CarouselLayout() {
+  const isMobile = useIsMobile();
   const [currentIndex, setCurrentIndex] = useState(1);
   const [dragging, setDragging] = useState(false);
   const total = cards.length;
@@ -130,19 +132,19 @@ function CarouselLayout() {
               y = -10;
             } else if (idx === cycleIndex(currentIndex - 1)) {
               scale = 0.95;
-              x = -120;
+              x = isMobile ? -60 : -120;
               zIndex = 8;
             } else if (idx === cycleIndex(currentIndex - 2)) {
-              scale = 0.85;
-              x = -200;
+              scale = 0.75;
+              x = !isMobile ? -200 : -110;
               zIndex = 5;
             } else if (idx === cycleIndex(currentIndex + 1)) {
               scale = 0.95;
-              x = 120;
+              x = isMobile ? 60 : 120;
               zIndex = 8;
             } else if (idx === cycleIndex(currentIndex + 2)) {
               scale = 0.85;
-              x = 200;
+              x = isMobile ? 110 : 200;
               zIndex = 5;
             }
 

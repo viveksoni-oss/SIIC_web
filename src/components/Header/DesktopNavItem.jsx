@@ -98,7 +98,10 @@ function DesktopNavItem({
                   <motion.div
                     onClick={() =>
                       !dropdownItem.children &&
-                      handleDropdownClick(dropdownItem.linkAddress)
+                      handleDropdownClick(
+                        dropdownItem.linkAddress,
+                        dropdownItem.isExternal
+                      )
                     }
                     whileHover={{
                       scale: 1.02,

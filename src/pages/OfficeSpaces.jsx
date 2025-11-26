@@ -4,6 +4,8 @@ import PageLayout from "../components/PageLayout";
 import OfficeSpacesBanner from "../components/banners/OfficeSpacesBanner";
 import LetUsKnow from "./../components/Utility Components/LetUsKnow";
 import CounterBox from "./../components/Utility Components/CounterBox";
+import SectionHeading from "./../components/Utility Components/SectionHeading";
+import HighlightedText from "@/components/Utility Components/HighlightedText";
 
 // Extracted LocationCard component to separate file recommended
 const LocationCard = ({
@@ -93,13 +95,13 @@ const Section = ({ children, className = "", background = false }) => (
 const SectionHeader = ({ title, subtitle, titleAccent, centered = false }) => (
   <div
     className={`${
-      centered ? "text-center mb-12 lg:mb-16" : "mb-8 lg:mb-12"
+      centered ? "text-justify mb-12 lg:mb-16" : "mb-8 lg:mb-12"
     } space-y-4`}
   >
-    <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-highlight leading-tight">
-      {title}{" "}
-      {titleAccent && <span className="text-primary">{titleAccent}</span>}
-    </h2>
+    <SectionHeading>
+      {title} <HighlightedText>{titleAccent}</HighlightedText>
+    </SectionHeading>
+
     {subtitle && (
       <p
         className={`text-base lg:text-lg text-gray-700 leading-relaxed ${
@@ -161,17 +163,14 @@ function OfficeSpaces() {
     {
       src: "OfficeSpace/office2.svg",
       alt: "Collaborative workspace area",
-      className: "col-span-2 h-64 lg:h-80",
     },
     {
       src: "OfficeSpace/office3.svg",
       alt: "Private meeting room",
-      className: "h-48 lg:h-56",
     },
     {
       src: "OfficeSpace/office4.svg",
       alt: "Modern office amenities",
-      className: "h-48 lg:h-56",
     },
   ];
 
@@ -192,16 +191,14 @@ function OfficeSpaces() {
 
           {/* Hero Content */}
           <div className="order-1 lg:order-2 space-y-6">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-highlight leading-tight">
-              Your Workspace, <br />
-              <span className="text-primary">Reimagined</span>
-            </h1>
-
-            <h2 className="text-xl lg:text-2xl font-semibold text-secondary">
+            <SectionHeading>
+              Your Workspace, <HighlightedText> Reimagined</HighlightedText>
+            </SectionHeading>
+            <h2 className="text-md lg:text-xl font-semibold text-[#1f1f1f]/80">
               Branding Support to Tell Your Story
             </h2>
 
-            <p className="text-base lg:text-lg text-gray-700 leading-relaxed">
+            <p className="text-base lg:text-md text-gray-700 leading-relaxed text-justify max-w-xl">
               Our 150,000 SQ.FT co-working spaces at IIT Kanpur and Noida offer
               24/7 access to flexible workstations, high-speed internet, meeting
               rooms, ergonomic furniture, startup accommodation, and on-site
@@ -237,18 +234,16 @@ function OfficeSpaces() {
           </div>
 
           {/* Image Gallery */}
-          <div className="grid grid-cols-2 gap-4 lg:gap-6">
+          <div className="grid grid-cols-3 gap-4 lg:gap-6">
             {galleryImages.map((image, index) => (
               <div
                 key={index}
-                className={
-                  image.className.includes("col-span-2") ? "col-span-2" : ""
-                }
+             
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className={`w-full ${image.className} object-cover rounded-2xl shadow-md`}
+                  className={`w-full h-60 object-cover rounded-2xl shadow-md`}
                   loading="lazy"
                 />
               </div>
@@ -311,9 +306,6 @@ function OfficeSpaces() {
           ))}
         </div>
       </Section>
-
-      {/* Call to Action */}
-      <LetUsKnow />
     </PageLayout>
   );
 }

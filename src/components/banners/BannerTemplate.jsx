@@ -14,7 +14,7 @@ function BannerTemplate({ Heading="heading", Description="description" }) {
       >
         <div>
           <motion.div
-            className="text-2xl lg:text-[50px] w-full font-medium capitalize"
+            className="text-2xl lg:text-6xl w-full font-medium capitalize"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

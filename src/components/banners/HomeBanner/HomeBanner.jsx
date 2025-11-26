@@ -7,7 +7,7 @@ import ContentSection from "./ContentSection";
 function HomeBanner() {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="relative text-white flex w-full justify-start">
+    <div className="relative text-white flex w-full justify-start ">
       {/* Content div */}
       <ContentSection isHovered={isHovered} setIsHovered={setIsHovered} />
       {/* Banner Image - Coming from bottom */}
@@ -24,7 +24,7 @@ function HomeBanner() {
         <motion.img
           src="/SIIC_building.png"
           alt="siic building picture"
-          className="w-full h-auto"
+          className="w-full h-auto "
           transition={{ duration: 0.3 }}
         />
       </motion.div>

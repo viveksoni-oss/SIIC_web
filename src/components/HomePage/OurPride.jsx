@@ -6,14 +6,14 @@ function OurPride() {
   const navigate = useNavigate();
   return (
     <div className=" mx-auto mt-40 mb-35 ">
-      <div className="flex flex-col xl:flex-row items-center justify-between  gap-16 xl:gap-8">
+      <div className="flex flex-col xl:flex-row   items-center justify-between  gap-16 xl:gap-8">
         {/* Left side - Carousel */}
-        <div className="2xl:ml-30 xl:ml-10">
+        <div className="2xl:ml-30 xl:ml-10 xl:order-none order-2 xl:mt-auto mt-15">
           <CarouselLayout />
         </div>
 
         {/* Right side - Our Pride */}
-        <div className=" shrink-0 md:w-2/3 w-full md:self-end xl:w-1/3   2xl:w-[450px]">
+        <div className=" shrink-0 md:w-2/3 xl:order-none order-1 w-full md:self-end xl:w-1/3   2xl:w-[450px]">
           <div className="bg-[#F5F5F5]  mx-2 lg:mx-0 md:rounded-l-2xl px-12 py-10 flex flex-col items-start gap-8 shadow">
             <h1 className="text-[42px] font-extralight leading-snug">
               Our{" "}
@@ -22,13 +22,8 @@ function OurPride() {
               </HighlightedText>
             </h1>
             <p className="text-base text-[#292929] leading-relaxed">
-              Real journeys of passion,
-              <br />
-              persistence, and innovation — from
-              <br />
-              bold ideas to breakthrough
-              <br />
-              startups that made it happen.
+              Real journeys of passion, persistence, and innovation from bold
+              ideas to breakthrough startups that made it happen.
             </p>
             <button
               onClick={() => navigate("/startups")}

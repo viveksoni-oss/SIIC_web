@@ -3,6 +3,7 @@ import HighlightedText from "../Utility Components/HighlightedText";
 import PathButton from "./PathButton";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { paths } from "@/data/KnowYourJourneyData";
 
 function KnowYourJourney() {
   const [currentPath, setCurrentPath] = useState(null);
@@ -10,82 +11,6 @@ function KnowYourJourney() {
   const [scrollTo, setScrollTo] = useState(null);
   const pathRef = useRef(null);
 
-  const paths = [
-    {
-      title: "idea",
-      content: "idea content",
-      path: "Bulb.svg",
-      hoverPath: "bulb-hover.svg",
-      CardContent: {
-        title: "Ideation",
-        paragraph: "Technological Readiness Level - 1 to 3",
-        RoadmapLink: "Ideation",
-        values: [
-          { title: "Mentorship", icon: "Mentorship" },
-          { title: "Lab-Facilities", icon: "Lab-Facilities" },
-          { title: "Investments", icon: "Investments" },
-        ],
-      },
-    },
-    {
-      title: "Prototype",
-      content: "Prototype content",
-      path: "Prototype.svg",
-      hoverPath: "prototype-hover.svg",
-      CardContent: {
-        title: "Prototype Development",
-        paragraph: "Technological Readiness Level - 4 to 6",
-        RoadmapLink: "Prototype",
-        values: [
-          { title: "Mentorship", icon: "Mentorship" },
-          { title: "Lab-facilities", icon: "Lab-Facilities" },
-          { title: "Investments", icon: "Investments" },
-          { title: "Office-Facilities", icon: "Office-Facilities" },
-        ],
-      },
-    },
-    {
-      title: "Scale up",
-      content: "Market",
-      path: "ScaleUp.svg",
-      hoverPath: "scaleUp-hover.svg",
-      CardContent: {
-        title: "Scale Up",
-        paragraph: "Technological Readiness Level - 7 to 9",
-        RoadmapLink: "ScaleUp",
-        values: [
-          { title: "Mentorship", icon: "Mentorship" },
-          { title: "Lab-Facilities", icon: "Lab-Facilities" },
-          { title: "Investments", icon: "Investments" },
-          { title: "Office - Facilities", icon: "Office-Facilities" },
-          { title: "Portfolio Manager", icon: "Portfolio Manager" },
-          { title: "Legal Compliance", icon: "Legal Compliance" },
-          { title: "Media & Branding", icon: "Media & Branding" },
-        ],
-      },
-    },
-    {
-      title: "Market",
-      content: "Market content",
-      path: "moneyDollar.svg",
-      hoverPath: "moneyDollar-hover.svg",
-      CardContent: {
-        title: "Market Ready",
-        paragraph: "Technological Readiness Level - 9+",
-        RoadmapLink: "Market",
-        values: [
-          { title: "Mentorship", icon: "Mentorship" },
-          { title: "Lab-Facilities", icon: "Lab-Facilities" },
-          { title: "Investments", icon: "Investments" },
-          { title: "Office - Facilities", icon: "Office-Facilities" },
-          { title: "Portfolio Manager", icon: "Portfolio Manager" },
-          { title: "Legal Compliance", icon: "Legal Compliance" },
-          { title: "Media & Branding", icon: "Media & Branding" },
-          { title: "Global Connect", icon: "Global Connect" },
-        ],
-      },
-    },
-  ];
   // Function to get direction of transition
   const getTransitionDirection = (currentIndex, previousIndex) => {
     if (previousIndex === null) return 0;
@@ -97,6 +22,7 @@ function KnowYourJourney() {
     setPreviousPath(currentPath);
     setCurrentPath(newPath);
   };
+
   useEffect(() => {
     if (!scrollTo) return;
 
@@ -120,7 +46,9 @@ function KnowYourJourney() {
       }
     };
     const container = document.getElementById("containerClass");
-    container.addEventListener("click", handleClickOutside);
+    if (container) {
+      container.addEventListener("click", handleClickOutside);
+    }
 
     return () => {
       if (container) {
@@ -139,19 +67,22 @@ function KnowYourJourney() {
   const direction = getTransitionDirection(currentIndex, previousIndex);
 
   return (
-    <div id="containerClass" className="w-full">
+    <div id="containerClass" className="w-full px-4 md:px-0">
       <div
-        className="mx-auto mt-26 container w-3/4 mb-45  p-6 rounded-2xl border-2 border-primary flex flex-col items-center justify-center"
+        className="mx-auto mt-10 md:mt-26 container w-full md:w-3/4 mb-20 md:mb-45 p-4 md:p-6 rounded-2xl border-2 border-primary flex flex-col items-center justify-center"
         ref={pathRef}
       >
-        <div className="flex justify-center items-center gap-2 flex-col">
-          <h1 className="text-[40px] font-light" id="knowYourJourney">
+        <div className="flex justify-center items-center gap-2 flex-col text-center">
+          <h1
+            className="text-3xl md:text-[40px] font-light"
+            id="knowYourJourney"
+          >
             Know your{" "}
-            <HighlightedText weight={600} size={"40px"}>
+            <HighlightedText weight={600} size={"clamp(30px, 4vw, 40px)"}>
               Journey
             </HighlightedText>
           </h1>
-          <p>
+          <p className="text-sm md:text-base px-4 md:px-0">
             Explore your startup's path -- SIIC guides you with support and
             resources.
           </p>
@@ -159,7 +90,7 @@ function KnowYourJourney() {
 
         <div
           id="start"
-          className="flex flex-row items-center justify-center gap-18 mt-10 container flex-wrap "
+          className="flex flex-row items-center justify-center gap-6 md:gap-18 mt-8 md:mt-10 container flex-wrap"
         >
           {paths.map((path) => (
             <PathButton
@@ -205,14 +136,18 @@ function KnowYourJourney() {
                 }
                 className="w-full"
               >
-                <div className="w-full h-auto mt-6 p-4 border-t-1 border-black/50 relative">
+                <div className="w-full h-auto mt-6 p-0 md:p-4 border-t-0 md:border-t-1 border-black/50 relative">
+                  {/* Mobile Separator */}
+                  <div className="w-full h-[1px] bg-black/20 mb-6 md:hidden block" />
+
                   <div className="relative overflow-hidden">
                     <motion.button
                       onClick={() => {
                         setCurrentPath(null);
                         setPreviousPath(null);
+                        setScrollTo("knowYourJourney");
                       }}
-                      className="absolute top-2 right-3 rounded-full p-2 text-primary"
+                      className="absolute top-0 right-0 md:top-2 md:right-3 rounded-full p-2 text-primary z-10"
                       whileHover={{
                         scale: 1.15,
                         rotate: 90,
@@ -226,7 +161,7 @@ function KnowYourJourney() {
                         ease: "easeInOut",
                       }}
                     >
-                      <X className="transition-colors duration-200" />
+                      <X className="transition-colors duration-200 w-6 h-6" />
                     </motion.button>
 
                     <AnimatePresence mode="wait">
@@ -249,11 +184,11 @@ function KnowYourJourney() {
                         }}
                         className="w-full"
                       >
-                        <div className="flex flex-col gap-2 my-10 justify-center items-center">
-                          <h2 className="text-4xl font-[600]">
+                        <div className="flex flex-col gap-2 my-6 md:my-10 justify-center items-center text-center px-2">
+                          <h2 className="text-2xl md:text-4xl font-[600]">
                             {currentPath?.CardContent.title}
                           </h2>
-                          <p className="text-base font-medium">
+                          <p className="text-sm md:text-base font-medium">
                             {currentPath.CardContent.paragraph
                               .split(" ")
                               .map((word, idx) => {
@@ -276,24 +211,27 @@ function KnowYourJourney() {
                         <img
                           src={`/KnowYourJourney/JourneySection/${currentPath.CardContent.RoadmapLink}.svg`}
                           alt={currentPath.CardContent.RoadmapLink}
-                          className="w-full h-auto md:p-20 p-0"
+                          className="w-full h-auto p-0 md:p-20"
                         />
 
-                        <div className="mt-10 flex justify-center items-center gap-6 flex-col">
-                          <h2 className="text-[40px] font-[400]">
+                        <div className="mt-10 flex justify-center items-center gap-6 flex-col text-center">
+                          <h2 className="text-2xl md:text-[40px] font-[400]">
                             The{" "}
-                            <HighlightedText weight={600} size="40px">
+                            <HighlightedText
+                              weight={600}
+                              size="clamp(24px, 4vw, 40px)"
+                            >
                               Value{" "}
                             </HighlightedText>{" "}
                             we Provide...
                           </h2>
 
-                          <div className="flex gap-6 justify-center items-center flex-wrap mx-20">
+                          <div className="flex gap-4 md:gap-6 justify-center items-center flex-wrap mx-2 md:mx-20">
                             {currentPath.CardContent.values.map(
                               (value, idx) => (
                                 <motion.div
                                   key={idx}
-                                  className="bg-[rgba(227,227,227,0.4)] h-38 flex-col gap-5 w-38 rounded-xl flex justify-center items-center p-4"
+                                  className="bg-[rgba(227,227,227,0.4)] h-32 w-32 md:h-38 md:w-38 flex-col gap-3 md:gap-5 rounded-xl flex justify-center items-center p-2 md:p-4"
                                   initial={{ opacity: 0, y: 20, scale: 0.9 }}
                                   animate={{ opacity: 1, y: 0, scale: 1 }}
                                   transition={{
@@ -309,13 +247,14 @@ function KnowYourJourney() {
                                     transition: { duration: 0.2 },
                                   }}
                                 >
-                                  <div className="flex justify-center items-center border-primary-highlight border-2 rounded-full bg-white w-16 h-16">
+                                  <div className="flex justify-center items-center border-primary-highlight border-2 rounded-full bg-white w-12 h-12 md:w-16 md:h-16">
                                     <img
                                       src={`/KnowYourJourney/JourneySection/icons/${value.icon}.svg`}
                                       alt={`${value.title} icon`}
+                                      className="w-6 h-6 md:w-auto md:h-auto"
                                     />
                                   </div>
-                                  <p className="text-center text-sm">
+                                  <p className="text-center text-xs md:text-sm">
                                     {value.title}
                                   </p>
                                 </motion.div>

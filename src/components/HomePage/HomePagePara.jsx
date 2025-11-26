@@ -7,8 +7,8 @@ function HomePagePara() {
   const isMobile = useIsMobile();
   return (
     <div
-      className={`text-[32px]  sm:text-[24px] md:text-[36px] px-[12px] md:px-0 flex items-center justify-center   content-center mx-auto my-16 ${
-        isMobile ? "pt-20 -mt-40" : ""
+      className={`text-[32px]  sm:text-[24px] md:text-[36px] px-[12px] md:px-0 flex items-center justify-center   content-center mx-auto my-16   -mt-20 ${
+        isMobile ? "pt-20 -mt-40 " : "pt-40"
       }`}
     >
       <div className="md:max-w-3xl max-w-sm text-center font-[200] mx-auto">

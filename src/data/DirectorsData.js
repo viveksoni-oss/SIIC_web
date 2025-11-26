@@ -1,10 +1,10 @@
 export const DirectorData = [
   {
     id: 1,
-    name: "Prof. Manindra Agrawal",
+    name: "Prof.Manindra Agrawal",
     role: "Director",
     domain: "",
-    image: "BoardOfDirectors/ManindraAgrawal.png",
+    image: "BoardOfDirectors/Manindra-Agrawal.png",
     linkedin: "https://www.linkedin.com/in/manindra-agrawal-b766721b/",
     strengths: "",
   },
@@ -13,7 +13,7 @@ export const DirectorData = [
     name: "Prof. Braj Bhushan",
     role: "Director",
     domain: "",
-    image: "BoardOfDirectors/braj_bhushan.png",
+    image: "BoardOfDirectors/braj-bhushan.png",
     linkedin: "https://in.linkedin.com/in/braj-bhushan-3b92673",
     strengths: "",
   },
@@ -31,7 +31,7 @@ export const DirectorData = [
     name: "Prof. Tarun Gupta",
     role: "",
     domain: "Strategy & Partnerships, SIIC",
-    image: "BoardOfDirectors/tarun_gupta.png",
+    image: "BoardOfDirectors/tarun-gupta.png",
     linkedin: "https://in.linkedin.com/in/tarun-gupta-96043b86",
     strengths:
       "Business Development, Partnership Building, Strategic Visioning, Market Expansion, Stakeholder Engagement",

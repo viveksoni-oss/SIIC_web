@@ -32,7 +32,7 @@ function Startups() {
         </div>
 
         <div>
-          <div className="grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 p-8 xl:justify-items-start justify-items-center grid-cols-1 2xl:grid-cols-5 h-[600px] overflow-y-auto 2xl:gap-8 pt-6 2xl:justify-items-center ">
+          <div className="grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-6 p-8 xl:justify-items-start justify-items-center grid-cols-1 2xl:grid-cols-5 h-[600px] overflow-y-auto 2xl:gap-12 2xl:gap-y-15 pt-6 2xl:justify-items-center ">
             {filteredData.map((startup) => (
               <StartupCard key={startup.id} data={startup} />
             ))}

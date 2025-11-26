@@ -2,12 +2,9 @@ import HighlightedText from "../Utility Components/HighlightedText";
 
 export default function OurOfferings({ offerings }) {
   return (
-    <div className="col-span-3 p-4 sm:p-6 space-y-6 sm:space-y-8 relative">
+    <div className="col-span-3 p-4 sm:p-6 space-y-6 sm:space-y-8 justify-items-start relative">
       <h1 className="text-[28px] sm:text-[32px] lg:text-[40px] font-thin mb-4 sm:mb-7">
-        Our{" "}
-        <HighlightedText weight={700}>
-          Offerings
-        </HighlightedText>
+        Our <HighlightedText weight={700}>Offerings</HighlightedText>
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">

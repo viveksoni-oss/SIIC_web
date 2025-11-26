@@ -3,24 +3,30 @@ import { useNavigate } from "react-router";
 import AnimatedLogo from "../../LogoAnimation/Logo";
 import HighlightedText from "../../Utility Components/HighlightedText";
 import { motion } from "framer-motion";
+import useIsMobile from "@/Hooks/useIsMobile";
 function ContentSection({ isHovered, setIsHovered }) {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   return (
     <motion.div
-      className="p-6 sm:px-10 md:px-16 lg:px-12 2xl:px-20 pt-16 sm:pt-20 md:pt-15 2xl:pt-24 max-w-full sm:max-w-[500px] md:max-w-[550px] 2xl:max-w-[650px] min-h-[400px] sm:min-h-[450px] md:h-[500px] flex flex-col gap-3 sm:gap-4 -mt-9"
+      className="p-6 sm:px-10 md:px-16 lg:px-12 2xl:px-20 pt-16 sm:pt-20 md:pt-15 2xl:pt-24 max-w-full sm:max-w-[600px] md:max-w-full xl:max-w-[650px] min-h-[400px] sm:min-h-[450px] md:h-[500px] flex flex-col gap-3 sm:gap-4 -mt-9"
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      onHoverStart={() => setIsHovered(true)}
+      onHoverStart={() => setIsHovered(true)}  
       onHoverEnd={() => setIsHovered(false)}
     >
-      <AnimatedLogo
-        setIsHovered={setIsHovered}
-        isHovered={isHovered}
-      ></AnimatedLogo>
+      {isMobile ? (
+        <div className="bg-white h-[6px] w-[80px] mt-10 -ml-1"></div>
+      ) : (
+        <AnimatedLogo
+          setIsHovered={setIsHovered}
+          isHovered={isHovered}
+        ></AnimatedLogo>
+      )}
       <div>
         <motion.div
-          className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl w-full font-medium capitalize"
+          className="text-5xl sm:text-6xl md:text-4xl lg:text-6xl 2xl:text-6xl w-full font-medium leading-tight capitalize"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -28,7 +34,7 @@ function ContentSection({ isHovered, setIsHovered }) {
           We incubate{" "}
           <HighlightedText>
             {" "}
-            <br className="sm:hidden" />
+            {/* <br className="sm:hidden" /> */}
             your
           </HighlightedText>{" "}
           innovations
@@ -41,11 +47,10 @@ function ContentSection({ isHovered, setIsHovered }) {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           From crazy concepts to real impact — we're with you at every{" "}
-          <br className="sm:hidden" />
+          {/* <br className="sm:hidden" /> */}
           step of the startup journey.
         </motion.p>
       </div>
-
       <motion.div
         className="flex  gap-4 sm:gap-6 md:gap-8 lg:gap-11 text-sm sm:text-base justify-start mt-3 sm:mt-5 font-semibold"
         initial={{ opacity: 0, y: 30 }}

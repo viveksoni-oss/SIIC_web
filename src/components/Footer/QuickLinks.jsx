@@ -30,33 +30,40 @@ function QuickLinks() {
     <div className="flex flex-col gap-4 grow-1 ">
       <h3 className="text-base font-bold">Quick Link:</h3>
 
-      <div className="flex gap-6 text-[#9ca3a5]">
+      <div className="flex gap-4 flex-wrap text-[#9ca3a5]">
         {LinksList.map((link) => {
           if (link.isExternalLink) {
             return (
-              <a
-                key={link.linkTitle}
-                target="_blank"
-                className={`underline underline-offset-6 hover:text-primary-highlight `}
-                href={link.link}
-              >
-                {link.linkTitle}
-              </a>
+              <div>
+                <a
+                  key={link.linkTitle}
+                  target="_blank"
+                  className={`relative hover:text-primary-highlight `}
+                  href={link.link}
+                >
+                  {link.linkTitle}
+                  <span
+                    className={`absolute left-0 -bottom-0.5 w-full group-hover/link:-bottom-[2px] bg-[#9ca3a5] group-hover/link:bg-white h-[1px] `}
+                  ></span>
+                </a>
+              </div>
             );
           } else {
             return (
-              <Link
-                key={link.linkTitle}
-                className={`relative transition-color duration-300 hover:text-primary-highlight group/link  ${
-                  pathname == link.link ? "text-primary-highlight " : null
-                }`}
-                to={link.link}
-              >
-                {link.linkTitle}
-                <span
-                  className={`absolute left-0 -bottom-0.5 w-full group-hover/link:-bottom-[2px] bg-[#9ca3a5] group-hover/link:bg-white h-[1px] `}
-                ></span>
-              </Link>
+              <div>
+                <Link
+                  key={link.linkTitle}
+                  className={`relative transition-color duration-300 hover:text-primary-highlight group/link  ${
+                    pathname == link.link ? "text-primary-highlight " : null
+                  }`}
+                  to={link.link}
+                >
+                  {link.linkTitle}
+                  <span
+                    className={`absolute left-0 -bottom-0.5 w-full group-hover/link:-bottom-[2px] bg-[#9ca3a5] group-hover/link:bg-white h-[1px] `}
+                  ></span>
+                </Link>
+              </div>
             );
           }
         })}
@@ -64,14 +71,18 @@ function QuickLinks() {
 
       <div className="mt-14 text-[#9ca3a5] font-medium flex flex-col justify-center gap-8">
         <div className="flex gap-4">
-          <img src="/Icons/location-pin.svg" className="w-8 h-8" alt="location-pin-icon" />
+          <img
+            src="/Icons/location-pin.svg"
+            className="w-8 h-8"
+            alt="location-pin-icon"
+          />
           <div className="w-[480px]">
             Indian Institute of Technology Kanpur, Kalyanpur, Kanpur Nagar,
             Uttar Pradesh-208016, India
           </div>
         </div>
         <div className="flex item-center gap-4 ">
-          <img src="/Icons/mail.svg" className="w-8 h-8"alt="mail-icon" />
+          <img src="/Icons/mail.svg" className="w-8 h-8" alt="mail-icon" />
           <a href="mailto:siic@iitk.ac.in">siic@iitk.ac.in</a>
         </div>{" "}
       </div>

@@ -24,17 +24,19 @@ import JoinAsMentor from "./pages/JoinAsMentor.jsx";
 import JoinAsInvestor from "./pages/JoinAsInvestor";
 import Careers from "./pages/Careers";
 import Tenders from "./pages/Tenders.jsx";
+import { useRef } from "react";
 
 function App() {
   useScrollToTop();
   useTitle();
+  const footerRef = useRef();
   return (
     <>
       <div className=" max-w-[100rem]  mx-auto overflow-hidden relative z-10 ">
         <Header></Header>
         <Routes>
           {/* HOME PAGE */}
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage footerRef={footerRef} />} />
           {/* PROGRAMS SECTION */}
           {/* Main programs listing page */}
           <Route path="/programs" element={<Programs />}></Route>
@@ -81,7 +83,7 @@ function App() {
           <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
         </Routes>
         {/* Footer  */}
-        <Footer></Footer>
+        <Footer footerRef={footerRef}></Footer>
       </div>
     </>
   );

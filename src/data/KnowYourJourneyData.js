@@ -1,0 +1,76 @@
+export  const paths = [
+  {
+    title: "idea",
+    content: "idea content",
+    path: "Bulb.svg",
+    hoverPath: "bulb-hover.svg",
+    CardContent: {
+      title: "Ideation",
+      paragraph: "Technological Readiness Level - 1 to 3",
+      RoadmapLink: "Ideation",
+      values: [
+        { title: "Mentorship", icon: "Mentorship" },
+        { title: "Lab-Facilities", icon: "Lab-Facilities" },
+        { title: "Investments", icon: "Investments" },
+      ],
+    },
+  },
+  {
+    title: "Prototype",
+    content: "Prototype content",
+    path: "Prototype.svg",
+    hoverPath: "prototype-hover.svg",
+    CardContent: {
+      title: "Prototype Development",
+      paragraph: "Technological Readiness Level - 4 to 6",
+      RoadmapLink: "Prototype",
+      values: [
+        { title: "Mentorship", icon: "Mentorship" },
+        { title: "Lab-facilities", icon: "Lab-Facilities" },
+        { title: "Investments", icon: "Investments" },
+        { title: "Office-Facilities", icon: "Office-Facilities" },
+      ],
+    },
+  },
+  {
+    title: "Scale up",
+    content: "Market",
+    path: "ScaleUp.svg",
+    hoverPath: "scaleUp-hover.svg",
+    CardContent: {
+      title: "Scale Up",
+      paragraph: "Technological Readiness Level - 7 to 9",
+      RoadmapLink: "ScaleUp",
+      values: [
+        { title: "Mentorship", icon: "Mentorship" },
+        { title: "Lab-Facilities", icon: "Lab-Facilities" },
+        { title: "Investments", icon: "Investments" },
+        { title: "Office - Facilities", icon: "Office-Facilities" },
+        { title: "Portfolio Manager", icon: "Portfolio Manager" },
+        { title: "Legal Compliance", icon: "Legal Compliance" },
+        { title: "Media & Branding", icon: "Media & Branding" },
+      ],
+    },
+  },
+  {
+    title: "Market",
+    content: "Market content",
+    path: "moneyDollar.svg",
+    hoverPath: "moneyDollar-hover.svg",
+    CardContent: {
+      title: "Market Ready",
+      paragraph: "Technological Readiness Level - 9+",
+      RoadmapLink: "Market",
+      values: [
+        { title: "Mentorship", icon: "Mentorship" },
+        { title: "Lab-Facilities", icon: "Lab-Facilities" },
+        { title: "Investments", icon: "Investments" },
+        { title: "Office - Facilities", icon: "Office-Facilities" },
+        { title: "Portfolio Manager", icon: "Portfolio Manager" },
+        { title: "Legal Compliance", icon: "Legal Compliance" },
+        { title: "Media & Branding", icon: "Media & Branding" },
+        { title: "Global Connect", icon: "Global Connect" },
+      ],
+    },
+  },
+];

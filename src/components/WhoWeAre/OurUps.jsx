@@ -2,7 +2,7 @@ import React from "react";
 
 function OurUps() {
   return (
-    <section className=" mt-32 flex flex-col md:flex-row justify-between  items-center w-full relative py-8">
+    <section className=" mt-32 flex flex-col lg:flex-row justify-between  items-center w-full relative py-8">
       {/* Text Block */}
       <div className="flex flex-col items-start max-w-2xl">
         <h1 className="text-[40px] font-thin mb-6">
@@ -34,13 +34,12 @@ function OurUps() {
       </div>
       {/* Illustration Block */}
       <div className="mt-25 pr-15">
-        <div className="w-[400px] h-[242px] border-2 border-secondary-gray mx-0 md:mx-12 rounded-2xl relative">
-          <div className=" px-4 py-2 aspect-square w-[180px] bg-secondary rounded-lg absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 flex justify-center items-center text-center flex-col text-white gap-2">
+        <div className=" w-[200px] h-[180px] lg:w-[400px] lg:h-[242px] border-2 border-secondary-gray mx-0 md:mx-12 rounded-2xl relative">
+          <div className=" px-4 py-2 aspect-square h-[60px] w-[60px] lg:w-[180px] bg-secondary rounded-lg absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 flex justify-center items-center text-center flex-col text-white lg:gap-2">
             <img
               src="/WhoWeAre/icons/Frame-1.svg"
-              width={75}
-              height={75}
               alt=""
+              className="w-25 h-25"
             />
             <p>Multidisciplinary Team</p>
           </div>

@@ -6,8 +6,8 @@ function StartupCard({ data }) {
   const [error, setError] = useState(false);
   const FALL_BACK_IMAGE = "fallback.png";
   const content = (
-    <div className="text-white rounded-md group inline-flex w-[260px]  hover:-translate-y-4 transition-all duration-600 ease-in-out flex-col cursor-pointer">
-      <div className="w-[260px] h-[260px] flex items-center justify-center">
+    <div className="text-white rounded-t-md group inline-flex w-[260px]  hover:-translate-y-4 transition-all duration-600 ease-in-out flex-col cursor-pointer overflow-hidden ">
+      <div className="w-[260px] h-[260px] flex items-center justify-center  rounded-t-md overflow-hidden border border-secondary-gray ">
         <img
           src={error ? FALL_BACK_IMAGE : data.image}
           onError={() => setError(true)}

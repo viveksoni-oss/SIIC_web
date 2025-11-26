@@ -4,6 +4,7 @@ export const navItems = [
     hasDropdown: false,
     linkAddress: "/",
   },
+
   {
     name: "What we Offer",
     hasDropdown: true,
@@ -19,15 +20,10 @@ export const navItems = [
           { heading: "Lab", linkAddress: "/lab" },
           { heading: "Office Space", linkAddress: "/office-spaces" },
           { heading: "Branding", linkAddress: "/branding" },
-          // {
-          //   heading: "Manage Portfolio",
-          //   linkAddress: "/manage-portfolios",
-          // },
         ],
       },
       { heading: "Partners", linkAddress: "/partners" },
       { heading: "Mentors", linkAddress: "/mentors" },
-      // { heading: "Co-founder", linkAddress: "/cofounders" },
       { heading: "Patents", linkAddress: "/patents" },
     ],
   },
@@ -35,6 +31,33 @@ export const navItems = [
     name: "Start ups",
     hasDropdown: false,
     linkAddress: "/startups",
+  },
+  {
+    name: "CoE",
+    hasDropdown: true,
+    linkAddress: "/",
+    dropdownItems: [
+      {
+        isExternal: "true",
+        heading: "AIIDE-CoE",
+        linkAddress: "https://www.aiidecoe.com/",
+      },
+      {
+        isExternal: "true",
+        heading: "Drone-CoE",
+        linkAddress: "https://dronecoe.siicincubator.com/",
+      },
+      {
+        isExternal: "true",
+        heading: "DST-NIDHI MedTech",
+        linkAddress: "https://medtechcoe.siicincubator.com/",
+      },
+      {
+        isExternal: "true",
+        heading: "5g-6g CoE",
+        linkAddress: "https://5g6gcoe.siicincubator.com/",
+      },
+    ],
   },
   {
     name: "Join Us",

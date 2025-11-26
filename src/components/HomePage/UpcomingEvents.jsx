@@ -3,7 +3,7 @@ import HighlightedText from "./../Utility Components/HighlightedText";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router";
 
-const AUTO_SCROLL_DELAY = 1500000; // Increased to 5 seconds for better UX
+const AUTO_SCROLL_DELAY = 5000; // Increased to 5 seconds for better UX
 const ANIMATION_DURATION = 0.6;
 
 const eventsData = [
@@ -14,18 +14,18 @@ const eventsData = [
     location: "IIT Kanpur",
     date: "15-12-2025",
     time: "10:00 AM",
-    image: "/UpcomingEvents/abhivyakti poster.png",
+    image: "/UpcomingEvents/Abhivyakti.svg",
   },
-  // {
-  //   id: 2,
-  //   title: "TechFest 2025",
-  //   description:
-  //     "Annual technical festival showcasing innovation and technology breakthroughs from across the nation...",
-  //   location: "IIT Bombay",
-  //   date: "22-04-2025",
-  //   time: "09:00 AM",
-  //   image: "/UpcomingEvents/Abhivyakti.svg",
-  // },
+  {
+    id: 2,
+    title: "TechFest 2025",
+    description:
+      "Annual technical festival showcasing innovation and technology breakthroughs from across the nation...",
+    location: "IIT Bombay",
+    date: "22-04-2025",
+    time: "09:00 AM",
+    image: "/UpcomingEvents/Abhivyakti.svg",
+  },
   // {
   //   id: 3,
   //   title: "StartUp Summit",
@@ -188,13 +188,13 @@ function UpcomingEvents() {
   const navigate = useNavigate();
   return (
     <motion.div
-      className="w-full pb-50 overflow-hidden relative"
+      className="w-full pb-50 overflow-hidden relative lg:block hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       {/* Image and Navigation Dots Section */}
-      <div className="absolute right-20 translate-y-[28%] flex gap-18 justify-between z-20">
+      <div className="absolute right-20 translate-y-1/6 flex gap-18 justify-between z-20">
         <div className="relative w-full">
           <div className="rounded-2xl overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
@@ -302,8 +302,10 @@ function UpcomingEvents() {
                 </div>
 
                 {/* Event Description */}
-                <p className="font-medium mt-4  text-gray-700">
-                  {currentEvent.description}
+                <p className="font-medium mt-4   text-gray-700">
+                  <span className="line-clamp-2">
+                    {currentEvent.description}
+                  </span>
 
                   <button
                     onClick={() => navigate("/upcoming-events")}

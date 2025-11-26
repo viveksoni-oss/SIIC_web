@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import HighlightedText from "../Utility Components/HighlightedText";
-import CardArrow from "../Utility Components/CardArrow";
 import {
   Select,
   SelectContent,
@@ -11,6 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import NewTeamCard from "../Utility Components/NewTeamCard";
+
 // Utility: Define a hierarchy order for roles
 const getSortOrder = (role) => {
   const hierarchy = [
@@ -21,11 +21,12 @@ const getSortOrder = (role) => {
     "Senior VP",
     "VP",
     "General Manager",
+    "Assistant Vice President",
     "Head",
     "Senior Manager",
     "Manager",
     "Deputy Manager",
-    "Assistant Vice President",
+
     "Assistant General Manager",
     "Assistant Manager",
     "Project Engineer",
@@ -45,7 +46,7 @@ const getSortOrder = (role) => {
   }
   return hierarchy.length; // unknown role at end
 };
-function TeamSections({ heading, TeamData, filter = true }) {
+function TeamSections({ heading, TeamData, filter = true, imageFilter }) {
   // Extract unique domains
   const allDomains = Array.from(
     new Set(TeamData.map((member) => member.domain))
@@ -67,7 +68,7 @@ function TeamSections({ heading, TeamData, filter = true }) {
   return (
     <div>
       {/* Heading + filter bar as a flex row on desktop */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between px-4 xl:px-18 mt-8.5">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between  xl:px-18 mt-8.5">
         <h1
           id={`${heading.toLowerCase().split(" ").join("-")}`}
           className="text-[36px] md:text-[40px] font-thin capitalize"
@@ -98,15 +99,12 @@ function TeamSections({ heading, TeamData, filter = true }) {
           </div>
         )}
       </div>
-      <div className="px-4 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 gap-y-10 rounded-2xl items-center justify-items-center relative">
-        {filtered.map((data) => (
-          <NewTeamCard key={data.id} arrowColor={"#6c3231"} data={data} />
-        ))}
-        {filtered.length % 3 === 1 && (
-          <div className="absolute -right-5 -bottom-5 xl:block hidden overflow-hidden">
-            <img src="/Polygon 5.svg" alt="rounded 222 triangle" />
-          </div>
-        )}
+      <div className="px-4  md:px-12 py-16  relative max-h-[600px] sm:max-h-[670px] overflow-x-clip overflow-y-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10  rounded-2xl items-center justify-items-center">
+          {filtered.map((data) => (
+            <NewTeamCard key={data.id} imageFilter={imageFilter} data={data} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 // Header/index.jsx
 import { motion } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { navItems } from "./HeaderItems";
 import { checkActiveLink, preloadImage } from "./utils";
 import Logo from "./Logo";
@@ -54,14 +54,16 @@ function Header() {
   );
 
   const handleDropdownClick = useCallback(
-    (linkAddress) => {
-      if (linkAddress) {
-        navigate(linkAddress);
-        setDropdownOpen(null);
-        setNestedDropdownOpen(null);
-        setMobileNestedOpen(null);
-        setIsMobileMenuOpen(false);
+    (linkAddress, isExternal = false) => {
+      if (isExternal) {
+        window.open(linkAddress, "_blank"); // Open external link in new tab
+      } else {
+        navigate(linkAddress); // Internal link using react-router
       }
+      setDropdownOpen(null);
+      setNestedDropdownOpen(null);
+      setMobileNestedOpen(null);
+      setIsMobileMenuOpen(false);
     },
     [navigate]
   );
