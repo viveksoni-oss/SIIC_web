@@ -50,11 +50,11 @@ function NewTeamCard({ data, imageFilter, imageF }) {
             >
               {!isHovered ? (
                 <img
-                  src="/Icons/hover-icons/linkedIn-hover.svg"
+                  src="Icons/hover-icons/linkedIn-hover.svg"
                   className="h-6 w-6"
                 />
               ) : (
-                <img src="/Icons/linkedIn.svg" className="h-6 w-6" />
+                <img src="Icons/linkedIn.svg" className="h-6 w-6" />
               )}
             </a>
           )}

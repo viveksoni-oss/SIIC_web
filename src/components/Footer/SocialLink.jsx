@@ -10,8 +10,8 @@ function SocialLink() {
     },
     {
       title: "linkedIn",
-      icon: "/Icons/linkedIn.svg",
-      hoverIcon: "/Icons/hover-icons/linkedIn-hover.svg",
+      icon: "Icons/linkedIn.svg",
+      hoverIcon: "Icons/hover-icons/linkedIn-hover.svg",
     },
     {
       title: "instagram",
