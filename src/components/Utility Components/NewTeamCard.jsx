@@ -1,6 +1,7 @@
 import useIsMobile from "@/Hooks/useIsMobile";
 import { Lightbulb, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
+import LinkedinIcon from "../IconComponents/LinkedinIcon";
 
 function NewTeamCard({ data, imageFilter, imageF }) {
   const { name, role, domain, image, linkedin } = data;
@@ -48,14 +49,7 @@ function NewTeamCard({ data, imageFilter, imageF }) {
               rel="noreferrer"
               className="mr-2 inline-flex items-center text-indigo-800 hover:text-indigo-900"
             >
-              {!isHovered ? (
-                <img
-                  src="Icons/hover-icons/linkedIn-hover.svg"
-                  className="h-6 w-6"
-                />
-              ) : (
-                <img src="Icons/linkedIn.svg" className="h-6 w-6" />
-              )}
+              <LinkedinIcon isHovered={!isHovered}></LinkedinIcon>
             </a>
           )}
         </div>
