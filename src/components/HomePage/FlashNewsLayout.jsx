@@ -50,10 +50,10 @@ function FlashNewsLayout() {
       <div className="block md:hidden">
         <Carousel
           className={"overflow-visible"}
-          // opts={{  loop: true }}
-          // plugins={[autoplay.current]}
-          // onMouseEnter={() => autoplay.current.stop()}
-          // onMouseLeave={() => autoplay.current.play()}
+          opts={{ loop: true }}
+          plugins={[autoplay.current]}
+          onMouseEnter={() => autoplay.current.stop()}
+          onMouseLeave={() => autoplay.current.play()}
         >
           <CarouselContent>
             {newsDetails.map((newsDetail, idx) => (
@@ -69,9 +69,14 @@ function FlashNewsLayout() {
         </Carousel>
       </div>
       {/* DESKTOP/TABLET: Standard flex layout */}
-      <div className="hidden md:flex items-center flex-row flex-wrap justify-evenly gap-8">
+      <div className="hidden md:grid md:grid-cols-2 xl:grid-cols-3 gap-8 w-full justify-items-center">
         {newsDetails.map((newsDetail, idx) => (
-          <FlashNewsCard key={idx} newsDetail={newsDetail} />
+          <div
+            key={idx}
+            className="w-full min-w-0 max-w-full flex justify-center"
+          >
+            <FlashNewsCard newsDetail={newsDetail} />
+          </div>
         ))}
       </div>
     </div>

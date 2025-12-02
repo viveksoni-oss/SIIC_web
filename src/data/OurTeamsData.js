@@ -1,125 +1,10 @@
-// export const ourLeadership = [
-//   {
-//     id: 1,
-//     name: "Prof. Deepu Philip",
-//     role: "Professor In-Charge (Incubation & Innovation)",
-//     domain: "Leadership",
-//     image: "/OurTeam/OurLeadership/deepuji.png",
-//     linkedin: "",
-//     strengths:
-//       "Team Management, Technology Strategy, Communication, Organizational Growth",
-//   },
-//   {
-//     id: 2,
-//     name: "Mr. Anurag Singh",
-//     role: "Chief Executive Officer",
-//     domain: "Leadership",
-//     image: "/OurTeam/OurLeadership/anuragsingh.png",
-//     linkedin: "https://www.linkedin.com/in/anurag-singh-8a1101/",
-//     strengths:
-//       "Business Planning, Leadership, Strategy Development, Stakeholder Engagement",
-//   },
-//   {
-//     id: 3,
-//     name: "Piyush Mishra",
-//     role: "Chief Operating Officer cum Chief Finance Officer",
-//     domain: "Leadership",
-//     image: "/OurTeam/OurLeadership/piyushMishra1.png",
-//     linkedin: "https://www.linkedin.com/in/piyush-mishra-43b80830/",
-//     strengths:
-//       "Business Planning, Leadership, Strategy Development, Stakeholder Engagement",
-//   },
-// ];
-// export const staffOfDomain = [
-//   {
-//     id: 1,
-//     name: "Dr. Sarvesh Sonkar",
-//     role: "Domain Specialist",
-//     domain: "COE - MedTech & AI / ML",
-//     image: "/OurTeam/StaffOfDomain/sarvesh.png",
-//     linkedin: "https://linkedin.com/in/sarvesh-sonkar",
-//     strengths:
-//       "Domain Expertise, Analysis, Research, Innovation, Cross-Team Collaboration",
-//   },
-//   {
-//     id: 2,
-//     name: "Vasav Krishna",
-//     role: "Senior Program Manager(COE - AI/ML)",
-//     domain: "COE - MedTech & AI / ML",
-//     image: "/OurTeam/StaffOfDomain/Vasav.png",
-//     linkedin: "https://www.linkedin.com/in/vasav-krishna-11b500110",
-//     strengths:
-//       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
-//   },
-//   {
-//     id: 3,
-//     name: "Sandeep Shandilya",
-//     role: "Project Scientist(COE - MedTech)",
-//     domain: "COE - MedTech & AI / ML",
-//     image: "/OurTeam/StaffOfDomain/sandeeps.png",
-//     linkedin: "https://www.linkedin.com/in/sandeep-shandilya-09818151",
-//     strengths:
-//       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
-//   },
-//   {
-//     id: 4,
-//     name: "Monishka Sharma",
-//     role: "YPP Fellow(COE - MedTech)",
-//     domain: "COE - MedTech & AI / ML",
-//     image: "/OurTeam/StaffOfDomain/Monishka.png",
-//     linkedin: "https://www.linkedin.com/in/monishka-sharma-01a765268/",
-//     strengths:
-//       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
-//   },
-//   {
-//     id: 5,
-//     name: "Gauri Vishnoi",
-//     role: "YPP Fellow (COE - AI/ML)",
-//     domain: "COE - MedTech & AI / ML",
-//     image: "/OurTeam/StaffOfDomain/gauri.png",
-//     linkedin: "https://www.linkedin.com/in/gauri-vishnoi-86a5a5259",
-//     strengths:
-//       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
-//   },
-//   {
-//     id: 6,
-//     name: "Neha Tom",
-//     role: "YPP Fellow (COE - AI/ML)",
-//     domain: "COE - MedTech & AI / ML",
-//     image: "/OurTeam/StaffOfDomain/nehatom.png",
-//     linkedin: "https://www.linkedin.com/in/neha-tom-a9ab8729a",
-//     strengths:
-//       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
-//   },
-// ];
-// export const staffOfOperation = [
-//   {
-//     id: 1,
-//     name: "Meera Joshi",
-//     role: "Operations Executive",
-//     domain: "Operations, SIIC",
-//     image: "/OurTeam/StaffOfOperations/Staff-of-Operations-1.png",
-//     linkedin: "https://linkedin.com/in/meera-joshi",
-//     strengths:
-//       "Coordination, Process Improvement, Problem Solving, Time Management",
-//   },
-//   {
-//     id: 2,
-//     name: "Ravi Sinha",
-//     role: "Operations Associate",
-//     domain: "Operations, SIIC",
-//     image: "/OurTeam/StaffOfOperations/Staff-of-Operations-2.png",
-//     linkedin: "https://linkedin.com/in/ravi-sinha",
-//     strengths: "Scheduling, Logistics, Communication, Teamwork",
-//   },
-// ];
 export const ourLeadership = [
   {
     id: 1,
     name: "Prof. Deepu Philip",
     role: "Professor In-Charge (Incubation & Innovation)",
     domain: "Leadership",
-    image: "/OurTeam/OurLeadership/deepuji.png",
+    image: "/PlaceHolders/TeamPlaceholder.jpg",
     linkedin: "https://siicincubator.com",
     strengths:
       "Team Management, Technology Strategy, Communication, Organizational Growth",
@@ -129,7 +14,7 @@ export const ourLeadership = [
     name: "Mr. Anurag Singh",
     role: "Chief Executive Officer",
     domain: "Leadership",
-    image: "/OurTeam/OurLeadership/anuragsingh.png",
+    image: "/PlaceHolders/TeamPlaceholder.jpg",
     linkedin: "https://www.linkedin.com/in/anurag-singh-8a1101/",
     strengths:
       "Business Planning, Leadership, Strategy Development, Stakeholder Engagement",
@@ -139,7 +24,7 @@ export const ourLeadership = [
     name: "Piyush Mishra",
     role: "Chief Operating Officer cum Chief Finance Officer",
     domain: "Leadership",
-    image: "/OurTeam/OurLeadership/piyushMishra1.png",
+    image: "/PlaceHolders/TeamPlaceholder.jpg",
     linkedin: "https://www.linkedin.com/in/piyush-mishra-43b80830/",
     strengths:
       "Business Planning, Leadership, Strategy Development, Stakeholder Engagement",
@@ -693,7 +578,7 @@ export const staffOfOperation = [
     role: "YPP Fellow",
     domain: "Information Technology",
     image: "/OurTeam/StaffOfOperations/krishlay.png",
-    linkedin: "https://www.linkedin.com/in/neha-tom-a9ab8729a",
+    linkedin: "https://www.linkedin.com/in/krishlay-pal68",
     strengths: "Scheduling, Logistics, Communication, Teamwork",
   },
 ];

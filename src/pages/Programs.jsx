@@ -6,6 +6,7 @@ import HighlightedText from "./../components/Utility Components/HighlightedText"
 import { useEffect } from "react";
 import { useSearchParams } from "react-router";
 import { getProgramsByType } from "./../Util/HelperFunctions";
+import BannerTemplate from "@/components/banners/BannerTemplate";
 
 function Programs() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -54,7 +55,16 @@ function Programs() {
   };
 
   return (
-    <PageLayout bodyStyle={"-mt-60 "} banner={<ProgramsBanner />}>
+    <PageLayout
+      bodyStyle={"-mt-60 "}
+      banner={
+        <BannerTemplate
+          heading="Programs to Support"
+ highlightedText="your"
+headingSuffix="innovations."
+        />
+      }
+    >
       <div className="p-16 min-h-[1200px]">
         {/* Active Programs */}
         <ProgramSection

@@ -32,7 +32,7 @@ function WhoWeAre() {
             We empower Innovation and entrepreneurship <br /> for a better
             tomorrow.
           </div>
-          <p className="text-[#1f1f1f] opacity-75 lg:max-w-[386px] content-end lg:ml-8">
+          <p className="text-[#1f1f1f] opacity-75 lg:max-w-[386px] content-end lg:ml-8 text-justify">
             Established in 2000, SIIC IIT Kanpur is one of India’s oldest tech
             incubators, supporting over 200 startups across diverse sectors. Now
             operating under the Foundation for Research & Innovation in Science
