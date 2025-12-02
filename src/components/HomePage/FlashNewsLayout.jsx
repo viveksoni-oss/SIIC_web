@@ -42,22 +42,22 @@ const newsDetails = [
 function FlashNewsLayout() {
   const autoplay = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
   return (
-    <div className="px-4 md:px-16">
+    <div className="px-4 md:px-16 -mb-25 md:mb-0">
       <SectionHeading>
         Flash <HighlightedText weight={800}>News</HighlightedText>{" "}
       </SectionHeading>
       {/* MOBILE: Carousel only for screens <md */}
       <div className="block md:hidden">
         <Carousel
-        className={"overflow-visible"}
-          opts={{ align: "center", loop: true }}
-          plugins={[autoplay.current]}
-          onMouseEnter={() => autoplay.current.stop()}
-          onMouseLeave={() => autoplay.current.play()}
+          className={"overflow-visible"}
+          // opts={{  loop: true }}
+          // plugins={[autoplay.current]}
+          // onMouseEnter={() => autoplay.current.stop()}
+          // onMouseLeave={() => autoplay.current.play()}
         >
-          <CarouselContent >
+          <CarouselContent>
             {newsDetails.map((newsDetail, idx) => (
-              <CarouselItem key={idx} className="px-[13px]">
+              <CarouselItem key={idx} className="">
                 <FlashNewsCard newsDetail={newsDetail} />
               </CarouselItem>
             ))}

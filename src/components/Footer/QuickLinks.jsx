@@ -25,6 +25,11 @@ function QuickLinks() {
       link: "/tenders",
       isExternalLink: false,
     },
+    {
+      linkTitle: "Intellectual Property	",
+      link: "/IPR",
+      isExternalLink: false,
+    },
   ];
   return (
     <div className="flex flex-col gap-4 grow-1 ">

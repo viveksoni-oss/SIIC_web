@@ -44,7 +44,7 @@ body {
 .animated-button::after {
   content: "";
   position: absolute;
-  inset: -0.15rem;
+  inset: -2px;
   border-radius: inherit;
   background: linear-gradient(
     var(--angle),

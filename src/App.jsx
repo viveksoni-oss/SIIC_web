@@ -25,6 +25,7 @@ import JoinAsInvestor from "./pages/JoinAsInvestor";
 import Careers from "./pages/Careers";
 import Tenders from "./pages/Tenders.jsx";
 import { useRef } from "react";
+import IPR from "./pages/IPR.jsx";
 
 function App() {
   useScrollToTop();
@@ -80,6 +81,8 @@ function App() {
           <Route path="/join-as-investor" element={<JoinAsInvestor />} />
           <Route path="/tenders" element={<Tenders />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/IPR" element={<IPR />} />
+
           <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
         </Routes>
         {/* Footer  */}

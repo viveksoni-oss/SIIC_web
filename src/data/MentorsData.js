@@ -222,7 +222,7 @@ export const mentorsData = [
       "B2B, Sales, Marketing, Go-to-market Strategy, Coaching, Software, SaaS, PaaS, IaaS",
     domain: "business development",
     image:
-      "https://siicincubator.com/assets/images/about/mentors/business_development/somesh_bhagat.webp",
+      "/mentors_images/somesh_bhagat.webp",
     linkedin: "https://www.linkedin.com/in/someshbhagat/?originalSubdomain=in",
   },
   {

@@ -35,13 +35,13 @@ const MentorCard = ({ mentor }) => {
     <article className="bg-secondary-gray/31 pl-20 p-4 text-xs relative mt-4 mb-19 container max-h-[195px] group ml-20 rounded-2xl max-w-[21.875rem]">
       {/* Image Container with Fixed Dimensions and Skeleton */}
       <div className="absolute -left-18 top-10 transition-transform transform duration-500">
-        <div className="relative w-[140px] h-[180px] rounded-2xl ">
+        <div className="relative w-[140px] h-[180px] rounded-2xl  ">
           {/* Skeleton Loader */}
           {!imageLoaded && <ImageSkeleton />}
 
           {/* Actual Image */}
           <img
-            className={`w-full h-full object-cover transition-opacity duration-300 ${
+            className={`w-full h-full object-cover transition-opacity rounded-2xl duration-300 ${
               imageLoaded ? "opacity-100" : "opacity-0"
             }`}
             src={mentor.image}

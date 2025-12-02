@@ -42,7 +42,11 @@ function LabBanner() {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             {/* Explore Button */}
-            <button className="group relative px-6 py-3 rounded-full border-2 text-[16px] border-white text-white font-medium transition-all duration-300 hover:bg-white hover:text-primary overflow-hidden">
+            <motion.button
+              className="group relative px-6 py-3 rounded-full border-2 text-[16px] border-white text-white font-medium transition-color duration-300 hover:bg-white hover:text-primary overflow-hidden"
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+            >
               <span className="flex items-center gap-2">
                 Explore them
                 <ArrowRight
@@ -50,12 +54,16 @@ function LabBanner() {
                   className="transition-transform duration-300 group-hover:-rotate-45 group-hover:translate-x-1"
                 />
               </span>
-            </button>
+            </motion.button>
 
             {/* Get Facility Button */}
-            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <AnimatedButton>Active programs</AnimatedButton>
-            </motion.div> */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="text-base font-medium tracking-wider duration-300 transition-all"
+              whileTap={{ scale: 0.95 }}
+            >
+              <AnimatedButton>Get a Facility</AnimatedButton>
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>

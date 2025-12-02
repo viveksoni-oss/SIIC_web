@@ -13,7 +13,7 @@ function ContentSection({ isHovered, setIsHovered }) {
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      onHoverStart={() => setIsHovered(true)}  
+      onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
       {isMobile ? (
@@ -61,8 +61,9 @@ function ContentSection({ isHovered, setIsHovered }) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.3 }}
+          className="justify-center items-center flex"
         >
-          <div className="px-[30px] py-[14px] hover:bg-white hover:text-primary transition-color border-2 border-white max-h-[46px] flex items-center justify-center rounded-full">
+          <div className="px-[12px] py-[10px] sm:px-[30px] sm:py-[14px] hover:bg-white hover:text-primary transition-color border-2 border-white max-h-[46px] flex items-center justify-center rounded-full">
             Incubate with us
           </div>
         </motion.button>
@@ -71,6 +72,7 @@ function ContentSection({ isHovered, setIsHovered }) {
           onClick={() => navigate("/programs")}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          className="justify-center items-center flex"
         >
           <AnimatedButton>Active programs</AnimatedButton>
         </motion.div>

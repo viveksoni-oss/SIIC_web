@@ -26,16 +26,6 @@ const eventsData = [
     time: "09:00 AM",
     image: "/UpcomingEvents/Abhivyakti.svg",
   },
-  // {
-  //   id: 3,
-  //   title: "StartUp Summit",
-  //   description:
-  //     "Connect with entrepreneurs, investors, and innovators in this premier startup networking event...",
-  //   location: "IIT Delhi",
-  //   date: "10-05-2025",
-  //   time: "11:30 AM",
-  //   image: "/UpcomingEvents/Abhivyakti.svg",
-  // },
 ];
 
 // Animation variants for better organization
@@ -319,7 +309,7 @@ function UpcomingEvents() {
             </AnimatePresence>
 
             {/* Event Details - Location, Date, Time */}
-            <div className="flex gap-8 md:gap-16 items-start mt-12 w-full overflow-hidden min-h-[60px]">
+            <div className="flex gap-4 xl:gap-16 items-start mt-12 w-full overflow-hidden min-h-[60px]">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={`${currentEvent.id}-details`}
@@ -344,21 +334,21 @@ function UpcomingEvents() {
                     <div className="font-bold text-sm text-gray-600">
                       Location
                     </div>
-                    <div className="text-center text-sm md:text-base">
+                    <div className="text-center text-sm xl:text-base">
                       {currentEvent.location}
                     </div>
                   </div>
                   <div className="h-12 border-l-2 border-gray-300"></div>
                   <div className="flex justify-center items-center gap-2 flex-col flex-1">
                     <div className="font-bold text-sm text-gray-600">Date</div>
-                    <div className="text-center text-sm md:text-base">
+                    <div className="text-center text-sm xl:text-base">
                       {currentEvent.date}
                     </div>
                   </div>
                   <div className="h-12 border-l-2 border-gray-300"></div>
                   <div className="flex justify-center items-center gap-2 flex-col flex-1">
                     <div className="font-bold text-sm text-gray-600">Time</div>
-                    <div className="text-center text-sm md:text-base">
+                    <div className="text-center text-sm xl:text-base">
                       {currentEvent.time}
                     </div>
                   </div>

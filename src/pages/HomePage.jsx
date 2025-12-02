@@ -109,12 +109,14 @@ function HomePage() {
         bodyStyle="relative  pb-5 "
         bannerLink={"HomePage_banner.png"}
       >
-        <DownArrow
-          flipped={goTopMode}
-          onClick={handleArrowClick}
-          arrowAbsolute={arrowAbsolute}
-          footerRef={footerRef}
-        />
+        {!isMobile && (
+          <DownArrow
+            flipped={goTopMode}
+            onClick={handleArrowClick}
+            arrowAbsolute={arrowAbsolute}
+            footerRef={footerRef}
+          />
+        )}
         <div ref={homeParaRef}>
           <HomePagePara />
         </div>
@@ -125,7 +127,8 @@ function HomePage() {
           <KnowYourJourney />
         </div>
         <div ref={eventsRef}>
-          {!isMobile ? <UpcomingEvents /> : <UpcomingEventsMobile />}
+          <UpcomingEvents />
+          <UpcomingEventsMobile />
         </div>
         <div ref={flashRef}>
           <FlashNewsLayout />

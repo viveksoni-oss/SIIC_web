@@ -44,37 +44,18 @@ const LocationCard = ({
   );
 };
 
-// Feature list item component
-const FeatureItem = ({ children }) => (
-  <li className="flex items-start gap-3">
-    <svg
-      className="w-6 h-6 text-primary flex-shrink-0 mt-0.5"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      aria-hidden="true"
-    >
-      <path
-        fillRule="evenodd"
-        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-        clipRule="evenodd"
-      />
-    </svg>
-    <span className="text-gray-700">{children}</span>
-  </li>
-);
-
 // Facility list item component
 const FacilityItem = ({ facility }) => (
-  <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 transition-colors duration-200">
-    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
+  <li className="flex items-center p-2  rounded-lg hover:bg-primary/5 transition-colors duration-200">
+    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center  rounded-full">
       <img
         src="/Icons/list-icon.svg"
         alt=""
-        className="w-5 h-5"
+        className="w-4 h-4"
         loading="lazy"
       />
     </div>
-    <span className="text-sm lg:text-base font-medium text-gray-800">
+    <span className="text-xs lg:text-base font-medium text-gray-800">
       {facility}
     </span>
   </li>
@@ -95,7 +76,7 @@ const Section = ({ children, className = "", background = false }) => (
 const SectionHeader = ({ title, subtitle, titleAccent, centered = false }) => (
   <div
     className={`${
-      centered ? "text-justify mb-12 lg:mb-16" : "mb-8 lg:mb-12"
+      centered ? " mb-12 lg:mb-16" : "mb-8 lg:mb-12"
     } space-y-4`}
   >
     <SectionHeading>
@@ -104,7 +85,7 @@ const SectionHeader = ({ title, subtitle, titleAccent, centered = false }) => (
 
     {subtitle && (
       <p
-        className={`text-base lg:text-lg text-gray-700 leading-relaxed ${
+        className={` ml-2 text-base lg:text-lg text-gray-700 text-justify leading-relaxed ${
           centered ? "max-w-3xl mx-auto" : ""
         }`}
       >
@@ -129,14 +110,12 @@ function OfficeSpaces() {
   ];
 
   const facilities = [
-    "High-Speed WiFi",
-    "Meeting Rooms",
-    "Private Cabins",
-    "Pantry & Cafeteria",
-    "24/7 Security",
-    "Power Backup",
-    "Parking Space",
-    "Event Space",
+    "High-speed internet and printing for seamless daily operations.",
+    "Meeting and conference rooms for productive team collaborations.",
+    "Access to shared labs and prototyping facilities (at IIT Kanpur).",
+    "Cafeteria and breakout zones for relaxation and informal talks.",
+    "secure access and power backup for uninterrupted workflow.",
+    "Event spaces for workshops, seminars, and networking events.",
   ];
 
   const locations = [
@@ -184,7 +163,7 @@ function OfficeSpaces() {
             <img
               src="OfficeSpace/office1.svg"
               alt="Modern co-working office space"
-              className="w-full h-auto rounded-2xl shadow-lg"
+              className="w-full  h-auto rounded-2xl shadow-lg"
               loading="eager"
             />
           </div>
@@ -223,27 +202,30 @@ function OfficeSpaces() {
             <SectionHeader
               title="Designed for"
               titleAccent="Innovation & Growth"
-              subtitle="Experience world-class amenities designed to fuel productivity and collaboration. From private meeting rooms to open collaborative spaces, we provide everything your team needs to thrive and scale."
+              subtitle={
+                <p>
+                  At SIIC, our co-working spaces are more than shared offices -
+                  they’re hubs of opportunity. With access to mentorship,
+                  funding, networking events, and a community of innovators, we
+                  provide the ideal environment for startups to thrive.
+                  <br /> <br /> Whether you're in Kanpur or Noida, our spaces
+                  offer flexible setups, modern amenities, seamless connectivity
+                  to the SIIC ecosystem, room to grow, and a culture of
+                  collaboration.
+                </p>
+              }
+              centered={true}
             />
-
-            <ul className="space-y-3 pt-4">
-              {features.map((feature, index) => (
-                <FeatureItem key={index}>{feature}</FeatureItem>
-              ))}
-            </ul>
           </div>
 
           {/* Image Gallery */}
           <div className="grid grid-cols-3 gap-4 lg:gap-6">
             {galleryImages.map((image, index) => (
-              <div
-                key={index}
-             
-              >
+              <div key={index}>
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className={`w-full h-60 object-cover rounded-2xl shadow-md`}
+                  className={`w-70 h-full  rounded-2xl shadow-md`}
                   loading="lazy"
                 />
               </div>
@@ -258,14 +240,13 @@ function OfficeSpaces() {
           title="Facilities at a"
           titleAccent="Glance"
           subtitle="Explore the tools, spaces, and resources that empower startups to innovate and scale faster."
-          centered
         />
 
-        <div className="border-2 border-primary-highlight rounded-3xl p-6 lg:p-12 bg-gradient-to-br from-white to-gray-50/50">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="border-2 border-primary-highlight/50 rounded-3xl p-6 lg:p-12 bg-gradient-to-br from-white to-gray-50/50">
+          <div className="grid gap-8 lg:gap-12 items-center">
             {/* Facilities List */}
             <div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+              <ul className="grid grid-cols-2 gap-4 lg:gap-1">
                 {facilities.map((facility, index) => (
                   <FacilityItem key={index} facility={facility} />
                 ))}
@@ -273,11 +254,11 @@ function OfficeSpaces() {
             </div>
 
             {/* Facilities Image */}
-            <div className="order-first lg:order-last">
+            <div className="order-first lg:order-last p-4">
               <img
                 src="OfficeSpace/office5.svg"
                 alt="Office facilities overview"
-                className="w-full h-auto rounded-2xl shadow-lg"
+                className="w-full h-auto rounded-2xl "
                 loading="lazy"
               />
             </div>
@@ -290,8 +271,8 @@ function OfficeSpaces() {
         <SectionHeader
           title="Where Innovation Finds a"
           titleAccent="Home"
-          subtitle="Visit our world-class facilities designed to nurture your startup journey."
-          centered
+          subtitle="    Visit our world-class facilities designed to nurture your startup journey."
+        
         />
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">

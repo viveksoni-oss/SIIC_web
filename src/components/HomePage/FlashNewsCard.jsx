@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
+import useIsMobile from "@/Hooks/useIsMobile";
 
 // Animation variants for better organization
 const cardVariants = {
@@ -47,6 +48,7 @@ const iconVariants = {
 };
 
 function FlashNewsCard({ newsDetail }) {
+  const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -78,7 +80,7 @@ function FlashNewsCard({ newsDetail }) {
       tabIndex={0}
       role="link"
       aria-label={`Read more about ${newsDetail.title}`}
-      className="border-[#F1F1F1] border-[1.5px] mx-auto shadow-2xs relative box-border rounded-[10px] overflow-hidden w-[385px]  sm:max-w-[420px] sm:min-w-[300px] sm:w-full flex flex-col items-center justify-start p-4 md:p-3 lg:p-4 gap-4 cursor-pointer transition-all duration-300 ease-out hover:bg-[#e3e3e3]/20 hover:shadow-lg hover:border-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
+      className="border-[#F1F1F1] border-[1.5px] mx-auto shadow-2xs relative box-border rounded-[10px] overflow-hidden md:w-[385px]  sm:max-w-[420px] sm:min-w-[300px] sm:w-full flex flex-col items-center justify-start p-4 md:p-3 lg:p-4 gap-4 cursor-pointer transition-all duration-300 ease-out hover:bg-[#e3e3e3]/20 hover:shadow-lg hover:border-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
     >
       {/* Image Container with Loading State */}
       <div className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
@@ -89,7 +91,7 @@ function FlashNewsCard({ newsDetail }) {
         )}
 
         {imageError ? (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+          <div className="absolute inset-0 flex  items-center justify-center bg-gray-200">
             <svg
               className="w-12 h-12 text-gray-400"
               fill="none"
@@ -159,34 +161,47 @@ function FlashNewsCard({ newsDetail }) {
       >
         <motion.div
           variants={iconVariants}
-          className="relative aspect-square w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8"
+          className="relative  w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8"
         >
-          {/* Default Icon */}
-          <motion.img
-            src="Icons/external-link.svg"
-            alt=""
-            aria-hidden="true"
-            className="absolute pointer inset-0 w-full h-full transition-opacity duration-300 ease-in-out"
-            style={{ opacity: isHovered ? 0 : 1 }}
-          />
+          {!isMobile ? (
+            <>
+              {/* Default Icon */}
+              <motion.img
+                src="Icons/external-link.svg"
+                alt=""
+                aria-hidden="true"
+                className="absolute pointer inset-0 w-full h-full transition-opacity duration-300 ease-in-out"
+                style={{ opacity: isHovered ? 0 : 1 }}
+              />
 
-          {/* Hover Icon */}
-          <motion.img
-            src="Icons/hover-icons/external-link-hover.svg"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out"
-            style={{ opacity: isHovered ? 1 : 0 }}
-          />
+              {/* Hover Icon */}
+              <motion.img
+                src="Icons/hover-icons/external-link-hover.svg"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out"
+                style={{ opacity: isHovered ? 1 :0  }}
+              />
+            </>
+          ) : (
+            <motion.img
+              src="Icons/external-link.svg"
+              alt=""
+              aria-hidden="true"
+              className="absolute pointer inset-0 w-full h-full transition-opacity duration-300 ease-in-out"
+            />
+          )}
         </motion.div>
       </a>
 
       {/* Smooth bottom bar animation */}
-      <motion.div
-        variants={bottomBarVariants}
-        className="bg-primary w-full h-14 md:h-10 lg:h-14 absolute bottom-0 left-0 z-10"
-        aria-hidden="true"
-      />
+      {!isMobile && (
+        <motion.div
+          variants={bottomBarVariants}
+          className="bg-primary w-full h-14 md:h-10 lg:h-14 absolute bottom-0 left-0 z-10"
+          aria-hidden="true"
+        />
+      )}
     </motion.article>
   );
 }
