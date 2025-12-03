@@ -46,7 +46,7 @@ const getSortOrder = (role) => {
   return hierarchy.length; // unknown role at end
 };
 
-function TeamSections({ heading, TeamData, filter = true, imageFilter }) {
+function TeamSections({ heading, TeamData }) {
   // Extract unique domains
   const allDomains = Array.from(
     new Set(TeamData.map((member) => member.domain))
@@ -112,7 +112,7 @@ function TeamSections({ heading, TeamData, filter = true, imageFilter }) {
         </h1>
 
         {/* Filter Bar */}
-        {filter && (
+        {
           <div className="flex items-center flex-wrap gap-3">
             <label className="font-semibold text-lg">
               Filter by <HighlightedText>domain</HighlightedText>:
@@ -132,20 +132,20 @@ function TeamSections({ heading, TeamData, filter = true, imageFilter }) {
               </SelectContent>
             </Select>
           </div>
-        )}
+        }
       </div>
 
       {/* Card wrapper with conditional gradient overlays and inner scroll area */}
       <div className="mt-10 mx-auto max-w-8xl">
-        <div className="relative rounded-3xl border border-slate-200 shadow-lg px-4 sm:px-4 md:px-4">
+        <div className="relative rounded-3xl border border-slate-200 shadow-lg sm:px-1 md:px-2">
           {/* Top gradient overlay (only when scrollable & not at top) */}
           {showTopFade && (
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-12 rounded-t-3xl bg-gradient-to-b from-black/20 via-black/10 to-transparent z-20" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-10 md:h-20 rounded-t-3xl bg-gradient-to-b from-gray-100 via-white/10 to-transparent z-20" />
           )}
 
           {/* Bottom gradient overlay (only when scrollable & not at bottom) */}
           {showBottomFade && (
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 rounded-b-3xl bg-gradient-to-t from-black/20 via-black/10 to-transparent z-20" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 md:h-20 rounded-b-3xl bg-gradient-to-t from-gray-100 via-white/10  to-transparent z-20" />
           )}
 
           {/* Scrollable content inside */}
@@ -156,11 +156,7 @@ function TeamSections({ heading, TeamData, filter = true, imageFilter }) {
             <div className="relative py-8 md:py-10">
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10 items-start justify-items-center">
                 {filtered.map((data) => (
-                  <NewTeamCard
-                    key={data.id}
-                    imageFilter={imageFilter}
-                    data={data}
-                  />
+                  <NewTeamCard key={data.id} data={data} />
                 ))}
               </div>
             </div>

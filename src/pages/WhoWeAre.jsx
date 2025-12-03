@@ -22,7 +22,7 @@ function WhoWeAre() {
         </>
       }
     >
-      <div className="flex flex-col justify-center  items-center lg:flex-row mt-20 ">
+      <div className="flex flex-col justify-center w-full  items-center lg:flex-row mt-20 ">
         <ImageCollage></ImageCollage>
         <div>
           <h1 className="text-[40px] font-thin mb-1">
@@ -32,7 +32,7 @@ function WhoWeAre() {
             We empower Innovation and entrepreneurship <br /> for a better
             tomorrow.
           </div>
-          <p className="text-[#1f1f1f] opacity-75 lg:max-w-[386px] content-end lg:ml-8 text-justify">
+          <p className="text-[#1f1f1f] opacity-75 lg:max-w-[386px] content-end lg:ml-8">
             Established in 2000, SIIC IIT Kanpur is one of India’s oldest tech
             incubators, supporting over 200 startups across diverse sectors. Now
             operating under the Foundation for Research & Innovation in Science

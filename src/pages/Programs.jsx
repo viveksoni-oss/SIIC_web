@@ -60,8 +60,9 @@ function Programs() {
       banner={
         <BannerTemplate
           heading="Programs to Support"
- highlightedText="your"
-headingSuffix="innovations."
+          highlightedText="your"
+          headingSuffix="innovations."
+          description="Startups access government resources through SIIC, fueling entrepreneurial growth."
         />
       }
     >

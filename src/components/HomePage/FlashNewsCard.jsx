@@ -80,7 +80,7 @@ function FlashNewsCard({ newsDetail }) {
       tabIndex={0}
       role="link"
       aria-label={`Read more about ${newsDetail.title}`}
-      className="border-[#F1F1F1] border-[1.5px] mx-auto shadow-2xs relative box-border rounded-[10px] overflow-hidden md:w-[385px]  sm:max-w-[420px] sm:min-w-[300px] sm:w-full flex flex-col items-center justify-start p-4 md:p-3 lg:p-4 gap-4 cursor-pointer transition-all duration-300 ease-out hover:bg-[#e3e3e3]/20 hover:shadow-lg hover:border-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
+      className="border-[#F1F1F1] border-[1.5px] mx-auto shadow-2xs relative box-border rounded-[10px] overflow-hidden  sm:max-w-[420px] sm:min-w-[300px] sm:w-full flex flex-col items-center justify-start p-4 md:p-3 lg:p-4 gap-4 cursor-pointer transition-all duration-300 ease-out hover:bg-[#e3e3e3]/20 hover:shadow-lg hover:border-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
     >
       {/* Image Container with Loading State */}
       <div className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
@@ -126,7 +126,7 @@ function FlashNewsCard({ newsDetail }) {
       </div>
 
       {/* Title */}
-      <h3 className="font-[500] text-base md:text-sm lg:text-base text-left w-full line-clamp-2 min-h-[3rem] text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
+      <h3 className="font-[500] text-base md:text-sm lg:text-base text-left w-full line-clamp-2  text-gray-800 group-hover:text-gray-900 transition-colors duration-200">
         {newsDetail.title}
       </h3>
 

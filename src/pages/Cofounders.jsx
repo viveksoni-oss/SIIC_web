@@ -23,14 +23,23 @@ function Cofounders() {
     "px-4 py-2 bg-white w-full sm:w-80 border-primary rounded-lg text-base font-[500] focus:outline-none focus:ring-2 focus:ring-primary-highlight transition-all duration-300 text-black border border-primary-highlight";
 
   return (
-    <PageLayout bodyStyle={"-mt-60 z-40 p-8"} banner={<CofounderBanner />}>
+    <PageLayout
+      bodyStyle={"-mt-60 z-40 p-8"}
+      banner={
+        <BannerTemplate
+          heading="Co-founders to Ach"
+          highlightedText=""
+          headingSuffix=""
+          description=""
+        />
+      }
+    >
       {/* Search Bar Container */}
       <SearchBar
         search={search}
         setSearch={setSearch}
         placeholder={"Search for Co-Founder"}
       ></SearchBar>
-
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 xl:grid-cols-[320px_1fr] gap-6">
         <Domain

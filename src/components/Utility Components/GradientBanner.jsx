@@ -34,7 +34,7 @@ function GradientBanner({ children, cls = "", bannerLink }) {
 
     loadImage();
   }, [imageSrc]);
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile("1026");
   return (
     <div className="relative">
       {/* Loading skeleton */}
@@ -49,7 +49,7 @@ function GradientBanner({ children, cls = "", bannerLink }) {
         <img
           src={currentSrc}
           alt="banner img"
-          className={`w-full h-[600px] z-20 object-cover transition-opacity duration-500 ${
+          className={`w-full h-[600px] z-20 rotate-y-180 lg:rotate-y-0 object-cover transition-opacity duration-500 ${
             imageLoaded ? "opacity-100" : "opacity-0"
           } ${cls}`}
           loading="eager" // Load immediately for hero images

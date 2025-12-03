@@ -2,7 +2,7 @@ import React from "react";
 
 function ImageCollage() {
   return (
-    <div className=" flex justify-center items-center xl:mx-22 w-full mx-auto md:w-1/2 my-20  scale-65 xl:scale-100 relative ">
+    <div className=" flex justify-center items-center xl:mx-22 w-full md:w-1/2 my-20  scale-65 xl:scale-100 relative ">
       <div className="relative">
         <div className="bg-secondary-gray/30 rounded-2xl relative w-[250px] h-[250px]">
           <div className="h-[80px] w-[80px] border-t-4 border-r-4 border-primary-highlight absolute -right-10 -top-10"></div>

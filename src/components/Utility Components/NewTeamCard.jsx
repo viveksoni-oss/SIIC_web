@@ -53,10 +53,10 @@ function NewTeamCard({ data, imageFilter, imageF }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex h-[320px] items-end justify-center overflow-hidden border-neutral-200  rounded-t-md  bg-white">
+      <div className="flex h-[320px] items-end justify-center overflow-hidden border-neutral-200  rounded-t-md  bg-gradient-to-b from-gray-50 via-gray-100 to-transparent ">
         <img
-          className="max-h-[320px] w-full transition-transform duration-700 ease-in-out group-hover/card:scale-110"
-          src={imageFilter || imageF ? image : "/Rajesh ji.png"}
+          className=" max-h-[320px] w-full transition-transform duration-700 ease-in-out group-hover/card:scale-110"
+          src={image }
           alt={name}
           loading="lazy"
         />

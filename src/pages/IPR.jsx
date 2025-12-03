@@ -3,55 +3,93 @@ import React from "react";
 import BannerTemplate from "./../components/banners/BannerTemplate";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
 import SectionHeading from "./../components/Utility Components/SectionHeading";
-import { Gift, Pin } from "lucide-react";
-import { Link } from "react-router";
+import {
+  Gift,
+  Trophy,
+  Users,
+  FileText,
+  Download,
+  ExternalLink,
+  ArrowRight,
+} from "lucide-react";
+import { Link } from "react-router"; // Assuming react-router-dom is used
 
 function IPR() {
-  const List = [
+  // Data for the top 3 cards (Offerings)
+  const offerings = [
     {
-      icon: <Gift/>,
-      Title: "List Of IPR",
-      link: "",
+      icon: <Gift className="w-10 h-10" />,
+      title: "LIST OF IPRS",
+      link: "https://iitk.ac.in/ipr/ipr-s",
+      external: true,
     },
-    // {
-    //   icon: "",
-    //   Title: "List Of IPR",
-    //   link: "",
-    // },
-    // {
-    //   icon: "",
-    //   Title: "List Of IPR",
-    //   link: "",
-    // },
-    // {
-    //   icon: "",
-    //   Title: "List Of IPR",
-    //   link: "",
-    // },
+    {
+      icon: <Trophy className="w-10 h-10" />,
+      title: "FOR INDUSTRY",
+      link: "https://iitk.ac.in/ipr/available-technologies",
+      external: true,
+    },
+    {
+      icon: <Users className="w-10 h-10" />,
+      title: "IPR POLICY IIT KANPUR",
+      link: "https://siicincubator.com/wp-content/uploads/2019/10/IPR-Policy_IIT-Kanpur.pdf",
+      external: true,
+    },
   ];
+
+  // Data for the Downloads section
+  const downloadLinks = [
+    {
+      title: "IPDF DISCLOSURE FORM",
+      url: "https://www.iitk.ac.in/ipr/data/forms/IPDF-Format_IITK_updated.docx",
+    },
+    {
+      title: "IPDF SAMPLE FORM",
+      url: "https://www.iitk.ac.in/ipr/data/forms/IPDF-Format_IITK_Sample.docx",
+    },
+    {
+      title: "NO OBJECTION CERTIFICATE (NOC)",
+      url: "https://www.iitk.ac.in/ipr/data/forms/NOC-Format_IPR_IIT-Kanpur.docx",
+    },
+    {
+      title: "REVENUE SHARING FORM",
+      url: "https://www.iitk.ac.in/ipr/data/forms/Revenue-sharing-disclosure-form.docx",
+    },
+    {
+      title: "FEP POLICY",
+      url: "https://www.iitk.ac.in/ipr/data/forms/Faculty-Entrepreneurship-Policy.pdf",
+    },
+    {
+      title: "FEP APPLICATION FORM",
+      url: "https://www.iitk.ac.in/ipr/data/forms/Faculty_Entrepreneurship_Application_Form.docx",
+    },
+    {
+      title: "NDA FOR TECH TRANSFER",
+      url: "https://www.iitk.ac.in/ipr/data/forms/NDA-template_updated.docx",
+    },
+  ];
+
   return (
     <PageLayout
       banner={
         <BannerTemplate
-          Heading={
-            <>
-              IPR <HighlightedText>Cell</HighlightedText>
-            </>
-          }
-          Description=""
+          heading="IPR"
+          highlightedText="Cell"
+          description="Protecting Innovation, Empowering Creators."
         />
       }
-      bodyStyle="-mt-90 p-16"
+      bodyStyle="-mt-70 p-16"
     >
-      <section className="">
-        <div className="container mx-auto px-6 lg:px-12 ">
+      {/* Hero / Intro Section */}
+      <section className="mb-20">
+        <div className="container mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Hero Image */}
             <div className="order-2 lg:order-1">
               <img
-                src="OfficeSpace/office1.svg"
-                alt="Modern co-working office space"
-                className="w-full  h-auto rounded-2xl shadow-lg"
+                src="IPR/intellectual_property.jpg"
+                alt="IPR and Technology Transfer"
+                className="w-full h-auto rounded-2xl shadow-lg object-contain"
                 loading="eager"
               />
             </div>
@@ -59,37 +97,112 @@ function IPR() {
             {/* Hero Content */}
             <div className="order-1 lg:order-2 space-y-6">
               <SectionHeading>
-                Your Workspace, <HighlightedText> Reimagined</HighlightedText>
+                Intellectual Property <HighlightedText>Rights</HighlightedText>
               </SectionHeading>
               <h2 className="text-md lg:text-xl font-semibold text-[#1f1f1f]/80">
-                Branding Support to Tell Your Story
+                Facilitating Technology Transfer & Innovation
               </h2>
 
-              <p className="text-base lg:text-md text-gray-700 leading-relaxed text-justify max-w-xl">
-                Our 150,000 SQ.FT co-working spaces at IIT Kanpur and Noida
-                offer 24/7 access to flexible workstations, high-speed internet,
-                meeting rooms, ergonomic furniture, startup accommodation, and
-                on-site support for seamless work and growth.
+              <p className="text-base lg:text-md text-gray-700 leading-relaxed text-justify">
+                The IPR Cell at IIT Kanpur facilitates the protection and
+                commercialization of intellectual property generated by faculty
+                and students. We provide comprehensive support for patents,
+                copyrights, and technology transfer to industry partners.
               </p>
+
+              <div className="pt-4 group/button">
+                <a
+                  href="https://iitk.ac.in/ipr/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300"
+                >
+                  Visit Official IPR Website{" "}
+                  <ArrowRight
+                    size={18}
+                    className="group-hover/button:-rotate-45 transition-transform duration-300"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="mt-20 px-6 container lg:px-12">
-        <div className="px-10 grid grid-cols-3">
-          {List.map((obj) => {
-            return (
-              <div className="flex flex-col gap-2 p-12 border-1">
-                <div className=" text-primary-highlight">{obj.icon}</div>
+
+      {/* Offerings / Key Links Section */}
+      <section className="container mx-auto px-6 lg:px-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {offerings.map((obj, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center gap-6 p-10 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all text-center group"
+            >
+              <div className="p-4 bg-primary/5 text-primary rounded-full group-hover:scale-110 transition-transform">
+                {obj.icon}
+              </div>
+              <h3 className="text-xl font-bold text-gray-800">{obj.title}</h3>
+
+              {obj.external ? (
+                <a
+                  href={obj.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full text-white font-medium transition-colors w-full max-w-[200px]"
+                >
+                  View Details
+                </a>
+              ) : (
                 <Link
                   to={obj.link}
-                  className="bg-primary inline-block p-4 rounded-full text-center text-white"
+                  className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full text-white font-medium transition-colors w-full max-w-[200px]"
                 >
-                  {obj.Title}
+                  View Details
                 </Link>
-              </div>
-            );
-          })}
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Downloads Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="text-center mb-12">
+            <SectionHeading>
+              Important <HighlightedText>Downloads</HighlightedText>
+            </SectionHeading>
+            <p className="text-gray-600 mt-2">
+              Access essential forms and policy documents
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {downloadLinks.map((file, index) => (
+              <a
+                key={index}
+                href={file.url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-4 p-5 bg-white rounded-lg border border-gray-200 hover:border-primary hover:shadow-md transition-all group"
+              >
+                <div className="p-3 bg-gray-100 rounded-lg text-gray-600 group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+                  {file.url.endsWith(".pdf") ? (
+                    <FileText size={24} />
+                  ) : (
+                    <Download size={24} />
+                  )}
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-sm font-semibold text-gray-800 group-hover:text-primary transition-colors line-clamp-2">
+                    {file.title}
+                  </h4>
+                  <span className="text-xs text-gray-500 uppercase">
+                    {file.url.split(".").pop()} File
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </PageLayout>

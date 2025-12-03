@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 body {
   @apply bg-[#f7f7f7];
+  
 }
 .Toastify__progress-bar {
   background: #6c3231 !important;
@@ -12,7 +13,7 @@ body {
   font-family: "Plus Jakarta Sans";
   src: url("/Fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
     format("truetype");
-  font-weight: 400;
+
   font-style: normal;
 }
 @theme {

@@ -11,10 +11,7 @@ import { NewPageLayout } from "./../components/Utility Components/NewPageLayout"
 
 function OurTeam() {
   const [searchParams] = useSearchParams();
-  const [imageFilter, setImageFilter] = useState(
-    searchParams.get("image") || false
-  );
-  console.log(imageFilter);
+  
   useEffect(() => {
     if (window.location.hash) {
       const el = document.getElementById(window.location);
@@ -41,17 +38,14 @@ function OurTeam() {
         heading={"Our Leadership"}
         TeamData={ourLeadership}
         filter={false}
-        imageFilter={imageFilter}
       ></TeamSections>
       {/* Staff of Domains */}
       <TeamSections
-        imageFilter={imageFilter}
         heading={"Staff of Domains"}
         TeamData={staffOfDomain}
       ></TeamSections>
       {/* Staff of Operations */}
       <TeamSections
-        imageFilter={imageFilter}
         heading={"Staff of Operations"}
         TeamData={staffOfOperation}
       ></TeamSections>

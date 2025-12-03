@@ -5,6 +5,7 @@ import LetUsKnow from "./../components/Utility Components/LetUsKnow";
 import ServiceCard from "./../components/Branding/ServiceCard";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
 import { SERVICES_DATA } from "./../data/ServicesData";
+import BannerTemplate from "@/components/banners/BannerTemplate";
 
 // Animation variants
 const fadeInUp = {
@@ -68,7 +69,7 @@ function BrandingHero() {
             stand out.
           </p>
 
-          <div className="text-base xl:text-[16px] text-[#1f1f1f]/75 space-y-4 max-w-[600px] leading-relaxed">
+          <div className="text-base xl:text-[16px] text-[#1f1f1f]/75 space-y-4 max-w-[600px] text-justify">
             <p>
               At SIIC, we help startups craft strong, memorable brands. From
               logo design to website creation, we offer creative solutions that
@@ -139,18 +140,29 @@ function ServicesGrid() {
 // Main Branding Component
 function Branding() {
   return (
-    <PageLayout bodyStyle="-mt-60 z-40 relative" banner={<BrandingBanner />}>
+    <PageLayout
+      bodyStyle="-mt-60 z-40 relative"
+      banner={
+        <BannerTemplate
+          heading="Branding Support to tell"
+          highlightedText="your"
+          headingSuffix="Story."
+          description=" SIIC connects innovators to find their co-founders, accelerating
+            ventures through shared expertise."
+        />
+      }
+    >
       {/* Hero Section */}
       <BrandingHero />
 
       {/* Services Section */}
-      <section className="pt-8 px-8">
+      <section className="pt-8 px-8 pb-30">
         <ServicesHeader />
         <ServicesGrid />
       </section>
 
       {/* Contact Section */}
-      <LetUsKnow />
+      {/* <LetUsKnow /> */}
     </PageLayout>
   );
 }

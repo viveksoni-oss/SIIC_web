@@ -10,24 +10,20 @@ function BannerTemplate({
   children,
 }) {
   return (
-    // Container: Vertically centered (items-center), Left aligned (justify-start)
-    <div className="relative text-white flex w-full min-h-[70vh] pt-16 md:pt-10 lg:pt-12 justify-start z-50">
+    <div className="z-50 relative text-white flex justify-between">
+      {/* Content div */}
       <motion.div
-        // Layout: Left aligned items, Left aligned text
-        // Padding: Progressive padding from left (sm:px-12, lg:pl-32) to create that "good spacing"
-        className="flex flex-col gap-6 px-6 sm:px-12 md:px-16 lg:pl-24 max-w-5xl w-full items-start text-left"
-        // Animation: Bottom Up (y: 60 -> y: 0)
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
+        className="p-8 md:p-20 pt-24 max-w-[765px] flex flex-col gap-4"
+        initial={{ opacity: 0, x: 0 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="w-full">
+        <div>
           <motion.div
-            // Text Size: Progressive scaling pattern
-            className="font-medium leading-tight capitalize text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-4xl lg:text-6xl w-full font-medium capitalize"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             {heading}{" "}
             {highlightedText && (
@@ -37,23 +33,22 @@ function BannerTemplate({
           </motion.div>
 
           <motion.p
-            // Description: Left aligned, specific max-width for readability
-            className="font-normal mt-6 text-base sm:text-lg md:text-xl max-w-2xl text-gray-200"
+            className="text-base font-normal mt-2.5 py-4 pr-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
             {description}
           </motion.p>
         </div>
 
-        {/* Children (Buttons): Left aligned */}
+        {/* Children (Buttons/Actions) */}
         {children && (
           <motion.div
-            className="flex flex-wrap gap-4 sm:gap-6 justify-start mt-4 font-semibold"
+            className="flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
           >
             {children}
           </motion.div>
