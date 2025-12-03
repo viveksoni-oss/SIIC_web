@@ -70,7 +70,7 @@ function ContentSection({ isHovered, setIsHovered }) {
 
       <div>
         <motion.h1
-          className="w-full text-5xl font-medium capitalize leading-tight sm:text-5xl md:text-5xl lg:text-6xl 2xl:text-6xl"
+          className="w-full text-5xl text-left font-medium capitalize leading-tight sm:text-5xl md:text-5xl lg:text-6xl 2xl:text-6xl"
           variants={headingVariants}
         >
           We incubate <HighlightedText>your</HighlightedText> innovations
