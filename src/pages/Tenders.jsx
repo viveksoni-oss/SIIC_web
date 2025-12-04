@@ -49,7 +49,7 @@ function Tenders() {
 
   return (
     <PageLayout
-      banner={<BannerTemplate Heading={Heading} Description={""} />}
+      banner={<BannerTemplate heading={"Our"} description={"SIIC hands crore scale tenders in record time."}  highlightedText="Tenders"/>}
       bodyStyle="-mt-80"
     >
       <div className="flex flex-wrap gap-8 justify-center py-8 px-4">
