@@ -1,6 +1,108 @@
 export const programsData = [
   {
     id: "big-2025",
+    slug: "hackathon-telecom",
+    name: "5G/6G COE",
+    title: "Hackathon Telecom 5G/6G COE",
+    fullTitle: "DBT-BIRAC Biotechnology Ignition Grant",
+    cardImage: "biotechnology-ignition-grant.png",
+    bannerImage: "biotechnology-ignition-grant.png",
+    startDate: "2025-01-15",
+    endDate: "2026-07-15",
+    postDate: "2024-12-01",
+    deadline: "2025-12-31",
+    applyLink: "https://apply.siic.com/big-2025",
+    type: "Active",
+    domain: ["IOT"],
+    centerOfExcellence: "Hackathon Telecom 5G/6G COE",
+    brief:
+      "SIIC IIT Kanpur, supported by Start in UP, launches the 5G/6G Innovation Hackathon through its Telecom 5G/6G Centre of Excellence. The initiative invites innovators to develop next-gen connectivity solutions aligned with national priorities and strengthen India’s leadership in telecommunications.",
+    process: [
+      { step: "Registration & Webinar Series" },
+      { step: "Application & Pitch Submission" },
+      { step: "Pitch Presentation" },
+      { step: "Winner Announcement" },
+    ],
+    offerings: [
+      {
+        icon: "funding",
+        title: "Awards",
+        description: "Up to ₹5 lakhs.",
+      },
+      {
+        icon: "mentoring",
+        title: "Access to lab facilities",
+       
+      },
+      {
+        icon: "networking",
+        title: "Mentorship from industry leaders, domain experts, and researchers",
+        // description: "Access to investor network and funding opportunities.",
+      },
+      {
+        icon: "networking",
+        title: "Opportunities for incubation and funding",
+        // description: "Access to investor network and funding opportunities.",
+      },
+      {
+        icon: "networking",
+        title: "Support for prototype development",
+        // description: "Access to investor network and funding opportunities.",
+      },
+      {
+        icon: "networking",
+        title: "Networking and exposure to government, and industry partners",
+        // description: "Access to investor network and funding opportunities.",
+      },
+    ],
+    eligibility: [
+      "Startups",
+      "Innovators",
+      "Students (Final-year undergraduate/postgraduate)",
+      "Researchers & Tech Developers from across India",
+
+    ],
+    faq: [
+      {
+        question: " Who can participate?",
+        answer: "Final-year students, startups, innovators, and entrepreneurs.",
+      },
+      {
+        question: "What is the team size?",
+        answer: "There is no minimum team size. Individuals can also apply.",
+      },
+      {
+        question: "How will I get updates?",
+        answer: "Through the official webpage.",
+      },
+      {
+        question: "Is registration free?",
+        answer: "Yes. Registration and all webinars are free.",
+      },
+      {
+        question: " Do I need to stick to the listed domains?",
+        answer: "Yes. You must choose a domain from the list—or apply under Open Innovation",
+      },
+      {
+        question: "Is hardware mandatory?",
+        answer: "No. Software-only solutions are also accepted if high-impact.",
+      },
+      {
+        question: "What support do winners receive?",
+        answer: "Funding, mentorship, prototype support, and access to testbeds.",
+      },
+      {
+        question: "Is my own problem statement allowed?",
+        answer: "Yes, as long as it fits within a domain (or goes under Open Innovation).",
+      },
+      {
+        question: "What are the key judging criteria?",
+        answer: "Innovation and originality of the idea, Relevance to 5G/6G use cases, Technical feasibility and scalability, Market readiness and social impact, Quality of presentation and demonstration",
+      },
+    ],
+  },
+  {
+    id: "big-2025",
     slug: "biotechnology-ignition-grant",
     name: "BIG",
     title: "Biotechnology Ignition Grant",
