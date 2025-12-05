@@ -6,8 +6,8 @@ export const events = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.",
     location: "IIT Kanpur",
-    dateRange: "17 - 19 January",
-    year: "2025",
+    dateRange: "19-22 March",
+    year: "2026",
     link: "https://example.com/abhivyakti",
   },
   {

@@ -56,7 +56,7 @@ export const staffOfDomain = [
     name: "Sandeep Shandilya",
     role: "Project Scientist(COE - MedTech)",
     domain: "COE - MedTech & AI / ML",
-    image: "/OurTeam/StaffOfDomain/sandeeps.png",
+    image: "/OurTeam/Team/SandeepShandilya.png",
     linkedin: "https://www.linkedin.com/in/sandeep-shandilya-09818151",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -66,7 +66,7 @@ export const staffOfDomain = [
     name: "Monishka Sharma",
     role: "YPP Fellow(COE - MedTech)",
     domain: "COE - MedTech & AI / ML",
-    image: "/OurTeam/StaffOfDomain/Monishka.png",
+    image: "/OurTeam/Team/MonishkaSharma.png",
     linkedin: "https://www.linkedin.com/in/monishka-sharma-01a765268/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -76,7 +76,7 @@ export const staffOfDomain = [
     name: "Gauri Vishnoi",
     role: "YPP Fellow (COE - AI/ML)",
     domain: "COE - MedTech & AI / ML",
-    image: "/OurTeam/StaffOfDomain/gauri.png",
+    image: "/OurTeam/Team/GauriVishnoi.png",
     linkedin: "https://www.linkedin.com/in/gauri-vishnoi-86a5a5259",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -86,7 +86,7 @@ export const staffOfDomain = [
     name: "Neha Tom",
     role: "YPP Fellow (COE - AI/ML)",
     domain: "COE - MedTech & AI / ML",
-    image: "/OurTeam/StaffOfDomain/nehatom.png",
+    image: "/OurTeam/Team/NehaTom.png",
     linkedin: "https://www.linkedin.com/in/neha-tom-a9ab8729a",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -96,7 +96,7 @@ export const staffOfDomain = [
     name: "Animesh Mishra",
     role: "Senior Manager",
     domain: "Defence and Aerospace/ Cyber Security/ FinTech",
-    image: "/OurTeam/StaffOfDomain/animeshm.png",
+    image: "/OurTeam/Team/AnimeshMishra.png",
     linkedin: "https://www.linkedin.com/in/animesh-mishra-240638148/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -106,7 +106,7 @@ export const staffOfDomain = [
     name: "Vikash Prakash",
     role: "Assistant Manager",
     domain: "Defence and Aerospace/ Cyber Security/ FinTech",
-    image: "/OurTeam/StaffOfDomain/vikashp.png",
+    image: "/OurTeam/Team/VikashPrakash.png",
     linkedin: "https://www.linkedin.com/in/vikash-prakash-537b75140",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -116,7 +116,7 @@ export const staffOfDomain = [
     name: "Mayank Shukla",
     role: "Executive",
     domain: "Defence and Aerospace/ Cyber Security/ FinTech",
-    image: "/OurTeam/StaffOfDomain/mayank_shukla.png",
+    image: "/OurTeam/Team/MayankShukla.png",
     linkedin: "https://www.linkedin.com/in/mayank-shukla-284570209",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -126,7 +126,7 @@ export const staffOfDomain = [
     name: "Shagun Bajpai",
     role: "YPP Fellow",
     domain: "Defence and Aerospace/ Cyber Security/ FinTech",
-    image: "/OurTeam/StaffOfDomain/sagun.png",
+    image: "/OurTeam/Team/ShagunBajpai.png",
     linkedin: "https://www.linkedin.com/in/shagunbajpai1522",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -136,7 +136,7 @@ export const staffOfDomain = [
     name: "Dr. Neelakshi",
     role: "Technical Head",
     domain: "CleanTech/GreenTech/SocialTech/MSME",
-    image: "/OurTeam/StaffOfDomain/neelakshi.png",
+    image: "/OurTeam/Team/neelakshi.png",
     linkedin: "https://www.linkedin.com/in/neelakshi-phd-7ba63911b",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -146,7 +146,7 @@ export const staffOfDomain = [
     name: "Shivani Singh",
     role: "Assistant Manager",
     domain: "CleanTech/GreenTech/SocialTech/MSME",
-    image: "/OurTeam/StaffOfDomain/Shivanii.png",
+    image: "/OurTeam/Team/ShivaniSingh.png",
     linkedin: "https://www.linkedin.com/in/shivani-singh-34293331",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -156,7 +156,7 @@ export const staffOfDomain = [
     name: "Praful Satpute",
     role: "Deputy manager",
     domain: "CleanTech/GreenTech/SocialTech/MSME",
-    image: "/OurTeam/StaffOfDomain/Praful.png",
+    image: "/OurTeam/Team/PrafulSatpute.png",
     linkedin: "https://www.linkedin.com/in/prafull-satpute",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -166,7 +166,7 @@ export const staffOfDomain = [
     name: "Muskan Sinha",
     role: "YPP Fellow",
     domain: "CleanTech/GreenTech/SocialTech/MSME",
-    image: "/OurTeam/StaffOfDomain/muskan.png",
+    image: "/OurTeam/Team/MuskanSinha.png",
     linkedin: "https://www.linkedin.com/in/muskan-sinha-191a90306/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -176,27 +176,18 @@ export const staffOfDomain = [
     name: "Tanya Singh",
     role: "Executive",
     domain: "CleanTech/GreenTech/SocialTech/MSME",
-    image: "/OurTeam/StaffOfDomain/tanya.png",
+    image: "/OurTeam/Team/TanyaSingh.png",
     linkedin: "https://www.linkedin.com/in/tanya-singh42",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
   },
-  {
-    id: 16,
-    name: "Jujjavarapu Charles Avinash",
-    role: "Executive",
-    domain: "IOT/Electrical & Electronics/ Manufacturing",
-    image: "/OurTeam/StaffOfDomain/charles.png",
-    linkedin: "https://www.linkedin.com/in/charles-avinash-7a48961b2/",
-    strengths:
-      "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
-  },
+
   {
     id: 17,
     name: "Mohd Zaid Khan",
     role: "Manager",
     domain: "IOT/Electrical & Electronics/ Manufacturing",
-    image: "/OurTeam/StaffOfDomain/zaid.png",
+    image: "/OurTeam/Team/MohdZaidKhan.png",
     linkedin: "https://www.linkedin.com/in/zaid-khan-8391462a",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -206,7 +197,7 @@ export const staffOfDomain = [
     name: "Anushree Gupta",
     role: "Assistant Manager",
     domain: "IOT/Electrical & Electronics/ Manufacturing",
-    image: "/OurTeam/StaffOfDomain/anushreeGupta.png",
+    image: "/OurTeam/Team/AnushreeGupta.png",
     linkedin: "https://www.linkedin.com/in/anushree-gupta-93841297",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -216,7 +207,7 @@ export const staffOfDomain = [
     name: "Neha Kamal",
     role: "Assistant Manager",
     domain: "IOT/Electrical & Electronics/ Manufacturing",
-    image: "/OurTeam/StaffOfDomain/neha_kamal.png",
+    image: "/OurTeam/Team/NehaKamal.png",
     linkedin: "https://www.linkedin.com/in/neha-kamal-243b10112/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -226,7 +217,7 @@ export const staffOfDomain = [
     name: "Dr. Deepti Chugh",
     role: "Head",
     domain: "MedTech/BioTech",
-    image: "/OurTeam/StaffOfDomain/deepti_chugh.png",
+    image: "/OurTeam/Team/DrDeeptiChugh.png",
     linkedin: "https://linkedin.com/in/deepti-chugh-78895019",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -236,7 +227,7 @@ export const staffOfDomain = [
     name: "Vivek Kumar",
     role: "Assistant Manager",
     domain: "MedTech/BioTech",
-    image: "/OurTeam/StaffOfDomain/vivek_kumar.png",
+    image: "/OurTeam/Team/VivekKumar.png",
     linkedin: "",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -246,7 +237,7 @@ export const staffOfDomain = [
     name: "Shiwanshi Pandey",
     role: "Executive",
     domain: "MedTech/BioTech",
-    image: "/OurTeam/StaffOfDomain/shivanshi.png",
+    image: "/OurTeam/Team/ShiwanshiPandey.png",
     linkedin: "https://www.linkedin.com/in/shiwanshi-pandey-a38997217",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -256,7 +247,7 @@ export const staffOfDomain = [
     name: "Sanchita Chaudhary",
     role: "VP (Business Development)",
     domain: "AgriTech / CSR",
-    image: "/OurTeam/StaffOfDomain/sanchita_chaudhary.webp",
+    image: "/OurTeam/Team/SanchitaChaudhary.webp",
     linkedin: "https://www.linkedin.com/in/sanchita-c-7a305b6/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -266,7 +257,7 @@ export const staffOfDomain = [
     name: "Shriya Dube",
     role: "Assistant Manager",
     domain: "AgriTech / CSR",
-    image: "/OurTeam/StaffOfDomain/shriya_dube.png",
+    image: "/OurTeam/Team/ShriyaDube.png",
     linkedin: "https://siicincubator.com/www.linkedin.com/in/shriya-dube",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -276,7 +267,7 @@ export const staffOfDomain = [
     name: "Vanshika Srivastava",
     role: "Assistant Manager",
     domain: "AgriTech / CSR",
-    image: "/OurTeam/StaffOfDomain/vanshika_srivastava.png",
+    image: "/OurTeam/Team/VanshikaSrivastava.png",
     linkedin: "https://www.linkedin.com/in/vanshika-srivastava-002827238/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -286,7 +277,7 @@ export const staffOfDomain = [
     name: "Anushka Bhargava",
     role: "YPP Fellow",
     domain: "AgriTech / CSR",
-    image: "/OurTeam/StaffOfDomain/anushka1.png",
+    image: "/OurTeam/Team/AnushkaBhargava.png",
     linkedin: "https://www.siicincubator.com",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -296,7 +287,7 @@ export const staffOfDomain = [
     name: "Ashish Sharma",
     role: "Assistant General Manager",
     domain: "Investment",
-    image: "/OurTeam/StaffOfDomain/ashishSharma.png",
+    image: "/OurTeam/Team/AshishSharma.png",
     linkedin: "https://www.linkedin.com/in/ashish-sharma-465429112/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -306,7 +297,7 @@ export const staffOfDomain = [
     name: "Shivanshu Mishra",
     role: "Analyst - Startup Fundraising Readiness",
     domain: "Investment",
-    image: "/OurTeam/StaffOfDomain/shivanshuMishra.png",
+    image: "/OurTeam/Team/ShivanshuMishra.png",
     linkedin: "https://www.linkedin.com/in/shivanshu-mishra-101b6b1b1/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -316,7 +307,7 @@ export const staffOfDomain = [
     name: "Sudha Selvaraj",
     role: "Senior VP",
     domain: "Portfolio Compliance / Govt. Business Development",
-    image: "/OurTeam/StaffOfDomain/sudhas.png",
+    image: "/OurTeam/Team/SudhaSelvaraj.png",
     linkedin: "https://siicincubator.com/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -326,7 +317,7 @@ export const staffOfDomain = [
     name: "Vatsala Khare",
     role: "Assistant Manager",
     domain: "Portfolio Compliance / Govt. Business Development",
-    image: "/OurTeam/StaffOfDomain/vatsala.png",
+    image: "/OurTeam/Team/VatsalaKhare.png",
     linkedin: "https://www.linkedin.com/in/vatsala-khare-292b2519/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -336,8 +327,8 @@ export const staffOfDomain = [
     name: "Anushree Gupta",
     role: "Assistant Manager",
     domain: "Portfolio Compliance / Govt. Business Development",
-    image: "/OurTeam/StaffOfDomain/anushree.png",
-    linkedin: "https://www.linkedin.com/in/anushree-gupta-46022a60/",
+    image: "/OurTeam/Team/AnushreeGuptaInvestment.png",
+    linkedin: "https://www.linkedin.com/in/anushree-gupta-46022a60",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
   },
@@ -346,8 +337,8 @@ export const staffOfDomain = [
     name: "Riya Sinha",
     role: "Assistant Manager",
     domain: "Portfolio Compliance / Govt. Business Development",
-    image: "/OurTeam/StaffOfDomain/riya_sinha.png",
-    linkedin: "https://www.linkedin.com/in/riya-sinha-395211233/",
+    image: "/OurTeam/Team/RiyaSinha.png",
+    linkedin: "https://www.linkedin.com/in/RiyaSinha.png",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
   },
@@ -356,7 +347,7 @@ export const staffOfDomain = [
     name: "Surbhi Awasthi",
     role: "General Manager",
     domain: "Business Development & CSR",
-    image: "/OurTeam/StaffOfDomain/userfemale.png",
+    image: "/OurTeam/Team/SurbhiAwasthi.png",
     linkedin: "http://linkedin.com/in/surbhi-awasthi-4479941b3",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
