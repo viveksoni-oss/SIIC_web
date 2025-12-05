@@ -36,7 +36,7 @@ export const staffOfDomain = [
     name: "Dr. Sarvesh Sonkar",
     role: "Domain Specialist",
     domain: "COE - MedTech & AI / ML",
-    image: "/OurTeam/StaffOfDomain/sarvesh.png",
+    image: "/OurTeam/StaffOfDomain/SarveshSonkar.png",
     linkedin: "https://linkedin.com/in/sarvesh-sonkar",
     strengths:
       "Domain Expertise, Analysis, Research, Innovation, Cross-Team Collaboration",

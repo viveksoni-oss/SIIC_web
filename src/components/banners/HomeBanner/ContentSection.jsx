@@ -80,8 +80,8 @@ function ContentSection({ isHovered, setIsHovered }) {
           className="mt-2 py-2 text-sm font-normal sm:mt-2.5 sm:py-4 sm:text-base"
           variants={descriptionVariants}
         >
-          From crazy concepts to real impact — we're with you at every step of
-          the startup journey.
+          From bold ideas to real-world impact, we’re here to support you at
+          every stage.
         </motion.p>
       </div>
 

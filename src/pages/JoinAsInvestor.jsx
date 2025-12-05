@@ -119,7 +119,18 @@ function JoinAsInvestor() {
     "Startup Incubation and Innovation Centre, IIT Kanpur, established in 2000, is one of India’s oldest business and technology incubators promoting startups and social enterprises specialising in manufacturing.";
 
   return (
-    <PageLayout bodyStyle="-mt-70 p-16" banner={<BannerTemplate heading="Join as an " highlightedText="Investor"  description="Partner with SIIC as an Investor"> </BannerTemplate>}>
+    <PageLayout
+      bodyStyle="-mt-70 p-16"
+      banner={
+        <BannerTemplate
+          heading="Join as an "
+          highlightedText="Investor"
+          description="Partner with SIIC as an Investor"
+        >
+          {" "}
+        </BannerTemplate>
+      }
+    >
       <InfoImageMetricsSection
         imageSrc={imageSrc}
         imageAlt={imageAlt}
