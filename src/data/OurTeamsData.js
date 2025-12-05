@@ -36,7 +36,7 @@ export const staffOfDomain = [
     name: "Dr. Sarvesh Sonkar",
     role: "Domain Specialist",
     domain: "COE - MedTech & AI / ML",
-    image: "/OurTeam/StaffOfDomain/SarveshSonkar.png",
+    image: "/OurTeam/Team/SarveshSonkar.png",
     linkedin: "https://linkedin.com/in/sarvesh-sonkar",
     strengths:
       "Domain Expertise, Analysis, Research, Innovation, Cross-Team Collaboration",
@@ -46,7 +46,7 @@ export const staffOfDomain = [
     name: "Vasav Krishna",
     role: "Senior Program Manager(COE - AI/ML)",
     domain: "COE - MedTech & AI / ML",
-    image: "/OurTeam/StaffOfDomain/Vasav.png",
+    image: "/OurTeam/Team/VasavKrishna.png",
     linkedin: "https://www.linkedin.com/in/vasav-krishna-11b500110",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
