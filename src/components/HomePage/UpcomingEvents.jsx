@@ -14,17 +14,7 @@ const eventsData = [
     location: "IIT Kanpur",
     date: "19-22 March 2026",
     time: "10:00 AM",
-    image: "/UpcomingEvents/Abhivyakti.svg",
-  },
-  {
-    id: 2,
-    title: "TechFest 2025",
-    description:
-      "Annual technical festival showcasing innovation and technology breakthroughs from across the nation...",
-    location: "IIT Bombay",
-    date: "22-04-2025",
-    time: "09:00 AM",
-    image: "/UpcomingEvents/Abhivyakti.svg",
+    image: "/UpcomingEvents/Abhivyakti.png",
   },
 ];
 
