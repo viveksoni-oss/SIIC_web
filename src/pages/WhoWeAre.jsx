@@ -12,13 +12,12 @@ function WhoWeAre() {
       heading={
         <>
           We are your{" "}
-          <HighlightedText weight={800}> Well Wishers</HighlightedText>.
+          <HighlightedText weight={800}> Partners</HighlightedText> in Innovation
         </>
       }
       description={
         <>
-          At SIIC, we accelerate innovations, transforming visions <br /> into
-          thriving ventures.
+          At SIIC, we work alongside you to build solutions that matter
         </>
       }
     >
@@ -29,8 +28,7 @@ function WhoWeAre() {
             Know us <HighlightedText weight={700}>Better</HighlightedText>
           </h1>
           <div className="text-[20px] font-medium text-[#1f1f1f] opacity-75 mb-4">
-            We empower Innovation and entrepreneurship <br /> for a better
-            tomorrow.
+            At SIIC, we work alongside you to build <br />solutions that matter.
           </div>
           <p className="text-[#1f1f1f] opacity-75 lg:max-w-[386px] content-end lg:ml-8">
             Established in 2000, SIIC IIT Kanpur is one of India’s oldest tech

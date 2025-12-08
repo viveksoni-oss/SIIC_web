@@ -55,10 +55,10 @@ function Programs() {
       bodyStyle={"px-8 py-9  lg:py-18 lg:px-16 -mt-60 "}
       banner={
         <BannerTemplate
-          heading="Programs to Support"
+          heading="Programs that power"
           highlightedText="your"
           headingSuffix="innovations."
-          description="Startups access government resources through SIIC, fueling entrepreneurial growth."
+          description="We connect startups to government and CSR initiatives that accelerate entrepreneurial growth"
         />
       }
     >
