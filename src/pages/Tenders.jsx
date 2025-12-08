@@ -12,7 +12,7 @@ import ChannelDc from "@/assets/Tender/channelDc.pdf";
 import TenderVectorSignal from "@/assets/Tender/TenderVectorsSignal.pdf";
 import Tender181224 from "@/assets/Tender/181224.pdf";
 import TenderMain from "@/assets/Tender/tender.pdf";
-import AmendmentTender from "@/assets/Tender/AmendmentTender.pdf";
+import AmendmentTender from "@/assets/Tender/amendmentTender.pdf";
 import SectionHeading from "@/components/Utility Components/SectionHeading";
 
 // ============================================================
