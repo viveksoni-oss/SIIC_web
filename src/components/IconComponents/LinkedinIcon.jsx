@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 
 function LinkedinIcon({ isHovered }) {
+  const [localHovered, setLocalHovered] = useState(false);
+
+  // If parent controls hover, use that; otherwise use local state
+  const effectiveHovered =
+    typeof isHovered === "boolean" ? isHovered : localHovered;
+
   return (
-    <div>
-      {isHovered ? (
+    <div
+      onMouseEnter={() => setLocalHovered(true)}
+      onMouseLeave={() => setLocalHovered(false)}
+      className="inline-flex"
+    >
+      {effectiveHovered ? (
         <svg
           width="28"
           height="28"

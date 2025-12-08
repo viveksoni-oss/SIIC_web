@@ -24,7 +24,7 @@ export const navItems = [
       },
       { heading: "Partners", linkAddress: "/partners" },
       { heading: "Mentors", linkAddress: "/mentors" },
-      { heading: "Patents", linkAddress: "/patents" },
+      { heading: "Patents", linkAddress: "/ipr" },
     ],
   },
   {

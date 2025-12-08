@@ -3,7 +3,7 @@ import BannerTemplate from "@/components/banners/BannerTemplate";
 import PageLayout from "@/components/PageLayout";
 import HighlightedText from "@/components/Utility Components/HighlightedText";
 import { Document, Page, pdfjs } from "react-pdf";
-import { Clock, Download } from "lucide-react";
+import { Clock, Download, Eye } from "lucide-react";
 
 // IMPORT PDFs FROM ASSETS
 import DSO from "@/assets/Tender/DSO.pdf";
@@ -12,6 +12,7 @@ import ChannelDc from "@/assets/Tender/channelDc.pdf";
 import TenderVectorSignal from "@/assets/Tender/TenderVectorsSignal.pdf";
 import Tender181224 from "@/assets/Tender/181224.pdf";
 import TenderMain from "@/assets/Tender/tender.pdf";
+import AmendmentTender from "@/assets/Tender/AmendmentTender.pdf";
 import SectionHeading from "@/components/Utility Components/SectionHeading";
 
 // ============================================================
@@ -106,9 +107,14 @@ function Tenders() {
 function TenderCard({ title, lastDate, pdf, isAmendment }) {
   const [isLoading, setIsLoading] = React.useState(true);
   const [hasError, setHasError] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <div className="m-4 h-auto w-[360px] rounded-xl shadow-md group bg-white border border-gray-200 flex flex-col transition-all hover:shadow-xl">
+    <div
+      className="m-4 h-auto w-[360px] rounded-xl shadow-md group bg-white border border-gray-200 flex flex-col transition-all hover:shadow-xl"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {/* PDF PREVIEW */}
       <div className="h-[210px] w-full overflow-hidden rounded-t-xl bg-gray-100 relative border-b border-gray-100">
         {!hasError ? (
@@ -161,19 +167,33 @@ function TenderCard({ title, lastDate, pdf, isAmendment }) {
         )}
 
         {/* Click overlay */}
-        <a
-          href={pdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute inset-0 z-10 bg-transparent"
-          aria-label="View PDF"
-        />
-
+        <a />
+        <div className="absolute inset-0 group-hover:bg-black/50 filter  transition-all duration-500 ease-in-out flex justify-center items-center  group-hover:backdrop-blur-xs h-full w-full z-15">
+          {isHovered && (
+            <a
+              className="flex justify-center items-center text-white flex-col"
+              href={pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View PDF"
+            >
+              {" "}
+              <Eye className="hover:scale-110 transition-all " />
+              <h1 className="font-semibold">Click for Preview</h1>
+            </a>
+          )}
+        </div>
         {/* Amendment tag */}
         {isAmendment && (
-          <span className="absolute top-3 left-3 z-20 rounded-full bg-amber-500 text-white text-[11px] font-semibold px-3 py-1 shadow-sm">
-            Amendment
-          </span>
+          <a
+            className="absolute top-3 right-3 z-20 rounded-full bg-amber-500 text-white text-[11px] font-semibold px-3 py-1 shadow-sm"
+            href={AmendmentTender}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Amendment PDF"
+          >
+            **Amendment
+          </a>
         )}
       </div>
 

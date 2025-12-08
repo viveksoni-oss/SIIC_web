@@ -4,6 +4,7 @@ import AnimatedButton from "../../Utility Components/AnimatedButton";
 import AnimatedLogo from "../../LogoAnimation/Logo";
 import HighlightedText from "../../Utility Components/HighlightedText";
 import useIsMobile from "@/Hooks/useIsMobile";
+import { INCUBATE_WITH_US } from "@/data/Links";
 
 // Extract animation variants for cleaner code
 const containerVariants = {
@@ -89,7 +90,10 @@ function ContentSection({ isHovered, setIsHovered }) {
         className="mt-3 flex justify-start gap-4 text-sm font-semibold sm:mt-5 sm:gap-6 sm:text-base md:gap-8 lg:gap-11"
         variants={ctaVariants}
       >
-        <motion.button
+        <motion.a
+          href={INCUBATE_WITH_US}
+          rel="noreferrer"
+          target="_blank"
           whileHover={buttonHoverEffect}
           whileTap={{ scale: 0.95 }}
           className="flex items-center justify-center"
@@ -98,7 +102,7 @@ function ContentSection({ isHovered, setIsHovered }) {
           <span className="flex max-h-[46px] items-center justify-center rounded-full border-2 border-white px-[12px] py-[10px] transition-colors hover:bg-white hover:text-primary sm:px-[30px] sm:py-[14px]">
             Incubate with us
           </span>
-        </motion.button>
+        </motion.a>
 
         <motion.div
           onClick={handleProgramsClick}

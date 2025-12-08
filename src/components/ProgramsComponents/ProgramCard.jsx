@@ -46,27 +46,28 @@ function ProgramCard({
       className={`group bg-white border-[#F1F1F1] border-2 overflow-hidden 
         max-w-xs rounded-xl cursor-pointer transition-all duration-500 ease-out 
       focus:outline-none focus:shadow-lg   flex flex-col
-      ${isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""}
+min-w-[320px]      ${isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""}
     `}
     >
       <div className="relative overflow-hidden h-[245px]">
         <div className="relative ">
           <img
             src={`/ProgramsDashboard/Card-Image/${data.cardImage}`}
-            className="absolute inset-0 w-full h-full transition-transform duration-500 object-fill min-h-[245px] ease-out group-hover:scale-105"
+            className="absolute inset-0 w-full h-full transition-transform duration-500 object-fill min-h-[245px] ease-out group-hover:scale-105 "
             alt={data.title ? `${data.title} preview` : "Program preview"}
             loading="lazy"
           />
-          <div className="absolute top-20 p-8 z-20 h-full flex items-center justify-center text-center">
-            <div className="text-white line-clamp-3 text-shadow-primary-highlight text-shadow-md text-3xl xl:text-xl 2xl:text-2xl  capitalize font-bold transition-transform duration-200">
+          {/* <div className="absolute top-18  z-20 h-full flex items-start ">
+            <div className="text-white line-clamp-3  text-3xl xl:text-xl text-center 2xl:text-2xl  capitalize font-bold transition-transform duration-200 px-8">
               {data.title}
             </div>
-          </div>
-          <img
+          </div> */}
+          {/* <img
             src={`/ProgramsDashboard/programOverlay.png`}
             className="absolute inset-0 w-full h-full transition-transform duration-500 object-fill min-h-[245px] ease-out  opacity-80"
             loading="lazy"
-          />
+          /> */}
+          <div className="absolute inset-0  w-full h-full   min-h-[245px] z-20"></div>
         </div>
         {data.type === "Active" && data.applyLink && (
           <div className="group/apply-btn ">
