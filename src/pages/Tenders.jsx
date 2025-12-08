@@ -87,7 +87,7 @@ function Tenders() {
       {/* PAGE HEADING */}
       <div className="w-full  px-4">
         <SectionHeading>
-        <HighlightedText>Tenders</HighlightedText>
+       Open <HighlightedText>Tenders</HighlightedText>
         
         </SectionHeading>
       </div>
