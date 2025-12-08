@@ -2,64 +2,98 @@ import React from "react";
 import BannerTemplate from "@/components/banners/BannerTemplate";
 import PageLayout from "@/components/PageLayout";
 import HighlightedText from "@/components/Utility Components/HighlightedText";
-
-// ============================================================
-// DYNAMIC IMPORT: Load react-pdf only on client side
-// ============================================================
-// This prevents SSR issues and ensures proper React context
 import { Document, Page, pdfjs } from "react-pdf";
 import { Clock, Download } from "lucide-react";
 
-// Worker setup
+// IMPORT PDFs FROM ASSETS
+import DSO from "@/assets/Tender/DSO.pdf";
+import BenchtopVector from "@/assets/Tender/benchtop_vector.pdf";
+import ChannelDc from "@/assets/Tender/channelDc.pdf";
+import TenderVectorSignal from "@/assets/Tender/TenderVectorsSignal.pdf";
+import Tender181224 from "@/assets/Tender/181224.pdf";
+import TenderMain from "@/assets/Tender/tender.pdf";
+import SectionHeading from "@/components/Utility Components/SectionHeading";
+
+// ============================================================
+// PDF WORKER
+// ============================================================
 if (typeof window !== "undefined") {
   pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 }
 
-// Tender data
+// ============================================================
+// DATA (now using imported asset URLs)
+// ============================================================
 const tenderList = [
   {
     id: 1,
     title: "Real Time DSO/AIML/DJAC Building/IIT/FIRST/DP/17-11-2025",
     lastDate: "27th November 2025 before 5:00 pm",
-    pdf: "/Tender/DSO.pdf",
+    pdf: DSO,
+    isAmendment: true,
   },
   {
     id: 2,
-    title: "AI Based Water Quality Monitoring/ENV/DP/19-11-2025",
-    lastDate: "5th December 2025 before 6:00 pm",
-    pdf: "/Tender/vectorSignal.pdf",
+    title: "Benchtop Vector/AIML/DJAC Building/IIT/FIRST/DP/17-11-2025",
+    lastDate: "3rd December 2025 before 5:00 pm",
+    pdf: BenchtopVector,
+    isAmendment: true,
   },
   {
     id: 3,
-    title: "AI Based Water Quality Monitoring/ENV/DP/19-11-2025",
-    lastDate: "5th December 2025 before 6:00 pm",
-    pdf: "/Tender/tender.pdf",
+    title: "4 Channel DC/AIML/DJAC Building/IIT/FIRST/DP/17-11-2025",
+    lastDate: "3rd December 2025 by 5:00 pm",
+    pdf: ChannelDc,
+    isAmendment: true,
+  },
+  {
+    id: 4,
+    title: "Vector Signal Generato/AIML/DJAC Building/IIT/FIRST/DP/ 17-11-2025",
+    lastDate: "3rd December 2025 before 5:00 pm",
+    pdf: TenderVectorSignal,
+    isAmendment: true,
+  },
+  {
+    id: 5,
+    title: "Equipment/ DJAC Building/IIT/FIRST/DP/18-12-2024",
+    lastDate: "21st December 2024 before 5:00 pm",
+    pdf: Tender181224,
+    isAmendment: false,
+  },
+  {
+    id: 6,
+    title: "FIRST Innovation Hub-1/IIT/FIRST/AB/19-01-2022",
+    lastDate: "31st January 2021 by 5:00 pm",
+    pdf: TenderMain,
+    isAmendment: false,
   },
 ];
 
 // ============================================================
-// MAIN COMPONENT
+// MAIN PAGE
 // ============================================================
 function Tenders() {
-  const Heading = (
-    <>
-      Our <HighlightedText>Tender</HighlightedText>
-    </>
-  );
-
   return (
     <PageLayout
-      banner={<BannerTemplate heading={"Our"} description={"SIIC hands crore scale tenders in record time."}  highlightedText="Tenders"/>}
-      bodyStyle="-mt-80"
+      banner={
+        <BannerTemplate
+          heading={"Our"}
+          description={"SIIC handles crore-scale tenders in record time."}
+          highlightedText="Tenders"
+        />
+      }
+      bodyStyle="-mt-80 px-28 py-20"
     >
-      <div className="flex flex-wrap gap-8 justify-center py-8 px-4">
+      {/* PAGE HEADING */}
+      <div className="w-full  px-4">
+        <SectionHeading>
+          Open <HighlightedText>Tenders</HighlightedText>
+        </SectionHeading>
+      </div>
+
+      <div className="flex flex-wrap gap-8 justify-center py-4 px-4">
         {tenderList.map((item) => (
-          <TenderCard
-            key={item.id}
-            title={item.title}
-            lastDate={item.lastDate}
-            pdf={item.pdf}
-          />
+          <TenderCard key={item.id} {...item} />
         ))}
       </div>
     </PageLayout>
@@ -67,9 +101,9 @@ function Tenders() {
 }
 
 // ============================================================
-// TENDER CARD WITH PDF PREVIEW
+// CARD
 // ============================================================
-function TenderCard({ title, lastDate, pdf }) {
+function TenderCard({ title, lastDate, pdf, isAmendment }) {
   const [isLoading, setIsLoading] = React.useState(true);
   const [hasError, setHasError] = React.useState(false);
 
@@ -88,7 +122,7 @@ function TenderCard({ title, lastDate, pdf }) {
             }}
             loading={
               <div className="flex h-full w-full items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-highlight"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-highlight" />
               </div>
             }
             error={null}
@@ -101,7 +135,7 @@ function TenderCard({ title, lastDate, pdf }) {
               renderAnnotationLayer={false}
               loading={
                 <div className="flex h-full w-full items-center justify-center">
-                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-highlight"></div>
+                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-highlight" />
                 </div>
               }
               className="transition-transform duration-500 group-hover:scale-105 origin-top"
@@ -126,6 +160,7 @@ function TenderCard({ title, lastDate, pdf }) {
           </div>
         )}
 
+        {/* Click overlay */}
         <a
           href={pdf}
           target="_blank"
@@ -133,15 +168,22 @@ function TenderCard({ title, lastDate, pdf }) {
           className="absolute inset-0 z-10 bg-transparent"
           aria-label="View PDF"
         />
+
+        {/* Amendment tag */}
+        {isAmendment && (
+          <span className="absolute top-3 left-3 z-20 rounded-full bg-amber-500 text-white text-[11px] font-semibold px-3 py-1 shadow-sm">
+            Amendment
+          </span>
+        )}
       </div>
 
-      {/* CARD BODY */}
+      {/* BODY */}
       <div className="flex-1 p-6 flex flex-col gap-6">
         <h1 className="text-xl font-semibold text-gray-800 line-clamp-3 leading-tight">
           {title}
         </h1>
 
-        <div className="flex items-center gap-1 ">
+        <div className="flex items-center gap-1">
           <Clock
             size={15}
             strokeWidth={3}
@@ -155,9 +197,9 @@ function TenderCard({ title, lastDate, pdf }) {
           download
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto w-full rounded-lg hover:bg-primary-highlight/120 bg-primary-highlight text-white font-semibold text-center py-2.5 transition-all active:scale-95 flex items-center justify-center gap-2"
+          className="mt-auto duration-300 ease-in-out w-full rounded-lg bg-primary hover:tracking-widest hover:bg-primary-highlight text-white font-semibold text-center py-2.5 transition-all active:scale-95 flex items-center justify-center gap-2"
         >
-          <Download />
+          <Download size={18} />
           Download PDF
         </a>
       </div>

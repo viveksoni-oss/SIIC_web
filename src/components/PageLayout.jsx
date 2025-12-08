@@ -11,9 +11,10 @@ function PageLayout({ children, banner, bodyStyle = "", bannerLink }) {
           min-h-screen relative bg-white -mt-23 rounded-2xl sm:rounded-3xl lg:rounded-[30px]
           ${bodyStyle}
         `}
-
       >
-        <main className="w-full mx-auto transition-all duration-400 ease-in-out">{children}</main>
+        <main className="w-full mx-auto transition-all duration-400 ease-in-out relative z-50">
+          {children}
+        </main>
         <ToastContainer autoClose={2000} />
       </div>
     </div>

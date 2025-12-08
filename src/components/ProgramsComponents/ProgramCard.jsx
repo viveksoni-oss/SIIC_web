@@ -35,32 +35,39 @@ function ProgramCard({
     return () => clearInterval(interval);
   }, [isHovered]);
 
-  // Keyboard navigation for card
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      navigate(`${data.slug}`);
-    }
-  };
-
   return (
+    // the height for the div was h-[350px]
     <div
       tabIndex={0}
       role="button"
       aria-label={`Open program details for ${data.title}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onKeyPress={handleKeyPress}
-      className={`group  bg-white  border-[#F1F1F1] border-2 overflow-hidden  lg:w-[310px] rounded-xl cursor-pointer transition-all duration-500 ease-out focus:outline-none focus:shadow-lg h-[350px] flex flex-col 
-        ${isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""}
-      `}
+      className={`group bg-white border-[#F1F1F1] border-2 overflow-hidden 
+        max-w-xs rounded-xl cursor-pointer transition-all duration-500 ease-out 
+      focus:outline-none focus:shadow-lg   flex flex-col
+      ${isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""}
+    `}
     >
       <div className="relative overflow-hidden h-[245px]">
-        <img
-          src={`/ProgramsDashboard/Card-Image/${data.cardImage}`}
-          className="w-full transition-transform duration-500 object-fill min-h-[245px] ease-out group-hover:scale-105"
-          alt={data.title ? `${data.title} preview` : "Program preview"}
-          loading="lazy"
-        />
+        <div className="relative ">
+          <img
+            src={`/ProgramsDashboard/Card-Image/${data.cardImage}`}
+            className="absolute inset-0 w-full h-full transition-transform duration-500 object-fill min-h-[245px] ease-out group-hover:scale-105"
+            alt={data.title ? `${data.title} preview` : "Program preview"}
+            loading="lazy"
+          />
+          <div className="absolute top-20 p-8 z-20 h-full flex items-center justify-center text-center">
+            <div className="text-white line-clamp-3 text-shadow-primary-highlight text-shadow-md text-3xl xl:text-xl 2xl:text-2xl  capitalize font-bold transition-transform duration-200">
+              {data.title}
+            </div>
+          </div>
+          <img
+            src={`/ProgramsDashboard/programOverlay.png`}
+            className="absolute inset-0 w-full h-full transition-transform duration-500 object-fill min-h-[245px] ease-out  opacity-80"
+            loading="lazy"
+          />
+        </div>
         {data.type === "Active" && data.applyLink && (
           <div className="group/apply-btn ">
             <a
@@ -82,16 +89,16 @@ function ProgramCard({
         </div>
         <div
           onClick={() => navigate(`${data.slug}`)}
-          className="flex justify-between items-center mt-1  "
+          className="flex justify-between items-center   "
           role="link"
           aria-label={`Know more about ${data.title}`}
         >
           {blinking ? (
-            <div className="text-[13px] font-[400] cursor-pointer transition-all duration-200 hover:underline">
+            <div className="text-[14px] font-[400] cursor-pointer transition-all duration-200 hover:underline">
               Know more <span className="ml-2">{">"}</span>
             </div>
           ) : (
-            <div className="text-primary-highlight italic text-[13px]  font-[400] cursor-pointer transition-all duration-200 hover:underline">
+            <div className="text-primary-highlight italic  text-[14px]  font-[400] cursor-pointer transition-all duration-200 hover:underline">
               Know more <span className="ml-2">{">>"}</span>
             </div>
           )}
@@ -105,6 +112,7 @@ function ProgramCard({
           )}
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 }

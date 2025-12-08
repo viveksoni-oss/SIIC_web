@@ -30,7 +30,7 @@ function MobileNavigation({
             initial="closed"
             animate="open"
             exit="closed"
-            className="lg:hidden fixed inset-0 bg-black z-40"
+            className="lg:hidden fixed inset-0 bg-black z-60"
             onClick={toggleMenu}
           />
 
@@ -40,7 +40,7 @@ function MobileNavigation({
             initial="closed"
             animate="open"
             exit="closed"
-            className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-xl overflow-y-auto"
+            className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-60 shadow-xl overflow-y-auto"
           >
             {/* Mobile Menu Header */}
             <motion.div

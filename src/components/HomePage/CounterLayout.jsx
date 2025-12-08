@@ -5,8 +5,8 @@ function CounterLayout() {
   const details = [
     { title: "startup incubated", count: "500", suffix: "+", prefix: "" },
     { title: "job created", count: "11000", suffix: "+", prefix: "" },
-    { title: "startup influenced", count: "800", suffix: "+", prefix: "" },
-    { title: "combined value", count: "12", prefix: "₹ ", suffix: " B" },
+    { title: "Women-led startups", count: "150", suffix: "+", prefix: "" },
+    { title: "combined value", count: "130", prefix: "₹ ", suffix: " B" },
   ];
 
   return (

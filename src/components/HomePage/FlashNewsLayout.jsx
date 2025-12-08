@@ -32,9 +32,8 @@ const newsDetails = [
   {
     title:
       "FUEL 2025- IIT Kanpur's SIIC Innovation Hub in Noida, reinforced SIIC's mission of accelerating innovation from lab to market. ",
-    imageLink: "News/Homepage/FlashNewsCard1.png",
-    externalLink:
-      "https://timesofindia.indiatimes.com/city/lucknow/up-playing-a-pivotal-role-in-indias-growth-story/articleshow/123874787.cms",
+    imageLink: "News/Homepage/FlashNewsCard1.jpg",
+    externalLink: "https://timestech.in/siic-iit-kanpur-hosts-fuel-2025/",
     PostedAt: "",
   },
 ];

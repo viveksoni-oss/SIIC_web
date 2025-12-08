@@ -334,21 +334,21 @@ function UpcomingEvents() {
                     <div className="font-bold text-sm text-gray-600">
                       Location
                     </div>
-                    <div className="text-center text-sm xl:text-base">
+                    <div className="text-center text-sm ">
                       {currentEvent.location}
                     </div>
                   </div>
                   <div className="h-12 border-l-2 border-gray-300"></div>
                   <div className="flex justify-center items-center gap-2 flex-col flex-1">
                     <div className="font-bold text-sm text-gray-600">Date</div>
-                    <div className="text-center text-sm xl:text-base">
+                    <div className="text-center text-sm ">
                       {currentEvent.date}
                     </div>
                   </div>
                   <div className="h-12 border-l-2 border-gray-300"></div>
                   <div className="flex justify-center items-center gap-2 flex-col flex-1">
                     <div className="font-bold text-sm text-gray-600">Time</div>
-                    <div className="text-center text-sm xl:text-base">
+                    <div className="text-center text-sm ">
                       {currentEvent.time}
                     </div>
                   </div>

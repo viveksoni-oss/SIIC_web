@@ -38,7 +38,7 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
       className="
         flex flex-col 
         gap-1 sm:gap-2 md:gap-3
-        justify-center items-center
+        justify-center 
         min-w-[120px] sm:min-w-[140px] md:min-w-[160px] lg:min-w-[180px]
         px-3 sm:px-4 md:px-6
         py-2 sm:py-3
@@ -53,9 +53,7 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
           text-4xl lg:text-5xl xl:text-5xl
           text-[#2D415C] 
           font-bold
-          
           text-center
-          
         "
         transition={{ duration: 0.8, ease: "backOut" }}
       >
@@ -69,7 +67,7 @@ function Counter({ number, title, prefix = "", suffix = "" }) {
           text-[#1F1F1F]
           text-center
           leading-snug
-          max-w-[150px] sm:max-w-[180px] md:max-w-[200px]
+          max-w-[150px] sm:max-w-[180px] md:max-w-[300px]
         "
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}

@@ -555,6 +555,15 @@ export const staffOfOperation = [
     strengths: "Scheduling, Logistics, Communication, Teamwork",
   },
   {
+    id: 25,
+    name: "Shalya T",
+    role: "Assistant Manager",
+    domain: "Information Technology",
+    image: "/OurTeam/StaffOfOperations/viveksoni.png",
+    linkedin: "https://www.linkedin.com/in/sonivivek346/",
+    strengths: "Scheduling, Logistics, Communication, Teamwork",
+  },
+  {
     id: 24,
     name: "Kumar Krishlay Pal",
     role: "YPP Fellow",

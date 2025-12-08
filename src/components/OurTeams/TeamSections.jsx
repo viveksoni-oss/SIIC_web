@@ -13,7 +13,7 @@ import NewTeamCard from "../Utility Components/NewTeamCard";
 // Utility: Define a hierarchy order for roles
 const getSortOrder = (role) => {
   const hierarchy = [
-    "Professor In-Charge  (Incubation & Innovation)",
+    "Professor In-Charge (Incubation & Innovation)",
     "Chief Executive Officer",
     "Chief Operating Officer",
     "Chief Finance Officer",

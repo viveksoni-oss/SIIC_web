@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router";
 import { getProgramsByType } from "./../Util/HelperFunctions";
 import BannerTemplate from "@/components/banners/BannerTemplate";
+import SectionHeading from "@/components/Utility Components/SectionHeading";
 
 function Programs() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -36,16 +37,11 @@ function Programs() {
       return null;
     }
     return (
-      <div className="flex flex-col gap-6 mb-10">
-        <div className="text-[40px] font-thin">
-          <div>
-            <HighlightedText size="40px" weight={700}>
-              {highlightText}
-            </HighlightedText>{" "}
-            {title}
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-20 2xl:gap-8 lg:gap-10 justify-center items-center">
+      <div className="flex flex-col justify-center items-center sm:justify-normal sm:justify-items-normal gap-6 mb-10">
+          <SectionHeading className="self-start">
+            <HighlightedText>{highlightText}</HighlightedText> {title}
+          </SectionHeading>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-6 ">
           {programs.map((program) => (
             <ProgramCard key={program.id} data={program} />
           ))}
@@ -56,7 +52,7 @@ function Programs() {
 
   return (
     <PageLayout
-      bodyStyle={"-mt-60 "}
+      bodyStyle={"px-8 py-9  lg:py-18 lg:px-16 -mt-60 "}
       banner={
         <BannerTemplate
           heading="Programs to Support"
@@ -66,7 +62,7 @@ function Programs() {
         />
       }
     >
-      <div className="p-16 min-h-[1200px]">
+      <div className=" min-h-[1200px]">
         {/* Active Programs */}
         <ProgramSection
           title="Programs"

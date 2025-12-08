@@ -4,7 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 body {
   @apply bg-[#f7f7f7];
-  
 }
 .Toastify__progress-bar {
   background: #6c3231 !important;
@@ -310,7 +309,6 @@ body {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -318,4 +316,35 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Firefox: thin scrollbar, global */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2d415c transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari): global scrollbar */
+*::-webkit-scrollbar {
+  width: 6px;
+  background-color: #aaaaaa;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 3px;
+  margin: 8px 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 10px;
+  box-shadow: -3px 0 0 #6b7280, 3px 0 0 #6b7280;
+  transition: all 0.3s ease;
+}
+
+*::-webkit-scrollbar-button {
+  scroll-behavior: smooth;
+  width: 0px;
+  height: 0px;
 }
