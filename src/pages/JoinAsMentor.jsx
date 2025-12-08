@@ -10,6 +10,7 @@ import JoinAsMentorBanner from "../components/banners/JoinAsMentorBanner";
 import SectionHeading from "./../components/Utility Components/SectionHeading";
 import InfoImageMetricsSection from "../components/JoinAs/InfoImageMetricsSection";
 import StepsCard from "../components/JoinAs/StepsCard";
+import BannerTemplate from "@/components/banners/BannerTemplate";
 
 function HowToBeMentor() {
   // Example steps, you would replace this with real steps and props
@@ -95,7 +96,7 @@ export function YourGains() {
   return (
     <section className="py-10">
       <SectionHeading>
-        Know your <HighlightedText weight={700}>Gains</HighlightedText>
+        Your Role as a <HighlightedText weight={700}> Mentor</HighlightedText>
       </SectionHeading>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 justify-items-center">
         {YOUR_GAINS.map((data, idx) => (
@@ -111,16 +112,24 @@ function JoinAsMentor() {
   const imageAlt = "Join as Investor";
   const heading = (
     <>
-      Why Support <HighlightedText> SIIC</HighlightedText> ?{" "}
+     Lead With Your <HighlightedText> Expertise</HighlightedText> ?{" "}
     </>
   );
   const description =
-    "Creating an impact through channeling support to new generation innovators.";
+    "Mentorship is the cornerstone of SIIC’s startup ecosystem. ";
   const text =
-    "Startup Incubation and Innovation Centre, IIT Kanpur, established in 2000, is one of India’s oldest business and technology incubators promoting startups and social enterprises specialising in manufacturing.";
+    "At SIIC, mentors play a defining role in helping startups refine their vision, overcome technical and strategic challenges, and scale solutions that matter to India and the world. By sharing your expertise and perspective, you empower founders to move faster, build stronger, and create lasting impact. Join us and help shape tomorrow’s breakthrough ventures.";
 
   return (
-    <PageLayout bodyStyle="p-8 md:p-16 -mt-60" banner={<JoinAsMentorBanner />}>
+    <PageLayout bodyStyle="p-8 md:p-16 -mt-60" 
+    banner={
+    <BannerTemplate 
+    heading="Become a Mentor at"
+    highlightedText="SIIC"
+    description="At SIIC, mentors help accelerate ideas into meaningful, high-growth ventures."
+    >
+
+    </BannerTemplate>}>
       <InfoImageMetricsSection
         imageSrc={imageSrc}
         imageAlt={imageAlt}

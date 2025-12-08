@@ -110,21 +110,22 @@ function JoinAsInvestor() {
   const imageAlt = "Join as Investor";
   const heading = (
     <>
-      Why Support <HighlightedText> SIIC</HighlightedText> ?{" "}
+      Why invest in  <HighlightedText> SIIC</HighlightedText> startups  ?{" "}
     </>
   );
   const description =
-    "Creating an impact through channeling support to new generation innovators.";
+    "Mentorship is the cornerstone of SIIC’s startup ecosystem. ";
   const text =
-    "Startup Incubation and Innovation Centre, IIT Kanpur, established in 2000, is one of India’s oldest business and technology incubators promoting startups and social enterprises specialising in manufacturing.";
+    "SIIC offers investors access to high-potential startups shaping India’s deep-tech, MedTech, agritech, sustainability, and social impact sectors. By partnering with us, you gain an early view into pioneering technologies, strong founder teams, and ventures backed by IIT Kanpur’s research strength. Your investment accelerates innovations that address India’s most urgent challenges while enabling scalable, commercially viable growth. Join us in backing the next wave of transformative startups.";
 
   return (
     <PageLayout
       bodyStyle="-mt-70 p-16"
       banner={
         <BannerTemplate
-          heading="Join as an "
+          heading="Join us as an "
           highlightedText="Investor"
+          headingSuffix=" at SIIC"
           description="Partner with SIIC as an Investor"
         >
           {" "}

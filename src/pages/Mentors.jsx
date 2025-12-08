@@ -4,6 +4,7 @@ import PageLayout from "../components/PageLayout";
 import MentorsSection from "./../components/Mentors/MentorsCard";
 import Domain from "../components/Utility Components/Domain";
 import SearchBar from "./../components/Utility Components/SearchBar";
+import BannerTemplate from "@/components/banners/BannerTemplate";
 
 function Mentors() {
   const categoriesOfMentors = [
@@ -58,7 +59,20 @@ function Mentors() {
   return (
     <PageLayout
       bodyStyle={"-mt-60 z-40 p-6 lg:pr-0 2xl:p-6"}
-      banner={<MentorsBanner />}
+      // banner={<MentorsBanner />}
+      banner={
+        <BannerTemplate
+          heading="Mentors Shaping Tomorrow’s "
+          highlightedText="Innovators"
+          maxWidth="700"
+          description={
+            <>
+              SIIC mentors help accelerate ideas into meaningful <br />{" "}
+              high-growth ventures.
+            </>
+          }
+        ></BannerTemplate>
+      }
     >
       {/* Search Bar Container */}
       <div className="flex justify-end mb-6 mr-4">

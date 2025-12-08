@@ -4,6 +4,7 @@ import PartnerBanner from "../components/banners/PartnerBanner";
 import SearchBar from "./../components/Utility Components/SearchBar";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
 import { PartnersData } from "./../data/PartnersData";
+import BannerTemplate from "@/components/banners/BannerTemplate";
 
 function PartnerLogos({ imgLink, title }) {
   return (
@@ -27,7 +28,19 @@ function Partners() {
     return () => clearTimeout(timeout); // Clean up previous timeout
   }, [search]);
   return (
-    <PageLayout bodyStyle={"-mt-60 z-40 "} banner={<PartnerBanner />}>
+    <PageLayout bodyStyle={"-mt-60 z-40 "}
+    
+    // banner={<PartnerBanner />}
+    banner={
+      <BannerTemplate 
+      heading="Partners To Fuel" 
+      highlightedText="Your" 
+      headingSuffix="Ventures"
+      description="With partner support, we extend valuable government and corporate opportunities to our incubatees"> 
+
+      </BannerTemplate>
+    }
+    >
       <div className="p-16 pr-8 flex flex-col gap-10 z-40">
         <div className="flex justify-end mr-2">
           <SearchBar

@@ -78,7 +78,7 @@ function Tenders() {
       banner={
         <BannerTemplate
           heading={"Our"}
-          description={"SIIC handles crore-scale tenders in record time."}
+          description={"SIIC hands crore scale tenders in record time."}
           highlightedText="Tenders"
         />
       }
@@ -87,7 +87,8 @@ function Tenders() {
       {/* PAGE HEADING */}
       <div className="w-full  px-4">
         <SectionHeading>
-          Open <HighlightedText>Tenders</HighlightedText>
+       Open <HighlightedText>Tenders</HighlightedText>
+        
         </SectionHeading>
       </div>
 
