@@ -1,10 +1,12 @@
+// PlaceHolder image address image: "/PlaceHolders/TeamPlaceholder.jpg",
 export const ourLeadership = [
   {
     id: 1,
     name: "Prof. Deepu Philip",
     role: "Professor In-Charge (Incubation & Innovation)",
     domain: "Leadership",
-    image: "/PlaceHolders/TeamPlaceholder.jpg",
+
+    image: "/OurTeam/Team/ProfDeepuPhilip.png",
     linkedin: "https://siicincubator.com",
     strengths:
       "Team Management, Technology Strategy, Communication, Organizational Growth",
@@ -24,7 +26,9 @@ export const ourLeadership = [
     name: "Piyush Mishra",
     role: "Chief Operating Officer cum Chief Finance Officer",
     domain: "Leadership",
-    image: "/PlaceHolders/TeamPlaceholder.jpg",
+
+    image: "/OurTeam/Team/PiyushMishra.png",
+    // image: "/PlaceHolders/TeamPlaceholder.jpg",
     linkedin: "https://www.linkedin.com/in/piyush-mishra-43b80830/",
     strengths:
       "Business Planning, Leadership, Strategy Development, Stakeholder Engagement",
@@ -136,7 +140,7 @@ export const staffOfDomain = [
     name: "Dr. Neelakshi",
     role: "Technical Head",
     domain: "CleanTech/GreenTech/SocialTech/MSME",
-    image: "/OurTeam/Team/neelakshi.png",
+    image: "/OurTeam/Team/DrNeelakshi.png",
     linkedin: "https://www.linkedin.com/in/neelakshi-phd-7ba63911b",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -151,16 +155,7 @@ export const staffOfDomain = [
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
   },
-  {
-    id: 13,
-    name: "Praful Satpute",
-    role: "Deputy manager",
-    domain: "CleanTech/GreenTech/SocialTech/MSME",
-    image: "/OurTeam/Team/PrafulSatpute.png",
-    linkedin: "https://www.linkedin.com/in/prafull-satpute",
-    strengths:
-      "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
-  },
+
   {
     id: 14,
     name: "Muskan Sinha",
@@ -247,7 +242,7 @@ export const staffOfDomain = [
     name: "Sanchita Chaudhary",
     role: "VP (Business Development)",
     domain: "AgriTech / CSR",
-    image: "/OurTeam/Team/SanchitaChaudhary.webp",
+    image: "/PlaceHolders/TeamPlaceholder2.jpg",
     linkedin: "https://www.linkedin.com/in/sanchita-c-7a305b6/",
     strengths:
       "Financial Modeling, Report Preparation, Market Analysis, Accuracy",
@@ -378,7 +373,7 @@ export const staffOfOperation = [
     name: "Swati Tyagi",
     role: "Executive",
     domain: "Administration",
-    image: "/OurTeam/Team/Swati.png",
+    image: "/OurTeam/Team/SwatiTyagi.png",
     linkedin: "https://www.linkedin.com/in/swati-tyagi-954763217/",
     strengths: "Scheduling, Logistics, Communication, Teamwork",
   },
@@ -387,7 +382,7 @@ export const staffOfOperation = [
     name: "Shivam Pandey",
     role: "Executive",
     domain: "Administration",
-    image: "/OurTeam/Team/shivam_pandey.png",
+    image: "/OurTeam/Team/ShivamPandey.png",
     linkedin: "https://siicincubator.com",
     strengths: "Scheduling, Logistics, Communication, Teamwork",
   },

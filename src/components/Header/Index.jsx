@@ -21,7 +21,7 @@ function Header() {
   // Preload logo on component mount
   useEffect(() => {
     preloadImage(
-      "/logo_header.png",
+      "Logos/logo_header.png",
       () => setLogoLoaded(true),
       () => {
         console.error("Failed to preload header logo");

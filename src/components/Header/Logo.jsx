@@ -20,7 +20,7 @@ function Logo({ logoLoaded, onLogoLoad, onLogoError }) {
             duration: logoLoaded ? 0.5 : 0,
             delay: logoLoaded ? 0.2 : 0,
           }}
-          src="/logo_header.png"
+          src="Logos/logo_header.png"
           alt="SIIC IITK logo"
           className={`h-16 md:h-18 lg:h-[70px] lg:w-[320px] object-contain transition-opacity duration-300 ${
             logoLoaded ? "opacity-100" : "opacity-0"
