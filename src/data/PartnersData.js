@@ -7,12 +7,12 @@ export const PartnersData = [
   {
     id: 2,
     name: "Partner 2",
-    img: "/PartnersLogo/partner-2",
+    img: `../assets/PartnersLogo/partner-2`,
   },
   {
     id: 3,
     name: "Partner 3",
-    img: "/PartnersLogo/partner-3",
+    img: "@/assets/PartnersLogo/partner-3",
   },
   {
     id: 4,
