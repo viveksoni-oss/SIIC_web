@@ -1,22 +1,20 @@
 import React, { useState } from "react";
+import Linkedin from "../IconComponents/Linkedin";
 
-import facebook from "@/assets/Icons/facebook.svg";
-import linkedin from "@/assets/Icons/linkedIn.svg";
-import linkedinHover from "@/assets/Icons/hover-icons/linkedIn-hover.svg";
 function SocialLink() {
   const [hovered, setHovered] = useState(null);
 
   const socialLinkList = [
     {
       title: "facebook",
-      icon: facebook,
+      icon: "/Icons/facebook.svg",
       hoverIcon: "/Icons/hover-icons/facebook-hover.svg",
       link: "https://www.facebook.com/IncubatorIITK",
     },
     {
       title: "linkedIn",
-      icon: linkedin,
-      hoverIcon: linkedinHover,
+      icon: "../../assets/Icons/linkedIn.svg",
+      hoverIcon: "../../assets/Icons/hover-icons/linkedIn-hover.svg",
       link: "https://www.linkedin.com/company/incubatoriitk",
     },
     {
