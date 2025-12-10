@@ -58,9 +58,9 @@ function UpcomingEventsMobile() {
       onTouchStart={() => setPaused(true)}
       onTouchEnd={() => setPaused(false)}
     >
-      <div className="bg-secondary-gray/40 rounded-xl border border-secondary-gray/50 p-6 md:p-8 overflow-hidden relative min-h-[700px] flex flex-col">
+      <div className="bg-secondary-gray/40 rounded-xl border border-secondary-gray/50 p-6 md:p-8 overflow-hidden relative min-h-[650px] flex flex-col">
         {/* Carousel Content Area */}
-        <div className="relative flex-grow">
+        <div className="relative flex">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={page}
@@ -141,11 +141,10 @@ function UpcomingEventsMobile() {
               </div>
 
               {/* Image Section with FIXED dimensions */}
-              <div className="flex-grow flex items-center justify-center py-4">
+              <div className="flex-grow flex items-center justify-center py-2">
                 <img
                   src={currentEvent.image}
-                  // Enforcing 250px width and 300px height strictly
-                  className="w-[250px] h-[300px] rounded-2xl object-cover bg-red-100 shadow-md"
+                  className="w-[300px] h-[350px] rounded-2xl object-cover bg-red-100 shadow-md"
                   alt={currentEvent.title}
                   draggable="false"
                 />
@@ -155,7 +154,7 @@ function UpcomingEventsMobile() {
         </div>
 
         {/* Custom Dot Navigation */}
-        <div className="flex justify-center items-center gap-3 mt-4 pt-2 z-10">
+        <div className="flex justify-center items-center gap-3 mt-2  z-10">
           {eventsData.map((_, idx) => {
             const isActive = idx === index;
             return (
