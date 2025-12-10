@@ -8,7 +8,7 @@ import Logo from "./Logo";
 import HamburgerButton from "./HamburgerButton";
 import DesktopNavigation from "./DesktopNavigation";
 import MobileNavigation from "./MobileNavigation";
-
+import SIICLogo from "@/assets/Logos/logo_header.png";
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
@@ -21,7 +21,7 @@ function Header() {
   // Preload logo on component mount
   useEffect(() => {
     preloadImage(
-      "Logos/logo_header.png",
+      SIICLogo,
       () => setLogoLoaded(true),
       () => {
         console.error("Failed to preload header logo");

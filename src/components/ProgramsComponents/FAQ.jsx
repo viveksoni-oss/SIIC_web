@@ -1,36 +1,19 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import HighlightedText from "../Utility Components/HighlightedText";
 
 function FAQ({ faqData }) {
-  const [expandedItems, setExpandedItems] = useState(new Set());
-  const [isHovered, setIsHovered] = useState(false);
-  const toggleExpanded = (id) => {
-    setIsHovered(false);
-    const newExpanded = new Set(expandedItems);
-    if (newExpanded.has(id)) {
-      newExpanded.delete(id);
-    } else {
-      newExpanded.add(id);
-    }
-    setExpandedItems(newExpanded);
-  };
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const shouldTruncate = (text) => {
-    return text.length > 100;
-  };
-
-  const getTruncatedText = (text) => {
-    return text.length > 80 ? text.substring(0, 80) + "..." : text;
+  const toggleItem = (index) => {
+    setActiveIndex((prev) => (prev === index ? null : index));
   };
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-      },
+      transition: { staggerChildren: 0.08 },
     },
   };
 
@@ -39,17 +22,14 @@ function FAQ({ faqData }) {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   };
 
   return (
     <div className="col-span-3 p-6">
-      {/* Header Section */}
-      <div className="mb-8 ">
+      {/* Header */}
+      <div className="mb-8">
         <h1 className="text-[40px] font-thin mb-4">
           Frequently Asked{" "}
           <HighlightedText size={"40px"} weight={700}>
@@ -59,115 +39,62 @@ function FAQ({ faqData }) {
       </div>
 
       {/* FAQ Items */}
-      <div className="relative ">
+      <div className="relative">
         <motion.div
           className="max-h-[485px] overflow-y-auto space-y-4 pr-3 scrollbar-container py-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {faqData.map((item, index) => (
-            <motion.div
-              key={item.id}
-              variants={itemVariants}
-              className="bg-secondary-gray/30 rounded-2xl  border-gray-100 py-3 px-5"
-            >
-              {/* Question */}
-              <h3 className="text-sm font-semibold text-[#1f1f1f] mb-3 leading-tight">
-                {item.question}
-              </h3>
+          {faqData.map((item, index) => {
+            const isOpen = activeIndex === index;
 
-              {/* Answer with Read More functionality */}
-              <div className="text-gray-600 text-base leading-relaxed">
-                <motion.div
-                  animate={{
-                    opacity: 1,
-                    transition: { duration: 0.3 },
-                  }}
-                  className="overflow-hidden"
+            return (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="bg-secondary-gray/30 rounded-2lx border border-gray-100"
+              >
+                {/* Question row */}
+                <button
+                  type="button"
+                  onClick={() => toggleItem(index)}
+                  className="w-full flex items-center justify-between py-3 px-5 text-left"
                 >
-                  <p className="mb-2 text-gray-600 text-base leading-relaxed">
-                    {expandedItems.has(item.id)
-                      ? item.answer
-                      : getTruncatedText(item.answer)}
+                  <h3 className="text-sm font-semibold text-[#1f1f1f] leading-tight">
+                    {item.question}
+                  </h3>
+                  <motion.span
+                    animate={{ rotate: isOpen ? 90 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="ml-4 text-gray-600 text-xl font-semibold"
+                  >
+                    {isOpen ? "-" : "+"}
+                  </motion.span>
+                </button>
 
-                    {/* Read More / Read Less Button - Inline */}
-                    {shouldTruncate(item.answer) && (
-                      <motion.button
-                        onClick={() => toggleExpanded(item.id)}
-                        className="ml-2 text-gray-600 text-sm hover:text-gray-600 font-medium transition-colors duration-200 focus:outline-none underline decoration-1 underline-offset-2"
-                        whileHover={{
-                          scale: 1.02,
-                        }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        {expandedItems.has(item.id) ? (
-                          <div
-                            onMouseEnter={() => setIsHovered(item.id)}
-                            onMouseLeave={() => setIsHovered(null)}
-                          >
-                            {item.id !== isHovered ? (
-                              <span>{"Read less >"}</span>
-                            ) : (
-                              <span className="text-primary-highlight font-semibold italic underline decoration-1 underline-offset-2 ">
-                                {"Read less >>"}
-                              </span>
-                            )}
-                          </div>
-                        ) : (
-                          <div
-                            onMouseEnter={() => setIsHovered(item.id)}
-                            onMouseLeave={() => setIsHovered(null)}
-                          >
-                            {item.id !== isHovered ? (
-                              <span>{"Read more >"}</span>
-                            ) : (
-                              <span className="text-primary-highlight font-semibold italic underline decoration-1 underline-offset-2 ">
-                                {"Read more >>"}
-                              </span>
-                            )}
-                          </div>
-                        )}
-                      </motion.button>
-                    )}
-                  </p>
-                </motion.div>
-              </div>
-            </motion.div>
-          ))}
+                {/* Answer */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 pb-4 text-gray-600 text-sm md:text-base leading-relaxed">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
-
-      {/* Custom Scrollbar Styles */}
-      <style jsx>{`
-        .scrollbar-container {
-          scrollbar-width: thin;
-          scrollbar-color: #2d415c transparent;
-        }
-        .scrollbar-container::-webkit-scrollbar {
-          width: 6px;
-          background-color: #aaaaaa;
-        }
-
-        .scrollbar-container::-webkit-scrollbar-track {
-          background: #f3f4f6;
-          border-radius: 3px;
-          margin: 8px 0;
-        }
-
-        .scrollbar-container::-webkit-scrollbar-thumb {
-          background: #6b7280;
-          border-radius: 10px;
-          box-shadow: -3px 0 0 #6b7280, 3px 0 0 #6b7280;
-          transition: all 0.3s ease;
-        }
-
-        .scrollbar-container::-webkit-scrollbar-button {
-          scroll-behavior: smooth;
-          width: 0px;
-          height: 0px;
-        }
-      `}</style>
     </div>
   );
 }
