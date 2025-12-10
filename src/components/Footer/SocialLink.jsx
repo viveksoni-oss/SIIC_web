@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import facebook from "@/assets/Icons/facebook.svg";
-import linkedin from "@/assets/Icons/linkedin.svg";
+import linkedin from "@/assets/Icons/linkedIn.svg";
 import linkedinHover from "@/assets/Icons/hover-icons/linkedIn-hover.svg";
 function SocialLink() {
   const [hovered, setHovered] = useState(null);
