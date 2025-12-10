@@ -140,15 +140,15 @@ function OfficeSpaces() {
 
   const galleryImages = [
     {
-      src: "OfficeSpace/office2.svg",
+      src: "OfficeSpace/office3.png",
       alt: "Collaborative workspace area",
     },
     {
-      src: "OfficeSpace/office3.svg",
+      src: "OfficeSpace/office2.png",
       alt: "Private meeting room",
     },
     {
-      src: "OfficeSpace/office4.svg",
+      src: "OfficeSpace/office4.png",
       alt: "Modern office amenities",
     },
   ];
@@ -161,9 +161,9 @@ function OfficeSpaces() {
           {/* Hero Image */}
           <div className="order-2 lg:order-1">
             <img
-              src="OfficeSpace/office1.svg"
+              src="OfficeSpace/office1.png"
               alt="Modern co-working office space"
-              className="w-full  h-auto rounded-2xl shadow-lg"
+              className="w-full  h-full rounded-2xl shadow-lg"
               loading="eager"
             />
           </div>
@@ -219,13 +219,13 @@ function OfficeSpaces() {
           </div>
 
           {/* Image Gallery */}
-          <div className="grid grid-cols-3 gap-4 lg:gap-6">
+          <div className="grid grid-cols-3 gap-4 lg:gap-6 mt-0 xl:mt-4">
             {galleryImages.map((image, index) => (
               <div key={index}>
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className={`w-70 h-full  rounded-2xl shadow-md`}
+                  className={`w-70 h-60 object-cover  rounded-2xl shadow-md`}
                   loading="lazy"
                 />
               </div>
@@ -256,7 +256,7 @@ function OfficeSpaces() {
             {/* Facilities Image */}
             <div className="order-first lg:order-last p-4">
               <img
-                src="OfficeSpace/office5.svg"
+                src="OfficeSpace/office5.png"
                 alt="Office facilities overview"
                 className="w-full h-auto rounded-2xl "
                 loading="lazy"
