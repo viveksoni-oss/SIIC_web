@@ -257,7 +257,7 @@ function Careers() {
   return (
     <PageLayout
       bodyStyle="-mt-60 p-8 sm:p-16"
-      banner={<BannerTemplate heading={Heading} description={desc} />}
+      banner={<BannerTemplate heading={Heading} description={desc} maxWidth="600"/>}
     >
       <InfoImageMetricsSection
         imageSrc={imageSrc}

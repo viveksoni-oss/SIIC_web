@@ -46,7 +46,7 @@ function ProgramCard({
       className={`group bg-white border-[#F1F1F1] border-2 overflow-hidden 
         max-w-xs rounded-xl cursor-pointer transition-all duration-500 ease-out 
       focus:outline-none focus:shadow-lg   flex flex-col
-min-w-[320px]      ${isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""}
+    ${isHovered ? "shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" : ""}
     `}
     >
       <div className="relative overflow-hidden h-[245px]">
