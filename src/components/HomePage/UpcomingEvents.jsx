@@ -2,21 +2,11 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import HighlightedText from "./../Utility Components/HighlightedText";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router";
+import { eventsData } from "@/data/UpcomingData";
+import { cn } from "@/lib/utils";
 
 const AUTO_SCROLL_DELAY = 5000; // Increased to 5 seconds for better UX
 const ANIMATION_DURATION = 0.6;
-
-const eventsData = [
-  {
-    id: 1,
-    title: "Abhivyakti",
-    description: `Abhivyakti by SIIC IIT Kanpur – Celebrating transformative startup success 20+ years of pioneering  incubation, uniting ecosystem enablers to showcase futuristic innovations.`,
-    location: "IIT Kanpur",
-    date: "19-22 March 2026",
-    time: "10:00 AM",
-    image: "/UpcomingEvents/Abhivyakti.png",
-  },
-];
 
 // Animation variants for better organization
 const imageVariants = {
@@ -87,7 +77,8 @@ function UpcomingEvents() {
 
   const containerRef = useRef(null);
   const autoScrollTimerRef = useRef(null);
-
+  const hasMultipleEvents = eventsData.length > 1; // 👈 add this
+  const currentEvent = eventsData[currentIndex];
   // Intersection Observer with improved configuration
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -114,6 +105,7 @@ function UpcomingEvents() {
 
   // Improved auto-scroll with proper cleanup
   useEffect(() => {
+    if (!hasMultipleEvents) return;
     if (!isHovered && isInView) {
       autoScrollTimerRef.current = setInterval(() => {
         setDirection(1);
@@ -128,7 +120,7 @@ function UpcomingEvents() {
         clearInterval(autoScrollTimerRef.current);
       }
     };
-  }, [isHovered, isInView]);
+  }, [hasMultipleEvents, isHovered, isInView]);
 
   // Optimized dot click handler with useCallback
   const handleDotClick = useCallback(
@@ -162,8 +154,6 @@ function UpcomingEvents() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isInView]);
-
-  const currentEvent = eventsData[currentIndex];
 
   const navigate = useNavigate();
   return (
@@ -200,32 +190,36 @@ function UpcomingEvents() {
             </AnimatePresence>
           </div>
         </div>
-
         {/* Vertical carousel indicator dots */}
-        <nav
-          className="flex flex-col justify-center gap-3 ml-2 z-30"
-          aria-label="Event navigation"
-          role="tablist"
-        >
-          {eventsData.map((event, index) => (
-            <motion.button
-              key={event.id}
-              onClick={() => handleDotClick(index)}
-              className={`w-[20px] h-[20px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center cursor-pointer transition-all duration-300 focus:outline-none  focus:ring-primary-highlight focus:ring-offset-2`}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={`Go to ${event.title}`}
-              aria-selected={index === currentIndex}
-              role="tab"
-            >
-              <div
-                className={`w-[12px] h-[12px] rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "bg-primary-highlight" : "bg-white"
-                }`}
-              ></div>
-            </motion.button>
-          ))}
-        </nav>
+        {
+          <nav
+            className={cn(
+              "flex flex-col justify-center gap-3 ml-2 z-30",
+              hasMultipleEvents ? "opacity-100" : "opacity-0"
+            )}
+            aria-label="Event navigation"
+            role="tablist"
+          >
+            {eventsData.map((event, index) => (
+              <motion.button
+                key={event.id}
+                onClick={() => handleDotClick(index)}
+                className={`w-[20px] h-[20px] rounded-full bg-white border-2 border-secondary-gray flex items-center justify-center cursor-pointer transition-all duration-300 focus:outline-none  focus:ring-primary-highlight focus:ring-offset-2`}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label={`Go to ${event.title}`}
+                aria-selected={index === currentIndex}
+                role="tab"
+              >
+                <div
+                  className={`w-[12px] h-[12px] rounded-full transition-all duration-300 ${
+                    index === currentIndex ? "bg-primary-highlight" : "bg-white"
+                  }`}
+                ></div>
+              </motion.button>
+            ))}
+          </nav>
+        }
       </div>
 
       {/* Main Content Section */}
@@ -283,8 +277,8 @@ function UpcomingEvents() {
 
                 {/* Event Description */}
                 <p className="font-medium mt-4   text-gray-700">
-                  <span className="line-clamp-2">
-                    {currentEvent.description}
+                  <span className="">
+                    {currentEvent.description.slice(0,150)+"..."}
                   </span>
 
                   <button
@@ -348,7 +342,7 @@ function UpcomingEvents() {
           </div>
 
           {/* Progress Bar */}
-          {!isHovered && isInView && (
+          {hasMultipleEvents && !isHovered && isInView && (
             <motion.div
               className="absolute bottom-0 left-0 h-1 bg-primary-highlight"
               initial={{ width: "0%" }}

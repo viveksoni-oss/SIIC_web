@@ -1,31 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SepratorLine from "./../Utility Components/SepratorLine";
+import { eventsData } from "@/data/UpcomingData";
 
 const AUTO_SCROLL_DELAY = 5000;
-
-const eventsData = [
-  {
-    id: 1,
-    title: "Abhivyakti",
-    description:
-      "Abhivyakti by SIIC IIT Kanpur – Celebrating transformative startup success 20+ years of pioneering incubation.",
-    location: "IIT Kanpur",
-    date: "15-12-2025",
-    time: "10:00 AM",
-    image: "/UpcomingEvents/Abhivyakti.svg  ",
-  },
-  {
-    id: 2,
-    title: "Tech Summit 2025",
-    description:
-      "Annual technology summit bringing together industry leaders and innovators.",
-    location: "Main Auditorium",
-    date: "20-01-2026",
-    time: "09:00 AM",
-    image: "/UpcomingEvents/Abhivyakti.svg", // Assuming this exists or use placeholder
-  },
-];
 
 const variants = {
   enter: (direction) => ({

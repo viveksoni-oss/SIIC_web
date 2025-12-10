@@ -46,7 +46,7 @@ const getSortOrder = (role) => {
   return hierarchy.length; // unknown role at end
 };
 
-function TeamSections({ heading, TeamData }) {
+function TeamSections({ heading, TeamData, filter = true }) {
   // Extract unique domains
   const allDomains = Array.from(
     new Set(TeamData.map((member) => member.domain))
@@ -112,7 +112,7 @@ function TeamSections({ heading, TeamData }) {
         </h1>
 
         {/* Filter Bar */}
-        {
+        {filter && (
           <div className="flex items-center flex-wrap gap-3">
             <label className="font-semibold text-lg">
               Filter by <HighlightedText>domain</HighlightedText>:
@@ -132,7 +132,7 @@ function TeamSections({ heading, TeamData }) {
               </SelectContent>
             </Select>
           </div>
-        }
+        )}
       </div>
 
       {/* Card wrapper with conditional gradient overlays and inner scroll area */}

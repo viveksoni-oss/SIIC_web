@@ -248,7 +248,7 @@ function Careers() {
     "Startup Incubation and Innovation Centre, IIT Kanpur, established in 2000, is one of India’s oldest business and technology incubators promoting startups and social enterprises specialising in manufacturing.";
   const Heading = (
     <>
-      Be the Pillars of our <HighlightedText>Future</HighlightedText> .
+      Be the Pillars of our <HighlightedText>Future</HighlightedText>
     </>
   );
   const desc =
@@ -257,7 +257,7 @@ function Careers() {
   return (
     <PageLayout
       bodyStyle="-mt-60 p-8 sm:p-16"
-      banner={<BannerTemplate Heading={Heading} Description={desc} />}
+      banner={<BannerTemplate heading={Heading} description={desc} />}
     >
       <InfoImageMetricsSection
         imageSrc={imageSrc}

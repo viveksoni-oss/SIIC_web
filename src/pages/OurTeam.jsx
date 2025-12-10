@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import HighlightedText from "../components/Utility Components/HighlightedText";
 import TeamSections from "../components/OurTeams/TeamSections";
 import {
@@ -6,16 +6,16 @@ import {
   staffOfDomain,
   staffOfOperation,
 } from "../data/OurTeamsData";
-import { useParams, useSearchParams } from "react-router";
+import { useSearchParams } from "react-router";
 import { NewPageLayout } from "./../components/Utility Components/NewPageLayout";
 
 function OurTeam() {
   const [searchParams] = useSearchParams();
-  
+
   useEffect(() => {
     if (window.location.hash) {
       const el = document.getElementById(window.location);
-      console.log(el);
+      
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
       }
