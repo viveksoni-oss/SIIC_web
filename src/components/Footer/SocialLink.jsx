@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Linkedin from "../IconComponents/Linkedin";
 
 function SocialLink() {
   const [hovered, setHovered] = useState(null);
