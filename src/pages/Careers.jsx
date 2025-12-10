@@ -92,19 +92,19 @@ function WorkOpportunities() {
 }
 
 // Young Professional Program Card
-function YPPProfileCard() {
+function YPPProfileCard({yppImgName ,yppName}) {
   return (
     <div>
       <div className="relative w-[170px] h-[330px] bg-secondary-gray/30 group/card rounded-2xl flex flex-col justify-between overflow-hidden">
         <div className="absolute group-hover/card:bg-primary-highlight/90 h-full w-full group-hover/card:animate-bar z-0 rounded-2xl bottom-0"></div>
         <div className=" opacity-0 flex flex-col justify-center text-center  items-center z-40 mt-14 px-4 gap-3 group-hover/card:-translate-y-2  group-hover/card:opacity-100 text-white transition-all duration-500 ease-in-out">
-          <h1 className="text-[20px] font-semibold leading-6">Rishabh pandy</h1>
+          <h1 className="text-[20px] font-semibold leading-6">{yppName}</h1>
           <p className="font-extrabold text-xs opacity-75">
             YPP Batch : 2025-26
           </p>
         </div>
         <img
-          src="/Careers/Ypp-1.png"
+          src={`/public/OurTeam/Team/${yppImgName}.png`}
           alt=""
           className="group-hover/card:scale-120 group-hover/card:-translate-y-4 z-40 transition-all duration-500 ease-in-out"
         />
@@ -202,9 +202,11 @@ function YoungProfessionalProgram() {
       </SectionHeading>
       <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-6">
         <div className="flex gap-4">
-          {Array.from({ length: 3 }, (_, idx) => (
-            <YPPProfileCard key={idx} />
-          ))}
+          {/* {Array.from({ length: 3 }, (_, idx) => ( */}
+            <YPPProfileCard yppImgName={"ShagunBajpai"} yppName={"Shagun Bajpai"} />
+            <YPPProfileCard yppImgName={"KumarKrishlayPal"}  yppName={"Krishlay Pal"} />
+            <YPPProfileCard  yppImgName={"MonishkaSharma"} yppName={"Monishka Sharma"}/>
+          {/* ))} */}
         </div>
         <div className="flex flex-col gap-10 max-w-[480px]">
           <h2 className="text-[20px] font-medium text-[#1f1f1f] opacity-75">
