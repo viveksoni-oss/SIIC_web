@@ -104,7 +104,7 @@ function YPPProfileCard({yppImgName ,yppName}) {
           </p>
         </div>
         <img
-          src={`/public/OurTeam/Team/${yppImgName}.png`}
+          src={`/OurTeam/Team/${yppImgName}.png`}
           alt=""
           className="group-hover/card:scale-120 group-hover/card:-translate-y-4 z-40 transition-all duration-500 ease-in-out"
         />
