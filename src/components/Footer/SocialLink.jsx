@@ -12,8 +12,8 @@ function SocialLink() {
     },
     {
       title: "linkedIn",
-      icon: "Icons/linkedIn.svg",
-      hoverIcon: "/Icons/hover-icons/linkedIn-hover.svg",
+      icon: "../../assets/Icons/linkedIn.svg",
+      hoverIcon: "../../assets/Icons/hover-icons/linkedIn-hover.svg",
       link: "https://www.linkedin.com/company/incubatoriitk",
     },
     {
