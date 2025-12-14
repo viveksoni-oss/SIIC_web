@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Linkedin from "../IconComponents/Linkedin";
 
 function SocialLink() {
   const [hovered, setHovered] = useState(null);
@@ -13,8 +12,8 @@ function SocialLink() {
     },
     {
       title: "linkedIn",
-      icon: "../../assets/Icons/linkedIn.svg",
-      hoverIcon: "../../assets/Icons/hover-icons/linkedIn-hover.svg",
+      icon: "Icons/linkedIn.svg",
+      hoverIcon: "/Icons/hover-icons/linkedIn-hover.svg",
       link: "https://www.linkedin.com/company/incubatoriitk",
     },
     {

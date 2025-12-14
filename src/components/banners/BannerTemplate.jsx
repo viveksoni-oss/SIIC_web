@@ -7,7 +7,7 @@ function BannerTemplate({
   highlightedText = "",
   headingSuffix = "",
   description = "Default description",
-  maxWidth = "790",
+  maxWidth = "500",
   children,
 }) {
   return (
@@ -21,7 +21,7 @@ function BannerTemplate({
       >
         <div>
           <motion.div
-            className="text-4xl lg:text-6xl w-full font-medium capitalize"
+            className="text-4xl lg:text-5xl w-full font-medium capitalize leading-15"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

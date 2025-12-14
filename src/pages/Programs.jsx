@@ -59,7 +59,7 @@ function Programs() {
           highlightedText="your"
           headingSuffix="innovations."
           description="We connect startups to government and CSR initiatives that accelerate entrepreneurial growth"
-          maxWidth="605"
+          maxWidth="600"
         />
       }
     >
