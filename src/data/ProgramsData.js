@@ -1,6 +1,7 @@
 export const programsData = [
   {
     id: "big-2025",
+    logos:["image 62"],
     slug: "hackathon-telecom",
     name: "5G/6G COE",
     title: "Hackathon Telecom 5G/6G COE",

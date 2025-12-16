@@ -144,6 +144,7 @@ function Branding() {
       bodyStyle="-mt-60 z-40 relative"
       banner={
         <BannerTemplate
+        maxWidth="600"
           heading="Branding Support to tell"
           highlightedText="your"
           headingSuffix="Story."

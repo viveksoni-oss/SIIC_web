@@ -15,6 +15,7 @@ import {
 } from "lucide-react"; // remove Lightbulb import
 
 import LinkedinIcon from "../IconComponents/LinkedinIcon";
+import { cn } from "./../../lib/utils";
 // Exact domain-to-icon mapping
 const domainIconMap = {
   // Vertical / sector domains
@@ -41,7 +42,7 @@ const getDomainIcon = (domain) => {
   return domainIconMap[domain] || BriefcaseBusiness; // fallback icon
 };
 
-function NewTeamCard({ data, imageFilter, imageF }) {
+function NewTeamCard({ data, height = 320 }) {
   const { name, role, domain, image, linkedin } = data;
   const [isHovered, setIsHovered] = useState(false);
 
@@ -53,10 +54,17 @@ function NewTeamCard({ data, imageFilter, imageF }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex h-[320px] items-end justify-center overflow-hidden border-neutral-200  rounded-t-md  bg-gradient-to-b from-gray-50 via-gray-100 to-transparent ">
+      <div
+        className={cn(
+          "flex  items-end justify-center overflow-hidden border-neutral-200  rounded-t-md  bg-gradient-to-b from-gray-50 via-gray-100 to-transparent ",
+          height ? `min-h-[${height}px]` : ""
+        )}
+      >
         <img
-          className=" max-h-[320px] w-full transition-transform duration-700 ease-in-out group-hover/card:scale-110"
-          src={image }
+          className={cn(
+            "w-full transition-transform duration-700 ease-in-out group-hover/card:scale-110"
+          )}
+          src={image}
           alt={name}
           loading="lazy"
         />

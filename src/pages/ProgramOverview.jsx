@@ -1,4 +1,4 @@
-import { Clock, SquareArrowOutUpRight } from "lucide-react";
+import { ArrowRight, Clock, SquareArrowOutUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
@@ -6,6 +6,7 @@ import FAQ from "../components/ProgramsComponents/FAQ";
 import { programsData as programs } from "../data/ProgramsData";
 import EligibilityCriteria from "./../components/ProgramsComponents/EligibilityCriteria";
 import OurOfferings from "../components/ProgramsComponents/OurOfferings";
+import { cn } from "@/lib/utils";
 
 // Program Title/Brief section (LEFT PANE)
 const ProgramTitleContainer = ({
@@ -51,13 +52,16 @@ const ProgramTitleContainer = ({
         <button
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="border-2 text-[11px] sm:text-[12px] flex items-center border-white group duration-300 ease-in-out text-white rounded-2xl w-full max-w-[220px] sm:max-w-[240px] px-3 sm:px-4 py-1 hover:bg-white hover:text-black hover:font-semibold transition-all"
+          className="border-2 text-[11px] sm:text-[12px] flex items-center border-white group duration-300 ease-in-out text-white rounded-2xl w-full max-w-[220px] sm:max-w-[240px] px-3 sm:px-4 py-1 hover:bg-white hover:text-black hover:font-semibold transition-all  justify-between"
           onClick={() => window.open(applyLink, "_blank")}
         >
           <span>Apply now</span>
-          <SquareArrowOutUpRight
+          <ArrowRight
             size={isHovered ? 22 : 15}
-            className="transition-all duration-300 ease-in-out"
+            className={cn(
+              "transition-all duration-300 ease-in-out",
+              isHovered ? "-rotate-45" : "rotate-0"
+            )}
           />
         </button>
       )}
@@ -81,6 +85,7 @@ function ProgramOverview() {
   if (!currentProgramData) return null;
 
   const {
+    logos,
     name,
     title,
     brief,
@@ -112,7 +117,7 @@ function ProgramOverview() {
     (brief.split(" ").length > 250 ? "..." : "");
 
   // Status dot color helper for right section only
-  const getStatusColor = () => {
+  const getStatusColor = (type) => {
     switch (type) {
       case "Active":
         return "bg-green-500";
@@ -152,7 +157,9 @@ function ProgramOverview() {
               {type && (
                 <span className="text-[10px] sm:text-xs px-2.5 sm:px-3 py-1 bg-white rounded-full border border-gray-200 flex items-center gap-1.5">
                   <span
-                    className={`w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full ${getStatusColor()}`}
+                    className={`w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full ${getStatusColor(
+                      type
+                    )}`}
                   ></span>
                   {type}
                 </span>
@@ -183,23 +190,17 @@ function ProgramOverview() {
               </div>
             )}
             {/* Partner icons/images (flex row, always at bottom, your custom IMAGES) */}
-            <div className="w-full flex gap-2 sm:gap-4 justify-start items-center pt-3 -mb-1 sm:-mb-5 mt-8">
-              <img
-                src="/ProgramBrief/logos/image 62.png"
-                alt="partner logo 1"
-                className="h-6 sm:h-8 w-auto"
-              />
-              <img
-                src="/ProgramBrief/logos/image 63.png"
-                alt="partner logo 2"
-                className="h-6 sm:h-8 w-auto"
-              />
-              <img
-                src="/ProgramBrief/logos/image 64.png"
-                alt="partner logo 3"
-                className="h-6 sm:h-8 w-auto"
-              />
-            </div>
+            {logos && (
+              <div className="w-full flex gap-2 sm:gap-4 justify-start items-center pt-3 -mb-1 sm:-mb-5 mt-8">
+                {logos.map((logo) => (
+                  <img
+                    src={`/ProgramBrief/logos/${logo}.png`}
+                    alt={"partner" + logo}
+                    className="h-6 sm:h-8 w-auto"
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

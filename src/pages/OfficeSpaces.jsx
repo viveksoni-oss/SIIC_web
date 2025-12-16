@@ -6,6 +6,7 @@ import LetUsKnow from "./../components/Utility Components/LetUsKnow";
 import CounterBox from "./../components/Utility Components/CounterBox";
 import SectionHeading from "./../components/Utility Components/SectionHeading";
 import HighlightedText from "@/components/Utility Components/HighlightedText";
+import BannerTemplate from "@/components/banners/BannerTemplate";
 
 // Extracted LocationCard component to separate file recommended
 const LocationCard = ({
@@ -66,18 +67,16 @@ const Section = ({ children, className = "", background = false }) => (
   <section
     className={`${
       background ? "bg-gradient-to-b from-gray-50 to-white" : ""
-    } py-16 lg:py-24 ${className}`}
+    } pt-16 lg:py-20 ${className}`}
   >
-    <div className="container mx-auto px-6 lg:px-12">{children}</div>
+    <div className="mx-auto px-6 lg:px-12">{children}</div>
   </section>
 );
 
 // Section header component
 const SectionHeader = ({ title, subtitle, titleAccent, centered = false }) => (
   <div
-    className={`${
-      centered ? " mb-12 lg:mb-16" : "mb-8 lg:mb-12"
-    } space-y-4`}
+    className={`${centered ? " mb-12 lg:mb-16" : "mb-8 lg:mb-12"} space-y-4`}
   >
     <SectionHeading>
       {title} <HighlightedText>{titleAccent}</HighlightedText>
@@ -154,10 +153,22 @@ function OfficeSpaces() {
   ];
 
   return (
-    <PageLayout banner={<OfficeSpacesBanner />} bodyStyle="-mt-60">
+    <PageLayout
+      banner={
+        <BannerTemplate
+          maxWidth="700"
+          heading="Create Workspace To Build"
+          highlightedText="Your"
+          headingSuffix="Vision"
+          description="A purpose-built space for focus, collaboration, and seamless innovation.
+"
+        />
+      }
+      bodyStyle="-mt-60"
+    >
       {/* Hero Section */}
       <Section>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12  items-center">
           {/* Hero Image */}
           <div className="order-2 lg:order-1">
             <img
@@ -173,9 +184,6 @@ function OfficeSpaces() {
             <SectionHeading>
               Your Workspace, <HighlightedText> Reimagined</HighlightedText>
             </SectionHeading>
-            <h2 className="text-md lg:text-xl font-semibold text-[#1f1f1f]/80">
-              Branding Support to Tell Your Story
-            </h2>
 
             <p className="text-base lg:text-md text-gray-700 leading-relaxed text-justify max-w-xl">
               Our 150,000 SQ.FT co-working spaces at IIT Kanpur and Noida offer
@@ -235,7 +243,7 @@ function OfficeSpaces() {
       </Section>
 
       {/* Facilities Section */}
-      <Section>
+      <Section className="-mt-20">
         <SectionHeader
           title="Facilities at a"
           titleAccent="Glance"
@@ -246,7 +254,7 @@ function OfficeSpaces() {
           <div className="grid gap-8 lg:gap-12 items-center">
             {/* Facilities List */}
             <div>
-              <ul className="grid grid-cols-2 gap-4 lg:gap-1">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-1">
                 {facilities.map((facility, index) => (
                   <FacilityItem key={index} facility={facility} />
                 ))}
@@ -267,14 +275,7 @@ function OfficeSpaces() {
       </Section>
 
       {/* Locations Section */}
-      <Section>
-        <SectionHeader
-          title="Where Innovation Finds a"
-          titleAccent="Home"
-          subtitle="    Visit our world-class facilities designed to nurture your startup journey."
-        
-        />
-
+      <Section className="-mt-20">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {locations.map((location) => (
             <LocationCard

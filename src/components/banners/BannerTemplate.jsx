@@ -7,7 +7,7 @@ function BannerTemplate({
   highlightedText = "",
   headingSuffix = "",
   description = "Default description",
-  maxWidth = "790",
+  maxWidth = "500",
   children,
 }) {
   return (

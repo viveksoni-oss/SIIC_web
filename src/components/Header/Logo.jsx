@@ -1,7 +1,7 @@
 // Header/Logo.jsx
 import { motion } from "framer-motion";
 import { Link } from "react-router";
-
+import SIIClogo from "@/assets/Logos/logo_header.png";
 function Logo({ logoLoaded, onLogoLoad, onLogoError }) {
   return (
     <Link to="/" aria-label="Go to home page">
@@ -20,7 +20,7 @@ function Logo({ logoLoaded, onLogoLoad, onLogoError }) {
             duration: logoLoaded ? 0.5 : 0,
             delay: logoLoaded ? 0.2 : 0,
           }}
-          src="Logos/logo_header.png"
+          src={SIIClogo}
           alt="SIIC IITK logo"
           className={`h-16 md:h-18 lg:h-[70px] lg:w-[320px] object-contain transition-opacity duration-300 ${
             logoLoaded ? "opacity-100" : "opacity-0"
