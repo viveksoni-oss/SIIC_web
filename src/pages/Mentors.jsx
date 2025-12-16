@@ -64,7 +64,7 @@ function Mentors() {
         <BannerTemplate
           heading="Mentors Shaping Tomorrow’s "
           highlightedText="Innovators"
-          maxWidth="700"
+          maxWidth="600"
           description={
             <>
               SIIC mentors help accelerate ideas into meaningful <br />{" "}
