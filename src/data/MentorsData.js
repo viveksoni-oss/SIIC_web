@@ -657,7 +657,7 @@ export const mentorsData = [
     company: "",
     strengths: "Super Foods",
     domain: "foodtech",
-    image: "/Mentors/VijayReddy.png",
+    image: "/Mentors/VijayBhaskarReddy.png",
     linkedin:
       "https:/www.linkedin.com/in/vijay-bhaskar-reddy-2118a529/?originalSubdomain=in",
   },
@@ -669,7 +669,7 @@ export const mentorsData = [
     strengths:
       "Quality standard of a wide range of personal care, home care, food and pharmaceutical products; Classical & patent & proprietary",
     domain: "Multiple sectors",
-    image: "/Mentors/user.webp",
+    image: "/Mentors/PravennSrivastava.png",
     linkedin:
       "https:/www.linkedin.com/in/dr-praveen-srivastava-6551b8b4/?originalSubdomain=in",
   },
@@ -703,7 +703,7 @@ export const mentorsData = [
     strengths:
       "Emerging Technologies, Deep tech, Health tech, Natural Language Processing (NLP), Machine Learning, Social Impact, Design thinking",
     domain: "deep tech",
-    image: "/Mentors/Anupam_kGarg.png",
+    image: "/Mentors/AnupamKumarGarg.png",
     linkedin: "https:/www.linkedin.com/in/anupam-kumar-garg/",
   },
   {
@@ -714,7 +714,7 @@ export const mentorsData = [
     strengths:
       "Engineering Design, Design Thinking, Mechanisms, Automation, Kinematic Synthesis",
     domain: "kinematics of mechanism",
-    image: "/Mentors/CAmarnath.png",
+    image: "/Mentors/Amarnath.png",
     linkedin:
       "https:/www.linkedin.com/in/amarnath-chitta-baa01b24/?originalSubdomain=in",
   },
@@ -749,7 +749,7 @@ export const mentorsData = [
     strengths:
       "Business Growth Strategy, Mergers & Acquisitions Advisor, Financial Projections and Management, Pitch Deck and Investor Relation Scouting,Strategic Capitalisation , Global Expansion",
     domain: "sustainability",
-    image: "/Mentors/abhay.png",
+    image: "/Mentors/AbhayMathur.png",
     linkedin: "https:/www.linkedin.com/in/abhaymathur-consultant/",
   },
   {
@@ -759,7 +759,7 @@ export const mentorsData = [
     company: "",
     strengths: "Medical devices, Agritech, education, defense and ecommerce",
     domain: "Multiple sectors",
-    image: "/Mentors/ajay_trivedi.png",
+    image: "/Mentors/AjayTrivedi.png",
     linkedin: "https:/www.linkedin.com/in/ajay-trivedi-5487803b/",
   },
   {
@@ -803,7 +803,7 @@ export const mentorsData = [
     strengths:
       "Funding & Investment, Strategic Guidance, Market Analysis, Financial Management, Networking and Connects",
     domain: "Multiple sectors",
-    image: "/Mentors/ritesh_daga.jpg",
+    image: "/Mentors/RiteshDaga.png",
     linkedin: "https:/www.linkedin.com/in/ritesh-daga-55a64460/",
   },
   {
@@ -961,7 +961,7 @@ export const mentorsData = [
     linkedin: "https:/www.linkedin.com/in/shikhargupta/",
   },
   {
-    id: 88, 
+    id: 88,
     name: "Dr. Suyash Singh",
     position: "",
     company: "",
