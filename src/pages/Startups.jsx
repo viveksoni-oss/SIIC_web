@@ -5,6 +5,7 @@ import StartupCard from "../components/Startups/StartupCard";
 import HighlightedText from "./../components/Utility Components/HighlightedText";
 import SearchBar from "./../components/Utility Components/SearchBar";
 import { startupData } from "./../data/StartupData";
+import BannerTemplate from "@/components/banners/BannerTemplate";
 
 function Startups() {
   const [search, setSearch] = useState("");
@@ -18,7 +19,8 @@ function Startups() {
   );
 
   return (
-    <PageLayout bodyStyle={"-mt-60 z-40 p-16  "} banner={<StartupsBanner />}>
+    <PageLayout bodyStyle={"-mt-60 z-40 p-16  "} banner={<BannerTemplate heading="StartUp" highlightedText="We" headingSuffix="incubated"
+     description="Showcasing startups nurtured at SIIC, now thriving across diverse industries." />}>
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-10 md:flex-row justify-between">
           <h1 className="text-5xl font-thin order-2 md:order-none text-[#1f1f1f] ">

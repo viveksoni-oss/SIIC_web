@@ -6,6 +6,7 @@ import ExternalLink from "./../components/IconComponents/ExternalLink";
 import { Calendar, MapPin } from "lucide-react";
 import { events } from "./../data/UpcomingEventsData";
 import PastEventsCarousel from "./../components/UpcomingEvents/PastEventsCarousel";
+import BannerTemplate from "@/components/banners/BannerTemplate";
 
 const Separator = () => (
   <svg
@@ -207,7 +208,21 @@ function UpcomingEvents() {
   const numCards = 10;
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <PageLayout bodyStyle="-mt-60 p-16" banner={<UpcomingEventsBanner />}>
+    <PageLayout
+      bodyStyle="-mt-60 p-16"
+      banner={
+        <BannerTemplate
+          heading={
+            <>
+              Your Gateway to <br />
+            </>
+          }
+          highlightedText="Breakthrough"
+          headingSuffix="Moments"
+          description="Build lasting connections through SIIC events, fueling incubatees’future ventures."
+        />
+      }
+    >
       <section>
         <h1 className="text-[42px] font-thin mb-8">
           Upcoming <HighlightedText weight={700}>Events</HighlightedText>

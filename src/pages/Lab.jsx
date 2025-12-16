@@ -1,8 +1,13 @@
 import { useState } from "react";
 import LabBanner from "../components/banners/LabBanner";
 import PageLayout from "./../components/PageLayout";
-import HighlightedText from "./../components/Utility Components/HighlightedText";
+
 import SectionHeading from "./../components/Utility Components/SectionHeading";
+import BannerTemplate from "@/components/banners/BannerTemplate";
+import AnimatedButton from "@/components/Utility Components/AnimatedButton";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import HighlightedText from "@/components/Utility Components/HighlightedText";
 
 function Lab() {
   const labImages = [
@@ -22,7 +27,32 @@ function Lab() {
     // Adjusted bodyStyle: Removed fixed height, kept negative margin for overlap
     <PageLayout
       bodyStyle="-mt-50 relative !min-h-[500px] z-20 pb-20 flex justify-center items-center"
-      banner={<LabBanner />}
+      banner={
+        <BannerTemplate heading="Lab facilities to build " highlightedText="Your" headingSuffix="ideas" description="State-of-the-art spaces that help innovators turn concepts into functional prototypes">
+          {" "}
+          <motion.button
+            className="group relative px-6 py-3 rounded-full border-2 text-[16px] border-white text-white font-medium transition-color duration-300 hover:bg-white hover:text-primary overflow-hidden"
+            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <span className="flex items-center gap-2">
+              Explore them
+              <ArrowRight
+                size={20}
+                className="transition-transform duration-300 group-hover:-rotate-45 group-hover:translate-x-1"
+              />
+            </span>
+          </motion.button>
+          {/* Get Facility Button */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="text-base font-medium tracking-wider duration-300 transition-all"
+            whileTap={{ scale: 0.95 }}
+          >
+            <AnimatedButton>Get a Facility</AnimatedButton>
+          </motion.div>
+        </BannerTemplate>
+      }
     >
       {/* THE WHITE CARD CONTAINER */}
       <div className="bg-white rounded-[40px] p-6 md:p-12 mx-auto w-[90%] md:w-[95%] flex flex-col md:flex-row gap-10 items-center justify-between ">

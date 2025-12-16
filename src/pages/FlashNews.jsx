@@ -252,10 +252,10 @@ function PastNewsSection() {
       <div className="grid grid-cols-[380px_1fr] gap-20">
         <div>
           <SectionHeading>
-            Innovation through the <HighlightedText>Years</HighlightedText>
+            SIIC Innovation Timeline: A Journey Through The <HighlightedText>Years</HighlightedText>
           </SectionHeading>
           <h3 className="mb-2 text-[18px]">
-            Dive into our past news to see how ideas evolved into action.
+           
           </h3>
           <p className="text-[16px] text-[#333]">
             SIIC recently celebrated major milestones, including successful
@@ -282,7 +282,7 @@ function NewsLetter() {
   return (
     <section>
       <SectionHeading>
-        Progress you can <HighlightedText>Measure</HighlightedText>
+        SIIC, IIT  Kanpur’s News Chronicle:  Shaping India’s  <HighlightedText>Tech Story </HighlightedText>
       </SectionHeading>
       <div className="pt-6">
         <Carousel className="w-full max-w-[300px] sm:max-w-[500px] md:max-w-5xl xl:max-w-[1400px] mx-auto">
@@ -321,7 +321,13 @@ function FlashNews() {
   return (
     <PageLayout
       bodyStyle="py-8 px-2 md:p-16 -mt-70"
-      banner={<BannerTemplate Heading={heading} Description={description} />}
+      banner={
+        <BannerTemplate
+          heading="SIIC "
+          highlightedText="Connect"
+          description="Stay Ahead with Real-Time Updates from India’s Leading Deep-Tech Incubator (Default Description)"
+        />
+      }
     >
       <div className="flex flex-col gap-10 ">
         <HeadLinesSection />
