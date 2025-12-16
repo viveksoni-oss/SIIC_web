@@ -373,7 +373,7 @@ export const mentorsData = [
     strengths:
       "Clinician feedback on Bio medical devices, therapeutic interventions, regenerative medicine, medical diagnostics, investigations and critical care intervention devices, Imaging interface guided therapy, robotic assisted surgical management interfaces and invasive implantable or extracorporeal circulatory devices.",
     domain: "Healthcare",
-    image: "public/Mentors/DrSubinSukesan.png",
+    image: "/Mentors/DrSubinSukesan.png",
   },
   {
     id: 35,
@@ -394,7 +394,7 @@ export const mentorsData = [
     strengths:
       "Deeptech, Enterprise Tech, B2B Product Management, Customer Success, Fund Raise Preparation, Finance & Operations",
     domain: "Multiple sectors",
-    image: "public/Mentors/MrBharatJoshi.png",
+    image: "/Mentors/BharatJoshi.png",
     linkedin: "https:/www.linkedin.com/in/bharatjosh/",
   },
   {
@@ -405,7 +405,7 @@ export const mentorsData = [
     strengths:
       "Rare diseases, genomics, diagnostics, quality management, artificial intelligence as applied to Healthcare and clinical trials",
     domain: "Multiple sectors",
-    image: "public/Mentors/DrSunilTadepalli.png",
+    image: "/Mentors/SunilTadepalli.png",
     linkedin: "https:/www.linkedin.com/in/suniltadepalli/",
   },
   {
@@ -416,7 +416,7 @@ export const mentorsData = [
     strengths:
       "Cardiology, electrophysiology , clinical research, Internal medicine, HealthTech innovation enthusisast",
     domain: "Healthcare",
-    image: "/Mentors/DeepakPadmanabha.png",
+    image: "/Mentors/DeepakPadmanabhan.png",
     linkedin: "https:/www.linkedin.com/in/deepakpadmanbhan/",
   },
   {
@@ -459,7 +459,7 @@ export const mentorsData = [
     company: "",
     strengths: "AI/ML, Causal Inference, and Cyber Risk Quantification",
     domain: "Cybersecurity",
-    image: "/Mentors/VenkatRamakrishnan.png",
+    image: "/Mentors/VenkatSubramaniam.png",
     linkedin:
       "https:/www.linkedin.com/in/venkatasubramanian-ramakrishnan-5544b9/?originalSubdomain=in",
   },
@@ -504,7 +504,7 @@ export const mentorsData = [
     strengths:
       "Business development, Investment Strategy, NASDAQ IPOs, Internationalisation, Product lifecycle management including development (Diagnostic and Medical devices), Personalised Medicine, Women’s Health, CleanTech and Green Energy.",
     domain: "Multiple sectors",
-    image: "/Mentors/KushagrpPunyani.png",
+    image: "/Mentors/KushagrPunyani.png",
     linkedin: "https:/www.linkedin.com/in/kpunyani/",
   },
   {
@@ -526,7 +526,7 @@ export const mentorsData = [
     strengths:
       "Energy, Environment, Water, Medical devices, Healthcare, Waste to Wealth, Education, Sustainable Development.",
     domain: "Multiple sectors",
-    image: "/Mentors/user.webp",
+    image: "/Mentors/RKTayal.png",
   },
   {
     id: 49,
@@ -536,7 +536,7 @@ export const mentorsData = [
     strengths:
       "Strategy Consulting, Program & Change Management, Angel Investing in Sustainability Startups",
     domain: "Multiple sectors",
-    image: "/Mentors/akshatKumar.webp",
+    image: "/Mentors/AkshatKumar.png",
     linkedin: "https:/www.linkedin.com/in/akshat-kumar-5a60086/",
   },
   {
@@ -581,7 +581,7 @@ export const mentorsData = [
     strengths:
       "E-commerce, Data Analytics, Market Research, Brand Strategy, Leadership coaching, Hiring & Retention",
     domain: "Multiple sectors",
-    image: "/Mentors/AshishShingru.png",
+    image: "/Mentors/AshishR.Singru.png",
     linkedin: "https:/www.linkedin.com/in/ashishsingru/?originalSubdomain=in",
   },
   {
