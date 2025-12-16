@@ -2,7 +2,7 @@ export const DirectorData = [
   {
     id: 1,
     name: "Prof.Manindra Agrawal",
-    role: "Director",
+    role: "Chairman",
     domain: "",
     image: "BoardOfDirectors/Manindra-Agrawal.png",
     linkedin: "https://www.linkedin.com/in/manindra-agrawal-b766721b/",
@@ -22,7 +22,7 @@ export const DirectorData = [
     name: "Prof. Deepu Philip",
     role: "Director",
     domain: "Technology, SIIC",
-    image: "BoardOfDirectors/deepuji.png",
+    image: "/OurTeam/Team/ProfDeepuPhilip.png",
     linkedin: "",
     strengths: " ",
   },

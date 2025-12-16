@@ -14,7 +14,7 @@ export const ourLeadership = [
   {
     id: 2,
     name: "Mr. Anurag Singh",
-    role: "Chief Executive Officer",
+    role: "Chief Executive Officer (Incubation & Innovation)",
     domain: "Leadership",
     image: "/OurTeam/Team/AnuragSingh.png",
     linkedin: "https://www.linkedin.com/in/anurag-singh-8a1101/",
@@ -24,7 +24,7 @@ export const ourLeadership = [
   {
     id: 3,
     name: "Piyush Mishra",
-    role: "Chief Operating Officer cum Chief Finance Officer",
+    role: "Chief Operating Officer Cum Chief Finance Officer",
     domain: "Leadership",
 
     image: "/OurTeam/Team/PiyushMishra.png",
@@ -525,7 +525,7 @@ export const staffOfOperation = [
   {
     id: 21,
     name: "Pradeep Kumar Pal",
-    role: "HEAD",
+    role: "Head",
     domain: "Information Technology",
     image: "/OurTeam/Team/PradeepKumarPal.png",
     linkedin: "https://www.linkedin.com/in/pradeep-kumar-79832526/",

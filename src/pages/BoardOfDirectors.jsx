@@ -21,7 +21,7 @@ function BoardOfDirectors() {
       <div className="px-0 sm:px-12 2xl:px-44">
         <div className="px-4 sm:px-8 xl:px-12 py-8 sm:py-12 xl:py-16 grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-10 xl:gap-22 xl:gap-y-10 xl:border relative xl:border-black/10 xl:rounded-2xl items-center justify-items-center">
           {DirectorData.map((data, index) => (
-            <NewTeamCard key={index} data={data} height={0}></NewTeamCard>
+            <NewTeamCard key={index} data={data} height={320}></NewTeamCard>
           ))}
           {DirectorData.length % 2 == 1 && (
             <div className="absolute -right-5 -bottom-5 xl:block hidden overflow-hidden">

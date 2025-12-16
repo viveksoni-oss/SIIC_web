@@ -52,7 +52,7 @@ const ProgramTitleContainer = ({
         <button
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="border-2 text-[11px] sm:text-[12px] flex items-center border-white group duration-300 ease-in-out text-white rounded-2xl w-full max-w-[220px] sm:max-w-[240px] px-3 sm:px-4 py-1 hover:bg-white hover:text-black hover:font-semibold transition-all  justify-between"
+          className=" max-h-7.5 border-2 text-[11px] sm:text-[12px] flex items-center border-white group duration-300 ease-in-out text-white rounded-2xl w-full max-w-[220px] sm:max-w-[240px] px-3 sm:px-4 py-1 hover:bg-white hover:text-black hover:font-semibold transition-all  justify-between"
           onClick={() => window.open(applyLink, "_blank")}
         >
           <span>Apply now</span>

@@ -1,15 +1,3 @@
-//   {
-//     id: 1,
-//     name: "Somesh Bahagt",
-//     position: "Founder",
-//     company: "CEO, LCB Fertilizers",
-//     image: "/Mentors/mentor-3.png",
-//     strengths:
-//       "B2B, Sales, Marketing, Go-to-market Strategy, Coaching, Software, SaaS, PaaS, IaaS.",
-//     domains: ["Chemicals & Petrochemicals Industry", "Business Development"],
-//     gender: "male",
-//   },
-
 export const mentorsData = [
   {
     id: 1,
@@ -18,9 +6,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "B2B, Sales, Marketing, Go-to-market Strategy, Coaching, Software, SaaS, PaaS, IaaS",
-    domain: "business development",
-    image: "/mentors_images/somesh_bhagat.webp",
-    linkedin: "https://www.linkedin.com/in/someshbhagat/?originalSubdomain=in",
+    domain: "Business development",
+    image: "/Mentors/SomeshBhagat.png",
+    linkedin: "https:/www.linkedin.com/in/someshbhagat/?originalSubdomain=in",
   },
   {
     id: 2,
@@ -29,10 +17,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Strategy, Planning, Financing, Governance, Risk, Cashflow Management",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/tarun_bhargava.webp",
-    linkedin: "https://www.linkedin.com/in/tbhargava/",
+    domain: "Multiple sectors",
+    image: "/Mentors/TarunBhargava.png",
+    linkedin: "https:/www.linkedin.com/in/tbhargava/",
   },
   {
     id: 3,
@@ -40,11 +27,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Agritech, Consumer Tech, edtech, Angel Investor, Business Development, Business Strategy,Business Modelling.",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/chand_das.webp",
-    linkedin: "https://www.linkedin.com/in/chand-das-9a85bb13/",
+      "Agritech, Consumer Tech, edtech, Angel Investor, Business development, Business Strategy,Business Modelling.",
+    domain: "Multiple sectors",
+    image: "/Mentors/ChandDas.png",
+    linkedin: "https:/www.linkedin.com/in/chand-das-9a85bb13/",
   },
   {
     id: 4,
@@ -53,11 +39,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "GovTech, Data Driven Startups, Social Entrepreneurship, Champions of Change for Digital India",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/amit_shukla.webp",
+    domain: "Multiple sectors",
+    image: "/Mentors/AmitShukla.png",
     linkedin:
-      "https://www.linkedin.com/in/amit-shukla-b7023a3/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/amit-shukla-b7023a3/?originalSubdomain=in",
   },
   {
     id: 5,
@@ -65,12 +50,11 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Hand holding Startups to business development, revenue generation, market segmentations, Funding help, agnostic to products/services",
-    domain: "gtm",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/gtm/jai_shankar_sharma.webp",
+      "Hand holding Startups to Business development, revenue generation, market segmentations, Funding help, agnostic to products/services",
+    domain: "Gtm",
+    image: "/Mentors/JaiShankarSharma.png",
     linkedin:
-      "https://www.linkedin.com/in/jai-shankar-sharma-b072177/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/jai-shankar-sharma-b072177/?originalSubdomain=in",
   },
   {
     id: 6,
@@ -79,11 +63,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Proficiency in accreditation, conformity assessment, standards, and technical regulations across various sectors including medical devices",
-    domain: "healthcare",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/healthcare/anil_jauhri.webp",
+    domain: "Healthcare",
+    image: "/Mentors/AnilJauhri.png",
     linkedin:
-      "https://www.linkedin.com/in/anil-jauhri-79264516/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/anil-jauhri-79264516/?originalSubdomain=in",
   },
   {
     id: 7,
@@ -92,10 +75,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Renewable Energy, Power & Energy storage, Supply Chain & Logistics, Environment & Sustainability, Metals, Chemicals & Consumables, Digital Platforms,\n                                            Business Models & Strategy",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/debadatta_mishra.webp",
-    linkedin: "https://www.linkedin.com/in/debadatta-mishra-26602a12/",
+    domain: "Multiple sectors",
+    image: "/Mentors/DebadattaMishra.png",
+    linkedin: "https:/www.linkedin.com/in/debadatta-mishra-26602a12/",
   },
   {
     id: 8,
@@ -104,35 +86,32 @@ export const mentorsData = [
     company: "",
     strengths:
       "Aerospace, Drones, Artificial Intelligence, Machine Learning, Health Tech",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/harsh_vinayak.webp",
-    linkedin: "https://www.linkedin.com/in/harshvinayak/?originalSubdomain=in",
+    domain: "Multiple sectors",
+    image: "/Mentors/HarshVinayak.png",
+    linkedin: "https:/www.linkedin.com/in/harshvinayak/?originalSubdomain=in",
   },
   {
-    id: 9,
+    id: 100,
     name: "Mr. Biplab K Paul",
     position: "",
     company: "",
     strengths:
       "Irrigation, agri-innovation, smallholders & Gender technology inclusiveness along with government policies",
-    domain: "agritech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/agritech/bipal_paul.webp",
-    linkedin: "https://www.linkedin.com/in/biplabketan-paul-06a6a47/",
+    domain: "Agritech",
+    image: "/Mentors/BipalPaul.png",
+    linkedin: "https:/www.linkedin.com/in/biplabketan-paul-06a6a47/",
   },
   {
-    id: 10,
+    id: 101,
     name: "Mr. Jagadeesh Sunkad",
     position: "",
     company: "",
     strengths:
       "Digital interventions for Agriculture Value chains, Soil less agriculture - Aeroponics, Material science innovations for agriculture",
-    domain: "agritech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/agritech/jagdeesh_sunkad.webp",
+    domain: "Agritech",
+    image: "/Mentors/JagdeeshSunkad.png",
     linkedin:
-      "https://www.linkedin.com/in/jagadeeshsunkad/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/jagadeeshsunkad/?originalSubdomain=in",
   },
   {
     id: 11,
@@ -140,46 +119,42 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "agritech, cleantech, sustainability, edtech, impact investment, Gender Smart Investing, GLI, SDG 5",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/prachi_jain.webp",
-    linkedin: "https://www.linkedin.com/in/ca-prachi-jain-6426b218",
+      "Agritech, cleantech, sustainability, edtech, impact investment, Gender Smart Investing, GLI, SDG 5",
+    domain: "Multiple sectors",
+    image: "/Mentors/PrachiJain.png",
+    linkedin: "https:/www.linkedin.com/in/ca-prachi-jain-6426b218",
   },
   {
-    id: 12,
+    id: 91,
     name: "Mr. Vaibhav Lodha",
     position: "",
     company: "",
     strengths:
-      "Go-to-market strategies, business development strategies, pitching - creating meaningful decks",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/vaibhav_lodha.webp",
-    linkedin: "https://www.linkedin.com/in/vaibhavlodha/?originalSubdomain=in",
+      "Go-to-market strategies, Business development strategies, pitching - creating meaningful decks",
+    domain: "Multiple sectors",
+    image: "/Mentors/VaibhavLodha.png",
+    linkedin: "https:/www.linkedin.com/in/vaibhavlodha/?originalSubdomain=in",
   },
   {
-    id: 13,
+    id: 93,
     name: "Mr. Anil Kumar Choudhary",
     position: "",
     company: "",
     strengths:
       "Energy & Resource Efficient Technology innovations and Solutions. Market Transformation Strategy, Sustainable Finance, Cyber Physical Interface",
-    domain: "energy",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/energy/anil_kumar_choudhary.webp",
-    linkedin: "https://www.linkedin.com/in/anil-kumar-choudhary-612245183/",
+    domain: "Energy",
+    image: "/Mentors/Anil_kumarChoudhary.png",
+    linkedin: "https:/www.linkedin.com/in/anil-kumar-choudhary-612245183/",
   },
   {
-    id: 14,
+    id: 92,
     name: "Mr. Amarnath",
     position: "",
     company: "",
     strengths: "Go To Market Strategy & Execution (Industry Agnostic)",
-    domain: "gtm",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/gtm/amarnath.webp",
-    linkedin: "https://www.linkedin.com/in/amarnathmentor/",
+    domain: "Gtm",
+    image: "/Mentors/amarnath.webp",
+    linkedin: "https:/www.linkedin.com/in/amarnathmentor/",
   },
   {
     id: 15,
@@ -188,10 +163,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Business Strategy, Growth & Scaling, Fund Raising, DeepTech Products, Consumer Tech., Information & Communication Tech, SAAS Product Management",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/palash_gupta.webp",
-    linkedin: "https://www.linkedin.com/in/palashgupta/?originalSubdomain=in",
+    domain: "Multiple sectors",
+    image: "/Mentors/PalashGupta.png",
+    linkedin: "https:/www.linkedin.com/in/palashgupta/?originalSubdomain=in",
   },
   {
     id: 16,
@@ -200,10 +174,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Design Thinking innovations, Nano enterprises intensive manufacturing, Greentech, Fintech",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/rony_banerjee.webp",
-    linkedin: "https://www.linkedin.com/in/ronypatna/",
+    domain: "Multiple sectors",
+    image: "/Mentors/RonyBanerjee.png",
+    linkedin: "https:/www.linkedin.com/in/ronypatna/",
   },
   {
     id: 17,
@@ -212,10 +185,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Digital Risk Management, Payment Systems, Cyber Security, Regulatory Affairs, Critical Infrastructure Security, Fraud Risk, Data Sovereignty and privacy, UPI and mobile banking system",
-    domain: "cybersecurity",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/cybersecurity/bharat_panchal.webp",
-    linkedin: "https://www.linkedin.com/in/bharatpanchal/?originalSubdomain=in",
+    domain: "Cybersecurity",
+    image: "/Mentors/BharatPanchal.png",
+    linkedin: "https:/www.linkedin.com/in/bharatpanchal/?originalSubdomain=in",
   },
   {
     id: 18,
@@ -224,10 +196,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "SOC, BCM, CML, SSAE18, Audit, Risk Management, Corporate Risk Management, IT Security, Business Continuity Management",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/amit_ghosh.webp",
-    linkedin: "https://www.linkedin.com/in/amit-ghosh-00b55121a/",
+    domain: "Multiple sectors",
+    image: "/Mentors/AmitGhosh.png",
+    linkedin: "https:/www.linkedin.com/in/amit-ghosh-00b55121a/",
   },
   {
     id: 19,
@@ -236,10 +207,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "IVD, Diagnostics, Biotechnology, Biotech, Medical Device, Manufacturing",
-    domain: "healthcare",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/healthcare/jatin_mahajan.webp",
-    linkedin: "https://www.linkedin.com/in/jatinmahajan",
+    domain: "Healthcare",
+    image: "/Mentors/JatinMahajan.png",
+    linkedin: "https:/www.linkedin.com/in/jatinmahajan",
   },
   {
     id: 20,
@@ -248,45 +218,41 @@ export const mentorsData = [
     company: "",
     strengths:
       "Consultant & Mentor in the areas of Biotechnology, Life Sciences, Sustainability & Green Sciences Operations start-up & organizational development for R&D\n                                            mentor building & growth development Entrepreneur & Angel investor Establishing Strategic partnerships/collaborations",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/nita_roy.webp",
-    linkedin: "https://www.linkedin.com/in/nita-roy-8734964",
+    domain: "Multiple sectors",
+    image: "/Mentors/NitaRoy.png",
+    linkedin: "https:/www.linkedin.com/in/nita-roy-8734964",
   },
   {
-    id: 21,
+    id: 99,
     name: "Mr. Anuj Mohan Sherry",
     position: "",
     company: "",
     strengths:
-      "FINTECH , Digital Payments , Mobile Financial Services , Mobile Money, e-wallet, cryptocurrency",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/anuj_mohan_sherry.webp",
-    linkedin: "https://www.linkedin.com/in/anujmohansherry/",
+      "Fintech , Digital Payments , Mobile Financial Services , Mobile Money, e-wallet, cryptocurrency",
+    domain: "Multiple sectors",
+    image: "/Mentors/Anuj_mohanSherry.png",
+    linkedin: "https:/www.linkedin.com/in/anujmohansherry/",
   },
   {
-    id: 22,
+    id: 94,
     name: "Major Virat Misra, Ex-IRTS",
     position: "",
     company: "",
     strengths:
-      "Government linkages, Govtech, Business Development Strategies, Pitching and Execution,\n                                            Emerging Technology (Sector agnostic)",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/manoj_virat_mishra.png",
+      "Government linkages, Govtech, Business development Strategies, Pitching and Execution,\n                                            Emerging Technology (Sector agnostic)",
+    domain: "Multiple sectors",
+    image: "/Mentors/manoj_virat_mishra.png",
   },
   {
-    id: 23,
+    id: 95,
     name: "Mr. Vijay Krishnamurthy",
     position: "",
     company: "",
     strengths:
       "Finance, Legal, Governance and Compliance, Pitch decks, VC connects, Funding strategies through equity/debt",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/VijayKrishnamurthy.webp",
-    linkedin: "https://in.linkedin.com/in/vijay-krishnamurthy-67a48418",
+    domain: "Multiple sectors",
+    image: "/Mentors/VijayKrishnamurthy.webp",
+    linkedin: "https:/in.linkedin.com/in/vijay-krishnamurthy-67a48418",
   },
   {
     id: 24,
@@ -295,11 +261,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Identifying new avenues and packaging the products and services, cost management and pricing, provide contextual familiarity with Government and Public systems, banking, public service delivery,",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/ramesh_g.webp",
+    domain: "Multiple sectors",
+    image: "/Mentors/RameshG.png",
     linkedin:
-      "https://www.linkedin.com/in/prof-ramesh-g-8a9b075/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/prof-ramesh-g-8a9b075/?originalSubdomain=in",
   },
   {
     id: 25,
@@ -307,12 +272,11 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Business Development, Manufacturing, Engineering Design, Logistics & supply chain, Mobility & Transportation, Energy, Govt Relations",
-    domain: "business development",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/business_development/bharat_salhotra.webp",
+      "Business development, Manufacturing, Engineering Design, Logistics & supply chain, Mobility & Transportation, Energy, Govt Relations",
+    domain: "Business development",
+    image: "/Mentors/BharatSalhotra.png",
     linkedin:
-      "https://www.linkedin.com/in/bharat-salhotra-6b6578/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/bharat-salhotra-6b6578/?originalSubdomain=in",
   },
   {
     id: 26,
@@ -321,10 +285,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Lifescience (Pharmaceuticals and Medical Technology) & Healthcare,General Management, Market Access & Market Development",
-    domain: "healthcare",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/healthcare/sanjay_banerjee.webp",
-    linkedin: "https://www.linkedin.com/in/sanjay-banerjee-2971403/",
+    domain: "Healthcare",
+    image: "/Mentors/SanjayBanerjee.png",
+    linkedin: "https:/www.linkedin.com/in/sanjay-banerjee-2971403/",
   },
   {
     id: 27,
@@ -333,10 +296,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Fintech: Payments & Banking, wealth management, financial inclusion, Emerging Technology, cyber security, Business Transformation and Operations",
-    domain: "fintech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/fintech/ritesh_jain.webp",
-    linkedin: "https://www.linkedin.com/in/drriteshjain/?originalSubdomain=uk",
+    domain: "Fintech",
+    image: "/Mentors/RiteshJain.png",
+    linkedin: "https:/www.linkedin.com/in/drriteshjain/?originalSubdomain=uk",
   },
   {
     id: 28,
@@ -344,11 +306,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Business Strategy, Fund Raising, Business Development, DeepTech, FinTech, HealthTech, Tech Transfer",
-    domain: "fintech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/fintech/anupam_saronwala.webp",
-    linkedin: "https://in.linkedin.com/in/anupamsaronwala",
+      "Business Strategy, Fund Raising, Business development, DeepTech, Fintech, HealthTech, Tech Transfer",
+    domain: "Fintech",
+    image: "/Mentors/AnupamSaronwala.png",
+    linkedin: "https:/in.linkedin.com/in/anupamsaronwala",
   },
   {
     id: 29,
@@ -357,10 +318,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Social Entrepreneur, International business, Healthcare technologies, Green tech,Sustainibility, Hospital projects, Fund raise and technology transfer",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/iftekhar_pathan.webp",
-    linkedin: "https://www.linkedin.com/in/iftekhar-pathan-8b61397/",
+    domain: "Multiple sectors",
+    image: "/Mentors/IftekharPathan.png",
+    linkedin: "https:/www.linkedin.com/in/iftekhar-pathan-8b61397/",
   },
   {
     id: 30,
@@ -370,9 +330,8 @@ export const mentorsData = [
     strengths:
       "Strategy Consulting, Execution Excellence, Mentor for CivicTech start- up (from concept stage to acquisition), Sports and Personal Finance",
     domain: "startup consulting management",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/startup_consulting_management/arun_sharma.webp",
-    linkedin: "https://www.linkedin.com/mwlite/in/arun-sharma-2726121",
+    image: "/Mentors/ArunSharma.png",
+    linkedin: "https:/www.linkedin.com/mwlite/in/arun-sharma-2726121",
   },
   {
     id: 31,
@@ -382,20 +341,18 @@ export const mentorsData = [
     strengths:
       "Management, Operations, Ideation, Feasibility Analysis, Risk Management, Program + Project Management, Quality Management",
     domain: "iot",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/iot/sourabh_srivastava.webp",
-    linkedin: "https://www.linkedin.com/in/sourabh-srivastava-03751314",
+    image: "/Mentors/SourabhSrivastava.png",
+    linkedin: "https:/www.linkedin.com/in/sourabh-srivastava-03751314",
   },
   {
     id: 32,
     name: "Ms. Yamini Wilfred",
     position: "",
     company: "",
-    strengths: "GTM, Digital Marketing, Business Development",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/yamini_wilfred.webp",
-    linkedin: "https://www.linkedin.com/in/yamini-wilfred-ab79921b/",
+    strengths: "GTM, Digital Marketing, Business development",
+    domain: "Multiple sectors",
+    image: "/Mentors/YaminiWilfred.png",
+    linkedin: "https:/www.linkedin.com/in/yamini-wilfred-ab79921b/",
   },
   {
     id: 33,
@@ -404,10 +361,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Deeptech, Agritech, Foodtech, Consumertech, SaaS and Enterprisetech",
-    domain: "agritech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/agritech/hemendra_mathur.webp",
-    linkedin: "https://www.linkedin.com/in/hemendra333/?originalSubdomain=in",
+    domain: "Agritech",
+    image: "/Mentors/HemendraMathur.png",
+    linkedin: "https:/www.linkedin.com/in/hemendra333/?originalSubdomain=in",
   },
   {
     id: 34,
@@ -416,9 +372,8 @@ export const mentorsData = [
     company: "",
     strengths:
       "Clinician feedback on Bio medical devices, therapeutic interventions, regenerative medicine, medical diagnostics, investigations and critical care intervention devices, Imaging interface guided therapy, robotic assisted surgical management interfaces and invasive implantable or extracorporeal circulatory devices.",
-    domain: "healthcare",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/healthcare/subin_sukesan.webp",
+    domain: "Healthcare",
+    image: "/Mentors/SubinSukesan.png",
   },
   {
     id: 35,
@@ -427,10 +382,9 @@ export const mentorsData = [
     company: "",
     strengths:
       'Strategize to scale startup business including "Go-to-market" for India Enterprise market(sector agnostic), Technology adoption (AI/ML/IOT/Cloud) for business disruption and associated services',
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/shantanu_rohatgi.webp",
-    linkedin: "https://www.linkedin.com/in/shantanu-rohatgi-34b8451",
+    domain: "Multiple sectors",
+    image: "/Mentors/ShantanuRohatgi.png",
+    linkedin: "https:/www.linkedin.com/in/shantanu-rohatgi-34b8451",
   },
   {
     id: 36,
@@ -439,10 +393,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Deeptech, Enterprise Tech, B2B Product Management, Customer Success, Fund Raise Preparation, Finance & Operations",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/bharat_joshi.webp",
-    linkedin: "https://www.linkedin.com/in/bharatjosh/",
+    domain: "Multiple sectors",
+    image: "/Mentors/BharatJoshi.png",
+    linkedin: "https:/www.linkedin.com/in/bharatjosh/",
   },
   {
     id: 37,
@@ -450,11 +403,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Rare diseases, genomics, diagnostics, quality management, artificial intelligence as applied to healthcare and clinical trials",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/sunil_tadepalli.png",
-    linkedin: "https://www.linkedin.com/in/suniltadepalli/",
+      "Rare diseases, genomics, diagnostics, quality management, artificial intelligence as applied to Healthcare and clinical trials",
+    domain: "Multiple sectors",
+    image: "/Mentors/sunil_tadepalli.png",
+    linkedin: "https:/www.linkedin.com/in/suniltadepalli/",
   },
   {
     id: 38,
@@ -463,10 +415,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Cardiology, electrophysiology , clinical research, Internal medicine, HealthTech innovation enthusisast",
-    domain: "healthcare",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/healthcare/deepak_padmanabha.webp",
-    linkedin: "https://www.linkedin.com/in/deepakpadmanbhan/",
+    domain: "Healthcare",
+    image: "/Mentors/DeepakPadmanabha.png",
+    linkedin: "https:/www.linkedin.com/in/deepakpadmanbhan/",
   },
   {
     id: 39,
@@ -475,10 +426,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Domain agnostic Business Strategy, Business planning, Startup qualification assessment frameworks, Product viability assessment, Financial planning, Funding, Operations Management, Marketing, Customer acquisition strategy, People management, Leadership coaching",
-    domain: "fintech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/fintech/ravi_challu.webp",
-    linkedin: "https://www.linkedin.com/in/ravichallu/?originalSubdomain=in",
+    domain: "Fintech",
+    image: "/Mentors/RaviChallu.png",
+    linkedin: "https:/www.linkedin.com/in/ravichallu/?originalSubdomain=in",
   },
   {
     id: 40,
@@ -486,10 +436,9 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths: "Healthcare - product management, functional architecture",
-    domain: "healthcare",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/healthcare/anshu_agarwal.webp",
-    linkedin: "https://www.linkedin.com/in/anshu-agarwal-8664004/",
+    domain: "Healthcare",
+    image: "/Mentors/AnshuAgarwal.png",
+    linkedin: "https:/www.linkedin.com/in/anshu-agarwal-8664004/",
   },
   {
     id: 41,
@@ -498,11 +447,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Cyber Security Risk Management, Cyber Security Governance, Cyber Security Awareness/Training associated products, Cyber security from cyber people perspective-Human Firewall",
-    domain: "cybersecurity",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/cybersecurity/pazhamalai_jayaraman.webp",
+    domain: "Cybersecurity",
+    image: "/Mentors/PazhamalaiJayaraman.png",
     linkedin:
-      "https://www.linkedin.com/in/pazhamalai-jayaraman-6836364/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/pazhamalai-jayaraman-6836364/?originalSubdomain=in",
   },
   {
     id: 42,
@@ -510,11 +458,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths: "AI/ML, Causal Inference, and Cyber Risk Quantification",
-    domain: "cybersecurity",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/cybersecurity/venkat_ramakrishnan.webp",
+    domain: "Cybersecurity",
+    image: "/Mentors/VenkatRamakrishnan.png",
     linkedin:
-      "https://www.linkedin.com/in/venkatasubramanian-ramakrishnan-5544b9/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/venkatasubramanian-ramakrishnan-5544b9/?originalSubdomain=in",
   },
   {
     id: 43,
@@ -524,9 +471,8 @@ export const mentorsData = [
     strengths:
       "Data Analytics, Blockchain, Artificial Intelligence (AI), Cloud, Data Center Architecture and Platform Security",
     domain: "ai ml",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/ai_ml/sukirti_gupta.webp",
-    linkedin: "https://www.linkedin.com/in/sukirtigupta/",
+    image: "/Mentors/SukirtiGupta.png",
+    linkedin: "https:/www.linkedin.com/in/sukirtigupta/",
   },
   {
     id: 44,
@@ -535,10 +481,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Cybersecurity, IT services, Business Strategy & GTM for Global Markets, Organisation and mentor building.",
-    domain: "cybersecurity",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/cybersecurity/maninder_singh.webp",
-    linkedin: "http://linkedin.com/in/manindersn",
+    domain: "Cybersecurity",
+    image: "/Mentors/ManinderSingh.png",
+    linkedin: "http:/linkedin.com/in/manindersn",
   },
   {
     id: 45,
@@ -547,10 +492,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Go to market, Pricing strategy, Medical devices, White Space marketing",
-    domain: "healthcare",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/healthcare/rahul_sharma.webp",
-    linkedin: "https://www.linkedin.com/in/rahul-sharma-ba12b325/",
+    domain: "Healthcare",
+    image: "/Mentors/RahulSharma.png",
+    linkedin: "https:/www.linkedin.com/in/rahul-sharma-ba12b325/",
   },
   {
     id: 46,
@@ -558,11 +502,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Business Development, Investment Strategy, NASDAQ IPOs, Internationalisation, Product lifecycle management including development (Diagnostic and Medical devices), Personalised Medicine, Women’s Health, CleanTech and Green Energy.",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/kushagrp_punyani.webp",
-    linkedin: "https://www.linkedin.com/in/kpunyani/",
+      "Business development, Investment Strategy, NASDAQ IPOs, Internationalisation, Product lifecycle management including development (Diagnostic and Medical devices), Personalised Medicine, Women’s Health, CleanTech and Green Energy.",
+    domain: "Multiple sectors",
+    image: "/Mentors/KushagrpPunyani.png",
+    linkedin: "https:/www.linkedin.com/in/kpunyani/",
   },
   {
     id: 47,
@@ -571,10 +514,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Commercialization, GTM, Growth Strategy, Fund Raising, Partnerships, Medical & Health technologies",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/ramanathan_v.webp",
-    linkedin: "https://www.linkedin.com/in/ramv67/",
+    domain: "Multiple sectors",
+    image: "/Mentors/RamanathanV.png",
+    linkedin: "https:/www.linkedin.com/in/ramv67/",
   },
   {
     id: 48,
@@ -583,9 +525,8 @@ export const mentorsData = [
     company: "",
     strengths:
       "Energy, Environment, Water, Medical devices, Healthcare, Waste to Wealth, Education, Sustainable Development.",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/user.webp",
+    domain: "Multiple sectors",
+    image: "/Mentors/user.webp",
   },
   {
     id: 49,
@@ -594,10 +535,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Strategy Consulting, Program & Change Management, Angel Investing in Sustainability Startups",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/akshatKumar.webp",
-    linkedin: "https://www.linkedin.com/in/akshat-kumar-5a60086/",
+    domain: "Multiple sectors",
+    image: "/Mentors/akshatKumar.webp",
+    linkedin: "https:/www.linkedin.com/in/akshat-kumar-5a60086/",
   },
   {
     id: 50,
@@ -606,11 +546,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Medical Device, Strategy, Marketing, Sales, Professional Education, Regulatory",
-    domain: "healthcare",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/healthcare/prabal_chakraborty.webp",
+    domain: "Healthcare",
+    image: "/Mentors/PrabalChakraborty.png",
     linkedin:
-      "https://www.linkedin.com/in/prabal-chakraborty-38512017/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/prabal-chakraborty-38512017/?originalSubdomain=in",
   },
   {
     id: 51,
@@ -619,10 +558,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Business planner & strategist, advisor, deep tech, innovation and creativity, leadership coaching , quality check evaluator",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/ankush_tiwari.webp",
-    linkedin: "https://www.linkedin.com/in/ankushtiwari/",
+    domain: "Multiple sectors",
+    image: "/Mentors/AnkushTiwari.png",
+    linkedin: "https:/www.linkedin.com/in/ankushtiwari/",
   },
   {
     id: 52,
@@ -631,10 +569,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "1. Business Growth Strategy: Go to Market, Market Entry Strategy and implementation, Collaboration/Partnership, Growth transformation; 2. Cross-border collaboration, Technology transfer, Evaluating Technology viability, -Negotiating JV agreement 3. Executive Search & Mastering Change: Headhunting leadership, Build Mutual Trust & Respect in an organisation by creating compelling complementary leadership mentor.",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/ajay_muttreja.webp",
-    linkedin: "https://www.linkedin.com/in/amuttreja/",
+    domain: "Multiple sectors",
+    image: "/Mentors/AjayMuttreja.png",
+    linkedin: "https:/www.linkedin.com/in/amuttreja/",
   },
   {
     id: 53,
@@ -643,10 +580,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "E-commerce, Data Analytics, Market Research, Brand Strategy, Leadership coaching, Hiring & Retention",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/ashish_shingru.webp",
-    linkedin: "https://www.linkedin.com/in/ashishsingru/?originalSubdomain=in",
+    domain: "Multiple sectors",
+    image: "/Mentors/AshishShingru.png",
+    linkedin: "https:/www.linkedin.com/in/ashishsingru/?originalSubdomain=in",
   },
   {
     id: 54,
@@ -655,11 +591,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Consumer tech , pharma tech , health tech , strategy , fund connects.",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/deep_mishra.webp",
+    domain: "Multiple sectors",
+    image: "/Mentors/DeepMishra.png",
     linkedin:
-      "https://www.linkedin.com/in/deep-mishra-631aa81/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/deep-mishra-631aa81/?originalSubdomain=in",
   },
   {
     id: 55,
@@ -668,10 +603,9 @@ export const mentorsData = [
     company: "",
     strengths: "Industrial/Manufacturing Policy, Oil and Gas.",
     domain: "oil and gas",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/oil_and_gas/saurabh_chandra.webp",
+    image: "/Mentors/SaurabhChandra.png",
     linkedin:
-      "https://www.linkedin.com/in/saurabh-chandra-8b1923118/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/saurabh-chandra-8b1923118/?originalSubdomain=in",
   },
   {
     id: 56,
@@ -679,11 +613,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Manufacturing, Transformation of quality management systems, Design and development of weapon systems, Customer Relationship, Business Development",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/saurabh_kumar.webp",
-    linkedin: "https://www.linkedin.com/in/saurabh-kumar-b45a85141/",
+      "Manufacturing, Transformation of quality management systems, Design and development of weapon systems, Customer Relationship, Business development",
+    domain: "Multiple sectors",
+    image: "/Mentors/SaurabhKumar.png",
+    linkedin: "https:/www.linkedin.com/in/saurabh-kumar-b45a85141/",
   },
   {
     id: 57,
@@ -691,11 +624,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Fintech, Insurtech, Retail, SME & Micro Lending, Banking, Payments, Building & Scaling Products, Business Development",
-    domain: "fintech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/fintech/manish_kankani.webp",
-    linkedin: "https://www.linkedin.com/in/manish-kankani-a03982/",
+      "Fintech, Insurtech, Retail, SME & Micro Lending, Banking, Payments, Building & Scaling Products, Business development",
+    domain: "Fintech",
+    image: "/Mentors/ManishKankani.png",
+    linkedin: "https:/www.linkedin.com/in/manish-kankani-a03982/",
   },
   {
     id: 58,
@@ -704,10 +636,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Finance, Risk Management, Internal Controls, Transformation, Governance, Execution excellence and Consumer Tech",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/chetan_mathur.webp",
-    linkedin: "https://www.linkedin.com/in/mathurchetan",
+    domain: "Multiple sectors",
+    image: "/Mentors/ChetanMathur.png",
+    linkedin: "https:/www.linkedin.com/in/mathurchetan",
   },
   {
     id: 59,
@@ -716,9 +647,8 @@ export const mentorsData = [
     company: "",
     strengths:
       "Strategy, finance, Governance, Corporate governance, ethics, regulatory, lending, micro finance, consumer finance",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/an_roy.webp",
+    domain: "Multiple sectors",
+    image: "/Mentors/AnRoy.png",
   },
   {
     id: 60,
@@ -727,10 +657,9 @@ export const mentorsData = [
     company: "",
     strengths: "Super Foods",
     domain: "foodtech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/foodtech/vijay_reddy.webp",
+    image: "/Mentors/VijayReddy.png",
     linkedin:
-      "https://www.linkedin.com/in/vijay-bhaskar-reddy-2118a529/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/vijay-bhaskar-reddy-2118a529/?originalSubdomain=in",
   },
   {
     id: 61,
@@ -739,11 +668,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Quality standard of a wide range of personal care, home care, food and pharmaceutical products; Classical & patent & proprietary",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/user.webp",
+    domain: "Multiple sectors",
+    image: "/Mentors/user.webp",
     linkedin:
-      "https://www.linkedin.com/in/dr-praveen-srivastava-6551b8b4/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/dr-praveen-srivastava-6551b8b4/?originalSubdomain=in",
   },
   {
     id: 62,
@@ -752,10 +680,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Investment Banker - Pharma, Medical Devices & Healthcare, Chemical & New Energy, Innovation & Strategy Development, Implementation from Lab to Pilot to Commercial Scale, CXO Level Network across domains.",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/manish_panchal.webp",
-    linkedin: "https://www.linkedin.com/in/manishpanchal2022/",
+    domain: "Multiple sectors",
+    image: "/Mentors/ManishPanchal.png",
+    linkedin: "https:/www.linkedin.com/in/manishpanchal2022/",
   },
   {
     id: 63,
@@ -765,9 +692,8 @@ export const mentorsData = [
     strengths:
       "solar energy materials, devices and manufacturing, sustainable materials, water-energy-food nexus solutions, sustainable rural communities",
     domain: "energy",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/energy/adrian_walters.webp",
-    linkedin: "https://www.linkedin.com/in/adrian-walters-rttp-6993a06b/",
+    image: "/Mentors/AdrianWalters.png",
+    linkedin: "https:/www.linkedin.com/in/adrian-walters-rttp-6993a06b/",
   },
   {
     id: 64,
@@ -777,9 +703,8 @@ export const mentorsData = [
     strengths:
       "Emerging Technologies, Deep tech, Health tech, Natural Language Processing (NLP), Machine Learning, Social Impact, Design thinking",
     domain: "deep tech",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/deep_tech/anupam_k_garg.webp",
-    linkedin: "https://www.linkedin.com/in/anupam-kumar-garg/",
+    image: "/Mentors/Anupam_kGarg.png",
+    linkedin: "https:/www.linkedin.com/in/anupam-kumar-garg/",
   },
   {
     id: 65,
@@ -789,10 +714,9 @@ export const mentorsData = [
     strengths:
       "Engineering Design, Design Thinking, Mechanisms, Automation, Kinematic Synthesis",
     domain: "kinematics of mechanism",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/kinematics_of_mechanism/c_amarnath.webp",
+    image: "/Mentors/CAmarnath.png",
     linkedin:
-      "https://www.linkedin.com/in/amarnath-chitta-baa01b24/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/amarnath-chitta-baa01b24/?originalSubdomain=in",
   },
   {
     id: 66,
@@ -801,11 +725,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "ICT enabled Smart urban solutions, Developing eco-system Partnerships, Innovative commercial models like PPP( Public-Private partnerships), Outcome led,5G enabled Industry used cases, Connectivity solutions for masses.",
-    domain: "cybersecurity",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/cybersecurity/ravi_gulati.webp",
+    domain: "Cybersecurity",
+    image: "/Mentors/RaviGulati.png",
     linkedin:
-      "https://www.linkedin.com/in/ravi-gulati-6b23346/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/ravi-gulati-6b23346/?originalSubdomain=in",
   },
   {
     id: 67,
@@ -815,9 +738,8 @@ export const mentorsData = [
     strengths:
       "Strong Industry Connect, adept in forging business alliances & JVs, strong professional and personal Network building skills",
     domain: "energy",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/energy/vimal_chopra.webp",
-    linkedin: "https://www.linkedin.com/in/vimal-chopra-0577639/",
+    image: "/Mentors/VimalChopra.png",
+    linkedin: "https:/www.linkedin.com/in/vimal-chopra-0577639/",
   },
   {
     id: 68,
@@ -827,20 +749,18 @@ export const mentorsData = [
     strengths:
       "Business Growth Strategy, Mergers & Acquisitions Advisor, Financial Projections and Management, Pitch Deck and Investor Relation Scouting,Strategic Capitalisation , Global Expansion",
     domain: "sustainability",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/sustainability/abhay.png",
-    linkedin: "https://www.linkedin.com/in/abhaymathur-consultant/",
+    image: "/Mentors/abhay.png",
+    linkedin: "https:/www.linkedin.com/in/abhaymathur-consultant/",
   },
   {
     id: 69,
     name: "Mr. Ajay Trivedi",
     position: "",
     company: "",
-    strengths: "Medical devices, agritech, education, defense and ecommerce",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/ajay_trivedi.png",
-    linkedin: "https://www.linkedin.com/in/ajay-trivedi-5487803b/",
+    strengths: "Medical devices, Agritech, education, defense and ecommerce",
+    domain: "Multiple sectors",
+    image: "/Mentors/ajay_trivedi.png",
+    linkedin: "https:/www.linkedin.com/in/ajay-trivedi-5487803b/",
   },
   {
     id: 70,
@@ -849,10 +769,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Banking, Data analytics, AI , Risk management , cyber security CTO, Bank of Baroda Banking Technology, Data Analytics, Artificial Intelligence (AI), Blockchain, Cloud Computing, Financial Risk Management, and Cybersecurity",
-    domain: "cybersecurity",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/cybersecurity/saurabh_shukla.webp",
-    linkedin: "https://www.linkedin.com/in/saurabh-shukla/",
+    domain: "Cybersecurity",
+    image: "/Mentors/SaurabhShukla.png",
+    linkedin: "https:/www.linkedin.com/in/saurabh-shukla/",
   },
   {
     id: 71,
@@ -862,9 +781,8 @@ export const mentorsData = [
     strengths:
       "Strategy, Leadership, Governance, Manufacturing, Sustainability Ceo/MD Supply Chain Level Executive Developing strategy and business plans, resolving key challenges, creating governance architecture for sustainable performance",
     domain: "sustainability",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/sustainability/Gaurav_Mathur.webp",
-    linkedin: "https://www.linkedin.com/in/gaurav-mathur-1516321",
+    image: "/Mentors/GauravMathur.png",
+    linkedin: "https:/www.linkedin.com/in/gaurav-mathur-1516321",
   },
   {
     id: 72,
@@ -872,11 +790,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Product Management, Data Analytics, GTM strategy, Growth Strategy, Business Development, International Expansio",
+      "Product Management, Data Analytics, GTM strategy, Growth Strategy, Business development, International Expansio",
     domain: "saas",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/saas/Piyush_photo.jpeg",
-    linkedin: "https://www.linkedin.com/in/piyushiitk/",
+    image: "/Mentors/PiyushGupta.png",
+    linkedin: "https:/www.linkedin.com/in/piyushiitk/",
   },
   {
     id: 73,
@@ -885,10 +802,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Funding & Investment, Strategic Guidance, Market Analysis, Financial Management, Networking and Connects",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/ritesh_daga.jpg",
-    linkedin: "https://www.linkedin.com/in/ritesh-daga-55a64460/",
+    domain: "Multiple sectors",
+    image: "/Mentors/ritesh_daga.jpg",
+    linkedin: "https:/www.linkedin.com/in/ritesh-daga-55a64460/",
   },
   {
     id: 74,
@@ -897,10 +813,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Go to Market, find Product Fit Market, Fund Raise, Angel Investment",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/vivek_khare.jpeg",
-    linkedin: "https://www.linkedin.com/in/vivekkhareatinfoedge/",
+    domain: "Multiple sectors",
+    image: "/Mentors/vivek_khare.jpeg",
+    linkedin: "https:/www.linkedin.com/in/vivekkhareatinfoedge/",
   },
   {
     id: 75,
@@ -908,9 +823,8 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths: "Drones techno-management, safety security and cyber crimes",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/rajesh_d.jpg",
+    domain: "Multiple sectors",
+    image: "/Mentors/rajesh_d.jpg",
   },
   {
     id: 76,
@@ -919,10 +833,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Growth Mentor, Business Model Advisor, Telecom, Space, Spirituality, Logistics, AI, Additive Manufacturing",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/abhishek_tiwari.webp",
-    linkedin: "https://www.linkedin.com/in/venturemozart",
+    domain: "Multiple sectors",
+    image: "/Mentors/AbhishekTiwari.png",
+    linkedin: "https:/www.linkedin.com/in/venturemozart",
   },
   {
     id: 77,
@@ -931,10 +844,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Strategy, Design, Manufacturing, Process Engineering, Technology, Sales",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/venkatesh.jpg",
-    linkedin: "https://www.linkedin.com/in/rvenk/",
+    domain: "Multiple sectors",
+    image: "/Mentors/venkatesh.jpg",
+    linkedin: "https:/www.linkedin.com/in/rvenk/",
   },
   {
     id: 78,
@@ -942,11 +854,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "Strategy, Management, Planning, Investment, IT/Software (AI/ML, IOT, Cloud, SaaS, Cybersecurity), US Business Development, Defense & Aerospace, Energy, Healthcare, Retail.",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/raj_laad.jpg",
-    linkedin: "https://www.linkedin.com/in/rajlaad/",
+      "Strategy, Management, Planning, Investment, IT/Software (AI/ML, IOT, Cloud, SaaS, Cybersecurity), US Business development, Defense & Aerospace, Energy, Healthcare, Retail.",
+    domain: "Multiple sectors",
+    image: "/Mentors/raj_laad.jpg",
+    linkedin: "https:/www.linkedin.com/in/rajlaad/",
   },
   {
     id: 79,
@@ -955,11 +866,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Military defence tactical and strategical high grade secure communication network,\n                                            Integrated Defense Systems & Warfare Capabilities, Technology & Engineering Solutions for Defense Readiness\n                                            Command, Control & Decision Support",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/AKSingh.jpg",
+    domain: "Multiple sectors",
+    image: "/Mentors/AKSingh.jpg",
     linkedin:
-      "https://www.linkedin.com/in/amrendra-kumar-singh-a7a586292/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/amrendra-kumar-singh-a7a586292/?originalSubdomain=in",
   },
   {
     id: 80,
@@ -968,10 +878,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Strategy, Business Transformation, Growth Strategy, Executive Leadership, Sales & Supply Chain Management.",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/salabh.jpeg",
-    linkedin: "https://www.linkedin.com/in/shalabh-seth-2678359/",
+    domain: "Multiple sectors",
+    image: "/Mentors/salabh.jpeg",
+    linkedin: "https:/www.linkedin.com/in/shalabh-seth-2678359/",
   },
   {
     id: 81,
@@ -980,11 +889,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Sustainability, Governance/e-governance, market-linkage, rural-tech",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/kalok.jpg",
+    domain: "Multiple sectors",
+    image: "/Mentors/kalok.jpg",
     linkedin:
-      "https://www.linkedin.com/in/kumar-alok-550338ab/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/kumar-alok-550338ab/?originalSubdomain=in",
   },
   {
     id: 82,
@@ -993,11 +901,10 @@ export const mentorsData = [
     company: "",
     strengths:
       "Angel Investor & Mentor; Electric Mobility, Energy, Built Environment, Climate Tech; Technology leveraged Business Strategy",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/hari.jpg",
+    domain: "Multiple sectors",
+    image: "/Mentors/hari.jpg",
     linkedin:
-      "https://www.linkedin.com/in/hariprasadhegde/?originalSubdomain=in",
+      "https:/www.linkedin.com/in/hariprasadhegde/?originalSubdomain=in",
   },
   {
     id: 83,
@@ -1006,10 +913,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Skill development Renewable energy Card Payments Marketing & Communications System conversion",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/Atul.png",
-    linkedin: "https://www.linkedin.com/in/bhatnagaratul/",
+    domain: "Multiple sectors",
+    image: "/Mentors/Atul.png",
+    linkedin: "https:/www.linkedin.com/in/bhatnagaratul/",
   },
   {
     id: 84,
@@ -1017,10 +923,9 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths: "Manufacturing technology, Aerospace , Medical devices",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/sharad2.png",
-    linkedin: "https://www.linkedin.com/in/sharad-agarwal-193460/",
+    domain: "Multiple sectors",
+    image: "/Mentors/sharad2.png",
+    linkedin: "https:/www.linkedin.com/in/sharad-agarwal-193460/",
   },
   {
     id: 85,
@@ -1028,11 +933,10 @@ export const mentorsData = [
     position: "",
     company: "",
     strengths:
-      "AI/ML, 5G & 6G Networks, Drones/UAV, Networking & Communications, IoT- smart city, healthcare, Manufacturing and Industry 4.0, Spacetech, Edtech",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/sandeepsharma.png",
-    linkedin: "https://www.linkedin.com/in/sandeep6g/?originalSubdomain=in",
+      "AI/ML, 5G & 6G Networks, Drones/UAV, Networking & Communications, IoT- smart city, Healthcare, Manufacturing and Industry 4.0, Spacetech, Edtech",
+    domain: "Multiple sectors",
+    image: "/Mentors/sandeepsharma.png",
+    linkedin: "https:/www.linkedin.com/in/sandeep6g/?originalSubdomain=in",
   },
   {
     id: 86,
@@ -1041,10 +945,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Defence innovation & manufacturing,Space, Unmanned technologies, Airside Operations and HADR/CBRN",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/philip2.png",
-    linkedin: "https://www.linkedin.com/in/air-marshal-philip-thomas-4036b233/",
+    domain: "Multiple sectors",
+    image: "/Mentors/philip2.png",
+    linkedin: "https:/www.linkedin.com/in/air-marshal-philip-thomas-4036b233/",
   },
   {
     id: 87,
@@ -1053,10 +956,9 @@ export const mentorsData = [
     company: "",
     strengths:
       "Growth and Investment Strategy, Market entry, Go-to market, GenAI, and Innovation",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/shikhar.png",
-    linkedin: "https://www.linkedin.com/in/shikhargupta/",
+    domain: "Multiple sectors",
+    image: "/Mentors/shikhar.png",
+    linkedin: "https:/www.linkedin.com/in/shikhargupta/",
   },
   {
     id: 88,
@@ -1065,9 +967,8 @@ export const mentorsData = [
     company: "",
     strengths:
       "Neurosciences & device development , Brain injury, Rehab & Predictive analysis,Neuro-oncology, Radiomics & Therapy,Telemedicine, Remote medical access & digital technology, Aging & Spine diseases",
-    domain: "multiple sectors",
-    image:
-      "https://siicincubator.com/assets/images/about/mentors/multiple_sectors/suryansh.jpeg",
-    linkedin: "https://www.linkedin.com/in/suyash-singh-3b332b11a",
+    domain: "Multiple sectors",
+    image: "/Mentors/suryansh.jpeg",
+    linkedin: "https:/www.linkedin.com/in/suyash-singh-3b332b11a",
   },
 ];

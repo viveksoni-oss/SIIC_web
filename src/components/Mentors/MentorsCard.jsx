@@ -118,17 +118,20 @@ const MemoizedMentorCard = ({ mentor }) => <MentorCard mentor={mentor} />;
 
 // Main container component
 function MentorsSection({ domain = "All", search = "" }) {
-  // Memoize filtered mentors
+  // Memoize filtered and sorted mentors
   const filteredMentors = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
 
-    return mentorsData.filter((mentor) => {
-      const matchesDomain = domain === "All" || mentor.domain.includes(domain);
-      const matchesSearch = mentor.name
-        .toLowerCase()
-        .includes(normalizedSearch);
-      return matchesDomain && matchesSearch;
-    });
+    return mentorsData
+      .filter((mentor) => {
+        const matchesDomain =
+          domain === "All" || mentor.domain.includes(domain);
+        const matchesSearch = mentor.name
+          .toLowerCase()
+          .includes(normalizedSearch);
+        return matchesDomain && matchesSearch;
+      })
+      .sort((a, b) => a.id - b.id); // <--- Added sort logic here
   }, [domain, search]);
 
   const isEmpty = filteredMentors.length === 0;

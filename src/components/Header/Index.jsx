@@ -75,7 +75,7 @@ function Header() {
         initial={{ y: 0 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="max-h-[100px] bg-[#f7f7f7] p-4 shadow-md flex justify-between items-center relative z-50"
+        className="max-h-[100px] bg-[#f7f7f7] p-4 lg:-ml-10 shadow-md flex justify-between items-center relative z-50"
       >
         <Logo
           logoLoaded={logoLoaded}

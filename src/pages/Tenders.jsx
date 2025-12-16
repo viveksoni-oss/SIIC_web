@@ -14,6 +14,7 @@ import Tender181224 from "@/assets/Tender/181224.pdf";
 import TenderMain from "@/assets/Tender/tender.pdf";
 import AmendmentTender from "@/assets/Tender/amendmentTender.pdf";
 import SectionHeading from "@/components/Utility Components/SectionHeading";
+import { NewPageLayout } from "@/components/Utility Components/NewPageLayout";
 
 // ============================================================
 // PDF WORKER
@@ -75,21 +76,18 @@ const tenderList = [
 // ============================================================
 function Tenders() {
   return (
-    <PageLayout
-      banner={
-        <BannerTemplate
-          heading={"Our"}
-          description={"SIIC hands crore scale tenders in record time."}
-          highlightedText="Tenders"
-        />
+    <NewPageLayout
+      heading={
+        <>
+          Our <HighlightedText>Tenders</HighlightedText>
+        </>
       }
-      bodyStyle="-mt-80 px-28 py-20"
+      description={"SIIC hands crore scale tenders in record time."}
     >
       {/* PAGE HEADING */}
-      <div className="w-full  px-4">
+      <div className="w-full  px-4  mt-10">
         <SectionHeading>
-       Open <HighlightedText>Tenders</HighlightedText>
-        
+          Open <HighlightedText>Tenders</HighlightedText>
         </SectionHeading>
       </div>
 
@@ -98,7 +96,7 @@ function Tenders() {
           <TenderCard key={item.id} {...item} />
         ))}
       </div>
-    </PageLayout>
+    </NewPageLayout>
   );
 }
 

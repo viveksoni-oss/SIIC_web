@@ -57,7 +57,7 @@ function NewTeamCard({ data, height = 320 }) {
       <div
         className={cn(
           "flex  items-end justify-center overflow-hidden border-neutral-200  rounded-t-md  bg-gradient-to-b from-gray-50 via-gray-100 to-transparent ",
-          height ? `min-h-[${height}px]` : ""
+          `h-[${height}px]`
         )}
       >
         <img

@@ -137,7 +137,7 @@ function TeamSections({ heading, TeamData, filter = true }) {
 
       {/* Card wrapper with conditional gradient overlays and inner scroll area */}
       <div className="mt-10 mx-auto max-w-8xl">
-        <div className="relative rounded-3xl border border-slate-200 shadow-lg sm:px-1 md:px-2">
+        <div className="relative rounded-3xl border border-slate-200 shadow-md sm:px-1 md:px-2">
           {/* Top gradient overlay (only when scrollable & not at top) */}
           {showTopFade && (
             <div className="pointer-events-none absolute inset-x-0 top-0 h-10 md:h-20 rounded-t-3xl bg-gradient-to-b from-gray-100 via-white/10 to-transparent z-20" />
