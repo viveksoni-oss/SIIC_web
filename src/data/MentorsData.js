@@ -935,7 +935,7 @@ export const mentorsData = [
     strengths:
       "AI/ML, 5G & 6G Networks, Drones/UAV, Networking & Communications, IoT- smart city, Healthcare, Manufacturing and Industry 4.0, Spacetech, Edtech",
     domain: "Multiple sectors",
-    image: "/Mentors/sandeepsharma.png",
+    image: "/Mentors/SandeepSharma.png",
     linkedin: "https:/www.linkedin.com/in/sandeep6g/?originalSubdomain=in",
   },
   {
@@ -946,7 +946,7 @@ export const mentorsData = [
     strengths:
       "Defence innovation & manufacturing,Space, Unmanned technologies, Airside Operations and HADR/CBRN",
     domain: "Multiple sectors",
-    image: "/Mentors/philip2.png",
+    image: "/Mentors/AirMarshalPhilipThomas.png",
     linkedin: "https:/www.linkedin.com/in/air-marshal-philip-thomas-4036b233/",
   },
   {
@@ -957,18 +957,18 @@ export const mentorsData = [
     strengths:
       "Growth and Investment Strategy, Market entry, Go-to market, GenAI, and Innovation",
     domain: "Multiple sectors",
-    image: "/Mentors/shikhar.png",
+    image: "/Mentors/ShikharGupta.png",
     linkedin: "https:/www.linkedin.com/in/shikhargupta/",
   },
   {
-    id: 88,
+    id: 88, 
     name: "Dr. Suyash Singh",
     position: "",
     company: "",
     strengths:
       "Neurosciences & device development , Brain injury, Rehab & Predictive analysis,Neuro-oncology, Radiomics & Therapy,Telemedicine, Remote medical access & digital technology, Aging & Spine diseases",
     domain: "Multiple sectors",
-    image: "/Mentors/suryansh.jpeg",
+    image: "/Mentors/SuyashSingh.png",
     linkedin: "https:/www.linkedin.com/in/suyash-singh-3b332b11a",
   },
 ];
