@@ -91,25 +91,25 @@ export const mentorsData = [
     linkedin: "https:/www.linkedin.com/in/harshvinayak/?originalSubdomain=in",
   },
   {
-    id: 100,
+    id: 9,
     name: "Mr. Biplab K Paul",
     position: "",
     company: "",
     strengths:
       "Irrigation, agri-innovation, smallholders & Gender technology inclusiveness along with government policies",
     domain: "Agritech",
-    image: "/Mentors/BipalPaul.png",
+    image: "//Mentors/BiplabKPaul.png",
     linkedin: "https:/www.linkedin.com/in/biplabketan-paul-06a6a47/",
   },
   {
-    id: 101,
+    id: 10,
     name: "Mr. Jagadeesh Sunkad",
     position: "",
     company: "",
     strengths:
       "Digital interventions for Agriculture Value chains, Soil less agriculture - Aeroponics, Material science innovations for agriculture",
     domain: "Agritech",
-    image: "/Mentors/JagdeeshSunkad.png",
+    image: "//Mentors/JagadeeshSunkad.png",
     linkedin:
       "https:/www.linkedin.com/in/jagadeeshsunkad/?originalSubdomain=in",
   },
@@ -125,7 +125,7 @@ export const mentorsData = [
     linkedin: "https:/www.linkedin.com/in/ca-prachi-jain-6426b218",
   },
   {
-    id: 91,
+    id: 12,
     name: "Mr. Vaibhav Lodha",
     position: "",
     company: "",
@@ -136,24 +136,24 @@ export const mentorsData = [
     linkedin: "https:/www.linkedin.com/in/vaibhavlodha/?originalSubdomain=in",
   },
   {
-    id: 93,
+    id: 13,
     name: "Mr. Anil Kumar Choudhary",
     position: "",
     company: "",
     strengths:
       "Energy & Resource Efficient Technology innovations and Solutions. Market Transformation Strategy, Sustainable Finance, Cyber Physical Interface",
     domain: "Energy",
-    image: "/Mentors/Anil_kumarChoudhary.png",
+    image: "/Mentors/AnilKumarChoudhary.png",
     linkedin: "https:/www.linkedin.com/in/anil-kumar-choudhary-612245183/",
   },
   {
-    id: 92,
+    id: 14,
     name: "Mr. Amarnath",
     position: "",
     company: "",
     strengths: "Go To Market Strategy & Execution (Industry Agnostic)",
     domain: "Gtm",
-    image: "/Mentors/amarnath.webp",
+    image: "/Mentors/Amarnath.png",
     linkedin: "https:/www.linkedin.com/in/amarnathmentor/",
   },
   {
@@ -223,35 +223,35 @@ export const mentorsData = [
     linkedin: "https:/www.linkedin.com/in/nita-roy-8734964",
   },
   {
-    id: 99,
+    id: 21,
     name: "Mr. Anuj Mohan Sherry",
     position: "",
     company: "",
     strengths:
       "Fintech , Digital Payments , Mobile Financial Services , Mobile Money, e-wallet, cryptocurrency",
     domain: "Multiple sectors",
-    image: "/Mentors/Anuj_mohanSherry.png",
+    image: "/Mentors/AnujMohanSherry.png",
     linkedin: "https:/www.linkedin.com/in/anujmohansherry/",
   },
   {
-    id: 94,
+    id: 22,
     name: "Major Virat Misra, Ex-IRTS",
     position: "",
     company: "",
     strengths:
       "Government linkages, Govtech, Business development Strategies, Pitching and Execution,\n                                            Emerging Technology (Sector agnostic)",
     domain: "Multiple sectors",
-    image: "/Mentors/manoj_virat_mishra.png",
+    image: "/Mentors/MajorViratMisraExIRTS.png",
   },
   {
-    id: 95,
+    id: 23,
     name: "Mr. Vijay Krishnamurthy",
     position: "",
     company: "",
     strengths:
       "Finance, Legal, Governance and Compliance, Pitch decks, VC connects, Funding strategies through equity/debt",
     domain: "Multiple sectors",
-    image: "/Mentors/VijayKrishnamurthy.webp",
+    image: "/Mentors/VijayKrishnamurthy.png",
     linkedin: "https:/in.linkedin.com/in/vijay-krishnamurthy-67a48418",
   },
   {
@@ -373,7 +373,7 @@ export const mentorsData = [
     strengths:
       "Clinician feedback on Bio medical devices, therapeutic interventions, regenerative medicine, medical diagnostics, investigations and critical care intervention devices, Imaging interface guided therapy, robotic assisted surgical management interfaces and invasive implantable or extracorporeal circulatory devices.",
     domain: "Healthcare",
-    image: "/Mentors/SubinSukesan.png",
+    image: "/Mentors/DrSubinSukesan.png",
   },
   {
     id: 35,
@@ -405,7 +405,7 @@ export const mentorsData = [
     strengths:
       "Rare diseases, genomics, diagnostics, quality management, artificial intelligence as applied to Healthcare and clinical trials",
     domain: "Multiple sectors",
-    image: "/Mentors/sunil_tadepalli.png",
+    image: "/Mentors/SunilTadepalli.png",
     linkedin: "https:/www.linkedin.com/in/suniltadepalli/",
   },
   {
@@ -416,7 +416,7 @@ export const mentorsData = [
     strengths:
       "Cardiology, electrophysiology , clinical research, Internal medicine, HealthTech innovation enthusisast",
     domain: "Healthcare",
-    image: "/Mentors/DeepakPadmanabha.png",
+    image: "/Mentors/DeepakPadmanabhan.png",
     linkedin: "https:/www.linkedin.com/in/deepakpadmanbhan/",
   },
   {
@@ -459,7 +459,7 @@ export const mentorsData = [
     company: "",
     strengths: "AI/ML, Causal Inference, and Cyber Risk Quantification",
     domain: "Cybersecurity",
-    image: "/Mentors/VenkatRamakrishnan.png",
+    image: "/Mentors/VenkatSubramaniam.png",
     linkedin:
       "https:/www.linkedin.com/in/venkatasubramanian-ramakrishnan-5544b9/?originalSubdomain=in",
   },
@@ -504,7 +504,7 @@ export const mentorsData = [
     strengths:
       "Business development, Investment Strategy, NASDAQ IPOs, Internationalisation, Product lifecycle management including development (Diagnostic and Medical devices), Personalised Medicine, Women’s Health, CleanTech and Green Energy.",
     domain: "Multiple sectors",
-    image: "/Mentors/KushagrpPunyani.png",
+    image: "/Mentors/KushagrPunyani.png",
     linkedin: "https:/www.linkedin.com/in/kpunyani/",
   },
   {
@@ -526,7 +526,7 @@ export const mentorsData = [
     strengths:
       "Energy, Environment, Water, Medical devices, Healthcare, Waste to Wealth, Education, Sustainable Development.",
     domain: "Multiple sectors",
-    image: "/Mentors/user.webp",
+    image: "/Mentors/RKTayal.png",
   },
   {
     id: 49,
@@ -536,7 +536,7 @@ export const mentorsData = [
     strengths:
       "Strategy Consulting, Program & Change Management, Angel Investing in Sustainability Startups",
     domain: "Multiple sectors",
-    image: "/Mentors/akshatKumar.webp",
+    image: "/Mentors/AkshatKumar.png",
     linkedin: "https:/www.linkedin.com/in/akshat-kumar-5a60086/",
   },
   {
@@ -581,7 +581,7 @@ export const mentorsData = [
     strengths:
       "E-commerce, Data Analytics, Market Research, Brand Strategy, Leadership coaching, Hiring & Retention",
     domain: "Multiple sectors",
-    image: "/Mentors/AshishShingru.png",
+    image: "/Mentors/AshishR.Singru.png",
     linkedin: "https:/www.linkedin.com/in/ashishsingru/?originalSubdomain=in",
   },
   {
