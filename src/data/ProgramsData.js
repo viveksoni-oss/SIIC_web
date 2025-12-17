@@ -28,33 +28,38 @@ export const programsData = [
     ],
     offerings: [
       {
-        icon: "funding",
+        icon: "awards",
         title: "Awards",
         description: "Up to ₹5 lakhs.",
       },
       {
-        icon: "mentoring",
-        title: "Access to lab facilities",
+        icon: "lab",
+        title:"facilities",
+        description: "Access to lab facilities",
       },
       {
-        icon: "networking",
-        title:
+        icon: "mentoring",
+        title:"Mentor",
+        description:
           "Mentorship from industry leaders, domain experts, and researchers",
         // description: "Access to investor network and funding opportunities.",
       },
       {
-        icon: "networking",
-        title: "Opportunities for incubation and funding",
+        icon: "opportunities",
+        title:"Opportunities",
+        description: "Opportunities for incubation and funding",
+        // description: "Access to investor network and funding opportunities.",
+      },
+      {
+        icon: "support",
+        title:"Support",
+        description: "Support for prototype development",
         // description: "Access to investor network and funding opportunities.",
       },
       {
         icon: "networking",
-        title: "Support for prototype development",
-        // description: "Access to investor network and funding opportunities.",
-      },
-      {
-        icon: "networking",
-        title: "Networking and exposure to government, and industry partners",
+        title:"Networking",
+        description: "Networking and exposure to government, and industry partners",
         // description: "Access to investor network and funding opportunities.",
       },
     ],
