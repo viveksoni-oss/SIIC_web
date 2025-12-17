@@ -19,7 +19,7 @@ function Startups() {
   );
 
   return (
-    <PageLayout bodyStyle={"-mt-60 z-40 p-16  "} banner={<BannerTemplate heading="StartUp" highlightedText="We" headingSuffix="incubated"
+    <PageLayout bodyStyle={"-mt-60 z-40 p-16  "} banner={<BannerTemplate heading="Startup" highlightedText="We" headingSuffix="incubated"
      description="Showcasing startups nurtured at SIIC, now thriving across diverse industries." />}>
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-10 md:flex-row justify-between">
