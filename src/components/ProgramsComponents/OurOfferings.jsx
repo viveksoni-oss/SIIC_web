@@ -21,7 +21,7 @@ export default function OurOfferings({ offerings }) {
               {/* 2. Render it as a Component if it exists */}
               {IconComponent ? (
                 <IconComponent
-                  className="w-12 h-12 text-primary-highlight"
+                  className="w-12 h-12 text-secondary-blue"
                   strokeWidth={1.5}
                 />
               ) : null}
