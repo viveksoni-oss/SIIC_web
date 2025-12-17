@@ -148,8 +148,8 @@ function ProgramOverview() {
 
         {/* RIGHT: Brief + Status + Icons (images) */}
         <div className="bg-secondary-gray/30 lg:col-span-3 w-full min-h-[280px] sm:min-h-[307px] rounded-2xl overflow-visible relative p-5 sm:p-7.5 flex flex-col">
-          <div className="flex-1 flex flex-col">
-            <div className="flex  items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <div className="flex-1 flex justify-evenly flex-col">
+            <div className="flex  items-center gap-2 sm:gap-3 mb-3 sm:mb-4 -mt-5">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-thin">
                 Program <HighlightedText weight={700}>Brief</HighlightedText>
               </h1>
@@ -166,29 +166,31 @@ function ProgramOverview() {
               )}
             </div>
             {/* Brief full width */}
-            <p className="mt-3 sm:mt-4 text-[14px] sm:text-[15px] lg:text-[16px] leading-6 sm:leading-7 font-light w-full">
+            <p className="text-[14px] sm:text-[15px] lg:text-[16px] leading-6 sm:leading-7 font-light w-full">
               {programBriefShort}
             </p>
-            {centerOfExcellence && (
-              <div className="mt-3 sm:mt-4 text-[10px] sm:text-xs font-semibold text-gray-600">
-                Center of Excellence:
-                <span className="ml-2 text-primary font-medium">
-                  {centerOfExcellence}
-                </span>
-              </div>
-            )}
-            {domain && domain.length > 0 && (
-              <div className="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
-                {domain.map((d, idx) => (
-                  <span
-                    key={idx}
-                    className="text-[9px] sm:text-[10px] px-2 py-1 bg-white rounded-full border border-gray-200 capitalize"
-                  >
-                    {d}
+            <div>
+              {centerOfExcellence && (
+                <div className="-mt-3 sm:mt-8 text-[10px] sm:text-xs font-semibold text-gray-600">
+                  Center of Excellence:
+                  <span className="ml-2 text-primary font-medium">
+                    {centerOfExcellence}
                   </span>
-                ))}
-              </div>
-            )}
+                </div>
+              )}
+              {domain && domain.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-1.5 sm:gap-2">
+                  {domain.map((d, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[9px] sm:text-[10px] px-2 py-1 bg-white rounded-full border border-gray-200 capitalize"
+                    >
+                      {d}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
             {/* Partner icons/images (flex row, always at bottom, your custom IMAGES) */}
             {logos && (
               <div className="w-full flex gap-2 sm:gap-4 justify-start items-center pt-3 -mb-1 sm:-mb-5 mt-8">

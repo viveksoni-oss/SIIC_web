@@ -325,7 +325,7 @@ function FlashNews() {
         <BannerTemplate
           heading="SIIC "
           highlightedText="Connect"
-          description="Stay Ahead with Real-Time Updates from India’s Leading Deep-Tech Incubator (Default Description)"
+          description="Stay Ahead with Real-Time Updates from India’s Leading Deep-Tech Incubator"  
         />
       }
     >

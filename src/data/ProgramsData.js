@@ -1,7 +1,9 @@
+import { AwardIcon } from "lucide-react";
+
 export const programsData = [
   {
     id: "big-2025",
-    logos:["image 62"],
+    // logos:["image 62"],
     slug: "hackathon-telecom",
     name: "5G/6G COE",
     title: "Hackathon Telecom 5G/6G COE",
@@ -33,11 +35,11 @@ export const programsData = [
       {
         icon: "mentoring",
         title: "Access to lab facilities",
-       
       },
       {
         icon: "networking",
-        title: "Mentorship from industry leaders, domain experts, and researchers",
+        title:
+          "Mentorship from industry leaders, domain experts, and researchers",
         // description: "Access to investor network and funding opportunities.",
       },
       {
@@ -61,7 +63,6 @@ export const programsData = [
       "Innovators",
       "Students (Final-year undergraduate/postgraduate)",
       "Researchers & Tech Developers from across India",
-
     ],
     faq: [
       {
@@ -82,7 +83,8 @@ export const programsData = [
       },
       {
         question: " Do I need to stick to the listed domains?",
-        answer: "Yes. You must choose a domain from the list—or apply under Open Innovation",
+        answer:
+          "Yes. You must choose a domain from the list—or apply under Open Innovation",
       },
       {
         question: "Is hardware mandatory?",
@@ -90,15 +92,18 @@ export const programsData = [
       },
       {
         question: "What support do winners receive?",
-        answer: "Funding, mentorship, prototype support, and access to testbeds.",
+        answer:
+          "Funding, mentorship, prototype support, and access to testbeds.",
       },
       {
         question: "Is my own problem statement allowed?",
-        answer: "Yes, as long as it fits within a domain (or goes under Open Innovation).",
+        answer:
+          "Yes, as long as it fits within a domain (or goes under Open Innovation).",
       },
       {
         question: "What are the key judging criteria?",
-        answer: "Innovation and originality of the idea, Relevance to 5G/6G use cases, Technical feasibility and scalability, Market readiness and social impact, Quality of presentation and demonstration",
+        answer:
+          "Innovation and originality of the idea, Relevance to 5G/6G use cases, Technical feasibility and scalability, Market readiness and social impact, Quality of presentation and demonstration",
       },
     ],
   },
@@ -547,7 +552,7 @@ export const programsData = [
     domain: ["power systems", "electrical engineering", "energy"],
     centerOfExcellence: "Power & Energy Systems",
     brief:
-      "GRID-INDIA Power System Award (GIPSA) outlines the initiative to recognise research excellence in power systems by rewarding Doctoral/Master research accomplishments in all the technical institutions offering PG in power systems and related fields in India. GRID-INDIA has associated with Startup Incubation and Innovation Centre (SIIC-IIT Kanpur), the technology business incubator of IIT Kanpur, for the implementation of this initiative. This is the 14th edition of the award program, wholly funded by Grid-India. SIIC-IIT Kanpur will function as the nodal agency for the implementation of this award program at the national level.",
+      "The 14th edition of GRID-INDIA Power System Award (GIPSA) 100% funding recognizes research excellence in power systems with rewards for Doctoral/Master accomplishments covering all PG institutions in India, in power systems & related fields.",
     process: [
       { step: "Nomination by Institutions" },
       { step: "Research Evaluation" },
@@ -556,7 +561,7 @@ export const programsData = [
     ],
     offerings: [
       {
-        icon: "funding",
+        icon: "awards",
         title: "Research Awards",
         description: "Cash awards for outstanding research.",
       },
